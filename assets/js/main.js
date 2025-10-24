@@ -17,7 +17,8 @@ const STRINGS = {
       website: "공식 사이트",
       cafe: "네이버 카페",
       instagram: "인스타그램",
-      map: "카카오맵"
+      map: "카카오맵",
+      band: "네이버 밴드"
     }
   },
   en: {
@@ -35,7 +36,8 @@ const STRINGS = {
       website: "Website",
       cafe: "Naver Cafe",
       instagram: "Instagram",
-      map: "Map"
+      map: "Map",
+      band: "Naver Band"
     }
   }
 }[LOCALE];
@@ -56,7 +58,12 @@ const VENUES = [
       ko: "아수라 라틴댄스 소셜 사진",
       en: "Asura Latin Dance Daegu social photo"
     },
-    links: []
+    links: [
+      {
+        type: "band",
+        url: "https://www.band.us/band/70307600/post"
+      }
+    ]
   },
   {
     id: "daegu-baya",
@@ -92,7 +99,7 @@ const VENUES = [
       ko: "살사드라마 대구 소셜 사진",
       en: "SalsaDrama Daegu social photo"
     },
-    links: []
+    links: [{ type: "cafe", url: "https://cafe.naver.com/salsadrama?iframe_url=/MyCafeIntro.nhn%3Fclubid=29348479" }]
   }
 ];
 
