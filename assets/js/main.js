@@ -48,6 +48,10 @@ const VENUES = [
     name: { ko: "아수라 라틴댄스", en: "Asura Latin Dance Daegu" },
     region: { ko: "대구", en: "Daegu" },
     city: { ko: "대구 중구", en: "Jung-gu, Daegu" },
+    address: {
+      ko: "대구 중구 삼덕동1가 13-2 3층 아수라장",
+      en: "3F, Asura Lounge, 13-2 Samdeok-dong 1-ga, Jung-gu, Daegu"
+    },
     styles: ["salsa", "bachata"],
     summary: {
       ko: "대구 중구에서 살사와 바차타 수업, 소셜을 운영하는 라틴댄스 커뮤니티입니다.",
@@ -81,7 +85,12 @@ const VENUES = [
       ko: "바야 라틴댄스 프로필 이미지",
       en: "Baya Latin Dance profile image"
     },
-    links: []
+    links: [
+      {
+        type: "band",
+        url: "https://www.band.us/band/88118947/intro"
+      }
+    ]
   },
   {
     id: "daegu-salsadrama",
@@ -210,7 +219,8 @@ const renderVenues = (venues) => {
 
     const meta = document.createElement("p");
     meta.className = "venue-card__meta";
-    meta.textContent = `${venue.city[LOCALE]}  ${venue.region[LOCALE]}`;
+  const cityLabel = venue.city[LOCALE];
+  meta.textContent = venue.address?.[LOCALE] ? `${cityLabel}\n${venue.address[LOCALE]}` : cityLabel;
 
     const summary = document.createElement("p");
     summary.className = "venue-card__summary";
