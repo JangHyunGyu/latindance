@@ -111,8 +111,8 @@ input:focus-visible {
 
 .filter-form {
   display: grid;
-  gap: 28px;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   align-items: flex-end;
 }
 
@@ -149,47 +149,6 @@ input:focus-visible {
   border-color: var(--color-accent);
 }
 
-.filter-form__chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
-  border-radius: 999px;
-  border: 1px solid var(--color-border);
-  background: var(--color-surface-soft);
-  color: var(--color-muted);
-  cursor: pointer;
-}
-
-.chip input {
-  accent-color: var(--color-accent);
-}
-
-.chip input:checked + span {
-  color: var(--color-text);
-  font-weight: 600;
-}
-
-.filter-form__reset {
-  justify-self: flex-start;
-  padding: 10px 16px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--color-border);
-  background: transparent;
-  color: var(--color-muted);
-  cursor: pointer;
-}
-
-.filter-form__reset:is(:hover, :focus-visible) {
-  color: var(--color-text);
-  border-color: var(--color-accent);
-}
 
 .results {
   display: grid;
@@ -391,10 +350,5 @@ input:focus-visible {
 @media (max-width: 480px) {
   .venue-card {
     padding: 20px;
-  }
-
-  .filter-form__reset {
-    width: 100%;
-    justify-content: center;
   }
 }

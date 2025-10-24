@@ -203,9 +203,7 @@ const VENUES = [
 ];
 
 const regionSelect = document.querySelector("[data-filter-region]");
-const styleCheckboxes = Array.from(document.querySelectorAll("[data-filter-style]"));
 const searchInput = document.querySelector("[data-filter-search]");
-const resetButton = document.querySelector("[data-filter-reset]");
 const resultsContainer = document.getElementById("venue-results");
 const countNode = document.querySelector("[data-result-count]");
 
@@ -242,19 +240,9 @@ const normalizeRegionValue = (value) => {
   return value;
 };
 
-const getActiveStyles = () =>
-  styleCheckboxes.filter((checkbox) => checkbox.checked).map((checkbox) => checkbox.value);
-
-const matchesFilters = (venue, { region, styles, search }) => {
+const matchesFilters = (venue, { region, search }) => {
   if (region && region !== "all" && venue.region[LOCALE] !== region) {
     return false;
-  }
-
-  if (styles.length) {
-    const hasAllStyles = styles.every((style) => venue.styles.includes(style));
-    if (!hasAllStyles) {
-      return false;
-    }
   }
 
   if (search) {
@@ -347,13 +335,11 @@ const renderVenues = (venues) => {
 
 const applyFilters = () => {
   const regionValue = normalizeRegionValue(regionSelect?.value || "all");
-  const selectedStyles = getActiveStyles();
   const searchValue = (searchInput?.value || "").trim().toLowerCase();
 
   const filtered = VENUES.filter((venue) =>
     matchesFilters(venue, {
       region: regionValue,
-      styles: selectedStyles,
       search: searchValue
     })
   );
@@ -365,28 +351,8 @@ const applyFilters = () => {
   renderVenues(filtered);
 };
 
-const resetFilters = () => {
-  if (regionSelect) {
-    regionSelect.value = "all";
-  }
-
-  styleCheckboxes.forEach((checkbox) => {
-    checkbox.checked = false;
-  });
-
-  if (searchInput) {
-    searchInput.value = "";
-  }
-
-  applyFilters();
-};
-
 const registerEvents = () => {
   regionSelect?.addEventListener("change", applyFilters);
-
-  styleCheckboxes.forEach((checkbox) => {
-    checkbox.addEventListener("change", applyFilters);
-  });
 
   if (searchInput) {
     let debounceId = null;
@@ -397,8 +363,6 @@ const registerEvents = () => {
       debounceId = window.setTimeout(applyFilters, 180);
     });
   }
-
-  resetButton?.addEventListener("click", resetFilters);
 };
 
 populateRegions();
