@@ -69,7 +69,7 @@ const VENUES = [
       en: "Community in Suseong-gu connecting dancers through bachata and salsa workshops."
     },
     image:
-      "https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/465018751_855158120001532_2341445861805686994_n.jpg?stp=dst-jpg_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmV4cGVyaW1lbnRhbCJ9&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_cat=104&_nc_oc=Q6cZ2QEHEoc7SjvGiKwUuYkCMU-emTL_G-jEzsU_GDkl2TXjZK-Si1A6Q-ke5oT7LABn6yo&_nc_ohc=KJVJr_A8NvsQ7kNvwFKe6SA&_nc_gid=rPycsNAR1QVY2ZVttjYO8Q&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfdFgv4iMOpYXFMASGuvurs4qROq1R_Ycblkm-jYtmq7YQ&oe=690188EF&_nc_sid=8b3546",
+      "https://coresos-phinf.pstatic.net/a/38848i/i_ecaUd018svcz3nbzjwvqch0_3q6ta6.jpg?type=cover_s276",
     imageAlt: {
       ko: "바야 라틴댄스 프로필 이미지",
       en: "Baya Latin Dance profile image"
@@ -85,6 +85,12 @@ const VENUES = [
     summary: {
       ko: "정기 소셜과 초급 클래스로 아마추어 댄서를 키우는 대구 라틴댄스 스튜디오입니다.",
       en: "Daegu studio nurturing new dancers with regular socials and beginner-friendly classes."
+    },
+    image:
+      "https://cafeptthumb-phinf.pstatic.net/MjAyNDAyMjFfMjQx/MDAxNzA4NDgyNzg2MzM4.ZgwF_y7aX-GoF0K5de1vRyX3y3-Fk3gI1oG1W38VMXUg.MoAoQU-YmRxlxR5HaMeRQXtn8MD8lHYFz8IaM44804Ig.JPEG/KakaoTalk_20240221_111201113_03.jpg?type=f150_150_mask",
+    imageAlt: {
+      ko: "살사드라마 대구 소셜 사진",
+      en: "SalsaDrama Daegu social photo"
     },
     links: []
   }
@@ -191,7 +197,7 @@ const renderVenues = (venues) => {
     card.id = venue.id;
     card.setAttribute("role", "listitem");
 
-  const name = document.createElement("h3");
+    const name = document.createElement("h3");
     name.className = "venue-card__name";
     name.textContent = venue.name[LOCALE];
 
