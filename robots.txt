@@ -4,4 +4,4 @@ Allow: /
 User-agent: Mediapartners-Google
 Allow: /
 
-Sitemap: https://latindance.archerlab.dev/sitemap.xml
+Sitemap: https://latindance.kr/sitemap.xml
