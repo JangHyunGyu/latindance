@@ -102,8 +102,7 @@ const VENUES = [
       ko: "정기 소셜과 초급 클래스로 아마추어 댄서를 키우는 대구 라틴댄스 스튜디오입니다.",
       en: "Daegu studio nurturing new dancers with regular socials and beginner-friendly classes."
     },
-    image:
-      "https://cafeptthumb-phinf.pstatic.net/MjAyNDAyMjFfMjQx/MDAxNzA4NDgyNzg2MzM4.ZgwF_y7aX-GoF0K5de1vRyX3y3-Fk3gI1oG1W38VMXUg.MoAoQU-YmRxlxR5HaMeRQXtn8MD8lHYFz8IaM44804Ig.JPEG/KakaoTalk_20240221_111201113_03.jpg?type=f150_150_mask",
+    image: "assets/images/salsa_drama.png",
     imageAlt: {
       ko: "살사드라마 대구 소셜 사진",
       en: "SalsaDrama Daegu social photo"
