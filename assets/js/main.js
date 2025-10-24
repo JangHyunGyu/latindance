@@ -42,130 +42,51 @@ const STRINGS = {
 
 const VENUES = [
   {
-    id: "seoul-salsaviva",
-    name: { ko: "살사비바 홍대", en: "SalsaViva Hongdae" },
-    region: { ko: "서울", en: "Seoul" },
-    city: { ko: "서울 마포구 홍대", en: "Hongdae, Mapo-gu" },
-    styles: ["salsa", "bachata"],
-    summary: {
-      ko: "2002년부터 운영 중인 대표 살사 스튜디오로 평일 수업과 주말 소셜을 꾸준히 열고 있습니다.",
-      en: "Since 2002 this Hongdae studio has offered weekday classes and packed weekend socials."
-    },
-    links: [
-      { type: "website", url: "https://salsaviva.co.kr" },
-      { type: "cafe", url: "https://cafe.naver.com/salsaviva" }
-    ]
-  },
-  {
-    id: "seoul-clubmambo",
-    name: { ko: "클럽 맘보 강남", en: "Club Mambo Gangnam" },
-    region: { ko: "서울", en: "Seoul" },
-    city: { ko: "서울 강남구 역삼", en: "Yeoksam, Gangnam-gu" },
-    styles: ["salsa", "bachata", "kizomba"],
-    summary: {
-      ko: "강남역 인근에서 심야 소셜과 라이브 라틴 밴드 공연을 진행하는 전통 살사 클럽입니다.",
-      en: "Long-running club near Gangnam Station known for late-night socials and live Latin music."
-    },
-    links: [
-      { type: "website", url: "https://clubmambo.co.kr" },
-      { type: "instagram", url: "https://www.instagram.com/clubmambokorea" }
-    ]
-  },
-  {
-    id: "seoul-thesalsa",
-    name: { ko: "더살사 강남", en: "The Salsa Gangnam" },
-    region: { ko: "서울", en: "Seoul" },
-    city: { ko: "서울 강남구 논현", en: "Nonhyeon, Gangnam-gu" },
-    styles: ["salsa", "bachata"],
-    summary: {
-      ko: "입문반부터 마스터반까지 세분화된 커리큘럼과 주중 소셜을 운영하는 종합 라틴 스튜디오입니다.",
-      en: "Comprehensive studio offering leveled courses and weeknight socials in Nonhyeon."
-    },
-    links: [
-      { type: "website", url: "https://thesalsa.co.kr" },
-      { type: "instagram", url: "https://www.instagram.com/thesalsakorea" }
-    ]
-  },
-  {
-    id: "seoul-bailamos",
-    name: { ko: "바일라모스 성수", en: "Bailamos Seongsu" },
-    region: { ko: "서울", en: "Seoul" },
-    city: { ko: "서울 성동구 성수", en: "Seongsu-dong, Seongdong-gu" },
-    styles: ["bachata", "salsa"],
-    summary: {
-      ko: "바차타 기반 커리큘럼과 주말 커뮤니티 소셜을 제공하는 성수동 스튜디오입니다.",
-      en: "Seongsu studio focused on bachata fundamentals with curated weekend socials."
-    },
-    links: [
-      { type: "instagram", url: "https://www.instagram.com/bailamos.kr" },
-      { type: "map", url: "https://map.kakao.com/?urlX=513593&urlY=1113797&itemId=1769750927" }
-    ]
-  },
-  {
-    id: "gyeonggi-suwonsalsa",
-    name: { ko: "수원 살사클럽", en: "Suwon Salsa Club" },
-    region: { ko: "경기", en: "Gyeonggi" },
-    city: { ko: "경기 수원시 영통", en: "Yeongtong, Suwon" },
-    styles: ["salsa", "bachata"],
-    summary: {
-      ko: "수원과 화성권 댄서가 모이는 커뮤니티로 평일 저녁 소셜과 무료 체험 클래스를 운영합니다.",
-      en: "Community hub for Suwon and Hwaseong dancers with weekday socials and trial classes."
-    },
-    links: [{ type: "cafe", url: "https://cafe.naver.com/suwonsalsa" }]
-  },
-  {
-    id: "busan-latinbusan",
-    name: { ko: "부산 라틴댄스 커뮤니티", en: "Busan Latin Dance" },
-    region: { ko: "부산", en: "Busan" },
-    city: { ko: "부산 부산진구 서면", en: "Seomyeon, Busanjin-gu" },
-    styles: ["salsa", "bachata", "kizomba"],
-    summary: {
-      ko: "부산 대표 커뮤니티로 해운대 야외 소셜과 시즌별 바차타 워크숍을 진행합니다.",
-      en: "Leading Busan crew running beach socials in Haeundae and seasonal bachata workshops."
-    },
-    links: [
-      { type: "cafe", url: "https://cafe.naver.com/latinbusan" },
-      { type: "instagram", url: "https://www.instagram.com/busanlatindance" }
-    ]
-  },
-  {
-    id: "daegu-latindg",
-    name: { ko: "대구 라틴", en: "Daegu Latin" },
+    id: "daegu-asura",
+    name: { ko: "아수라 라틴댄스", en: "Asura Latin Dance Daegu" },
     region: { ko: "대구", en: "Daegu" },
-    city: { ko: "대구 중구 동성로", en: "Dongseongno, Jung-gu" },
+    city: { ko: "대구 중구", en: "Jung-gu, Daegu" },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "동성로 중심가에서 주간 소셜과 연례 대구 살사 페스티벌을 주최하는 커뮤니티입니다.",
-      en: "Downtown Daegu community hosting weekly socials and the annual Daegu Salsa Festival."
+      ko: "대구 중구에서 살사와 바차타 수업, 소셜을 운영하는 라틴댄스 커뮤니티입니다.",
+      en: "Daegu-based community in Jung-gu offering salsa and bachata classes and socials."
     },
-    links: [{ type: "cafe", url: "https://cafe.naver.com/dglatin" }]
+    image: "https://coresos-phinf.pstatic.net/a/352828/1_04aUd018svc1cz5zw2xq05k6_o4ujpe.jpg?type=cover_s276",
+    imageAlt: {
+      ko: "아수라 라틴댄스 소셜 사진",
+      en: "Asura Latin Dance Daegu social photo"
+    },
+    links: []
   },
   {
-    id: "daejeon-djlatino",
-    name: { ko: "대전 DJ Latino", en: "Daejeon DJ Latino" },
-    region: { ko: "대전", en: "Daejeon" },
-    city: { ko: "대전 서구 둔산", en: "Dunsan, Seo-gu" },
+    id: "daegu-baya",
+    name: { ko: "바야 라틴댄스", en: "Baya Latin Dance" },
+    region: { ko: "대구", en: "Daegu" },
+    city: { ko: "대구 수성구", en: "Suseong-gu, Daegu" },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "충청권 최대 라틴 커뮤니티로 격주 소셜과 파티형 워크숍을 꾸준히 열고 있습니다.",
-      en: "Largest community in Chungcheong with bi-weekly socials and themed workshop parties."
+      ko: "바차타와 살사 워크숍을 중심으로 지역 댄서들을 연결하는 대구 수성구 커뮤니티입니다.",
+      en: "Community in Suseong-gu connecting dancers through bachata and salsa workshops."
     },
-    links: [{ type: "cafe", url: "https://cafe.naver.com/djlatino" }]
+    image:
+      "https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/465018751_855158120001532_2341445861805686994_n.jpg?stp=dst-jpg_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmV4cGVyaW1lbnRhbCJ9&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_cat=104&_nc_oc=Q6cZ2QEHEoc7SjvGiKwUuYkCMU-emTL_G-jEzsU_GDkl2TXjZK-Si1A6Q-ke5oT7LABn6yo&_nc_ohc=KJVJr_A8NvsQ7kNvwFKe6SA&_nc_gid=rPycsNAR1QVY2ZVttjYO8Q&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfdFgv4iMOpYXFMASGuvurs4qROq1R_Ycblkm-jYtmq7YQ&oe=690188EF&_nc_sid=8b3546",
+    imageAlt: {
+      ko: "바야 라틴댄스 프로필 이미지",
+      en: "Baya Latin Dance profile image"
+    },
+    links: []
   },
   {
-    id: "jeju-latinholic",
-    name: { ko: "라틴홀릭 제주", en: "LatinHolic Jeju" },
-    region: { ko: "제주", en: "Jeju" },
-    city: { ko: "제주 제주시 구좌", en: "Gujwa, Jeju City" },
-    styles: ["bachata", "salsa"],
+    id: "daegu-salsadrama",
+    name: { ko: "살사드라마", en: "SalsaDrama" },
+    region: { ko: "대구", en: "Daegu" },
+    city: { ko: "대구 남구", en: "Nam-gu, Daegu" },
+    styles: ["salsa", "bachata"],
     summary: {
-      ko: "제주 섬 곳곳에서 시즌 소셜과 야외 비치 이벤트를 기획하는 라틴 커뮤니티입니다.",
-      en: "Island-wide collective hosting seasonal socials and outdoor beach events across Jeju."
+      ko: "정기 소셜과 초급 클래스로 아마추어 댄서를 키우는 대구 라틴댄스 스튜디오입니다.",
+      en: "Daegu studio nurturing new dancers with regular socials and beginner-friendly classes."
     },
-    links: [
-      { type: "instagram", url: "https://www.instagram.com/latinholic" },
-      { type: "cafe", url: "https://blog.naver.com/latinholic" }
-    ]
+    links: []
   }
 ];
 
@@ -267,9 +188,10 @@ const renderVenues = (venues) => {
   venues.forEach((venue) => {
     const card = document.createElement("article");
     card.className = "venue-card";
+    card.id = venue.id;
     card.setAttribute("role", "listitem");
 
-    const name = document.createElement("h3");
+  const name = document.createElement("h3");
     name.className = "venue-card__name";
     name.textContent = venue.name[LOCALE];
 
@@ -287,13 +209,35 @@ const renderVenues = (venues) => {
       tags.appendChild(createTag(style));
     });
 
-    const links = document.createElement("div");
-    links.className = "venue-card__links";
-    venue.links.forEach((descriptor) => {
-      links.appendChild(createLink(descriptor));
-    });
+    const contentFragment = document.createDocumentFragment();
 
-    card.append(name, meta, summary, tags, links);
+    if (venue.image) {
+      const media = document.createElement("figure");
+      media.className = "venue-card__media";
+
+      const img = document.createElement("img");
+      img.className = "venue-card__image";
+      img.src = venue.image;
+      img.alt = venue.imageAlt?.[LOCALE] || venue.name[LOCALE];
+      img.loading = "lazy";
+
+      media.appendChild(img);
+      contentFragment.appendChild(media);
+    }
+
+    contentFragment.append(name, meta, summary, tags);
+
+    if (Array.isArray(venue.links) && venue.links.length) {
+      const links = document.createElement("div");
+      links.className = "venue-card__links";
+      venue.links.forEach((descriptor) => {
+        links.appendChild(createLink(descriptor));
+      });
+      contentFragment.appendChild(links);
+      card.appendChild(contentFragment);
+    } else {
+      card.appendChild(contentFragment);
+    }
     fragment.appendChild(card);
   });
 
