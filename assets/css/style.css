@@ -221,6 +221,12 @@ input:focus-visible {
   line-height: 1.55;
 }
 
+.venue-card__schedule {
+  margin: 0;
+  color: var(--color-text);
+  font-weight: 600;
+}
+
 .venue-card__tags {
   display: flex;
   flex-wrap: wrap;

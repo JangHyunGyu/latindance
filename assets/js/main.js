@@ -128,6 +128,10 @@ const VENUES = [
       ko: "살사와 바차타 정기 모임으로 당근모임 플랫폼과 인스타그램을 통해 회원을 모집합니다.",
       en: "Community hosting regular salsa and bachata meetups, organizing through Karrot gatherings and Instagram."
     },
+    schedule: {
+      ko: "매주 일요일 저녁 8시 정모",
+      en: "Sundays 8 PM weekly meetup"
+    },
     image: "assets/images/con_studio.png",
     imageAlt: {
       ko: "꼰스튜디오 로고",
@@ -257,6 +261,13 @@ const renderVenues = (venues) => {
     summary.className = "venue-card__summary";
     summary.textContent = venue.summary[LOCALE];
 
+    let scheduleNode = null;
+    if (venue.schedule?.[LOCALE]) {
+      scheduleNode = document.createElement("p");
+      scheduleNode.className = "venue-card__schedule";
+      scheduleNode.textContent = venue.schedule[LOCALE];
+    }
+
     const tags = document.createElement("div");
     tags.className = "venue-card__tags";
     venue.styles.forEach((style) => {
@@ -279,7 +290,11 @@ const renderVenues = (venues) => {
       contentFragment.appendChild(media);
     }
 
-    contentFragment.append(name, meta, summary, tags);
+    contentFragment.append(name, meta, summary);
+    if (scheduleNode) {
+      contentFragment.appendChild(scheduleNode);
+    }
+    contentFragment.appendChild(tags);
 
     if (Array.isArray(venue.links) && venue.links.length) {
       const links = document.createElement("div");
