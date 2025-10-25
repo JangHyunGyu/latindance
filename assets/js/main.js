@@ -187,25 +187,6 @@ const VENUES = [
     ]
   },
   {
-    id: "daegu-amorsalsa",
-    name: { ko: "아모르 살사", en: "Amor Salsa Daegu" },
-    region: { ko: "대구", en: "Daegu" },
-    city: { ko: "대구", en: "Daegu" },
-    styles: ["salsa", "bachata"],
-    summary: {
-      ko: "대구에서 살사와 바차타를 함께 즐기는 커뮤니티입니다.",
-      en: "Daegu salsa community gathering dancers for salsa and bachata socials."
-    },
-    image: "assets/images/armor_salsa.png",
-    imageAlt: {
-      ko: "아모르 살사 로고",
-      en: "Amor Salsa Daegu logo"
-    },
-    links: [
-      { type: "band", url: "https://www.band.us/band/62310643/intro" }
-    ]
-  },
-  {
     id: "daegu-babaroo",
     name: { ko: "클럽 바바루", en: "Club Babaroo" },
     region: { ko: "대구", en: "Daegu" },
@@ -253,36 +234,6 @@ const VENUES = [
       {
         type: "store",
         url: "https://smartstore.naver.com/nysalsa/products/6030784833?"
-      }
-    ]
-  },
-  {
-    id: "daegu-cuba",
-    name: { ko: "쿠바", en: "Cuba Dance Community" },
-    region: { ko: "대구", en: "Daegu" },
-    city: { ko: "대구 중구", en: "Jung-gu, Daegu" },
-    address: {
-      ko: "더데이 스튜디오 공평로 26-7 4층",
-      en: "4F The Day Studio, 26-7 Gongpyeong-ro, Jung-gu, Daegu"
-    },
-    styles: ["salsa", "bachata", "linedance"],
-    summary: {
-      ko: "살사·바차타·라인댄스를 함께 배우는 대구 신규 동호회입니다.",
-      en: "New Daegu community covering salsa, bachata, and line dance sessions."
-    },
-    image: "assets/images/cuba_latin.png",
-    imageAlt: {
-      ko: "쿠바 동호회 로고",
-      en: "Cuba Dance Community logo"
-    },
-    links: [
-      {
-        type: "website",
-        url: "https://www.daangn.com/kr/group/%EB%8C%80%EA%B5%AC-%EB%9D%BC%ED%8B%B4%EB%8C%84%EC%8A%A4-%EB%8F%99%ED%98%B8%ED%9A%8C-%EC%BF%A0%EB%B0%94-7e4p431zhvhv"
-      },
-      {
-        type: "youtube",
-        url: "https://www.youtube.com/@%EB%8C%80%EA%B5%AC%EB%9D%BC%ED%8B%B4%EB%8C%84%EC%8A%A4%EC%BF%A0%EB%B0%94"
       }
     ]
   },
