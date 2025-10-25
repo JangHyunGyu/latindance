@@ -453,6 +453,12 @@ const applyFilters = () => {
     })
   );
 
+  filtered.sort((a, b) =>
+    a.name[LOCALE].localeCompare(b.name[LOCALE], LOCALE === "ko" ? "ko" : "en", {
+      sensitivity: "base"
+    })
+  );
+
   if (countNode) {
     countNode.textContent = formatCount(filtered.length);
   }
