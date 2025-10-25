@@ -232,7 +232,7 @@ const VENUES = [
   },
   {
     id: "daegu-nysalsa",
-    name: { ko: "NY 살사댄스학원", en: "NY Salsa Dance Academy" },
+  name: { ko: "NY 살사아카데미", en: "NY Salsa Academy" },
     region: { ko: "대구", en: "Daegu" },
     city: { ko: "대구", en: "Daegu" },
     styles: ["salsa", "bachata"],
@@ -242,8 +242,8 @@ const VENUES = [
     },
     image: "assets/images/ny_salsa_dance.png",
     imageAlt: {
-      ko: "NY 살사댄스학원 로고",
-      en: "NY Salsa Dance Academy logo"
+      ko: "NY 살사아카데미 로고",
+      en: "NY Salsa Academy logo"
     },
     links: [
       {
