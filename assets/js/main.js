@@ -93,11 +93,10 @@ const VENUES = [
       ko: "바차타와 살사 워크숍을 중심으로 지역 댄서들을 연결하는 대구 수성구 커뮤니티입니다.",
       en: "Community in Suseong-gu connecting dancers through bachata and salsa workshops."
     },
-    image:
-      "https://coresos-phinf.pstatic.net/a/38848i/i_ecaUd018svcz3nbzjwvqch0_3q6ta6.jpg?type=cover_s276",
+    image: "assets/images/latinclub_baya.png",
     imageAlt: {
-      ko: "라틴클럽 바야 프로필 이미지",
-      en: "Latin Club Baya profile image"
+      ko: "라틴클럽 바야 로고",
+      en: "Latin Club Baya logo"
     },
     links: [
       {
