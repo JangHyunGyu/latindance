@@ -71,10 +71,10 @@ const VENUES = [
       ko: "대구 중구에서 살사와 바차타 수업, 소셜을 운영하는 라틴댄스 커뮤니티입니다.",
       en: "Daegu-based community in Jung-gu offering salsa and bachata classes and socials."
     },
-    image: "https://coresos-phinf.pstatic.net/a/352828/1_04aUd018svc1cz5zw2xq05k6_o4ujpe.jpg?type=cover_s276",
+  image: "assets/images/latin_asura.png",
     imageAlt: {
-  ko: "라틴 아수라 소셜 사진",
-  en: "Latin Asura Daegu social photo"
+      ko: "라틴 아수라 로고",
+      en: "Latin Asura Daegu logo"
     },
     links: [
       {
