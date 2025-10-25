@@ -60,8 +60,8 @@ const VENUES = [
   {
   id: "daegu-asura",
   name: { ko: "라틴 아수라", en: "Latin Asura Daegu" },
-    region: { ko: "대구", en: "Daegu" },
-    city: { ko: "대구 중구", en: "Jung-gu" },
+  region: { ko: "대구", en: "Daegu" },
+  city: { ko: "대구 중구", en: "Jung-gu" },
     address: {
       ko: "대구 중구 삼덕동1가 13-2 3층 아수라장",
       en: "3F, Asura Lounge, 13-2 Samdeok-dong 1-ga, Jung-gu, Daegu"
@@ -87,11 +87,15 @@ const VENUES = [
     id: "daegu-baya",
     name: { ko: "라틴클럽 바야", en: "Latin Club Baya" },
     region: { ko: "대구", en: "Daegu" },
-    city: { ko: "대구 수성구", en: "Suseong-gu" },
-    styles: ["salsa", "bachata"],
+    city: { ko: "대구 중구", en: "Jung-gu" },
+    address: {
+      ko: "대구광역시 중구 동성로4길 20-7",
+      en: "20-7 Dongseong-ro 4-gil, Jung-gu, Daegu"
+    },
+    styles: ["bachata", "linedance"],
     summary: {
-      ko: "바차타와 살사 워크숍을 중심으로 지역 댄서들을 연결하는 대구 수성구 커뮤니티입니다.",
-      en: "Community in Suseong-gu connecting dancers through bachata and salsa workshops."
+      ko: "바차타와 라인댄스 워크숍을 중심으로 지역 댄서들을 연결하는 대구 수성구 커뮤니티입니다.",
+      en: "Community in Suseong-gu connecting dancers through bachata and line dance workshops."
     },
     image: "assets/images/latinclub_baya.png",
     imageAlt: {
