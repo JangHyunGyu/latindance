@@ -11,10 +11,10 @@ const STRINGS = {
       salsa: "살사",
       bachata: "바차타",
       kizomba: "키조바",
-  zouk: "줌바·주크",
-  linedance: "라인댄스",
-  brazilianjuke: "브라질리언 주크",
-  bachatajuke: "바차주크"
+      zouk: "줌바·주크",
+      linedance: "라인댄스",
+      brazilianjuke: "브라질리언 주크",
+      bachatajuke: "바차주크"
     },
     linkLabels: {
       website: "당근모임",
@@ -37,10 +37,10 @@ const STRINGS = {
       salsa: "Salsa",
       bachata: "Bachata",
       kizomba: "Kizomba",
-  zouk: "Zouk / Zumba",
-  linedance: "Line Dance",
-  brazilianjuke: "Brazilian Zouk",
-  bachatajuke: "Bachata Zouk"
+      zouk: "Zouk / Zumba",
+      linedance: "Line Dance",
+      brazilianjuke: "Brazilian Zouk",
+      bachatajuke: "Bachata Zouk"
     },
     linkLabels: {
       website: "Karrot Group",

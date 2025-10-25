@@ -74,6 +74,7 @@ input:focus-visible {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-text);
+  text-decoration: none;
 }
 
 .site-nav {
@@ -192,6 +193,10 @@ input:focus-visible {
   display: grid;
   gap: 24px;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+#venue-results {
+  scroll-margin-top: 120px;
 }
 
 .venue-card {
