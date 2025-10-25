@@ -18,7 +18,9 @@ const STRINGS = {
       cafe: "네이버 카페",
       instagram: "인스타그램",
       map: "카카오맵",
-      band: "네이버 밴드"
+      band: "네이버 밴드",
+      facebook: "페이스북",
+      youtube: "유튜브"
     }
   },
   en: {
@@ -37,15 +39,17 @@ const STRINGS = {
       cafe: "Naver Cafe",
       instagram: "Instagram",
       map: "Map",
-      band: "Naver Band"
+      band: "Naver Band",
+      facebook: "Facebook",
+      youtube: "YouTube"
     }
   }
 }[LOCALE];
 
 const VENUES = [
   {
-    id: "daegu-asura",
-    name: { ko: "아수라 라틴댄스", en: "Asura Latin Dance Daegu" },
+  id: "daegu-asura",
+  name: { ko: "라틴 아수라", en: "Latin Asura Daegu" },
     region: { ko: "대구", en: "Daegu" },
     city: { ko: "대구 중구", en: "Jung-gu" },
     address: {
@@ -59,8 +63,8 @@ const VENUES = [
     },
     image: "https://coresos-phinf.pstatic.net/a/352828/1_04aUd018svc1cz5zw2xq05k6_o4ujpe.jpg?type=cover_s276",
     imageAlt: {
-      ko: "아수라 라틴댄스 소셜 사진",
-      en: "Asura Latin Dance Daegu social photo"
+  ko: "라틴 아수라 소셜 사진",
+  en: "Latin Asura Daegu social photo"
     },
     links: [
       {
@@ -71,7 +75,7 @@ const VENUES = [
   },
   {
     id: "daegu-baya",
-    name: { ko: "바야 라틴댄스", en: "Baya Latin Dance" },
+    name: { ko: "라틴클럽 바야", en: "Latin Club Baya" },
     region: { ko: "대구", en: "Daegu" },
     city: { ko: "대구 수성구", en: "Suseong-gu" },
     styles: ["salsa", "bachata"],
@@ -82,13 +86,17 @@ const VENUES = [
     image:
       "https://coresos-phinf.pstatic.net/a/38848i/i_ecaUd018svcz3nbzjwvqch0_3q6ta6.jpg?type=cover_s276",
     imageAlt: {
-      ko: "바야 라틴댄스 프로필 이미지",
-      en: "Baya Latin Dance profile image"
+      ko: "라틴클럽 바야 프로필 이미지",
+      en: "Latin Club Baya profile image"
     },
     links: [
       {
         type: "band",
         url: "https://www.band.us/band/88118947/intro"
+      },
+      {
+        type: "youtube",
+        url: "https://www.youtube.com/@latinclub_baya"
       }
     ]
   },
@@ -143,6 +151,75 @@ const VENUES = [
         url: "https://www.daangn.com/kr/group/%EB%8C%80%EA%B5%AC%EC%82%B4%EC%82%AC-%EB%B0%94%EC%B0%A8%ED%83%80-%EB%9D%BC%ED%8B%B4%EB%8C%84%EC%8A%A4-%EA%BC%B0%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4-d8prbg7m6nqo/?in=%EC%9C%A8%ED%95%98%EB%8F%99-5616"
       },
       { type: "instagram", url: "https://www.instagram.com/latin_moving/" }
+    ]
+  },
+  {
+    id: "daegu-latinshine",
+    name: { ko: "라틴펍 샤인", en: "Latin Pub SHINE" },
+    region: { ko: "대구", en: "Daegu" },
+    city: { ko: "대구", en: "Daegu" },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "라틴 라이브와 소셜을 함께 즐길 수 있는 대구의 라틴 펍입니다.",
+      en: "Daegu Latin pub combining live music with salsa and bachata socials."
+    },
+    image: "assets/images/latin_pub_shine.png",
+    imageAlt: {
+      ko: "라틴펍 샤인 로고",
+      en: "Latin Pub SHINE logo"
+    },
+    links: [
+      { type: "instagram", url: "https://www.instagram.com/p/C_2b2GRpjTA/" },
+      { type: "band", url: "https://www.band.us/band/72771396/post" },
+      {
+        type: "facebook",
+        url: "https://www.facebook.com/p/LatinPub-SHINE-100039631676264/?locale=ml_IN&_rdr"
+      }
+    ]
+  },
+  {
+    id: "daegu-amorsalsa",
+    name: { ko: "아모르 살사", en: "Amor Salsa Daegu" },
+    region: { ko: "대구", en: "Daegu" },
+    city: { ko: "대구", en: "Daegu" },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "대구에서 살사와 바차타를 함께 즐기는 커뮤니티입니다.",
+      en: "Daegu salsa community gathering dancers for salsa and bachata socials."
+    },
+    image: "assets/images/armor_salsa.png",
+    imageAlt: {
+      ko: "아모르 살사 로고",
+      en: "Amor Salsa Daegu logo"
+    },
+    links: [
+      { type: "band", url: "https://www.band.us/band/62310643/intro" }
+    ]
+  },
+  {
+    id: "daegu-babaroo",
+    name: { ko: "클럽 바바루", en: "Club Babaroo" },
+    region: { ko: "대구", en: "Daegu" },
+    city: { ko: "대구 중구", en: "Jung-gu, Daegu" },
+    address: {
+      ko: "대구 중구 동성로4길 39 3·4층 바바루",
+      en: "3-4F, Babaroo, 39 Dongseong-ro 4-gil, Jung-gu, Daegu"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "왕초보 무료반과 정기 소셜을 운영하는 대구 대표 라틴 동호회입니다.",
+      en: "Daegu-based Latin club running free beginner courses and busy weekly socials."
+    },
+    schedule: {
+      ko: "수 20:00 레슨 · 금 21:30 정모",
+      en: "Wednesdays 8 PM lessons · Fridays 9:30 PM social"
+    },
+    links: [
+      {
+        type: "website",
+        url: "https://www.daangn.com/kr/group/%EB%8C%80%EA%B5%AC-%EC%82%B4%EC%82%AC-%EB%B0%94%EC%B0%A8%ED%83%80-%EB%8C%84%EC%8A%A4%EB%8F%99%ED%98%B8%ED%9A%8C-%EB%B0%94%EB%B0%94%EB%A3%A8-you66xsqfbom/"
+      },
+      { type: "cafe", url: "https://cafe.naver.com/busanholics" }
     ]
   }
 ];
