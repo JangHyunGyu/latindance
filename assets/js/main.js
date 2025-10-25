@@ -317,6 +317,11 @@ const VENUES = [
       ko: "브라질리언 주크와 바차주크를 중심으로 활동하는 대구 라틴댄스 동호회입니다.",
       en: "Daegu dance group focusing on Brazilian Zouk and Bachata-Zouk sessions."
     },
+    image: "assets/images/daegu_zouk.png",
+    imageAlt: {
+      ko: "대구 주크 로고",
+      en: "Daegu Juke logo"
+    },
     links: [{ type: "band", url: "https://www.band.us/band/97302785/post" }]
   }
 ];
