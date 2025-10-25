@@ -11,7 +11,8 @@ const STRINGS = {
       salsa: "살사",
       bachata: "바차타",
       kizomba: "키조바",
-      zouk: "줌바·주크"
+      zouk: "줌바·주크",
+      linedance: "라인댄스"
     },
     linkLabels: {
       website: "당근모임",
@@ -33,7 +34,8 @@ const STRINGS = {
       salsa: "Salsa",
       bachata: "Bachata",
       kizomba: "Kizomba",
-      zouk: "Zouk / Zumba"
+      zouk: "Zouk / Zumba",
+      linedance: "Line Dance"
     },
     linkLabels: {
       website: "Karrot Group",
@@ -248,6 +250,22 @@ const VENUES = [
         url: "https://smartstore.naver.com/nysalsa/products/6030784833?"
       }
     ]
+  },
+  {
+    id: "daegu-cuba",
+    name: { ko: "쿠바", en: "Cuba Dance Community" },
+    region: { ko: "대구", en: "Daegu" },
+    city: { ko: "대구 중구", en: "Jung-gu, Daegu" },
+    address: {
+      ko: "더데이 스튜디오 공평로 26-7 4층",
+      en: "4F The Day Studio, 26-7 Gongpyeong-ro, Jung-gu, Daegu"
+    },
+    styles: ["salsa", "bachata", "linedance"],
+    summary: {
+      ko: "살사·바차타·라인댄스를 함께 배우는 대구 신규 동호회입니다.",
+      en: "New Daegu community covering salsa, bachata, and line dance sessions."
+    },
+    links: []
   }
 ];
 
