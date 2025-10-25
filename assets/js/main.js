@@ -14,7 +14,7 @@ const STRINGS = {
       zouk: "줌바·주크"
     },
     linkLabels: {
-      website: "공식 사이트",
+      website: "당근모임",
       cafe: "네이버 카페",
       instagram: "인스타그램",
       map: "카카오맵",
@@ -33,7 +33,7 @@ const STRINGS = {
       zouk: "Zouk / Zumba"
     },
     linkLabels: {
-      website: "Website",
+      website: "Karrot Group",
       cafe: "Naver Cafe",
       instagram: "Instagram",
       map: "Map",
@@ -47,7 +47,7 @@ const VENUES = [
     id: "daegu-asura",
     name: { ko: "아수라 라틴댄스", en: "Asura Latin Dance Daegu" },
     region: { ko: "대구", en: "Daegu" },
-    city: { ko: "대구 중구", en: "Jung-gu, Daegu" },
+    city: { ko: "대구 중구", en: "Jung-gu" },
     address: {
       ko: "대구 중구 삼덕동1가 13-2 3층 아수라장",
       en: "3F, Asura Lounge, 13-2 Samdeok-dong 1-ga, Jung-gu, Daegu"
@@ -73,7 +73,7 @@ const VENUES = [
     id: "daegu-baya",
     name: { ko: "바야 라틴댄스", en: "Baya Latin Dance" },
     region: { ko: "대구", en: "Daegu" },
-    city: { ko: "대구 수성구", en: "Suseong-gu, Daegu" },
+    city: { ko: "대구 수성구", en: "Suseong-gu" },
     styles: ["salsa", "bachata"],
     summary: {
       ko: "바차타와 살사 워크숍을 중심으로 지역 댄서들을 연결하는 대구 수성구 커뮤니티입니다.",
@@ -96,7 +96,7 @@ const VENUES = [
     id: "daegu-salsadrama",
     name: { ko: "살사드라마", en: "SalsaDrama" },
     region: { ko: "대구", en: "Daegu" },
-    city: { ko: "대구 남구", en: "Nam-gu, Daegu" },
+    city: { ko: "대구 남구", en: "Nam-gu" },
     styles: ["salsa", "bachata"],
     summary: {
       ko: "정기 소셜과 초급 클래스로 아마추어 댄서를 키우는 대구 라틴댄스 스튜디오입니다.",
@@ -107,7 +107,34 @@ const VENUES = [
       ko: "살사드라마 대구 소셜 사진",
       en: "SalsaDrama Daegu social photo"
     },
-    links: [{ type: "cafe", url: "https://cafe.naver.com/salsadrama?iframe_url=/MyCafeIntro.nhn%3Fclubid=29348479" }]
+    links: [
+      {
+        type: "cafe",
+        url: "https://cafe.naver.com/salsadrama?iframe_url=/MyCafeIntro.nhn%3Fclubid=29348479"
+      }
+    ]
+  },
+  {
+    id: "daegu-consstudio",
+    name: { ko: "꼰스튜디오", en: "Cons Studio Daegu" },
+    region: { ko: "대구", en: "Daegu" },
+    city: { ko: "대구 중구", en: "Jung-gu" },
+    address: {
+      ko: "대구 중구 국채보상로 570-18 꼰스튜디오",
+      en: "570-18 Gukchaebosang-ro, Jung-gu, Daegu"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "살사와 바차타 정기 모임으로 당근모임 플랫폼과 인스타그램을 통해 회원을 모집합니다.",
+      en: "Community hosting regular salsa and bachata meetups, organizing through Karrot gatherings and Instagram."
+    },
+    links: [
+      {
+        type: "website",
+        url: "https://www.daangn.com/kr/group/%EB%8C%80%EA%B5%AC%EC%82%B4%EC%82%AC-%EB%B0%94%EC%B0%A8%ED%83%80-%EB%9D%BC%ED%8B%B4%EB%8C%84%EC%8A%A4-%EA%BC%B0%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4-d8prbg7m6nqo/?in=%EC%9C%A8%ED%95%98%EB%8F%99-5616"
+      },
+      { type: "instagram", url: "https://www.instagram.com/latin_moving/" }
+    ]
   }
 ];
 
