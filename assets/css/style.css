@@ -1,17 +1,22 @@
 :root {
   --max-width: 1100px;
   --page-padding: 32px;
-  --color-bg: #080b13;
-  --color-surface: #111827;
-  --color-surface-soft: #162033;
-  --color-border: rgba(255, 255, 255, 0.12);
-  --color-text: rgba(255, 255, 255, 0.9);
-  --color-muted: rgba(255, 255, 255, 0.65);
-  --color-subtle: rgba(255, 255, 255, 0.45);
-  --color-accent: #ff6f61;
-  --radius-lg: 24px;
-  --radius-md: 16px;
-  --radius-sm: 10px;
+  --color-bg: #05060f;
+  --color-bg-alt: #0a101f;
+  --color-surface: rgba(15, 20, 34, 0.78);
+  --color-surface-soft: rgba(22, 32, 51, 0.82);
+  --color-surface-elevated: rgba(30, 43, 70, 0.9);
+  --color-border: rgba(255, 255, 255, 0.16);
+  --color-text: rgba(255, 255, 255, 0.92);
+  --color-muted: rgba(255, 255, 255, 0.68);
+  --color-subtle: rgba(255, 255, 255, 0.5);
+  --color-accent: #ff7c4f;
+  --color-accent-soft: rgba(255, 124, 79, 0.18);
+  --radius-lg: 26px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
+  --shadow-lg: 0 20px 45px rgba(3, 5, 12, 0.6);
+  --shadow-md: 0 14px 30px rgba(6, 10, 20, 0.45);
 }
 
 * {
@@ -23,8 +28,11 @@ body {
   margin: 0;
   min-height: 100%;
   font-family: 'Pretendard', 'Manrope', 'Noto Sans KR', sans-serif;
-  background: var(--color-bg);
+  background: radial-gradient(circle at 20% 20%, rgba(40, 70, 140, 0.18), transparent 55%),
+    radial-gradient(circle at 80% 0%, rgba(255, 124, 79, 0.12), transparent 45%),
+    var(--color-bg);
   color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -44,9 +52,10 @@ input:focus-visible {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(8, 11, 19, 0.92);
-  border-bottom: 1px solid var(--color-border);
-  backdrop-filter: blur(12px);
+  background: rgba(5, 7, 15, 0.88);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 10px 25px rgba(3, 6, 14, 0.4);
 }
 
 .site-header__inner {
@@ -60,10 +69,11 @@ input:focus-visible {
 }
 
 .brand {
-  font-size: 1.05rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
+  font-size: 1.18rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  color: var(--color-text);
 }
 
 .site-nav {
@@ -99,14 +109,15 @@ input:focus-visible {
   padding: 60px var(--page-padding) 90px;
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 54px;
 }
 
 .filters {
-  padding: 24px;
+  padding: 28px;
   border-radius: var(--radius-lg);
-  border: 1px solid var(--color-border);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   background: var(--color-surface);
+  box-shadow: var(--shadow-md);
 }
 
 .filter-form {
@@ -137,18 +148,21 @@ input:focus-visible {
 .filter-form input[type='search'] {
   width: 100%;
   padding: 10px 12px;
-  font: inherit;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
   border-radius: var(--radius-sm);
   border: 1px solid var(--color-border);
   background: rgba(15, 21, 34, 0.88);
   color: var(--color-text);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+  transition: border-color 150ms ease, box-shadow 150ms ease;
 }
 
 .filter-form select:focus,
 .filter-form input[type='search']:focus {
   border-color: var(--color-accent);
+  box-shadow: inset 0 0 0 1px rgba(255, 124, 79, 0.25);
 }
-
 
 .results {
   display: grid;
@@ -164,7 +178,8 @@ input:focus-visible {
 
 .results__title {
   margin: 0;
-  font-size: 1.35rem;
+  font-size: 1.55rem;
+  letter-spacing: 0.04em;
 }
 
 .results__count {
@@ -181,18 +196,28 @@ input:focus-visible {
 
 .venue-card {
   display: grid;
-  gap: 16px;
-  padding: 24px;
+  gap: 18px;
+  padding: 28px;
   border-radius: var(--radius-md);
-  border: 1px solid var(--color-border);
-  background: var(--color-surface);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--color-surface-elevated);
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(22px);
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+
+.venue-card:is(:hover, :focus-within) {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 55px rgba(3, 6, 12, 0.7);
+  border-color: rgba(255, 124, 79, 0.35);
 }
 
 .venue-card__media {
   margin: 0;
   border-radius: var(--radius-sm);
   overflow: hidden;
-  background: var(--color-surface-soft);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 
 .venue-card__image {
@@ -205,7 +230,9 @@ input:focus-visible {
 
 .venue-card__name {
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
 }
 
 .venue-card__meta {
@@ -254,14 +281,18 @@ input:focus-visible {
 .venue-card__link {
   padding: 8px 12px;
   border-radius: var(--radius-sm);
-  border: 1px solid var(--color-border);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   color: var(--color-muted);
   font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.04);
+  transition: background 160ms ease, color 160ms ease, border-color 160ms ease, transform 160ms ease;
 }
 
 .venue-card__link:is(:hover, :focus-visible) {
   color: var(--color-text);
   border-color: var(--color-accent);
+  background: var(--color-accent-soft);
+  transform: translateY(-1px);
 }
 
 .venue-empty {
@@ -271,16 +302,18 @@ input:focus-visible {
   border: 1px dashed var(--color-border);
   color: var(--color-muted);
   text-align: center;
-  background: rgba(16, 23, 38, 0.8);
+  background: rgba(16, 23, 38, 0.85);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 
 .contribute {
   display: grid;
   gap: 14px;
-  padding: 32px;
+  padding: 34px;
   border-radius: var(--radius-lg);
-  border: 1px solid var(--color-border);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   background: var(--color-surface);
+  box-shadow: var(--shadow-md);
 }
 
 .contribute__title {
@@ -303,7 +336,8 @@ input:focus-visible {
 .site-footer {
   margin-top: auto;
   border-top: 1px solid var(--color-border);
-  background: rgba(8, 11, 19, 0.92);
+  background: rgba(5, 7, 15, 0.92);
+  backdrop-filter: blur(14px);
 }
 
 .site-footer__text {
@@ -338,7 +372,7 @@ input:focus-visible {
   }
 
   .page {
-    gap: 40px;
+    gap: 44px;
     padding-bottom: 72px;
   }
 
@@ -375,6 +409,6 @@ input:focus-visible {
 
 @media (max-width: 480px) {
   .venue-card {
-    padding: 20px;
+    padding: 22px;
   }
 }
