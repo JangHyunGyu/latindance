@@ -20,7 +20,8 @@ const STRINGS = {
       map: "카카오맵",
       band: "네이버 밴드",
       facebook: "페이스북",
-      youtube: "유튜브"
+      youtube: "유튜브",
+      store: "네이버 스토어"
     }
   },
   en: {
@@ -41,7 +42,8 @@ const STRINGS = {
       map: "Map",
       band: "Naver Band",
       facebook: "Facebook",
-      youtube: "YouTube"
+      youtube: "YouTube",
+      store: "Naver Store"
     }
   }
 }[LOCALE];
@@ -214,12 +216,32 @@ const VENUES = [
       ko: "수 20:00 레슨 · 금 21:30 정모",
       en: "Wednesdays 8 PM lessons · Fridays 9:30 PM social"
     },
+    image: "assets/images/club_babaru.png",
+    imageAlt: {
+      ko: "클럽 바바루 로고",
+      en: "Club Babaroo logo"
+    },
+    links: [{ type: "cafe", url: "https://cafe.naver.com/busanholics" }]
+  },
+  {
+    id: "daegu-nysalsa",
+    name: { ko: "NY 살사댄스학원", en: "NY Salsa Dance Academy" },
+    region: { ko: "대구", en: "Daegu" },
+    city: { ko: "대구", en: "Daegu" },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "전문 강사진이 살사·바차타 커리큘럼을 제공하는 대구 라틴댄스 학원입니다.",
+      en: "Daegu academy offering structured salsa and bachata training with professional instructors."
+    },
     links: [
       {
         type: "website",
-        url: "https://www.daangn.com/kr/group/%EB%8C%80%EA%B5%AC-%EC%82%B4%EC%82%AC-%EB%B0%94%EC%B0%A8%ED%83%80-%EB%8C%84%EC%8A%A4%EB%8F%99%ED%98%B8%ED%9A%8C-%EB%B0%94%EB%B0%94%EB%A3%A8-you66xsqfbom/"
+        url: "https://www.daangn.com/kr/local-profile/ny%EC%82%B4%EC%82%AC%EB%8C%84%EC%8A%A4%ED%95%99%EC%9B%90-1312301"
       },
-      { type: "cafe", url: "https://cafe.naver.com/busanholics" }
+      {
+        type: "store",
+        url: "https://smartstore.naver.com/nysalsa/products/6030784833?"
+      }
     ]
   }
 ];
