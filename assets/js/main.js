@@ -128,6 +128,11 @@ const VENUES = [
       ko: "살사와 바차타 정기 모임으로 당근모임 플랫폼과 인스타그램을 통해 회원을 모집합니다.",
       en: "Community hosting regular salsa and bachata meetups, organizing through Karrot gatherings and Instagram."
     },
+    image: "assets/images/con_studio.png",
+    imageAlt: {
+      ko: "꼰스튜디오 로고",
+      en: "Cons Studio Daegu logo"
+    },
     links: [
       {
         type: "website",
