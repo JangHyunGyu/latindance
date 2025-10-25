@@ -233,6 +233,11 @@ const VENUES = [
       ko: "전문 강사진이 살사·바차타 커리큘럼을 제공하는 대구 라틴댄스 학원입니다.",
       en: "Daegu academy offering structured salsa and bachata training with professional instructors."
     },
+    image: "assets/images/ny_salsa_dance.png",
+    imageAlt: {
+      ko: "NY 살사댄스학원 로고",
+      en: "NY Salsa Dance Academy logo"
+    },
     links: [
       {
         type: "website",
