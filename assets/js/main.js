@@ -11,8 +11,10 @@ const STRINGS = {
       salsa: "살사",
       bachata: "바차타",
       kizomba: "키조바",
-      zouk: "줌바·주크",
-      linedance: "라인댄스"
+  zouk: "줌바·주크",
+  linedance: "라인댄스",
+  brazilianjuke: "브라질리언 주크",
+  bachatajuke: "바차주크"
     },
     linkLabels: {
       website: "당근모임",
@@ -22,7 +24,8 @@ const STRINGS = {
       band: "네이버 밴드",
       facebook: "페이스북",
       youtube: "유튜브",
-      store: "네이버 스토어"
+      store: "네이버 스토어",
+      blog: "네이버 블로그"
     }
   },
   en: {
@@ -34,8 +37,10 @@ const STRINGS = {
       salsa: "Salsa",
       bachata: "Bachata",
       kizomba: "Kizomba",
-      zouk: "Zouk / Zumba",
-      linedance: "Line Dance"
+  zouk: "Zouk / Zumba",
+  linedance: "Line Dance",
+  brazilianjuke: "Brazilian Zouk",
+  bachatajuke: "Bachata Zouk"
     },
     linkLabels: {
       website: "Karrot Group",
@@ -45,7 +50,8 @@ const STRINGS = {
       band: "Naver Band",
       facebook: "Facebook",
       youtube: "YouTube",
-      store: "Naver Store"
+      store: "Naver Store",
+      blog: "Naver Blog"
     }
   }
 }[LOCALE];
@@ -265,7 +271,53 @@ const VENUES = [
       ko: "살사·바차타·라인댄스를 함께 배우는 대구 신규 동호회입니다.",
       en: "New Daegu community covering salsa, bachata, and line dance sessions."
     },
-    links: []
+    image: "assets/images/cuba_latin.png",
+    imageAlt: {
+      ko: "쿠바 동호회 로고",
+      en: "Cuba Dance Community logo"
+    },
+    links: [
+      {
+        type: "website",
+        url: "https://www.daangn.com/kr/group/%EB%8C%80%EA%B5%AC-%EB%9D%BC%ED%8B%B4%EB%8C%84%EC%8A%A4-%EB%8F%99%ED%98%B8%ED%9A%8C-%EC%BF%A0%EB%B0%94-7e4p431zhvhv"
+      },
+      {
+        type: "youtube",
+        url: "https://www.youtube.com/@%EB%8C%80%EA%B5%AC%EB%9D%BC%ED%8B%B4%EB%8C%84%EC%8A%A4%EC%BF%A0%EB%B0%94"
+      }
+    ]
+  },
+  {
+    id: "daegu-salsaholic",
+    name: { ko: "살사홀릭 대구", en: "SalsaHolic Daegu" },
+    region: { ko: "대구", en: "Daegu" },
+    city: { ko: "대구", en: "Daegu" },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "바바루 운영진이 진행하는 살사·바차타 커뮤니티입니다.",
+      en: "Daegu community led by Babaroo crew focusing on salsa and bachata socials."
+    },
+    image: "assets/images/salsa_holic.png",
+    imageAlt: {
+      ko: "살사홀릭 대구 로고",
+      en: "SalsaHolic Daegu logo"
+    },
+    links: [
+      { type: "instagram", url: "https://www.instagram.com/salsaholic_d.g/" },
+      { type: "blog", url: "https://m.blog.naver.com/PostList.naver?blogId=babaru00&tab=1" }
+    ]
+  },
+  {
+    id: "daegu-jooc",
+    name: { ko: "대구 주크", en: "Daegu Juke" },
+    region: { ko: "대구", en: "Daegu" },
+    city: { ko: "대구", en: "Daegu" },
+    styles: ["brazilianjuke", "bachatajuke"],
+    summary: {
+      ko: "브라질리언 주크와 바차주크를 중심으로 활동하는 대구 라틴댄스 동호회입니다.",
+      en: "Daegu dance group focusing on Brazilian Zouk and Bachata-Zouk sessions."
+    },
+    links: [{ type: "band", url: "https://www.band.us/band/97302785/post" }]
   }
 ];
 
