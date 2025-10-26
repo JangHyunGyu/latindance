@@ -10,8 +10,8 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "대구 중구에서 살사와 바차타 수업, 소셜을 운영하는 라틴댄스 커뮤니티입니다.",
-      en: "Daegu-based community in Jung-gu offering salsa and bachata classes and socials."
+      ko: "대구 중구 삼덕동에서 살사와 바차타 레슨과 소셜을 운영하는 커뮤니티입니다.",
+      en: "Community in Jung-gu, Daegu running salsa and bachata lessons and socials."
     },
     image: "assets/images/latin_asura.png",
     imageAlt: {
@@ -36,8 +36,8 @@ const VENUES = [
     },
     styles: ["bachata", "linedance"],
     summary: {
-      ko: "바차타와 라인댄스 워크숍을 중심으로 지역 댄서들을 연결하는 대구 수성구 커뮤니티입니다.",
-      en: "Community in Suseong-gu connecting dancers through bachata and line dance workshops."
+      ko: "동성로에서 바차타와 라인댄스 클래스를 운영하고 정기 모임을 여는 클럽입니다.",
+      en: "Club in Dongseong-ro hosting bachata and line dance classes with regular gatherings."
     },
     image: "assets/images/latinclub_baya.png",
     imageAlt: {
@@ -70,8 +70,8 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "정기 소셜과 초급 클래스로 아마추어 댄서를 키우는 대구 라틴댄스 스튜디오입니다.",
-      en: "Daegu studio nurturing new dancers with regular socials and beginner-friendly classes."
+      ko: "동성로4길에서 살사와 바차타 레슨, 정기 소셜을 진행하는 스튜디오입니다.",
+      en: "Studio on Dongseong-ro 4-gil offering salsa and bachata lessons and regular socials."
     },
     image: "assets/images/salsa_drama.png",
     imageAlt: {
@@ -100,8 +100,8 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "살사와 바차타 정기 모임으로 당근모임 플랫폼과 인스타그램을 통해 회원을 모집합니다.",
-      en: "Community hosting regular salsa and bachata meetups, organizing through Karrot gatherings and Instagram."
+      ko: "국채보상로에서 살사와 바차타 정기 모임을 열고 당근모임과 인스타그램으로 공지합니다.",
+      en: "Group on Gukchaebosang-ro running regular salsa and bachata meetups announced via Karrot and Instagram."
     },
     schedule: {
       ko: "매주 일요일 저녁 8시 정모",
@@ -131,8 +131,8 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "라틴 라이브와 소셜을 함께 즐길 수 있는 대구의 라틴 펍입니다.",
-      en: "Daegu Latin pub combining live music with salsa and bachata socials."
+      ko: "동덕로27길에서 라틴 라이브 공연과 살사·바차타 소셜을 여는 라틴 펍입니다.",
+      en: "Latin pub on Dongdeok-ro 27-gil hosting live music with salsa and bachata socials."
     },
     image: "assets/images/latin_pub_shine.png",
     imageAlt: {
@@ -159,8 +159,8 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "왕초보 무료반과 정기 소셜을 운영하는 대구 대표 라틴 동호회입니다.",
-      en: "Daegu-based Latin club running free beginner courses and busy weekly socials."
+      ko: "동성로4길에서 살사와 바차타 초급 레슨과 정기 소셜을 운영하는 동호회입니다.",
+      en: "Club on Dongseong-ro 4-gil running beginner salsa and bachata lessons with regular socials."
     },
     schedule: {
       ko: "수 20:00 레슨 · 금 21:30 정모",
@@ -184,8 +184,8 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "전문 강사진이 살사·바차타 커리큘럼을 제공하는 대구 라틴댄스 학원입니다.",
-      en: "Daegu academy offering structured salsa and bachata training with professional instructors."
+      ko: "동덕로27길에서 살사와 바차타 커리큘럼을 운영하는 라틴댄스 학원입니다.",
+      en: "Latin dance academy on Dongdeok-ro 27-gil providing structured salsa and bachata programs."
     },
     image: "assets/images/ny_salsa_dance.png",
     imageAlt: {
@@ -214,8 +214,8 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "바바루 운영진이 진행하는 살사·바차타 커뮤니티입니다.",
-      en: "Daegu community led by Babaroo crew focusing on salsa and bachata socials."
+      ko: "바바루 운영진이 동성로4길에서 살사와 바차타 소셜과 워크숍을 진행하는 커뮤니티입니다.",
+      en: "Community led by the Babaroo team hosting salsa and bachata socials and workshops on Dongseong-ro 4-gil."
     },
     image: "assets/images/salsa_holic.png",
     imageAlt: {
@@ -234,8 +234,8 @@ const VENUES = [
     city: { ko: "대구", en: "Daegu" },
     styles: ["brazilianjuke", "bachatajuke"],
     summary: {
-      ko: "브라질리언 주크와 바차주크를 중심으로 활동하는 대구 라틴댄스 동호회입니다.",
-      en: "Daegu dance group focusing on Brazilian Zouk and Bachata-Zouk sessions."
+      ko: "브라질리언 주크와 바차주크 세션을 운영하는 대구 모임입니다.",
+      en: "Daegu group hosting Brazilian Zouk and Bachata-Zouk sessions."
     },
     image: "assets/images/daegu_zouk.png",
     imageAlt: {
