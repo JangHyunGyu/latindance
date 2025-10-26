@@ -8,7 +8,7 @@ const VENUES = [
       ko: "대구광역시 중구 삼덕동1가 13-2 3층 아수라장",
       en: "3F, Asura Lounge, 13-2 Samdeok-dong 1-ga, Jung-gu, Daegu"
     },
-    styles: ["salsa", "bachata"],
+  styles: ["salsa", "bachata", "kizomba"],
     summary: {
       ko: "살사와 바차타를 사랑하는 사람들이 모여 화요일 무료 풋워크 워크샵과 활기찬 정모를 즐기고, 스튜디오에서 정이 넘치는 커뮤니티를 만들어 가는 동호회입니다.",
       en: "Vibrant group of salsa and bachata lovers offering free Tuesday footwork workshops, lively weekly meetups, and a warm community that gathers at the Asurajang studio."
@@ -325,8 +325,8 @@ const VENUES = [
     ]
   },
   {
-    id: "busan-nobless",
-    name: { ko: "노블레스 부산", en: "Nobless Busan" },
+  id: "busan-nobless",
+  name: { ko: "노블레스", en: "Nobless" },
     region: { ko: "부산", en: "Busan" },
     city: { ko: "부산 부산진구", en: "Busanjin-gu" },
     address: {
@@ -335,14 +335,14 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "살사와 바차타 모임을 열어 음악과 소셜을 함께 즐기는 부산 노블레스 커뮤니티입니다.",
-      en: "Busan Nobless community hosting salsa and bachata meetups for dancers to enjoy music and socials together."
+      ko: "4050 세대를 위한 라틴댄스 동호회로 월요일마다 정기 모임을 열고, 살사·메렝게·바차타 강습과 와인·뷔페 파티 같은 사교 이벤트를 즐길 수 있는 커뮤니티입니다.",
+      en: "latin club for dancers in their 40s and 50s with Monday sessions, teaching salsa, merengue, and bachata alongside wine and buffet socials."
     },
     links: [{ type: "band", url: "https://www.band.us/@noblessbusan" }]
   },
   {
-    id: "busan-latino-clip",
-    name: { ko: "라티노 클립", en: "Latino Clip" },
+  id: "busan-latino",
+  name: { ko: "라티노", en: "Latino" },
     region: { ko: "부산", en: "Busan" },
     city: { ko: "부산 부산진구", en: "Busanjin-gu" },
     address: {
@@ -351,8 +351,8 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "살사와 바차타 소셜을 중심으로 라틴 음악과 커뮤니티 문화를 즐길 수 있는 부산 라티노 클립 클럽입니다.",
-      en: "Busan Latin club Latino Clip offering salsa and bachata socials where dancers can enjoy vibrant music and community vibes."
+      ko: "2001년부터 부산 살사의 메카로 자리 잡아 살사·바차타·키좀바 강습을 매일 열고, 초보자도 부담 없이 참여하는 활기찬 소셜과 정기 이벤트로 라틴 문화를 나누는 클럽입니다.",
+      en: "Founded in 2001 as the heart of Busan salsa, this club runs daily salsa, bachata, and kizomba classes, open socials for newcomers, and regular showcases that keep Latin culture thriving."
     },
     links: [
       { type: "band", url: "https://www.band.us/band/8166230/post" },
