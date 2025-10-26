@@ -362,6 +362,24 @@ const VENUES = [
     ]
   },
   {
+    id: "busan-salsafit",
+    name: { ko: "살사핏 댄스학원", en: "Salsafit Dance Academy" },
+    region: { ko: "부산", en: "Busan" },
+    city: { ko: "부산 부산진구", en: "Busanjin-gu" },
+    address: {
+      ko: "부산광역시 부산진구 신천대로 50번길 72",
+      en: "72 Sincheon-daero 50beon-gil, Busanjin-gu, Busan"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "체계적인 살사·바차타 커리큘럼과 피트니스 기반 트레이닝으로 기본기부터 소셜 응용까지 지도하고, 초보자도 환영하는 정규 수업을 운영하는 부산진구 라틴 댄스 학원입니다.",
+      en: "Busanjin-gu Latin dance academy pairing structured salsa and bachata curricula with fitness-inspired training, guiding students from fundamentals to social dancing while welcoming beginners year-round."
+    },
+    links: [
+      { type: "instagram", url: "https://www.instagram.com/salsafitkorea/" }
+    ]
+  },
+  {
     id: "busan-feeldance",
     name: { ko: "필댄스", en: "Feel Dance" },
     region: { ko: "부산", en: "Busan" },
