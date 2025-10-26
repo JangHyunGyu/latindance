@@ -354,6 +354,11 @@ const VENUES = [
       ko: "2001년부터 부산 살사의 메카로 자리 잡아 살사·바차타·키좀바 강습을 매일 열고, 초보자도 부담 없이 참여하는 활기찬 소셜과 정기 이벤트로 라틴 문화를 나누는 클럽입니다.",
       en: "Founded in 2001 as the heart of Busan salsa, this club runs daily salsa, bachata, and kizomba classes, open socials for newcomers, and regular showcases that keep Latin culture thriving."
     },
+    image: "assets/images/latino.png",
+    imageAlt: {
+      ko: "라티노 부산 로고",
+      en: "Latino Busan logo"
+    },
     links: [
       { type: "band", url: "https://www.band.us/band/8166230/post" },
       { type: "instagram", url: "https://www.instagram.com/latino_salsa_club/" }
