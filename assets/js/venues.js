@@ -325,6 +325,41 @@ const VENUES = [
     ]
   },
   {
+    id: "busan-nobless",
+    name: { ko: "노블레스 부산", en: "Nobless Busan" },
+    region: { ko: "부산", en: "Busan" },
+    city: { ko: "부산 부산진구", en: "Busanjin-gu" },
+    address: {
+      ko: "부산광역시 부산진구 양지로5번길 8 지하 1층",
+      en: "B1, 8 Yangji-ro 5beon-gil, Busanjin-gu, Busan"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "살사와 바차타 모임을 열어 음악과 소셜을 함께 즐기는 부산 노블레스 커뮤니티입니다.",
+      en: "Busan Nobless community hosting salsa and bachata meetups for dancers to enjoy music and socials together."
+    },
+    links: [{ type: "band", url: "https://www.band.us/@noblessbusan" }]
+  },
+  {
+    id: "busan-latino-clip",
+    name: { ko: "라티노 클립", en: "Latino Clip" },
+    region: { ko: "부산", en: "Busan" },
+    city: { ko: "부산 부산진구", en: "Busanjin-gu" },
+    address: {
+      ko: "부산광역시 부산진구 양지로5번길 8 지하 1층",
+      en: "B1, 8 Yangji-ro 5beon-gil, Busanjin-gu, Busan"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "살사와 바차타 소셜을 중심으로 라틴 음악과 커뮤니티 문화를 즐길 수 있는 부산 라티노 클립 클럽입니다.",
+      en: "Busan Latin club Latino Clip offering salsa and bachata socials where dancers can enjoy vibrant music and community vibes."
+    },
+    links: [
+      { type: "band", url: "https://www.band.us/band/8166230/post" },
+      { type: "instagram", url: "https://www.instagram.com/latino_salsa_club/" }
+    ]
+  },
+  {
     id: "busan-feeldance",
     name: { ko: "필댄스", en: "Feel Dance" },
     region: { ko: "부산", en: "Busan" },
