@@ -10,8 +10,8 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "대구 중구 삼덕동에서 살사와 바차타 레슨과 소셜을 운영하는 커뮤니티입니다.",
-      en: "Community in Jung-gu, Daegu running salsa and bachata lessons and socials."
+      ko: "살사와 바차타를 사랑하는 사람들이 모여 화요일 무료 풋워크 워크샵과 활기찬 정모를 즐기고, 아수라장 스튜디오에서 정이 넘치는 커뮤니티를 만들어 가는 동호회입니다.",
+      en: "Vibrant group of salsa and bachata lovers offering free Tuesday footwork workshops, lively weekly meetups, and a warm community that gathers at the Asurajang studio."
     },
     image: "assets/images/latin_asura.png",
     imageAlt: {
@@ -36,8 +36,8 @@ const VENUES = [
     },
     styles: ["bachata", "linedance"],
     summary: {
-      ko: "동성로에서 바차타와 라인댄스 클래스를 운영하고 정기 모임을 여는 클럽입니다.",
-      en: "Club in Dongseong-ro hosting bachata and line dance classes with regular gatherings."
+      ko: "전문 강사진이 라틴댄스의 매력을 친절하게 전하고, 바차타 특화 레벨별 맞춤 커리큘럼으로 실력을 빠르게 키우며, 활발한 커뮤니티 소통과 다양한 파티로 라틴 리듬에 빠져드는 전문 클럽입니다.",
+      en: "Latin club where veteran instructors warmly share the joy of latin dance, level-tailored bachata programs accelerate your progress, and an active community plus themed parties keep the Latin rhythms alive."
     },
     image: "assets/images/latinclub_baya.png",
     imageAlt: {
@@ -70,8 +70,8 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "동성로4길에서 살사와 바차타 레슨, 정기 소셜을 진행하는 스튜디오입니다.",
-      en: "Studio on Dongseong-ro 4-gil offering salsa and bachata lessons and regular socials."
+      ko: "퇴근 후 2030 직장인들이 살사·바차타를 배우고 정기 소셜로 교류하는 라틴 댄스 모임입니다.",
+      en: "Evening community where 20s and 30s learn salsa and bachata with structured lessons and lively socials."
     },
     image: "assets/images/salsa_drama.png",
     imageAlt: {
@@ -100,8 +100,8 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "국채보상로에서 살사와 바차타 정기 모임을 열고 당근모임과 인스타그램으로 공지합니다.",
-      en: "Group on Gukchaebosang-ro running regular salsa and bachata meetups announced via Karrot and Instagram."
+      ko: "살사·바차타 정기 모임을 운영하며 초보부터 숙련자까지 함께 어울릴 수 있는 라틴 댄스 동호회입니다.",
+      en: "Latin dance community hosting regular salsa and bachata meetups for dancers of all levels."
     },
     schedule: {
       ko: "매주 일요일 저녁 8시 정모",
@@ -131,8 +131,8 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "동덕로27길에서 라틴 라이브 공연과 살사·바차타 소셜을 여는 라틴 펍입니다.",
-      en: "Latin pub on Dongdeok-ro 27-gil hosting live music with salsa and bachata socials."
+      ko: "초보자도 살사·바차타를 배우고 즐기며 동호회 활동으로 사람들과 교류할 수 있고, 라틴 음악과 함께 칵테일·하이볼 같은 음료를 즐길 수 있는 라틴 펍입니다.",
+      en: "Latin pub where newcomers can learn and enjoy salsa or bachata, connect with local socials, or simply relax with Latin beats and cocktails or highballs."
     },
     image: "assets/images/latin_pub_shine.png",
     imageAlt: {
@@ -159,8 +159,8 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "동성로4길에서 살사와 바차타 초급 레슨과 정기 소셜을 운영하는 동호회입니다.",
-      en: "Club on Dongseong-ro 4-gil running beginner salsa and bachata lessons with regular socials."
+      ko: "살사와 바차타 초급 레슨과 정기 소셜을 운영하는 라틴 동호회입니다.",
+      en: "Latin club running beginner salsa and bachata lessons with regular socials."
     },
     schedule: {
       ko: "수 20:00 레슨 · 금 21:30 정모",
@@ -184,8 +184,8 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "동덕로27길에서 살사와 바차타 커리큘럼을 운영하는 라틴댄스 학원입니다.",
-      en: "Latin dance academy on Dongdeok-ro 27-gil providing structured salsa and bachata programs."
+      ko: "살사와 바차타 커리큘럼을 운영하는 라틴댄스 학원입니다.",
+      en: "Latin dance academy providing structured salsa and bachata programs."
     },
     image: "assets/images/ny_salsa_dance.png",
     imageAlt: {
@@ -214,8 +214,8 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "바바루 운영진이 동성로4길에서 살사와 바차타 소셜과 워크숍을 진행하는 커뮤니티입니다.",
-      en: "Community led by the Babaroo team hosting salsa and bachata socials and workshops on Dongseong-ro 4-gil."
+      ko: "바바루 운영진이 살사와 바차타 소셜과 워크숍을 진행하는 커뮤니티입니다.",
+      en: "Community led by the Babaroo team hosting salsa and bachata socials and workshops."
     },
     image: "assets/images/salsa_holic.png",
     imageAlt: {
