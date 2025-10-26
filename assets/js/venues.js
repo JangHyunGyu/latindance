@@ -375,8 +375,15 @@ const VENUES = [
       ko: "체계적인 살사·바차타 커리큘럼과 피트니스 기반 트레이닝으로 기본기부터 소셜 응용까지 지도하고, 초보자도 환영하는 정규 수업을 운영하는 부산진구 라틴 댄스 학원입니다.",
       en: "Busanjin-gu Latin dance academy pairing structured salsa and bachata curricula with fitness-inspired training, guiding students from fundamentals to social dancing while welcoming beginners year-round."
     },
+    image: "assets/images/salsa_fit.png",
+    imageAlt: {
+      ko: "살사핏 로고",
+      en: "Salsafit logo"
+    },
     links: [
-      { type: "instagram", url: "https://www.instagram.com/salsafitkorea/" }
+      { type: "instagram", url: "https://www.instagram.com/salsafitkorea/" },
+      { type: "blog", url: "https://blog.naver.com/salsafit" },
+      { type: "youtube", url: "https://www.youtube.com/@karinapark_korea" }
     ]
   },
   {
