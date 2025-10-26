@@ -387,6 +387,24 @@ const VENUES = [
     ]
   },
   {
+    id: "busan-mamboclub",
+    name: { ko: "맘보클럽", en: "Mambo Club Busan" },
+    region: { ko: "부산", en: "Busan" },
+    city: { ko: "부산 부산진구", en: "Busanjin-gu" },
+    address: {
+      ko: "부산광역시 부산진구 부전동 520-38",
+      en: "520-38 Bujeon-dong, Busanjin-gu, Busan"
+    },
+    styles: ["salsa", "bachata", "kizomba"],
+    summary: {
+      ko: "살사·바차타·키좀바 소셜과 워크숍을 주중에 열며, 초보자도 쉽게 어울릴 수 있는 친근한 분위기를 이어가는 부산 라틴 클럽입니다.",
+      en: "Busan Latin club hosting weeknight salsa, bachata, and kizomba socials and workshops, keeping the vibe friendly for newcomers."
+    },
+    links: [
+      { type: "band", url: "https://www.band.us/@salsanight" }
+    ]
+  },
+  {
     id: "busan-feeldance",
     name: { ko: "필댄스", en: "Feel Dance" },
     region: { ko: "부산", en: "Busan" },
