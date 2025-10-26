@@ -289,5 +289,40 @@ const VENUES = [
       en: "Busan community where salsa and bachata fans gather to share tips and enjoy Latin culture together."
     },
     links: []
+  },
+  {
+    id: "busan-rueda",
+    name: { ko: "루에다", en: "Rueda" },
+    region: { ko: "부산", en: "Busan" },
+    city: { ko: "부산 부산진구", en: "Busanjin-gu" },
+    address: {
+      ko: "부산광역시 부산진구 신천대로62번길 42 2층",
+      en: "2F, 42 Sincheon-daero 62beon-gil, Busanjin-gu, Busan"
+    },
+    styles: ["salsa"],
+    summary: {
+      ko: "살사를 루에다 스타일로 함께 연습하고 소셜로 교류하는 부산 커뮤니티입니다.",
+      en: "Busan salsa community practicing rueda together and connecting through socials."
+    },
+    links: []
+  },
+  {
+  id: "busan-feeldance",
+  name: { ko: "필댄스", en: "Feel Dance" },
+    region: { ko: "부산", en: "Busan" },
+    city: { ko: "부산 부산진구", en: "Busanjin-gu" },
+    address: {
+      ko: "부산광역시 부산진구 부전로 95 이현빌딩 4층",
+      en: "4F, Ihyeon Building, 95 Bujeon-ro, Busanjin-gu, Busan"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "살사와 바차타를 체계적인 커리큘럼으로 배울 수 있는 부산 라틴댄스 아카데미입니다.",
+      en: "Busan Latin dance academy offering structured salsa and bachata programs."
+    },
+    links: [
+      { type: "instagram", url: "https://www.instagram.com/feel_dance_korea/" },
+      { type: "cafe", url: "https://cafe.naver.com/fdsalsa" }
+    ]
   }
 ];
