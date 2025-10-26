@@ -120,6 +120,20 @@ const matchesFilters = (venue, { region, search }) => {
 
 const formatCount = (count) => (count === 0 ? STRINGS.countEmpty : STRINGS.count(count));
 
+const isCityRepeatedInAddress = (cityLabel = "", addressLabel = "") => {
+  if (!cityLabel || !addressLabel) {
+    return false;
+  }
+
+  const tokens = cityLabel.split(/\s+/).filter(Boolean);
+  if (!tokens.length) {
+    return false;
+  }
+
+  const lowerAddress = addressLabel.toLowerCase();
+  return tokens.every((token) => lowerAddress.includes(token.toLowerCase()));
+};
+
 const createTag = (style) => {
   const tag = document.createElement("span");
   tag.className = "tag";
@@ -165,8 +179,15 @@ const renderVenues = (venues) => {
 
     const meta = document.createElement("p");
     meta.className = "venue-card__meta";
-  const cityLabel = venue.city[LOCALE];
-  meta.textContent = venue.address?.[LOCALE] ? `${cityLabel}\n${venue.address[LOCALE]}` : cityLabel;
+    const cityLabel = venue.city?.[LOCALE] || "";
+    const addressLabel = venue.address?.[LOCALE];
+    if (addressLabel && isCityRepeatedInAddress(cityLabel, addressLabel)) {
+      meta.textContent = addressLabel;
+    } else if (addressLabel && cityLabel) {
+      meta.textContent = `${cityLabel}\n${addressLabel}`;
+    } else {
+      meta.textContent = cityLabel || addressLabel || "";
+    }
 
     const summary = document.createElement("p");
     summary.className = "venue-card__summary";

@@ -31,7 +31,7 @@ const VENUES = [
     region: { ko: "대구", en: "Daegu" },
     city: { ko: "대구 중구", en: "Jung-gu" },
     address: {
-      ko: "대구광역시 중구 동성로4길 20-7",
+  ko: "대구 중구 동성로4길 20-7",
       en: "20-7 Dongseong-ro 4-gil, Jung-gu, Daegu"
     },
     styles: ["bachata", "linedance"],
@@ -122,7 +122,7 @@ const VENUES = [
     region: { ko: "대구", en: "Daegu" },
     city: { ko: "대구 중구", en: "Jung-gu" },
     address: {
-      ko: "대구광역시 중구 동덕로27길 39 3층 (봉산동 37-19)",
+  ko: "대구 중구 동덕로27길 39 3층 (봉산동 37-19)",
       en: "3F, 39 Dongdeok-ro 27-gil (37-19 Bongsan-dong), Jung-gu, Daegu"
     },
     styles: ["salsa", "bachata"],
@@ -175,7 +175,7 @@ const VENUES = [
     region: { ko: "대구", en: "Daegu" },
     city: { ko: "대구", en: "Daegu" },
     address: {
-      ko: "대구광역시 중구 동덕로27길 39 4층 (봉산동 37-19)",
+  ko: "대구 중구 동덕로27길 39 4층 (봉산동 37-19)",
       en: "4F, 39 Dongdeok-ro 27-gil (37-19 Bongsan-dong), Jung-gu, Daegu"
     },
     styles: ["salsa", "bachata"],
