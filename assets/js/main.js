@@ -289,6 +289,9 @@ const registerEvents = () => {
 
   filterForm?.addEventListener("submit", (event) => {
     event.preventDefault();
+    if (searchInput) {
+      searchInput.blur();
+    }
     applyFilters();
   });
 };
