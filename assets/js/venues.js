@@ -304,11 +304,17 @@ const VENUES = [
       ko: "살사를 루에다 스타일로 함께 연습하고 소셜로 교류하는 부산 커뮤니티입니다.",
       en: "Busan salsa community practicing rueda together and connecting through socials."
     },
-    links: []
+    links: [
+      { type: "instagram", url: "https://www.instagram.com/rueda_busan/" },
+      { type: "blog", url: "https://blog.naver.com/hyunayab" },
+      { type: "facebook", url: "https://www.facebook.com/azucarinrueda/" },
+      { type: "band", url: "https://www.band.us/@ruedaclub" },
+      { type: "youtube", url: "https://www.youtube.com/@busan_rueda" }
+    ]
   },
   {
-  id: "busan-feeldance",
-  name: { ko: "필댄스", en: "Feel Dance" },
+    id: "busan-feeldance",
+    name: { ko: "필댄스", en: "Feel Dance" },
     region: { ko: "부산", en: "Busan" },
     city: { ko: "부산 부산진구", en: "Busanjin-gu" },
     address: {
@@ -319,6 +325,11 @@ const VENUES = [
     summary: {
       ko: "살사와 바차타를 체계적인 커리큘럼으로 배울 수 있는 부산 라틴댄스 아카데미입니다.",
       en: "Busan Latin dance academy offering structured salsa and bachata programs."
+    },
+    image: "assets/images/feeldance.png",
+    imageAlt: {
+      ko: "필댄스 로고",
+      en: "Feel Dance logo"
     },
     links: [
       { type: "instagram", url: "https://www.instagram.com/feel_dance_korea/" },
