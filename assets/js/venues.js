@@ -308,8 +308,8 @@ const VENUES = [
     },
   styles: ["salsa", "bachata"],
     summary: {
-      ko: "살사를 루에다 스타일로 함께 연습하고 소셜로 교류하는 부산 커뮤니티입니다.",
-      en: "Busan salsa community practicing rueda together and connecting through socials."
+      ko: "상시 연습 환경, 전문 강사진, 연습 후 뒷풀이, SNS 기반 활발한 소통으로 즐겁게 살사·바차타를 배우고 교류하는 커뮤니티입니다.",
+      en: "Busan Seomyeon community with easy access, a free one-month beginner course, daily practice space, veteran instructors, and active socials across band and Instagram."
     },
     image: "assets/images/rueda.png",
     imageAlt: {
@@ -335,8 +335,8 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "살사와 바차타를 체계적인 커리큘럼으로 배울 수 있는 부산 라틴댄스 아카데미입니다.",
-      en: "Busan Latin dance academy offering structured salsa and bachata programs."
+      ko: "초보자도 부담 없이 살사·바차타를 배우고, 부산을 넘어 창원·대구 지부와도 연결되어 SNS로 활발히 소통하며 친목을 나누는 라틴 동호회입니다.",
+      en: "Latin social club for 20s and 30s across Busan, Changwon, and Daegu, welcoming absolute beginners to enjoy salsa and bachata, stay connected on social media, and build friendships through dance."
     },
     image: "assets/images/feeldance.png",
     imageAlt: {
