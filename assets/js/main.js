@@ -151,6 +151,14 @@ const createLink = (descriptor) => {
   return link;
 };
 
+const shuffleArray = (items) => {
+  for (let i = items.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [items[i], items[j]] = [items[j], items[i]];
+  }
+  return items;
+};
+
 const renderVenues = (venues) => {
   if (!resultsContainer) {
     return;
@@ -256,11 +264,7 @@ const applyFilters = () => {
     })
   );
 
-  filtered.sort((a, b) =>
-    a.name[LOCALE].localeCompare(b.name[LOCALE], LOCALE === "ko" ? "ko" : "en", {
-      sensitivity: "base"
-    })
-  );
+  shuffleArray(filtered);
 
   if (countNode) {
     countNode.textContent = formatCount(filtered.length);
