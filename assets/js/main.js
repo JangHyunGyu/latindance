@@ -60,6 +60,7 @@ const STRINGS = {
 
 const regionSelect = document.querySelector("[data-filter-region]");
 const searchInput = document.querySelector("[data-filter-search]");
+const filterForm = document.querySelector(".filter-form");
 const resultsContainer = document.getElementById("venue-results");
 const countNode = document.querySelector("[data-result-count]");
 
@@ -285,6 +286,11 @@ const registerEvents = () => {
       debounceId = window.setTimeout(applyFilters, 180);
     });
   }
+
+  filterForm?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    applyFilters();
+  });
 };
 
 populateRegions();
