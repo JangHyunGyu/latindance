@@ -285,10 +285,12 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "살사와 바차타를 좋아하는 사람들이 함께 모여 정보를 나누고 즐겁게 라틴 문화를 즐기는 부산 커뮤니티입니다.",
-      en: "Busan community where salsa and bachata fans gather to share tips and enjoy Latin culture together."
+      ko: "주중 여러 차례 정모를 열어 다양한 시간대에 춤을 즐길 수 있고, 친밀한 동호회 분위기와 중년 강습, 교류 파티까지 운영하는 부산 라틴 커뮤니티입니다.",
+      en: "Busan Latin community hosting multiple weekly meetups across Gwangalli and Seomyeon, fostering close-knit friendships, offering middle-aged salsa sessions, and arranging exchange socials."
     },
-    links: []
+    links: [
+      { type: "band", url: "https://www.band.us/@051salsa" }
+    ]
   },
   {
     id: "busan-rueda",
@@ -303,6 +305,11 @@ const VENUES = [
     summary: {
       ko: "살사를 루에다 스타일로 함께 연습하고 소셜로 교류하는 부산 커뮤니티입니다.",
       en: "Busan salsa community practicing rueda together and connecting through socials."
+    },
+    image: "assets/images/rueda.png",
+    imageAlt: {
+      ko: "루에다 부산 로고",
+      en: "Rueda Busan logo"
     },
     links: [
       { type: "instagram", url: "https://www.instagram.com/rueda_busan/" },
