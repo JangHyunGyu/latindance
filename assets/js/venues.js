@@ -5,7 +5,7 @@ const VENUES = [
     region: { ko: "대구", en: "Daegu" },
     city: { ko: "대구 중구", en: "Jung-gu" },
     address: {
-      ko: "대구 중구 삼덕동1가 13-2 3층 아수라장",
+      ko: "대구광역시 중구 삼덕동1가 13-2 3층 아수라장",
       en: "3F, Asura Lounge, 13-2 Samdeok-dong 1-ga, Jung-gu, Daegu"
     },
     styles: ["salsa", "bachata"],
@@ -31,7 +31,7 @@ const VENUES = [
     region: { ko: "대구", en: "Daegu" },
     city: { ko: "대구 중구", en: "Jung-gu" },
     address: {
-  ko: "대구 중구 동성로4길 20-7",
+      ko: "대구광역시 중구 동성로4길 20-7",
       en: "20-7 Dongseong-ro 4-gil, Jung-gu, Daegu"
     },
     styles: ["bachata", "linedance"],
@@ -65,7 +65,7 @@ const VENUES = [
     region: { ko: "대구", en: "Daegu" },
     city: { ko: "대구 중구", en: "Jung-gu" },
     address: {
-      ko: "대구 중구 동성로4길 39 4층",
+      ko: "대구광역시 중구 동성로4길 39 4층",
       en: "4F, 39 Dongseong-ro 4-gil, Jung-gu, Daegu"
     },
     styles: ["salsa", "bachata"],
@@ -82,6 +82,10 @@ const VENUES = [
       {
         type: "cafe",
         url: "https://cafe.naver.com/salsadrama?iframe_url=/MyCafeIntro.nhn%3Fclubid=29348479"
+      },
+      {
+        type: "instagram",
+        url: "https://www.instagram.com/salsadrama2010/"
       }
     ]
   },
@@ -91,7 +95,7 @@ const VENUES = [
     region: { ko: "대구", en: "Daegu" },
     city: { ko: "대구 중구", en: "Jung-gu" },
     address: {
-      ko: "대구 중구 국채보상로 570-18 꼰스튜디오",
+      ko: "대구광역시 중구 국채보상로 570-18 꼰스튜디오",
       en: "570-18 Gukchaebosang-ro, Jung-gu, Daegu"
     },
     styles: ["salsa", "bachata"],
@@ -122,7 +126,7 @@ const VENUES = [
     region: { ko: "대구", en: "Daegu" },
     city: { ko: "대구 중구", en: "Jung-gu" },
     address: {
-  ko: "대구 중구 동덕로27길 39 3층 (봉산동 37-19)",
+      ko: "대구광역시 중구 동덕로27길 39 3층 (봉산동 37-19)",
       en: "3F, 39 Dongdeok-ro 27-gil (37-19 Bongsan-dong), Jung-gu, Daegu"
     },
     styles: ["salsa", "bachata"],
@@ -150,7 +154,7 @@ const VENUES = [
     region: { ko: "대구", en: "Daegu" },
     city: { ko: "대구 중구", en: "Jung-gu, Daegu" },
     address: {
-      ko: "대구 중구 동성로4길 39 3·4층 바바루",
+      ko: "대구광역시 중구 동성로4길 39 3·4층 바바루",
       en: "3-4F, Babaroo, 39 Dongseong-ro 4-gil, Jung-gu, Daegu"
     },
     styles: ["salsa", "bachata"],
@@ -175,7 +179,7 @@ const VENUES = [
     region: { ko: "대구", en: "Daegu" },
     city: { ko: "대구", en: "Daegu" },
     address: {
-  ko: "대구 중구 동덕로27길 39 4층 (봉산동 37-19)",
+      ko: "대구광역시 중구 동덕로27길 39 4층 (봉산동 37-19)",
       en: "4F, 39 Dongdeok-ro 27-gil (37-19 Bongsan-dong), Jung-gu, Daegu"
     },
     styles: ["salsa", "bachata"],
@@ -205,7 +209,7 @@ const VENUES = [
     region: { ko: "대구", en: "Daegu" },
     city: { ko: "대구 중구", en: "Jung-gu" },
     address: {
-      ko: "대구 중구 동성로4길 39 4층",
+      ko: "대구광역시 중구 동성로4길 39 4층",
       en: "4F, 39 Dongseong-ro 4-gil, Jung-gu, Daegu"
     },
     styles: ["salsa", "bachata"],
