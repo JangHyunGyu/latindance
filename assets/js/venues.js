@@ -36,7 +36,7 @@ const VENUES = [
     },
     styles: ["bachata", "linedance"],
     summary: {
-      ko: "전문 강사진이 라틴댄스의 매력을 친절하게 전하고, 바차타 특화 레벨별 맞춤 커리큘럼으로 실력을 빠르게 키우며, 활발한 커뮤니티 소통과 다양한 파티로 라틴 리듬에 빠져드는 전문 클럽입니다.",
+      ko: "바차타 특화 레벨별 맞춤 커리큘럼으로 실력을 빠르게 키우며, 활발한 커뮤니티 소통과 다양한 파티를 즐길 수 있는 라틴클럽입니다.",
       en: "Latin club where veteran instructors warmly share the joy of latin dance, level-tailored bachata programs accelerate your progress, and an active community plus themed parties keep the Latin rhythms alive."
     },
     image: "assets/images/latinclub_baya.png",
