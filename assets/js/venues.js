@@ -184,8 +184,8 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "살사와 바차타를 함께 연습하고 소셜로 교류하는 대구 라틴댄스 커뮤니티입니다.",
-      en: "Daegu Latin dance community practicing salsa and bachata together with welcoming socials."
+      ko: "살사와 바차타를 사랑하는 사람들이 모여 정보를 나누고, 즐겁고 건강하게 라틴 문화를 즐기려는 대구 커뮤니티입니다.",
+      en: "Daegu community where salsa and bachata enthusiasts gather to share insights and enjoy Latin culture in a fun, healthy way."
     },
     image: "assets/images/mn.png",
     imageAlt: {
