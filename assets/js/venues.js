@@ -70,8 +70,8 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "퇴근 후 2030 직장인들이 살사·바차타를 배우고 정기 소셜로 교류하는 라틴 댄스 모임입니다.",
-      en: "Evening community where 20s and 30s learn salsa and bachata with structured lessons and lively socials."
+      ko: "퇴근 후 2030 직장인들이 전문 강사와 함께 살사·바차타를 배우고 정기 소셜로 교류하는 라틴 댄스 모임입니다.",
+      en: "Evening community where 20s and 30s learn salsa and bachata with professional instructors, structured lessons, and lively socials."
     },
     image: "assets/images/salsa_drama.png",
     imageAlt: {
@@ -234,8 +234,8 @@ const VENUES = [
     city: { ko: "대구", en: "Daegu" },
     styles: ["brazilianjuke", "bachatajuke"],
     summary: {
-      ko: "브라질리언 주크와 바차주크 세션을 운영하는 대구 모임입니다.",
-      en: "Daegu group hosting Brazilian Zouk and Bachata-Zouk sessions."
+      ko: "브라질리언 주크와 바차주크를 함께 즐기며 세션·연습모임으로 교류하는 대구 커뮤니티입니다.",
+      en: "Daegu community that shares Brazilian Zouk and Bachata-Zouk through collaborative sessions and practice meetups."
     },
     image: "assets/images/daegu_zouk.png",
     imageAlt: {
