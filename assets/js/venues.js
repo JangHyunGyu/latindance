@@ -107,10 +107,6 @@ const VENUES = [
       ko: "살사·바차타 정기 모임을 운영하며 초보부터 숙련자까지 함께 어울릴 수 있는 라틴 댄스 동호회입니다.",
       en: "Latin dance community hosting regular salsa and bachata meetups for dancers of all levels."
     },
-    schedule: {
-      ko: "매주 일요일 저녁 8시 정모",
-      en: "Sundays 8 PM weekly meetup"
-    },
     image: "assets/images/con_studio.png",
     imageAlt: {
       ko: "꼰스튜디오 로고",
@@ -165,10 +161,6 @@ const VENUES = [
     summary: {
       ko: "대구 최대 규모의 라틴댄스 전문 클럽이자 아카데미로, 살사·바차타 등 다양한 라틴댄스를 배우고 즐길 수 있는 공간입니다.",
       en: "Daegu's largest Latin dance club and academy offering a space to learn and enjoy salsa, bachata, and more."
-    },
-    schedule: {
-      ko: "수 20:00 레슨 · 금 21:30 정모",
-      en: "Wednesdays 8 PM lessons · Fridays 9:30 PM social"
     },
     image: "assets/images/club_babaru.png",
     imageAlt: {
