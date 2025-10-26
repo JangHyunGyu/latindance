@@ -187,6 +187,11 @@ const VENUES = [
       ko: "살사와 바차타를 함께 연습하고 소셜로 교류하는 대구 라틴댄스 커뮤니티입니다.",
       en: "Daegu Latin dance community practicing salsa and bachata together with welcoming socials."
     },
+    image: "assets/images/mn.png",
+    imageAlt: {
+      ko: "M&N 로고",
+      en: "M&N logo"
+    },
     links: [
       {
         type: "website",
