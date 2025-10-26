@@ -288,6 +288,11 @@ const VENUES = [
       ko: "주중 여러 차례 정모를 열어 다양한 시간대에 춤을 즐길 수 있고, 친밀한 동호회 분위기와 중년 강습, 교류 파티까지 운영하는 부산 라틴 커뮤니티입니다.",
       en: "Busan Latin community hosting multiple weekly meetups across Gwangalli and Seomyeon, fostering close-knit friendships, offering middle-aged salsa sessions, and arranging exchange socials."
     },
+    image: "assets/images/lalala.png",
+    imageAlt: {
+      ko: "라라라살사 로고",
+      en: "LaLaLa Salsa logo"
+    },
     links: [
       { type: "band", url: "https://www.band.us/@051salsa" }
     ]
@@ -301,7 +306,7 @@ const VENUES = [
       ko: "부산광역시 부산진구 신천대로62번길 42 2층",
       en: "2F, 42 Sincheon-daero 62beon-gil, Busanjin-gu, Busan"
     },
-    styles: ["salsa"],
+  styles: ["salsa", "bachata"],
     summary: {
       ko: "살사를 루에다 스타일로 함께 연습하고 소셜로 교류하는 부산 커뮤니티입니다.",
       en: "Busan salsa community practicing rueda together and connecting through socials."
