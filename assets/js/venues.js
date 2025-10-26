@@ -174,6 +174,27 @@ const VENUES = [
     links: [{ type: "cafe", url: "https://cafe.naver.com/busanholics" }]
   },
   {
+    id: "daegu-mn",
+    name: { ko: "M&N", en: "M&N" },
+    region: { ko: "대구", en: "Daegu" },
+    city: { ko: "대구 남구", en: "Nam-gu" },
+    address: {
+      ko: "대구광역시 남구 중앙대로 215",
+      en: "215 Jungang-daero, Nam-gu, Daegu"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "살사와 바차타를 함께 연습하고 소셜로 교류하는 대구 라틴댄스 커뮤니티입니다.",
+      en: "Daegu Latin dance community practicing salsa and bachata together with welcoming socials."
+    },
+    links: [
+      {
+        type: "website",
+        url: "https://karrotmarket.com/kr/group/%EB%8C%80%EA%B5%AC%EB%9D%BC%ED%8B%B4%EB%8C%84%EC%8A%A4-%EC%82%B4%EC%82%AC%EB%B0%94%EC%B0%A8%ED%83%80-m-n-3r61i1xewiur/?in=%EB%82%A8%EC%82%B0%EB%8F%99-5682"
+      }
+    ]
+  },
+  {
     id: "daegu-nysalsa",
     name: { ko: "NY 살사아카데미", en: "NY Salsa Academy" },
     region: { ko: "대구", en: "Daegu" },
