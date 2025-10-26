@@ -120,8 +120,12 @@ const VENUES = [
   {
     id: "daegu-salsadrama",
     name: { ko: "살사드라마", en: "SalsaDrama" },
-    region: { ko: "대구", en: "Daegu" },
-    city: { ko: "대구 남구", en: "Nam-gu" },
+  region: { ko: "대구", en: "Daegu" },
+  city: { ko: "대구 중구", en: "Jung-gu" },
+    address: {
+      ko: "대구 중구 동성로4길 39 4층",
+      en: "4F, 39 Dongseong-ro 4-gil, Jung-gu, Daegu"
+    },
     styles: ["salsa", "bachata"],
     summary: {
       ko: "정기 소셜과 초급 클래스로 아마추어 댄서를 키우는 대구 라틴댄스 스튜디오입니다.",
@@ -174,7 +178,11 @@ const VENUES = [
     id: "daegu-latinshine",
     name: { ko: "라틴펍 샤인", en: "Latin Pub SHINE" },
     region: { ko: "대구", en: "Daegu" },
-    city: { ko: "대구", en: "Daegu" },
+    city: { ko: "대구 중구", en: "Jung-gu" },
+    address: {
+      ko: "대구광역시 중구 동덕로27길 39 3층 (봉산동 37-19)",
+      en: "3F, 39 Dongdeok-ro 27-gil (37-19 Bongsan-dong), Jung-gu, Daegu"
+    },
     styles: ["salsa", "bachata"],
     summary: {
       ko: "라틴 라이브와 소셜을 함께 즐길 수 있는 대구의 라틴 펍입니다.",
@@ -224,6 +232,10 @@ const VENUES = [
   name: { ko: "NY 살사아카데미", en: "NY Salsa Academy" },
     region: { ko: "대구", en: "Daegu" },
     city: { ko: "대구", en: "Daegu" },
+    address: {
+      ko: "대구광역시 중구 동덕로27길 39 4층 (봉산동 37-19)",
+      en: "4F, 39 Dongdeok-ro 27-gil (37-19 Bongsan-dong), Jung-gu, Daegu"
+    },
     styles: ["salsa", "bachata"],
     summary: {
       ko: "전문 강사진이 살사·바차타 커리큘럼을 제공하는 대구 라틴댄스 학원입니다.",
@@ -249,7 +261,11 @@ const VENUES = [
     id: "daegu-salsaholic",
     name: { ko: "살사홀릭 대구", en: "SalsaHolic Daegu" },
     region: { ko: "대구", en: "Daegu" },
-    city: { ko: "대구", en: "Daegu" },
+    city: { ko: "대구 중구", en: "Jung-gu" },
+    address: {
+      ko: "대구 중구 동성로4길 39 4층",
+      en: "4F, 39 Dongseong-ro 4-gil, Jung-gu, Daegu"
+    },
     styles: ["salsa", "bachata"],
     summary: {
       ko: "바바루 운영진이 진행하는 살사·바차타 커뮤니티입니다.",
