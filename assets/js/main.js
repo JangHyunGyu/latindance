@@ -10,7 +10,7 @@ const STRINGS = {
     styles: {
       salsa: "살사",
       bachata: "바차타",
-      kizomba: "키조바",
+  kizomba: "키좀바",
       zouk: "줌바·주크",
       linedance: "라인댄스",
       brazilianjuke: "브라질리언 주크",
