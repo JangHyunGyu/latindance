@@ -10,7 +10,7 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "살사와 바차타를 사랑하는 사람들이 모여 화요일 무료 풋워크 워크샵과 활기찬 정모를 즐기고, 아수라장 스튜디오에서 정이 넘치는 커뮤니티를 만들어 가는 동호회입니다.",
+      ko: "살사와 바차타를 사랑하는 사람들이 모여 화요일 무료 풋워크 워크샵과 활기찬 정모를 즐기고, 스튜디오에서 정이 넘치는 커뮤니티를 만들어 가는 동호회입니다.",
       en: "Vibrant group of salsa and bachata lovers offering free Tuesday footwork workshops, lively weekly meetups, and a warm community that gathers at the Asurajang studio."
     },
     image: "assets/images/latin_asura.png",
@@ -36,7 +36,7 @@ const VENUES = [
     },
     styles: ["bachata", "linedance"],
     summary: {
-      ko: "바차타 특화 레벨별 맞춤 커리큘럼으로 실력을 빠르게 키우며, 활발한 커뮤니티 소통과 다양한 파티를 즐길 수 있는 라틴클럽입니다.",
+      ko: "바차타 특화 수준별 맞춤 커리큘럼으로 실력을 빠르게 키우며, 활발한 커뮤니티 소통과 다양한 파티를 즐길 수 있는 라틴클럽입니다.",
       en: "Latin club where veteran instructors warmly share the joy of latin dance, level-tailored bachata programs accelerate your progress, and an active community plus themed parties keep the Latin rhythms alive."
     },
     image: "assets/images/latinclub_baya.png",
@@ -159,8 +159,8 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "살사와 바차타 초급 레슨과 정기 소셜을 운영하는 라틴 동호회입니다.",
-      en: "Latin club running beginner salsa and bachata lessons with regular socials."
+      ko: "대구 최대 규모의 라틴댄스 전문 클럽이자 아카데미로, 살사·바차타 등 다양한 라틴댄스를 배우고 즐길 수 있는 공간입니다.",
+      en: "Daegu's largest Latin dance club and academy offering a space to learn and enjoy salsa, bachata, and more."
     },
     schedule: {
       ko: "수 20:00 레슨 · 금 21:30 정모",
