@@ -22,6 +22,10 @@ const VENUES = [
       {
         type: "band",
         url: "https://www.band.us/band/70307600/post"
+      },
+      {
+        type: "website",
+        url: "https://www.daangn.com/kr/group/%EB%8C%80%EA%B5%AC%EB%9D%BC%ED%8B%B4%EC%95%84%EC%88%98%EB%9D%BC-%EC%82%B4%EC%82%AC%EB%B0%94%EC%B0%A8%ED%83%80-w26qjxjaijq4/"
       }
     ]
   },
@@ -269,5 +273,21 @@ const VENUES = [
       en: "Daegu Juke logo"
     },
     links: [{ type: "band", url: "https://www.band.us/band/97302785/post" }]
+  },
+  {
+    id: "busan-lalala",
+    name: { ko: "라라라살사", en: "LaLaLa Salsa" },
+    region: { ko: "부산", en: "Busan" },
+    city: { ko: "부산 부산진구", en: "Busanjin-gu" },
+    address: {
+      ko: "부산광역시 부산진구 부전로20번길 5층",
+      en: "5F, Bujeon-ro 20beon-gil, Busanjin-gu, Busan"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "살사와 바차타를 좋아하는 사람들이 함께 모여 정보를 나누고 즐겁게 라틴 문화를 즐기는 부산 커뮤니티입니다.",
+      en: "Busan community where salsa and bachata fans gather to share tips and enjoy Latin culture together."
+    },
+    links: []
   }
 ];
