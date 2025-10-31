@@ -338,9 +338,9 @@ const VENUES = [
     id: "latinblossom",
     name: { ko: "라틴블라썸", en: "Latin Blossom" },
     region: { ko: "경남", en: "Gyeongsangnam-do" },
-  city: { ko: "경상남도 창원시 성산구", en: "Seongsan-gu, Changwon-si, Gyeongsangnam-do" },
+  city: { ko: "경남 창원시 성산구", en: "Seongsan-gu, Changwon-si, Gyeongsangnam-do" },
     address: {
-      ko: "경상남도 창원시 성산구 중앙대로83번길 14 지하 1층",
+  ko: "경남 창원시 성산구 중앙대로83번길 14 지하 1층",
       en: "B1, 14 Jungang-daero 83beon-gil, Seongsan-gu, Changwon-si, Gyeongsangnam-do"
     },
     styles: ["salsa", "bachata"],
@@ -530,9 +530,9 @@ const VENUES = [
     id: "changwon-feeldance",
     name: { ko: "필댄스 창원", en: "Feel Dance Changwon" },
     region: { ko: "경남", en: "Gyeongsangnam-do" },
-  city: { ko: "경상남도 창원시 성산구", en: "Seongsan-gu, Changwon-si, Gyeongsangnam-do" },
+  city: { ko: "경남 창원시 성산구", en: "Seongsan-gu, Changwon-si, Gyeongsangnam-do" },
     address: {
-      ko: "경상남도 창원시 성산구 중앙대로83번길 14",
+  ko: "경남 창원시 성산구 중앙대로83번길 14",
       en: "14 Jungang-daero 83beon-gil, Seongsan-gu, Changwon-si, Gyeongsangnam-do"
     },
     styles: ["salsa", "bachata"],
@@ -574,14 +574,14 @@ const VENUES = [
     id: "jinju-latinfiruna",
     name: { ko: "라틴피루나", en: "Latin Firuna" },
     region: { ko: "경남", en: "Gyeongsangnam-do" },
-    city: { ko: "경상남도 진주시", en: "Jinju-si, Gyeongsangnam-do" },
+  city: { ko: "경남 진주시", en: "Jinju-si, Gyeongsangnam-do" },
     address: {
       ko: "경남 진주시 진주성로 97-1 토속정 지하 1층",
       en: "B1, Tosokjeong, 97-1 Jinjuseong-ro, Jinju-si, Gyeongsangnam-do"
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "경남 진주에서 2010년에 창립돼 전용 바를 갖추고 살사와 바차타를 활발하게 즐기고 배우는 지역 대표 라틴피루나 동호회입니다.",
+      ko: "경남 진주에서 2010년에 창립돼 전용 바를 갖추고 살사와 바차타를 활발하게 즐기고 배우는 지역 대표 동호회입니다.",
       en: "Established in 2010 with its own bar, Latin Firuna is Jinju's flagship community for learning and enjoying salsa and bachata in a lively setting."
     },
     image: "assets/images/latin_piruna.png",
