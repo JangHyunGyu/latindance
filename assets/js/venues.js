@@ -502,8 +502,8 @@ const VENUES = [
     ]
   },
   {
-    id: "busan-feeldance",
-    name: { ko: "필댄스", en: "Feel Dance" },
+  id: "busan-feeldance",
+  name: { ko: "필댄스 부산", en: "Feel Dance Busan" },
     region: { ko: "부산", en: "Busan" },
     city: { ko: "부산 부산진구", en: "Busanjin-gu" },
     address: {
