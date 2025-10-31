@@ -335,6 +335,25 @@ const VENUES = [
     ]
   },
   {
+    id: "changwon-latinblossom",
+    name: { ko: "창원 라틴블라썸", en: "Latin Blossom Changwon" },
+    region: { ko: "경남", en: "Gyeongsangnam-do" },
+    city: { ko: "경남 창원시 성산구", en: "Seongsan-gu, Changwon-si" },
+    address: {
+      ko: "경상남도 창원시 성산구 중앙대로83번길 14 지하 1층",
+      en: "B1, 14 Jungang-daero 83beon-gil, Seongsan-gu, Changwon-si, Gyeongsangnam-do"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "창원 중심에서 살사와 바차타를 단계별로 배우고 정기 소셜과 워크숍으로 교류하는 라틴 커뮤니티로, 직장인도 퇴근 후 쉽게 참여해 에너지를 충전할 수 있는 공간입니다.",
+      en: "Changwon-based Latin community offering step-by-step salsa and bachata training, regular socials, and workshops that help office workers recharge after hours."
+    },
+    links: [
+      { type: "instagram", url: "https://www.instagram.com/latin.blossom/" },
+      { type: "band", url: "https://www.band.us/@latinblossom" }
+    ]
+  },
+  {
     id: "busan-lalala",
     name: { ko: "라라라살사", en: "LaLaLa Salsa" },
     region: { ko: "부산", en: "Busan" },
