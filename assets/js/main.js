@@ -27,7 +27,9 @@ const STRINGS = {
       store: "네이버 스토어",
       blog: "네이버 블로그",
       kakaotalk: "카카오톡"
-    }
+    },
+    scrollTopLabel: "맨 위로",
+    scrollTopTitle: "맨 위로 이동"
   },
   en: {
     regionsAll: "All regions",
@@ -54,7 +56,9 @@ const STRINGS = {
       store: "Naver Store",
       blog: "Naver Blog",
       kakaotalk: "KakaoTalk"
-    }
+    },
+    scrollTopLabel: "Back to top",
+    scrollTopTitle: "Scroll back to top"
   }
 }[LOCALE];
 
@@ -304,3 +308,53 @@ const registerEvents = () => {
 populateRegions();
 registerEvents();
 applyFilters();
+
+// 맨위로 가기 버튼
+const initScrollTop = () => {
+  const button = document.querySelector('.scroll-top');
+  if (!button) return;
+
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const threshold = 200;
+  let ticking = false;
+
+  const updateVisibility = () => {
+    const scrollY = window.scrollY || window.pageYOffset || 0;
+    if (scrollY > threshold) {
+      button.classList.add("is-visible");
+    } else {
+      button.classList.remove("is-visible");
+    }
+    ticking = false;
+  };
+
+  const handleScroll = () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateVisibility);
+      ticking = true;
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll, { passive: true });
+  updateVisibility();
+
+  button.addEventListener("click", (e) => {
+    e.preventDefault();
+    
+    // hover 일시적으로 비활성화
+    button.classList.add('no-hover');
+    button.blur();
+    
+    window.scrollTo({
+      top: 0,
+      behavior: prefersReducedMotion.matches ? "auto" : "smooth"
+    });
+    
+    // 500ms 후 no-hover 제거 (안전하게)
+    setTimeout(() => {
+      button.classList.remove('no-hover');
+    }, 500);
+  });
+};
+
+initScrollTop();
