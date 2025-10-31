@@ -72,7 +72,7 @@ const VENUES = [
       ko: "대구광역시 중구 동성로4길 39 4층",
       en: "4F, 39 Dongseong-ro 4-gil, Jung-gu, Daegu"
     },
-    styles: ["salsa", "bachata"],
+  styles: ["salsa", "bachata", "kizomba"],
     summary: {
       ko: "퇴근 후 2030 직장인들이 전문 강사와 함께 살사·바차타를 배우고 정기 소셜로 교류하는 라틴 댄스 모임입니다.",
       en: "Evening community where 20s and 30s learn salsa and bachata with professional instructors, structured lessons, and lively socials."
