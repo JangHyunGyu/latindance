@@ -335,8 +335,8 @@ const VENUES = [
     ]
   },
   {
-    id: "changwon-latinblossom",
-  name: { ko: "라틴블라썸", en: "Latin Blossom" },
+    id: "latinblossom",
+    name: { ko: "라틴블라썸", en: "Latin Blossom" },
     region: { ko: "경남", en: "Gyeongsangnam-do" },
   city: { ko: "경상남도 창원시 성산구", en: "Seongsan-gu, Changwon-si, Gyeongsangnam-do" },
     address: {
@@ -568,6 +568,25 @@ const VENUES = [
     links: [
       { type: "instagram", url: "https://www.instagram.com/feel_dance_korea/" },
       { type: "cafe", url: "https://cafe.naver.com/fdsalsa" }
+    ]
+  },
+  {
+    id: "jinju-latinfiruna",
+    name: { ko: "라틴피루나", en: "Latin Firuna" },
+    region: { ko: "경남", en: "Gyeongsangnam-do" },
+    city: { ko: "경상남도 진주시", en: "Jinju-si, Gyeongsangnam-do" },
+    address: {
+      ko: "경남 진주시 진주성로 97-1 토속정 지하 1층",
+      en: "B1, Tosokjeong, 97-1 Jinjuseong-ro, Jinju-si, Gyeongsangnam-do"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "진주에서 살사·바차타를 함께 연습하며 지방 공연과 합동 소셜도 활발히 기획하는 라틴피루나 커뮤니티입니다.",
+      en: "Jinju-based Latin Firuna community that trains together in salsa and bachata while organizing regional performances and joint socials."
+    },
+    links: [
+      { type: "band", url: "https://www.band.us/band/58556160" },
+      { type: "cafe", url: "https://cafe.naver.com/jinjulatin" }
     ]
   },
 ];
