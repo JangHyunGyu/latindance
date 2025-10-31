@@ -590,6 +590,46 @@ const VENUES = [
     ]
   },
   {
+    id: "gimhae-lunadance",
+    name: { ko: "루나댄스", en: "Luna Dance" },
+    region: { ko: "경남", en: "Gyeongsangnam-do" },
+    city: { ko: "경남 김해시", en: "Gimhae-si, Gyeongsangnam-do" },
+    address: {
+      ko: "경남 김해시 번화1로68번길 15 조이월드 6층 604호",
+      en: "Room 604, 6F Joy World, 15 Beonhwa 1-ro 68beon-gil, Gimhae-si, Gyeongsangnam-do"
+    },
+    styles: ["salsa"],
+    summary: {
+      ko: "김해 중심 상권에서 살사 레슨과 소셜을 열어 지역 무용 애호가들이 함께 어울리는 루나댄스 커뮤니티입니다.",
+      en: "Luna Dance is a Gimhae-based salsa community hosting lessons and socials in the downtown district so local dancers can connect and grow together."
+    },
+    links: [
+      { type: "website", url: "https://litt.ly/lunadance" },
+      { type: "instagram", url: "https://www.instagram.com/latindance_luna/" }
+    ]
+  },
+  {
+    id: "gimhae-salsaamor",
+    name: { ko: "살사아모르", en: "Salsa Amor" },
+    region: { ko: "경남", en: "Gyeongsangnam-do" },
+    city: { ko: "경남 김해시", en: "Gimhae-si, Gyeongsangnam-do" },
+    address: {
+      ko: "경남 김해시 분성로 302번길 12 2층 엘하비 댄스스튜디오",
+      en: "2F, Lhabe Dance Studio, 12 Bunseong-ro 302beon-gil, Gimhae-si, Gyeongsangnam-do"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "김해 엘하비 댄스스튜디오를 거점으로 중장년층도 편하게 살사와 바차타를 배우고, 주중 소셜과 각종 이벤트로 정을 나누는 살사아모르 커뮤니티입니다.",
+      en: "Salsa Amor gathers at the Lhabe Dance Studio in Gimhae, welcoming mature dancers to learn salsa and bachata and stay connected through weeknight socials and special events."
+    },
+    links: [
+      { type: "facebook", url: "https://www.facebook.com/gimhaesalsa" },
+      { type: "band", url: "https://www.band.us/@salsaamor" },
+      { type: "youtube", url: "https://www.youtube.com/user/wedori" },
+      { type: "cafe", url: "https://cafe.naver.com/goldlatin" }
+    ]
+  },
+  {
     id: "jinju-latinfiruna",
     name: { ko: "라틴피루나", en: "Latin Firuna" },
     region: { ko: "경남", en: "Gyeongsangnam-do" },
