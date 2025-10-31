@@ -336,7 +336,7 @@ const VENUES = [
   },
   {
     id: "changwon-latinblossom",
-    name: { ko: "창원 라틴블라썸", en: "Latin Blossom Changwon" },
+  name: { ko: "라틴블라썸", en: "Latin Blossom" },
     region: { ko: "경남", en: "Gyeongsangnam-do" },
   city: { ko: "경상남도 창원시 성산구", en: "Seongsan-gu, Changwon-si, Gyeongsangnam-do" },
     address: {
