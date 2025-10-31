@@ -228,6 +228,9 @@ const renderVenues = (venues) => {
       img.src = venue.image;
       img.alt = venue.imageAlt?.[LOCALE] || venue.name[LOCALE];
       img.loading = "lazy";
+      if (venue.imageFit === "contain") {
+        img.classList.add("venue-card__image--contain");
+      }
 
       media.appendChild(img);
       contentFragment.appendChild(media);

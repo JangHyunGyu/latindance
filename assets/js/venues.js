@@ -281,6 +281,7 @@ const VENUES = [
       ko: "구미 아르떼 로고",
       en: "Gumi Arte logo"
     },
+    imageFit: "contain",
     links: [
       {
         type: "instagram",

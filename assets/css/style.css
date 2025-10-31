@@ -233,6 +233,11 @@ input:focus-visible {
   aspect-ratio: 16 / 9;
 }
 
+.venue-card__image--contain {
+  object-fit: contain;
+  background-color: rgba(5, 7, 15, 0.9);
+}
+
 .venue-card__name {
   margin: 0;
   font-size: 1.3rem;
