@@ -276,6 +276,11 @@ const VENUES = [
       ko: "대구 지역 살사·바차타 소셜을 꾸준히 열어 초보자도 쉽게 참여하고 서로 교류할 수 있도록 돕는 비바살사 커뮤니티입니다.",
       en: "Daegu-based Viva Salsa community hosting regular salsa and bachata socials that make it easy for newcomers to join and connect with local dancers."
     },
+    image: "assets/images/viva_salsa.png",
+    imageAlt: {
+      ko: "비바살사 로고",
+      en: "Viva Salsa Daegu logo"
+    },
     links: [
       { type: "band", url: "https://www.band.us/@vivasalsaindaegu" }
     ]
