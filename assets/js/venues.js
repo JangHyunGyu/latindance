@@ -102,7 +102,7 @@ const VENUES = [
       ko: "대구광역시 중구 국채보상로 570-18 꼰스튜디오",
       en: "570-18 Gukchaebosang-ro, Jung-gu, Daegu"
     },
-    styles: ["salsa", "bachata"],
+  styles: ["salsa", "bachata", "kizomba"],
     summary: {
       ko: "살사·바차타 정기 모임을 운영하며 초보부터 숙련자까지 함께 어울릴 수 있는 라틴 댄스 동호회입니다.",
       en: "Latin dance community hosting regular salsa and bachata meetups for dancers of all levels."
@@ -129,7 +129,7 @@ const VENUES = [
       ko: "대구광역시 중구 동덕로27길 39 3층 (봉산동 37-19)",
       en: "3F, 39 Dongdeok-ro 27-gil (37-19 Bongsan-dong), Jung-gu, Daegu"
     },
-    styles: ["salsa", "bachata"],
+  styles: ["salsa", "bachata", "kizomba"],
     summary: {
       ko: "초보자도 살사·바차타를 배우고 즐기며 동호회 활동으로 사람들과 교류할 수 있고, 라틴 음악과 함께 칵테일·하이볼 같은 음료를 즐길 수 있는 라틴 펍입니다.",
       en: "Latin pub where newcomers can learn and enjoy salsa or bachata, connect with local socials, or simply relax with Latin beats and cocktails or highballs."
@@ -307,6 +307,31 @@ const VENUES = [
         type: "youtube",
         url: "https://www.youtube.com/@salsaltv2134"
       }
+    ]
+  },
+  {
+    id: "pohang-dancelove",
+    name: { ko: "포항댄스사랑 모임", en: "Pohang Dance Love" },
+    region: { ko: "경북", en: "Gyeongsangbuk-do" },
+    city: { ko: "경북 포항시", en: "Pohang-si" },
+    address: {
+      ko: "경북 포항시 남구 중앙로 112 4층",
+      en: "4F, 112 Jungang-ro, Nam-gu, Pohang-si, Gyeongsangbuk-do"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "단계별 수업으로 초보자도 쉽게 배우고 긍정적인 분위기와 더불어 해변살사 같은 특별 이벤트와 전국에서도 규모 있는 주년 파티를 개최할 만큼 저력과 활발한 활동을 자랑합니다.",
+      en: "Pohang Latin dance community offering step-by-step salsa and bachata classes that welcome beginners, fostering an upbeat space for office workers to recharge, and known for energetic beach salsa events plus large-scale anniversary parties that draw dancers from across Korea."
+    },
+    image: "assets/images/pohang_dance_love.png",
+    imageAlt: {
+      ko: "포항댄스사랑 모임 로고",
+      en: "Pohang Dance Love logo"
+    },
+    links: [
+      { type: "website", url: "https://www.daangn.com/kr/group/%ED%8F%AC%ED%95%AD%EB%8C%84%EC%8A%A4%EC%82%AC%EB%9E%91-8hk5jf54o9o1/" },
+      { type: "facebook", url: "https://www.facebook.com/phdjkoong" },
+      { type: "band", url: "https://www.band.us/band/76903808" }
     ]
   },
   {
