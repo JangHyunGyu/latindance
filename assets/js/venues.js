@@ -603,6 +603,11 @@ const VENUES = [
       ko: "김해 중심 상권에서 살사 레슨과 소셜을 열어 지역 무용 애호가들이 함께 어울리는 루나댄스 커뮤니티입니다.",
       en: "Luna Dance is a Gimhae-based salsa community hosting lessons and socials in the downtown district so local dancers can connect and grow together."
     },
+    image: "assets/images/luna_dance.png",
+    imageAlt: {
+      ko: "루나댄스 로고",
+      en: "Luna Dance logo"
+    },
     links: [
       { type: "website", url: "https://litt.ly/lunadance" },
       { type: "instagram", url: "https://www.instagram.com/latindance_luna/" }
