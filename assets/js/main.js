@@ -341,19 +341,10 @@ const initScrollTop = () => {
   button.addEventListener("click", (e) => {
     e.preventDefault();
     
-    // hover 일시적으로 비활성화
-    button.classList.add('no-hover');
-    button.blur();
-    
     window.scrollTo({
       top: 0,
       behavior: prefersReducedMotion.matches ? "auto" : "smooth"
     });
-    
-    // 500ms 후 no-hover 제거 (안전하게)
-    setTimeout(() => {
-      button.classList.remove('no-hover');
-    }, 500);
   });
 };
 
