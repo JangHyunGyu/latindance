@@ -291,6 +291,10 @@ const VENUES = [
         url: "https://www.band.us/@no1kumiarte"
       },
       {
+        type: "cafe",
+        url: "https://cafe.naver.com/gumiarte"
+      },
+      {
         type: "blog",
         url: "https://m.blog.naver.com/lch5262"
       },
