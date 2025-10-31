@@ -599,10 +599,19 @@ const VENUES = [
     name: { ko: "진라댄", en: "Jinradan" },
     region: { ko: "경남", en: "Gyeongsangnam-do" },
     city: { ko: "경남 진주시", en: "Jinju-si, Gyeongsangnam-do" },
+    address: {
+      ko: "경남 진주시 가좌길 74번길 14 B1",
+      en: "B1, 14 Gajwa-gil 74beon-gil, Jinju-si, Gyeongsangnam-do"
+    },
     styles: ["salsa", "bachata"],
     summary: {
       ko: "진주 지역에서 살사·바차타 레슨과 소셜을 꾸준히 열어 신입부터 기존 회원까지 함께 성장하는 진라댄 라틴 커뮤니티입니다.",
       en: "Jinju-based Jinradan community that keeps the local scene active with regular salsa and bachata lessons and socials welcoming both newcomers and long-time dancers."
+    },
+    image: "assets/images/jinladan.png",
+    imageAlt: {
+      ko: "진라댄 로고",
+      en: "Jinradan logo"
     },
     links: [
       { type: "band", url: "https://www.band.us/band/96265289" },
