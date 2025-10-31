@@ -338,7 +338,7 @@ const VENUES = [
     id: "changwon-latinblossom",
     name: { ko: "창원 라틴블라썸", en: "Latin Blossom Changwon" },
     region: { ko: "경남", en: "Gyeongsangnam-do" },
-    city: { ko: "경남 창원시 성산구", en: "Seongsan-gu, Changwon-si" },
+  city: { ko: "경상남도 창원시 성산구", en: "Seongsan-gu, Changwon-si, Gyeongsangnam-do" },
     address: {
       ko: "경상남도 창원시 성산구 중앙대로83번길 14 지하 1층",
       en: "B1, 14 Jungang-daero 83beon-gil, Seongsan-gu, Changwon-si, Gyeongsangnam-do"
@@ -517,7 +517,52 @@ const VENUES = [
     },
     links: [
       { type: "instagram", url: "https://www.instagram.com/feel_dance_korea/" },
+      { type: "cafe", url: "https://cafe.naver.com/fdsalsa" },
+      { type: "youtube", url: "https://www.youtube.com/@nanda_999" }
+    ]
+  },
+  {
+    id: "changwon-feeldance",
+    name: { ko: "필댄스 창원", en: "Feel Dance Changwon" },
+    region: { ko: "경남", en: "Gyeongsangnam-do" },
+  city: { ko: "경상남도 창원시 성산구", en: "Seongsan-gu, Changwon-si, Gyeongsangnam-do" },
+    address: {
+      ko: "경상남도 창원시 성산구 중앙대로83번길 14",
+      en: "14 Jungang-daero 83beon-gil, Seongsan-gu, Changwon-si, Gyeongsangnam-do"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "창원 지부는 부산 본점과 연계해 초보자도 부담 없이 살사·바차타를 배우고, 지역 SNS 커뮤니티와 교류 소셜로 친목을 넓히는 필댄스 라틴 동호회입니다.",
+      en: "Changwon branch of Feel Dance that partners with the Busan team to welcome beginners into salsa and bachata, staying connected through local socials and online communities."
+    },
+    image: "assets/images/feeldance.png",
+    imageAlt: {
+      ko: "필댄스 창원 로고",
+      en: "Feel Dance Changwon logo"
+    },
+    links: [
+      { type: "instagram", url: "https://www.instagram.com/feeldance_changwon_official/" },
       { type: "cafe", url: "https://cafe.naver.com/fdsalsa" }
     ]
-  }
+  },
+  {
+    id: "daegu-feeldance",
+    name: { ko: "필댄스 대구", en: "Feel Dance Daegu" },
+    region: { ko: "대구", en: "Daegu" },
+    city: { ko: "대구", en: "Daegu" },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "대구 지부는 부산·창원과 함께 협업해 살사·바차타를 기초부터 가르치고, SNS 소통과 합동 소셜 파티로 지역 라틴 네트워크를 확장하는 필댄스 커뮤니티입니다.",
+      en: "Daegu branch collaborates with the Busan and Changwon teams to teach salsa and bachata fundamentals, building a wider Latin network through social media and joint socials."
+    },
+    image: "assets/images/feeldance.png",
+    imageAlt: {
+      ko: "필댄스 대구 로고",
+      en: "Feel Dance Daegu logo"
+    },
+    links: [
+      { type: "instagram", url: "https://www.instagram.com/feel_dance_korea/" },
+      { type: "cafe", url: "https://cafe.naver.com/fdsalsa" }
+    ]
+  },
 ];
