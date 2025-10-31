@@ -581,8 +581,13 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "진주에서 살사·바차타를 함께 연습하며 지방 공연과 합동 소셜도 활발히 기획하는 라틴피루나 커뮤니티입니다.",
-      en: "Jinju-based Latin Firuna community that trains together in salsa and bachata while organizing regional performances and joint socials."
+      ko: "경남 진주에서 2010년에 창립돼 전용 바를 갖추고 살사와 바차타를 활발하게 즐기고 배우는 지역 대표 라틴피루나 동호회입니다.",
+      en: "Established in 2010 with its own bar, Latin Firuna is Jinju's flagship community for learning and enjoying salsa and bachata in a lively setting."
+    },
+    image: "assets/images/latin_piruna.png",
+    imageAlt: {
+      ko: "라틴피루나 로고",
+      en: "Latin Firuna logo"
     },
     links: [
       { type: "band", url: "https://www.band.us/band/58556160" },
