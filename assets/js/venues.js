@@ -267,6 +267,20 @@ const VENUES = [
     links: [{ type: "band", url: "https://www.band.us/band/97302785/post" }]
   },
   {
+    id: "daegu-vivasalsa",
+    name: { ko: "비바살사", en: "Viva Salsa Daegu" },
+    region: { ko: "대구", en: "Daegu" },
+    city: { ko: "대구", en: "Daegu" },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "대구 지역 살사·바차타 소셜을 꾸준히 열어 초보자도 쉽게 참여하고 서로 교류할 수 있도록 돕는 비바살사 커뮤니티입니다.",
+      en: "Daegu-based Viva Salsa community hosting regular salsa and bachata socials that make it easy for newcomers to join and connect with local dancers."
+    },
+    links: [
+      { type: "band", url: "https://www.band.us/@vivasalsaindaegu" }
+    ]
+  },
+  {
     id: "gumi-arte",
     name: { ko: "구미 아르떼", en: "Gumi Arte" },
     region: { ko: "경북", en: "Gyeongsangbuk-do" },
