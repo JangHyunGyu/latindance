@@ -25,7 +25,8 @@ const STRINGS = {
       facebook: "페이스북",
       youtube: "유튜브",
       store: "네이버 스토어",
-      blog: "네이버 블로그"
+      blog: "네이버 블로그",
+      kakaotalk: "카카오톡"
     }
   },
   en: {
@@ -51,7 +52,8 @@ const STRINGS = {
       facebook: "Facebook",
       youtube: "YouTube",
       store: "Naver Store",
-      blog: "Naver Blog"
+      blog: "Naver Blog",
+      kakaotalk: "KakaoTalk"
     }
   }
 }[LOCALE];

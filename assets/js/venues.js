@@ -285,6 +285,22 @@ const VENUES = [
       {
         type: "instagram",
         url: "https://www.instagram.com/gumi.arte/"
+      },
+      {
+        type: "band",
+        url: "https://www.band.us/@no1kumiarte"
+      },
+      {
+        type: "blog",
+        url: "https://m.blog.naver.com/lch5262"
+      },
+      {
+        type: "youtube",
+        url: "https://www.youtube.com/@salsaltv2134"
+      },
+      {
+        type: "kakaotalk",
+        url: "https://pf.kakao.com/_lch5262/chat"
       }
     ]
   },
