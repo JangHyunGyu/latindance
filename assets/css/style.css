@@ -405,7 +405,8 @@ input:focus-visible {
   transform: translateY(0);
 }
 
-button.scroll-top.is-visible:hover {
+button.scroll-top.is-visible:hover,
+button.scroll-top.is-visible:active {
   background: rgba(255, 124, 79, 0.25) !important;
   border-color: rgba(255, 124, 79, 0.4) !important;
   box-shadow: 0 6px 20px rgba(255, 124, 79, 0.3) !important;
