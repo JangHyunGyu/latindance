@@ -537,8 +537,8 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "창원 지부는 부산 본점과 연계해 초보자도 부담 없이 살사·바차타를 배우고, 지역 SNS 커뮤니티와 교류 소셜로 친목을 넓히는 필댄스 라틴 동호회입니다.",
-      en: "Changwon branch of Feel Dance that partners with the Busan team to welcome beginners into salsa and bachata, staying connected through local socials and online communities."
+      ko: "창원 지부는 부산과 함께 연계해 초보자도 부담 없이 살사·바차타를 배우고, 지역 SNS 커뮤니티와 교류 소셜로 친목을 넓히는 필댄스 라틴 동호회입니다.",
+      en: "Changwon branch of Feel Dance collaborates with the Busan team to welcome beginners into salsa and bachata, staying connected through local socials and online communities."
     },
     image: "assets/images/feeldance.png",
     imageAlt: {
