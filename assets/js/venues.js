@@ -348,6 +348,11 @@ const VENUES = [
       ko: "창원 중심에서 살사와 바차타를 단계별로 배우고 정기 소셜과 워크숍으로 교류하는 라틴 커뮤니티로, 직장인도 퇴근 후 쉽게 참여해 에너지를 충전할 수 있는 공간입니다.",
       en: "Changwon-based Latin community offering step-by-step salsa and bachata training, regular socials, and workshops that help office workers recharge after hours."
     },
+    image: "assets/images/latin_blossom.png",
+    imageAlt: {
+      ko: "라틴블라썸 로고",
+      en: "Latin Blossom logo"
+    },
     links: [
       { type: "instagram", url: "https://www.instagram.com/latin.blossom/" },
       { type: "band", url: "https://www.band.us/@latinblossom" }
