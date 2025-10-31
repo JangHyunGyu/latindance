@@ -271,6 +271,10 @@ const VENUES = [
     name: { ko: "구미 아르떼", en: "Gumi Arte" },
     region: { ko: "경북", en: "Gyeongsangbuk-do" },
     city: { ko: "경북 구미시", en: "Gumi-si" },
+    address: {
+      ko: "경북 구미시 송원서로2길 37-1 4층",
+      en: "4F, 37-1 Songwonseo-ro 2-gil, Gumi-si, Gyeongsangbuk-do"
+    },
     styles: ["salsa", "bachata"],
     summary: {
       ko: "구미 도심에서 살사·바차타 기초 강의와 주말 소셜을 열어 지역에 라틴댄스 문화를 퍼뜨리는 커뮤니티입니다.",
