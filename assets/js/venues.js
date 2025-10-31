@@ -301,10 +301,6 @@ const VENUES = [
       {
         type: "youtube",
         url: "https://www.youtube.com/@salsaltv2134"
-      },
-      {
-        type: "kakaotalk",
-        url: "https://pf.kakao.com/_lch5262/chat"
       }
     ]
   },
