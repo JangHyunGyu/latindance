@@ -605,7 +605,8 @@ const VENUES = [
       en: "Jinju-based Jinradan community that keeps the local scene active with regular salsa and bachata lessons and socials welcoming both newcomers and long-time dancers."
     },
     links: [
-      { type: "band", url: "https://www.band.us/band/96265289" }
+      { type: "band", url: "https://www.band.us/band/96265289" },
+      { type: "instagram", url: "https://www.instagram.com/jinjulatindance/" }
     ]
   },
 ];
