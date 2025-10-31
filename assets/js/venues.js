@@ -267,6 +267,28 @@ const VENUES = [
     links: [{ type: "band", url: "https://www.band.us/band/97302785/post" }]
   },
   {
+    id: "gumi-arte",
+    name: { ko: "구미 아르떼", en: "Gumi Arte" },
+    region: { ko: "경북", en: "Gyeongsangbuk-do" },
+    city: { ko: "경북 구미시", en: "Gumi-si" },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "구미 도심에서 살사·바차타 기초 강의와 주말 소셜을 열어 지역에 라틴댄스 문화를 퍼뜨리는 커뮤니티입니다.",
+      en: "Community in downtown Gumi growing the local Latin scene with beginner-friendly salsa and bachata classes plus weekend socials."
+    },
+    image: "assets/images/arte.png",
+    imageAlt: {
+      ko: "구미 아르떼 로고",
+      en: "Gumi Arte logo"
+    },
+    links: [
+      {
+        type: "instagram",
+        url: "https://www.instagram.com/gumi.arte/"
+      }
+    ]
+  },
+  {
     id: "busan-lalala",
     name: { ko: "라라라살사", en: "LaLaLa Salsa" },
     region: { ko: "부산", en: "Busan" },
