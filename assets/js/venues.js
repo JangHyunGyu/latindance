@@ -483,7 +483,7 @@ const VENUES = [
       ko: "부산광역시 부산진구 양지로5번길 8 지하 1층",
       en: "B1, 8 Yangji-ro 5beon-gil, Busanjin-gu, Busan"
     },
-    styles: ["salsa", "bachata"],
+    styles: ["salsa", "bachata", "kizomba"],
     summary: {
       ko: "2001년부터 부산 살사의 메카로 자리 잡아 살사·바차타·키좀바 강습을 매일 열고, 초보자도 부담 없이 참여하는 활기찬 소셜과 정기 이벤트로 라틴 문화를 나누는 클럽입니다.",
       en: "Founded in 2001 as the heart of Busan salsa, this club runs daily salsa, bachata, and kizomba classes, open socials for newcomers, and regular showcases that keep Latin culture thriving."
