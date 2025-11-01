@@ -348,9 +348,9 @@ const VENUES = [
       en: "Pohang Dance Love logo"
     },
     links: [
+      { type: "cafe", url: "https://cafe.naver.com/pohangdancelove" },
       { type: "website", url: "https://www.daangn.com/kr/group/%ED%8F%AC%ED%95%AD%EB%8C%84%EC%8A%A4%EC%82%AC%EB%9E%91-8hk5jf54o9o1/" },
-      { type: "facebook", url: "https://www.facebook.com/phdjkoong" },
-      { type: "band", url: "https://www.band.us/band/76903808" }
+      { type: "facebook", url: "https://www.facebook.com/phdjkoong" }
     ]
   },
   {
