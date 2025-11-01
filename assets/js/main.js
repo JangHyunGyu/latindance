@@ -312,7 +312,17 @@ const registerEvents = () => {
 
 populateRegions();
 registerEvents();
-applyFilters();
+
+// 초기 필터 적용 - 브라우저가 폼 값을 복원할 시간을 줌
+setTimeout(applyFilters, 0);
+
+// 뒤로가기로 페이지 복원 시 필터 재적용
+window.addEventListener('pageshow', (event) => {
+  if (event.persisted) {
+    // 페이지가 bfcache에서 복원된 경우
+    setTimeout(applyFilters, 0);
+  }
+});
 
 // 맨위로 가기 버튼
 const initScrollTop = () => {
