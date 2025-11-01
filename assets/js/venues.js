@@ -436,7 +436,7 @@ const VENUES = [
       ko: "",
       en: ""
     },
-    styles: ["zouk", "brazilianjuke"],
+    styles: ["brazilianjuke"],
     summary: {
       ko: "부산에서 브라질리언 주크의 매력을 나누며 정기 수업과 소셜을 운영하는 커뮤니티입니다.",
       en: "Busan community sharing the beauty of Brazilian Zouk through regular classes and social gatherings."
