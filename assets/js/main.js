@@ -88,7 +88,12 @@ const populateRegions = () => {
   });
 
   regionSelect.appendChild(fragment);
-  regionSelect.value = "all";
+  
+  // 브라우저가 뒤로가기로 값을 복원했는지 확인
+  // 복원되지 않았을 때만 기본값 설정
+  if (!regionSelect.value || regionSelect.value === "") {
+    regionSelect.value = "all";
+  }
 };
 
 const normalizeRegionValue = (value) => {
