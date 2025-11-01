@@ -428,6 +428,32 @@ const VENUES = [
     ]
   },
   {
+    id: "busan-zouk",
+    name: { ko: "부산 주크", en: "Zouk Busan" },
+    region: { ko: "부산", en: "Busan" },
+    city: { ko: "부산", en: "Busan" },
+    address: {
+      ko: "",
+      en: ""
+    },
+    styles: ["zouk", "brazilianjuke"],
+    summary: {
+      ko: "부산에서 브라질리언 주크의 매력을 나누며 정기 수업과 소셜을 운영하는 커뮤니티입니다.",
+      en: "Busan community sharing the beauty of Brazilian Zouk through regular classes and social gatherings."
+    },
+    image: "assets/images/busan_zouk.png",
+    imageAlt: {
+      ko: "부산 주크 로고",
+      en: "Zouk Busan logo"
+    },
+    links: [
+      { type: "instagram", url: "https://www.instagram.com/zoukbusan/" },
+      { type: "cafe", url: "https://cafe.naver.com/bbzouk" },
+      { type: "facebook", url: "https://www.facebook.com/groups/1131029938076175/" },
+      { type: "band", url: "https://band.us/@busanzouk" }
+    ]
+  },
+  {
   id: "busan-nobless",
   name: { ko: "노블레스", en: "Nobless" },
     region: { ko: "부산", en: "Busan" },
