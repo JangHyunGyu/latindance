@@ -14,7 +14,7 @@
   var styleLabels = {
     salsa: { ko: '살사', en: 'Salsa' },
     bachata: { ko: '바차타', en: 'Bachata' },
-    kizomba: { ko: '키조바', en: 'Kizomba' },
+    kizomba: { ko: '키좀바', en: 'Kizomba' },
     zouk: { ko: '주크', en: 'Zouk' },
     linedance: { ko: '라인댄스', en: 'Line Dance' },
     brazilianjuke: { ko: '브라질 주크', en: 'Brazilian Zouk' },
@@ -142,7 +142,7 @@
           'name': '라틴댄스 허브에서는 어떤 정보를 찾을 수 있나요?',
           'acceptedAnswer': {
             '@type': 'Answer',
-            'text': '라틴댄스 허브는 전국 살사, 바차타, 키조바 등 라틴댄스 동호회와 클럽의 공식 사이트, SNS, 커뮤니티 채널을 한 곳에 모아 제공합니다.'
+            'text': '라틴댄스 허브는 전국 살사, 바차타, 키좀바 등 라틴댄스 동호회와 클럽의 공식 사이트, SNS, 커뮤니티 채널을 한 곳에 모아 제공합니다.'
           }
         },
         {
