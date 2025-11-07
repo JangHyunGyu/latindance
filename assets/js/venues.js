@@ -8,7 +8,7 @@ const VENUES = [
       ko: "대구광역시 중구 삼덕동1가 13-2 3층 아수라장",
       en: "3F, Asura Lounge, 13-2 Samdeok-dong 1-ga, Jung-gu, Daegu"
     },
-    styles: ["salsa", "bachata", "kizomba"],
+  styles: ["salsa", "bachata"],
     summary: {
       ko: "살사와 바차타를 사랑하는 사람들이 모여 화요일 무료 풋워크 워크샵과 활기찬 정모를 즐기고, 스튜디오에서 정이 넘치는 커뮤니티를 만들어 가는 동호회입니다.",
       en: "Vibrant group of salsa and bachata lovers offering free Tuesday footwork workshops, lively weekly meetups, and a warm community that gathers at the Asurajang studio."
@@ -72,7 +72,7 @@ const VENUES = [
       ko: "대구광역시 중구 동성로4길 39 4층",
       en: "4F, 39 Dongseong-ro 4-gil, Jung-gu, Daegu"
     },
-    styles: ["salsa", "bachata", "kizomba"],
+  styles: ["salsa", "bachata"],
     summary: {
       ko: "퇴근 후 2030 직장인들이 전문 강사와 함께 살사·바차타를 배우고 정기 소셜로 교류하는 라틴 댄스 모임입니다.",
       en: "Evening community where 20s and 30s learn salsa and bachata with professional instructors, structured lessons, and lively socials."
@@ -724,8 +724,8 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "울산 지역에서 살사와 바차타를 즐기는 라틴댄스 커뮤니티입니다.",
-      en: "Ulsan-based Latin dance community enjoying salsa and bachata together."
+      ko: "체계적인 레벨별 살사 강습과 발표회 시스템으로 초보자도 단계적으로 실력을 쌓으며 성취감을 느낄 수 있는 울산 라울 커뮤니티입니다.",
+      en: "Ulsan Laul helps dancers progress level by level through a structured salsa curriculum and showcase system, giving newcomers confidence as they grow."
     },
     image: "assets/images/laul.png",
     imageAlt: {
@@ -747,8 +747,8 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "울산에서 살사와 바차타의 열정을 나누는 라틴댄스 커뮤니티입니다.",
-      en: "Ulsan-based Latin dance community sharing the passion for salsa and bachata."
+      ko: "20년 경력의 전문 강사가 상주해 살사·바차타·키좀바를 지도하고 매주 정기 모임을 활발히 운영하는 아카데미형 라틴댄스 동호회입니다.",
+      en: "Academy-style Latin dance group led by an instructor with 20 years of experience, offering salsa, bachata, and kizomba classes alongside weekly gatherings."
     },
     image: "assets/images/fuego.png",
     imageAlt: {
@@ -794,8 +794,8 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "살사와 바차타 수업, 소셜 파티, 공연으로 라틴 문화를 나누는 울산 사보르 커뮤니티입니다.",
-      en: "Ulsan Sabor shares Latin culture through salsa and bachata classes, socials, and showcases."
+      ko: "20년이 넘는 전통을 가진 울산 최초의 라틴댄스 동호회로, 전용 바 공간에서 살사와 바차타 등을 부담 없이 배우고 즐길 수 있습니다.",
+      en: "Ulsan's first Latin dance club with over 20 years of history, featuring a dedicated bar space where dancers can learn and enjoy salsa, bachata, and more at an accessible cost."
     },
     image: "assets/images/ulsan_sabor.png",
     imageAlt: {
