@@ -534,10 +534,10 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "살사와 바차타를 중심으로 기초부터 소셜 응용까지 지도하며 라틴 음악과 함께 즐길 수 있는 부산진구 LY댄스 스튜디오입니다.",
-      en: "Busanjin-based LY Dance Studio guiding dancers from fundamentals to social applications of salsa and bachata in a welcoming Latin music space."
+      ko: "부산진구 신천대로 인근에 자리한 라틴댄스 전문 스튜디오로, 활발한 네이버 카페와 페이스북 커뮤니티를 기반으로 라르고Y·입생로랑(YSL) 강사진이 체계적인 살사·바차타 수업을 진행합니다.",
+      en: "Latin dance studio near Sincheon-daero in Busanjin-gu, operated through active Naver Cafe and Facebook communities with structured salsa and bachata training led by instructors Largo Y and YSL."
     },
-    image: "assets/images/ly_dance_studio_busan.png",
+  image: "assets/images/ly_dance_studio.png",
     imageAlt: {
       ko: "LY댄스 스튜디오 부산 로고",
       en: "LY Dance Studio Busan logo"
@@ -815,10 +815,10 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "살사와 바차타를 중심으로 울산 남구 지역에서 꾸준한 수업과 소셜 연습을 제공하는 LY댄스 스튜디오 울산 지점입니다.",
-      en: "Ulsan branch of LY Dance Studio delivering consistent salsa and bachata lessons plus practice sessions for the Nam-gu community."
+      ko: "부산 스튜디오와 연계되어 라르고Y·입생로랑(YSL) 전문 강사진의 지도를 그대로 이어받는 아카데미형 스튜디오로, 울산 댄서들이 소통하며 성장할 수 있는 열린 공간을 지향합니다.",
+      en: "Academy-style branch connected with the Busan studio, offering guidance from the same Largo Y and YSL instructor team while providing an open space for Ulsan dancers—from professionals to amateurs—to connect and grow."
     },
-    image: "assets/images/ly_dance_studio_ulsan.png",
+  image: "assets/images/ly_dance_studio.png",
     imageAlt: {
       ko: "LY댄스 스튜디오 울산 로고",
       en: "LY Dance Studio Ulsan logo"
