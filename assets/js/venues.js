@@ -524,6 +524,27 @@ const VENUES = [
     ]
   },
   {
+    id: "busan-lydance",
+    name: { ko: "LY댄스 스튜디오 부산", en: "LY Dance Studio Busan" },
+    region: { ko: "부산", en: "Busan" },
+    city: { ko: "부산 부산진구", en: "Busanjin-gu" },
+    address: {
+      ko: "부산광역시 부산진구 신천대로 108 지하 1층",
+      en: "B1, 108 Sincheon-daero, Busanjin-gu, Busan"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "살사와 바차타를 중심으로 기초부터 소셜 응용까지 지도하며 라틴 음악과 함께 즐길 수 있는 부산진구 LY댄스 스튜디오입니다.",
+      en: "Busanjin-based LY Dance Studio guiding dancers from fundamentals to social applications of salsa and bachata in a welcoming Latin music space."
+    },
+    image: "assets/images/ly_dance_studio_busan.png",
+    imageAlt: {
+      ko: "LY댄스 스튜디오 부산 로고",
+      en: "LY Dance Studio Busan logo"
+    },
+    links: []
+  },
+  {
     id: "busan-mamboclub",
     name: { ko: "맘보클럽", en: "Mambo Club Busan" },
     region: { ko: "부산", en: "Busan" },
@@ -782,6 +803,27 @@ const VENUES = [
       { type: "instagram", url: "https://www.instagram.com/ulsan_dance/" },
       { type: "band", url: "https://band.us/@ulsankizomba" }
     ]
+  },
+  {
+    id: "ulsan-lydance",
+    name: { ko: "LY댄스 스튜디오 울산", en: "LY Dance Studio Ulsan" },
+    region: { ko: "울산", en: "Ulsan" },
+    city: { ko: "울산 남구", en: "Nam-gu, Ulsan" },
+    address: {
+      ko: "울산광역시 남구 삼산중로 113 평창현대2차아파트 상가 3층 301호",
+      en: "Room 301, 3F, Pyeongchang Hyundai 2nd Apt. Complex, 113 Samsanjung-ro, Nam-gu, Ulsan"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "살사와 바차타를 중심으로 울산 남구 지역에서 꾸준한 수업과 소셜 연습을 제공하는 LY댄스 스튜디오 울산 지점입니다.",
+      en: "Ulsan branch of LY Dance Studio delivering consistent salsa and bachata lessons plus practice sessions for the Nam-gu community."
+    },
+    image: "assets/images/ly_dance_studio_ulsan.png",
+    imageAlt: {
+      ko: "LY댄스 스튜디오 울산 로고",
+      en: "LY Dance Studio Ulsan logo"
+    },
+    links: []
   },
   {
     id: "ulsan-sabor",
