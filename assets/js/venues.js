@@ -790,10 +790,10 @@ const VENUES = [
     id: "ulsan-kizomba",
     name: { ko: "울산 키좀바", en: "Ulsan Kizomba" },
     region: { ko: "울산", en: "Ulsan" },
-    city: { ko: "울산", en: "Ulsan" },
+    city: { ko: "울산 남구", en: "Nam-gu, Ulsan" },
     address: {
-      ko: "울산광역시",
-      en: "Ulsan"
+      ko: "울산광역시 남구 삼산로199번길 13, 3층 (달동)",
+      en: "3F, 13 Samsan-ro 199beon-gil, Nam-gu, Ulsan (Daldong)"
     },
     styles: ["kizomba"],
     summary: {
@@ -811,3 +811,11 @@ const VENUES = [
     ]
   },
 ];
+
+if (typeof window !== "undefined") {
+  window.VENUES = VENUES;
+}
+
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = VENUES;
+}
