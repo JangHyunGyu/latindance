@@ -534,15 +534,20 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "부산진구 신천대로 인근에 자리한 라틴댄스 전문 스튜디오로, 활발한 네이버 카페와 페이스북 커뮤니티를 기반으로 라르고Y·입생로랑(YSL) 강사진이 체계적인 살사·바차타 수업을 진행합니다.",
-      en: "Latin dance studio near Sincheon-daero in Busanjin-gu, operated through active Naver Cafe and Facebook communities with structured salsa and bachata training led by instructors Largo Y and YSL."
+      ko: "부산진구 신천대로 인근에 자리한 라틴댄스 전문 스튜디오로, 네이버 카페·밴드와 인스타그램·유튜브 채널을 통해 소식을 공유하고 라르고Y·입생로랑(YSL) 강사진이 체계적인 살사·바차타 수업을 진행합니다.",
+      en: "Latin dance studio near Sincheon-daero in Busanjin-gu that shares updates via its Naver Cafe, Band, Instagram, and YouTube channels while the Largo Y and YSL instructor team leads structured salsa and bachata programs."
     },
-  image: "assets/images/ly_dance_studio.png",
+    image: "assets/images/ly_dance_studio.png",
     imageAlt: {
       ko: "LY댄스 스튜디오 부산 로고",
       en: "LY Dance Studio Busan logo"
     },
-    links: []
+    links: [
+      { type: "cafe", url: "https://cafe.naver.com/atsalsa" },
+      { type: "band", url: "https://www.band.us/@lydance" },
+      { type: "instagram", url: "https://www.instagram.com/largoysl_korea" },
+      { type: "youtube", url: "https://www.youtube.com/c/LargoTV" }
+    ]
   },
   {
     id: "busan-mamboclub",
@@ -815,15 +820,20 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "부산 스튜디오와 연계되어 라르고Y·입생로랑(YSL) 전문 강사진의 지도를 그대로 이어받는 아카데미형 스튜디오로, 울산 댄서들이 소통하며 성장할 수 있는 열린 공간을 지향합니다.",
-      en: "Academy-style branch connected with the Busan studio, offering guidance from the same Largo Y and YSL instructor team while providing an open space for Ulsan dancers—from professionals to amateurs—to connect and grow."
+      ko: "부산 본점과 연계해 라르고Y·입생로랑(YSL) 강사진이 살사·바차타 커리큘럼을 제공하며, 네이버 카페·밴드와 인스타그램·유튜브를 통해 울산 지부 소식을 공유하는 아카데미형 스튜디오입니다.",
+      en: "Branch linked with the Busan studio, delivering salsa and bachata curricula from the Largo Y and YSL instructor team while sharing Ulsan updates via its Naver Cafe, Band, Instagram, and YouTube channels."
     },
-  image: "assets/images/ly_dance_studio.png",
+    image: "assets/images/ly_dance_studio.png",
     imageAlt: {
       ko: "LY댄스 스튜디오 울산 로고",
       en: "LY Dance Studio Ulsan logo"
     },
-    links: []
+    links: [
+      { type: "cafe", url: "https://cafe.naver.com/atsalsa" },
+      { type: "band", url: "https://www.band.us/@lydance" },
+      { type: "instagram", url: "https://www.instagram.com/largoysl_korea" },
+      { type: "youtube", url: "https://www.youtube.com/c/LargoTV" }
+    ]
   },
   {
     id: "ulsan-sabor",
