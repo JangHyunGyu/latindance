@@ -745,8 +745,8 @@ const VENUES = [
     region: { ko: "울산", en: "Ulsan" },
     city: { ko: "울산", en: "Ulsan" },
     address: {
-      ko: "울산광역시",
-      en: "Ulsan"
+      ko: "울산광역시 남구 삼산로 199번길 13, 3층",
+      en: "3F, 13 Samsan-ro 199beon-gil, Nam-gu, Ulsan"
     },
     styles: ["salsa", "bachata"],
     summary: {
@@ -787,7 +787,7 @@ const VENUES = [
   },
   {
     id: "ulsan-kizomba",
-    name: { ko: "울산 키좀바", en: "Ulsan Kizomba" },
+  name: { ko: "울산키좀바", en: "Ulsan Kizomba" },
     region: { ko: "울산", en: "Ulsan" },
     city: { ko: "울산 남구", en: "Nam-gu, Ulsan" },
     address: {
@@ -837,7 +837,7 @@ const VENUES = [
   },
   {
     id: "ulsan-sabor",
-    name: { ko: "울산 사보르", en: "Ulsan Sabor" },
+  name: { ko: "사보르", en: "Ulsan Sabor" },
     region: { ko: "울산", en: "Ulsan" },
     city: { ko: "울산 남구", en: "Nam-gu, Ulsan" },
     address: {
