@@ -8,7 +8,7 @@ const VENUES = [
       ko: "대구광역시 중구 삼덕동1가 13-2 3층 아수라장",
       en: "3F, Asura Lounge, 13-2 Samdeok-dong 1-ga, Jung-gu, Daegu"
     },
-  styles: ["salsa", "bachata", "kizomba"],
+    styles: ["salsa", "bachata", "kizomba"],
     summary: {
       ko: "살사와 바차타를 사랑하는 사람들이 모여 화요일 무료 풋워크 워크샵과 활기찬 정모를 즐기고, 스튜디오에서 정이 넘치는 커뮤니티를 만들어 가는 동호회입니다.",
       en: "Vibrant group of salsa and bachata lovers offering free Tuesday footwork workshops, lively weekly meetups, and a warm community that gathers at the Asurajang studio."
@@ -42,33 +42,6 @@ const VENUES = [
     summary: {
       ko: "바차타 특화 수준별 맞춤 커리큘럼으로 실력을 빠르게 키우며, 활발한 커뮤니티 소통과 다양한 파티를 즐길 수 있는 라틴클럽입니다.",
       en: "Latin club where veteran instructors warmly share the joy of latin dance, level-tailored bachata programs accelerate your progress, and an active community plus themed parties keep the Latin rhythms alive."
-    {
-      id: "ulsan-sabor",
-      name: { ko: "울산 사보르", en: "Ulsan Sabor" },
-      region: { ko: "울산", en: "Ulsan" },
-      city: { ko: "울산 남구", en: "Nam-gu, Ulsan" },
-      address: {
-        ko: "울산광역시 남구 대학로84번길 16 3층",
-        en: "3F, 16 Daehak-ro 84beon-gil, Nam-gu, Ulsan"
-      },
-      styles: ["salsa", "bachata"],
-      summary: {
-        ko: "살사와 바차타 수업, 소셜 파티, 공연으로 라틴 문화를 나누는 울산 사보르 커뮤니티입니다.",
-        en: "Ulsan Sabor shares Latin culture through salsa and bachata classes, socials, and showcases."
-      },
-      image: "assets/images/ulsan_sabor.png",
-      imageAlt: {
-        ko: "울산 사보르 로고",
-        en: "Ulsan Sabor logo"
-      },
-      links: [
-        { type: "facebook", url: "https://www.facebook.com/ulsansabor" },
-        { type: "youtube", url: "https://www.youtube.com/@%EC%9A%B8%EC%82%B0%EC%82%B4%EC%82%AC%EB%8C%84%EC%8A%A4%EC%82%AC%EB%B3%B4%EB%A5%B4" },
-        { type: "instagram", url: "https://www.instagram.com/ulsansalsa_sabor/" },
-        { type: "band", url: "https://www.band.us/band/74344250" },
-        { type: "cafe", url: "https://cafe.naver.com/browndbpvr" }
-      ]
-    },
     },
     image: "assets/images/latinclub_baya.png",
     imageAlt: {
@@ -99,7 +72,7 @@ const VENUES = [
       ko: "대구광역시 중구 동성로4길 39 4층",
       en: "4F, 39 Dongseong-ro 4-gil, Jung-gu, Daegu"
     },
-  styles: ["salsa", "bachata", "kizomba"],
+    styles: ["salsa", "bachata", "kizomba"],
     summary: {
       ko: "퇴근 후 2030 직장인들이 전문 강사와 함께 살사·바차타를 배우고 정기 소셜로 교류하는 라틴 댄스 모임입니다.",
       en: "Evening community where 20s and 30s learn salsa and bachata with professional instructors, structured lessons, and lively socials."
@@ -129,7 +102,7 @@ const VENUES = [
       ko: "대구광역시 중구 국채보상로 570-18 꼰스튜디오",
       en: "570-18 Gukchaebosang-ro, Jung-gu, Daegu"
     },
-  styles: ["salsa", "bachata", "kizomba"],
+    styles: ["salsa", "bachata", "kizomba"],
     summary: {
       ko: "살사·바차타 정기 모임을 운영하며 초보부터 숙련자까지 함께 어울릴 수 있는 라틴 댄스 동호회입니다.",
       en: "Latin dance community hosting regular salsa and bachata meetups for dancers of all levels."
@@ -156,7 +129,7 @@ const VENUES = [
       ko: "대구광역시 중구 동덕로27길 39 3층 (봉산동 37-19)",
       en: "3F, 39 Dongdeok-ro 27-gil (37-19 Bongsan-dong), Jung-gu, Daegu"
     },
-  styles: ["salsa", "bachata", "kizomba"],
+    styles: ["salsa", "bachata", "kizomba"],
     summary: {
       ko: "초보자도 살사·바차타를 배우고 즐기며 동호회 활동으로 사람들과 교류할 수 있고, 라틴 음악과 함께 칵테일·하이볼 같은 음료를 즐길 수 있는 라틴 펍입니다.",
       en: "Latin pub where newcomers can learn and enjoy salsa or bachata, connect with local socials, or simply relax with Latin beats and cocktails or highballs."
@@ -559,7 +532,7 @@ const VENUES = [
       ko: "부산광역시 부산진구 부전동 520-38",
       en: "520-38 Bujeon-dong, Busanjin-gu, Busan"
     },
-  styles: ["salsa", "bachata"],
+    styles: ["salsa", "bachata"],
     summary: {
       ko: "살사·바차타·키좀바 소셜과 워크숍을 주중에 열며, 초보자도 쉽게 어울릴 수 있는 친근한 분위기를 이어가는 부산 라틴 클럽입니다.",
       en: "Busan Latin club hosting weeknight salsa, bachata, and kizomba socials and workshops, keeping the vibe friendly for newcomers."
@@ -744,10 +717,10 @@ const VENUES = [
     id: "ulsan-laul",
     name: { ko: "라울", en: "Laul" },
     region: { ko: "울산", en: "Ulsan" },
-    city: { ko: "울산 남구", en: "Nam-gu, Ulsan" },
+    city: { ko: "울산", en: "Ulsan" },
     address: {
-      ko: "울산광역시 남구 삼산로199번길 13, 3층 (달동)",
-      en: "3F, 13 Samsan-ro 199beon-gil, Nam-gu, Ulsan (Daldong)"
+      ko: "울산광역시",
+      en: "Ulsan"
     },
     styles: ["salsa", "bachata"],
     summary: {
@@ -808,6 +781,33 @@ const VENUES = [
     links: [
       { type: "instagram", url: "https://www.instagram.com/ulsan_dance/" },
       { type: "band", url: "https://band.us/@ulsankizomba" }
+    ]
+  },
+  {
+    id: "ulsan-sabor",
+    name: { ko: "울산 사보르", en: "Ulsan Sabor" },
+    region: { ko: "울산", en: "Ulsan" },
+    city: { ko: "울산 남구", en: "Nam-gu, Ulsan" },
+    address: {
+      ko: "울산광역시 남구 대학로84번길 16 3층",
+      en: "3F, 16 Daehak-ro 84beon-gil, Nam-gu, Ulsan"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "살사와 바차타 수업, 소셜 파티, 공연으로 라틴 문화를 나누는 울산 사보르 커뮤니티입니다.",
+      en: "Ulsan Sabor shares Latin culture through salsa and bachata classes, socials, and showcases."
+    },
+    image: "assets/images/ulsan_sabor.png",
+    imageAlt: {
+      ko: "울산 사보르 로고",
+      en: "Ulsan Sabor logo"
+    },
+    links: [
+      { type: "facebook", url: "https://www.facebook.com/ulsansabor" },
+      { type: "youtube", url: "https://www.youtube.com/@%EC%9A%B8%EC%82%B0%EC%82%B4%EC%82%AC%EB%8C%84%EC%8A%A4%EC%82%AC%EB%B3%B4%EB%A5%B4" },
+      { type: "instagram", url: "https://www.instagram.com/ulsansalsa_sabor/" },
+      { type: "band", url: "https://www.band.us/band/74344250" },
+      { type: "cafe", url: "https://cafe.naver.com/browndbpvr" }
     ]
   },
 ];
