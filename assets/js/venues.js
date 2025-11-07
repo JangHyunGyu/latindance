@@ -768,10 +768,10 @@ const VENUES = [
       ko: "울산광역시 남구 삼산로199번길 13, 3층 (달동)",
       en: "3F, 13 Samsan-ro 199beon-gil, Nam-gu, Ulsan (Daldong)"
     },
-    styles: ["kizomba"],
+    styles: ["salsa", "bachata", "kizomba"],
     summary: {
-      ko: "울산에서 키좀바 음악과 소셜을 함께 즐기는 라틴댄스 커뮤니티입니다.",
-      en: "Ulsan community gathering to enjoy kizomba music and socials together."
+      ko: "울산 키좀바 동호회는 서울과 울산에서 17년 이상의 경력을 지닌 전문 강사진의 지도 아래 키좀바뿐만 아니라 살사, 바차타 등 다채로운 라틴 댄스를 배우고 즐길 수 있는 커뮤니티입니다.",
+      en: "Ulsan Kizomba is led by instructors with over 17 years of experience in Seoul and Ulsan, offering Kizomba alongside salsa, bachata, and a variety of Latin dances."
     },
     image: "assets/images/ulsan_kizomba.png",
     imageAlt: {
