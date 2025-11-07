@@ -740,10 +740,10 @@ const VENUES = [
     id: "ulsan-fuego",
     name: { ko: "푸에고", en: "Fuego" },
     region: { ko: "울산", en: "Ulsan" },
-    city: { ko: "울산", en: "Ulsan" },
+    city: { ko: "울산 남구", en: "Nam-gu, Ulsan" },
     address: {
-      ko: "울산광역시",
-      en: "Ulsan"
+      ko: "울산광역시 남구 삼산로199번길 13, 3층 (달동)",
+      en: "3F, 13 Samsan-ro 199beon-gil, Nam-gu, Ulsan (Daldong)"
     },
     styles: ["salsa", "bachata"],
     summary: {
