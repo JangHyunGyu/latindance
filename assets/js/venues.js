@@ -713,4 +713,50 @@ const VENUES = [
       { type: "instagram", url: "https://www.instagram.com/jinjulatindance/" }
     ]
   },
+  {
+    id: "ulsan-laul",
+    name: { ko: "라울", en: "Laul" },
+    region: { ko: "울산", en: "Ulsan" },
+    city: { ko: "울산", en: "Ulsan" },
+    address: {
+      ko: "울산광역시",
+      en: "Ulsan"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "울산 지역에서 살사와 바차타를 즐기는 라틴댄스 커뮤니티입니다.",
+      en: "Ulsan-based Latin dance community enjoying salsa and bachata together."
+    },
+    image: "assets/images/laul.png",
+    imageAlt: {
+      ko: "라울 로고",
+      en: "Laul logo"
+    },
+    links: [
+      { type: "band", url: "https://band.us/@laul" }
+    ]
+  },
+  {
+    id: "ulsan-fuego",
+    name: { ko: "푸에고", en: "Fuego" },
+    region: { ko: "울산", en: "Ulsan" },
+    city: { ko: "울산", en: "Ulsan" },
+    address: {
+      ko: "울산광역시",
+      en: "Ulsan"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "울산에서 살사와 바차타의 열정을 나누는 라틴댄스 커뮤니티입니다.",
+      en: "Ulsan-based Latin dance community sharing the passion for salsa and bachata."
+    },
+    image: "assets/images/fuego.png",
+    imageAlt: {
+      ko: "푸에고 로고",
+      en: "Fuego logo"
+    },
+    links: [
+      { type: "band", url: "https://band.us/@fuegouskr" }
+    ]
+  },
 ];
