@@ -534,8 +534,8 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "부산진구 신천대로 인근에 자리한 라틴댄스 전문 스튜디오로, 네이버 카페·밴드와 인스타그램·유튜브 채널을 통해 소식을 공유하고 라르고Y·입생로랑(YSL) 강사진이 체계적인 살사·바차타 수업을 진행합니다.",
-      en: "Latin dance studio near Sincheon-daero in Busanjin-gu that shares updates via its Naver Cafe, Band, Instagram, and YouTube channels while the Largo Y and YSL instructor team leads structured salsa and bachata programs."
+      ko: "부산진구 신천대로 인근에 자리한 라틴댄스 전문 스튜디오로, 네이버 카페·밴드와 인스타그램·유튜브 채널을 통해 소식을 공유하고 전문 강사진이 체계적인 살사·바차타 수업을 진행합니다.",
+      en: "Latin dance studio near Sincheon-daero in Busanjin-gu that shares updates via its Naver Cafe, Band, Instagram, and YouTube channels while its instructor team leads structured salsa and bachata programs."
     },
     image: "assets/images/ly_dance_studio.png",
     imageAlt: {
@@ -820,8 +820,8 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "부산 본점과 연계해 라르고Y·입생로랑(YSL) 강사진이 살사·바차타 커리큘럼을 제공하며, 네이버 카페·밴드와 인스타그램·유튜브를 통해 울산 지부 소식을 공유하는 아카데미형 스튜디오입니다.",
-      en: "Branch linked with the Busan studio, delivering salsa and bachata curricula from the Largo Y and YSL instructor team while sharing Ulsan updates via its Naver Cafe, Band, Instagram, and YouTube channels."
+      ko: "부산 본점과 연계해 동일한 커리큘럼으로 살사·바차타 수업을 제공하며, 네이버 카페·밴드와 인스타그램·유튜브를 통해 울산 지부 소식을 공유하는 아카데미형 스튜디오입니다.",
+      en: "Branch linked with the Busan studio, delivering the same salsa and bachata curricula while sharing Ulsan updates via its Naver Cafe, Band, Instagram, and YouTube channels."
     },
     image: "assets/images/ly_dance_studio.png",
     imageAlt: {
