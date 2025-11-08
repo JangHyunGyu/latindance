@@ -200,6 +200,30 @@ const VENUES = [
     ]
   },
   {
+    id: "seoul-macondo",
+    name: { ko: "마콘도", en: "Macondo" },
+    region: { ko: "서울", en: "Seoul" },
+    city: { ko: "서울 마포구", en: "Mapo-gu" },
+    address: {
+      ko: "서울특별시 마포구 동교동 164-22",
+      en: "164-22 Donggyo-dong, Mapo-gu, Seoul"
+    },
+    styles: ["salsa", "bachata", "kizomba"],
+    summary: {
+      ko: "한국 최초의 살사 클럽을 표방하며, 다양한 라틴 댄스를 즐길 수 있는 깔끔하고 분위기 좋은 전문 라틴 댄스 바입니다.",
+      en: "Self-described as Korea's first salsa club, this polished Latin dance bar offers a welcoming atmosphere for enjoying a wide range of Latin dances."
+    },
+    image: "assets/images/latindance_full_logo.png",
+    imageAlt: {
+      ko: "마콘도 로고",
+      en: "Macondo logo"
+    },
+    links: [
+      { type: "instagram", url: "https://www.instagram.com/macondo_hongdae/" },
+      { type: "cafe", url: "https://cafe.daum.net/macondo" }
+    ]
+  },
+  {
     id: "seoul-felizclub",
     name: { ko: "펠리스", en: "Feliz" },
     region: { ko: "서울", en: "Seoul" },
