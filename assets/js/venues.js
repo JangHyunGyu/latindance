@@ -167,7 +167,7 @@ const VENUES = [
       ko: "홍대에서 몇 안 되는 라틴 전문 클럽 중 하나로, 이색적인 경험이나 라틴 댄스에 관심 있는 사람들에게 인기 있는 라틴 클럽입니다.",
       en: "One of the few dedicated Latin clubs in Hongdae, popular with visitors seeking a distinctive experience or a deeper dive into Latin dance."
     },
-    image: "assets/images/latindance_full_logo.png",
+  image: "assets/images/hongturn.png",
     imageAlt: {
       ko: "홍턴 로고",
       en: "Hong Turn logo"
