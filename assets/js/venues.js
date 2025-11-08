@@ -39,7 +39,7 @@ const VENUES = [
       ko: "2040 직장인 중심의 라틴 댄스 동호회로 '전 세계에서 가장 쉬운 커리큘럼'을 표방하며, 춤을 처음 접하는 왕초보도 부담 없이 시작할 수 있도록 돕습니다.",
       en: "Latin dance community for office workers in their 20s to 40s, promoting the 'easiest curriculum in the world' so absolute beginners can start salsa and bachata without pressure."
     },
-    image: "assets/images/latindance_full_logo.png",
+    image: "assets/images/with_latin.png",
     imageAlt: {
       ko: "위드라틴 로고",
       en: "With Latin logo"
@@ -65,7 +65,7 @@ const VENUES = [
       ko: "홍대 인근에서 살사·바차타를 전문적으로 지도하며 정기 소셜과 워크숍을 운영하는 아카데미형 라틴 댄스 스튜디오입니다.",
       en: "Academy-style Latin dance studio near Hongdae that offers structured salsa and bachata training alongside regular socials and workshops."
     },
-    image: "assets/images/latindance_full_logo.png",
+    image: "assets/images/sda.png",
     imageAlt: {
       ko: "SDA 살사댄스아카데미 로고",
       en: "SDA Salsa Dance Academy logo"
@@ -97,7 +97,8 @@ const VENUES = [
     },
     links: [
       { type: "instagram", url: "https://www.instagram.com/jessica_latinclub_bonita/" },
-      { type: "facebook", url: "https://www.facebook.com/clubbonitaseoul" }
+      { type: "facebook", url: "https://www.facebook.com/clubbonitaseoul" },
+      { type: "threads", url: "https://www.threads.com/@jessica_latinclub_bonita" }
     ]
   },
   {
