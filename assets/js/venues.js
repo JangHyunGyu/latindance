@@ -8,7 +8,7 @@ const VENUES = [
       ko: "서울특별시 강남구 테헤란로6길 9 B1, B2",
       en: "B1-B2, 9 Teheran-ro 6-gil, Gangnam-gu, Seoul"
     },
-    styles: ["salsa", "bachata"],
+  styles: ["bachata"],
     summary: {
       ko: "강남과 홍대 센터 간에 강습 교차 수강 시스템을 운영하여 회원들의 편의성을 높이고 살사, 바차타 등 라틴 댄스를 체계적으로 가르치고 활발한 소셜 모임을 주최하는 아카데미형 2030 직장인 동호회입니다.",
       en: "Academy-style community for working professionals in their 20s and 30s that offers cross-enrollment between its Gangnam and Hongdae centers, delivering structured salsa and bachata training alongside active social gatherings."
