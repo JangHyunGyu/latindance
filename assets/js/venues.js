@@ -78,7 +78,7 @@ const VENUES = [
   },
   {
     id: "seoul-bonita",
-    name: { ko: "라틴클럽 보니따", en: "Latin Club Bonita" },
+    name: { ko: "보니따", en: "Bonita" },
     region: { ko: "서울", en: "Seoul" },
     city: { ko: "서울 마포구", en: "Mapo-gu" },
     address: {
@@ -92,8 +92,8 @@ const VENUES = [
     },
     image: "assets/images/club_bonita.png",
     imageAlt: {
-      ko: "라틴클럽 보니따 로고",
-      en: "Latin Club Bonita logo"
+      ko: "보니따 로고",
+      en: "Bonita logo"
     },
     links: [
       { type: "instagram", url: "https://www.instagram.com/jessica_latinclub_bonita/" },
