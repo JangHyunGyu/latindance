@@ -28,7 +28,8 @@ const STRINGS = {
       store: "네이버 스토어",
       blog: "네이버 블로그",
   kakaotalk: "카카오톡",
-  threads: "Threads"
+  threads: "Threads",
+  linktree: "Linktree"
     },
     scrollTopLabel: "맨 위로",
     scrollTopTitle: "맨 위로 이동"
@@ -59,7 +60,8 @@ const STRINGS = {
       store: "Naver Store",
       blog: "Naver Blog",
   kakaotalk: "KakaoTalk",
-  threads: "Threads"
+  threads: "Threads",
+  linktree: "Linktree"
     },
     scrollTopLabel: "Back to top",
     scrollTopTitle: "Scroll back to top"

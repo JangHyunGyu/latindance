@@ -102,8 +102,83 @@ const VENUES = [
     ]
   },
   {
+    id: "seoul-salatindanceclub",
+    name: { ko: "SA 살사 댄스 클럽", en: "SA Salsa Dance Club" },
+    region: { ko: "서울", en: "Seoul" },
+    city: { ko: "서울 마포구", en: "Mapo-gu" },
+    address: {
+      ko: "서울특별시 마포구 동교로 191",
+      en: "191 Donggyo-ro, Mapo-gu, Seoul"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "하나의 특정 바에 고정되기보다는 홍대 일대 여러 바를 오가며 활동하는 지역 연합 동호회로, '초보자들의 성지'라 불릴 만큼 신규 회원 유입이 활발한 살사의 시작점입니다.",
+      en: "Hongdae-based collective that rotates between multiple venues rather than one fixed bar, widely known as the 'sanctuary for beginners' where newcomers flock to start their salsa journey."
+    },
+    image: "assets/images/latindance_full_logo.png",
+    imageAlt: {
+      ko: "SA 살사 댄스 클럽 로고",
+      en: "SA Salsa Dance Club logo"
+    },
+    links: [
+      { type: "youtube", url: "https://www.youtube.com/@SALatinSalsaDanceClub" },
+      { type: "instagram", url: "https://www.instagram.com/sa.latin.official/" },
+      { type: "instagram", url: "https://www.instagram.com/saglobal.dance/" },
+      { type: "cafe", url: "https://cafe.daum.net/salatin" },
+      { type: "facebook", url: "https://www.facebook.com/salatinsalsadanceclub" },
+      { type: "linktree", url: "https://linktr.ee/sa.latin.official" }
+    ]
+  },
+  {
+    id: "seoul-buenaonda",
+    name: { ko: "부에나", en: "Buena" },
+    region: { ko: "서울", en: "Seoul" },
+    city: { ko: "서울 마포구", en: "Mapo-gu" },
+    address: {
+      ko: "서울특별시 마포구 동교로 217 LJ빌딩",
+      en: "LJ Building, 217 Donggyo-ro, Mapo-gu, Seoul"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "라틴 문화를 사랑하는 사람들이 모여 언어와 춤을 배우고 문화를 체험하는 라틴 컬쳐 커뮤니티입니다.",
+      en: "Latin culture community where enthusiasts gather to learn language, dance, and immerse themselves in Latin cultural experiences."
+    },
+    image: "assets/images/latindance_full_logo.png",
+    imageAlt: {
+      ko: "부에나 로고",
+      en: "Buena logo"
+    },
+    links: [
+      { type: "instagram", url: "https://www.instagram.com/hyunsookjane/" },
+      { type: "cafe", url: "https://cafe.naver.com/buenaonda" }
+    ]
+  },
+  {
+    id: "seoul-hongturn",
+    name: { ko: "홍턴", en: "Hong Turn" },
+    region: { ko: "서울", en: "Seoul" },
+    city: { ko: "서울 마포구", en: "Mapo-gu" },
+    address: {
+      ko: "서울특별시 마포구 동교동 199-3",
+      en: "199-3 Donggyo-dong, Mapo-gu, Seoul"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "홍대에서 몇 안 되는 라틴 전문 클럽 중 하나로, 이색적인 경험이나 라틴 댄스에 관심 있는 사람들에게 인기 있는 라틴 클럽입니다.",
+      en: "One of the few dedicated Latin clubs in Hongdae, popular with visitors seeking a distinctive experience or a deeper dive into Latin dance."
+    },
+    image: "assets/images/latindance_full_logo.png",
+    imageAlt: {
+      ko: "홍턴 로고",
+      en: "Hong Turn logo"
+    },
+    links: [
+      { type: "facebook", url: "https://www.facebook.com/people/Hong-Turn/100008483355636/" }
+    ]
+  },
+  {
     id: "seoul-felizclub",
-  name: { ko: "펠리스", en: "Feliz" },
+    name: { ko: "펠리스", en: "Feliz" },
     region: { ko: "서울", en: "Seoul" },
     city: { ko: "서울 마포구", en: "Mapo-gu" },
     address: {
@@ -135,7 +210,7 @@ const VENUES = [
       ko: "대구광역시 중구 삼덕동1가 13-2 3층 아수라장",
       en: "3F, Asura Lounge, 13-2 Samdeok-dong 1-ga, Jung-gu, Daegu"
     },
-  styles: ["salsa", "bachata"],
+    styles: ["salsa", "bachata"],
     summary: {
       ko: "살사와 바차타를 사랑하는 사람들이 모여 화요일 무료 풋워크 워크샵과 활기찬 정모를 즐기고, 스튜디오에서 정이 넘치는 커뮤니티를 만들어 가는 동호회입니다.",
       en: "Vibrant group of salsa and bachata lovers offering free Tuesday footwork workshops, lively weekly meetups, and a warm community that gathers at the Asurajang studio."
