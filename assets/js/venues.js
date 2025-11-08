@@ -115,7 +115,7 @@ const VENUES = [
       ko: "하나의 특정 바에 고정되기보다는 홍대 일대 여러 바를 오가며 활동하는 지역 연합 동호회로, '초보자들의 성지'라 불릴 만큼 신규 회원 유입이 활발한 살사의 시작점입니다.",
       en: "Hongdae-based collective that rotates between multiple venues rather than one fixed bar, widely known as the 'sanctuary for beginners' where newcomers flock to start their salsa journey."
     },
-  image: "assets/images/hongturn.png",
+    image: "assets/images/hongturn.png",
     imageAlt: {
       ko: "SA 살사 댄스 클럽 로고",
       en: "SA Salsa Dance Club logo"
@@ -143,7 +143,7 @@ const VENUES = [
       ko: "라틴 문화를 사랑하는 사람들이 모여 언어와 춤을 배우고 문화를 체험하는 라틴 컬쳐 커뮤니티입니다.",
       en: "Latin culture community where enthusiasts gather to learn language, dance, and immerse themselves in Latin cultural experiences."
     },
-  image: "assets/images/hongturn.png",
+    image: "assets/images/hongturn.png",
     imageAlt: {
       ko: "부에나 로고",
       en: "Buena logo"
@@ -167,7 +167,7 @@ const VENUES = [
       ko: "홍대에서 몇 안 되는 라틴 전문 클럽 중 하나로, 이색적인 경험이나 라틴 댄스에 관심 있는 사람들에게 인기 있는 라틴 클럽입니다.",
       en: "One of the few dedicated Latin clubs in Hongdae, popular with visitors seeking a distinctive experience or a deeper dive into Latin dance."
     },
-  image: "assets/images/hongturn.png",
+    image: "assets/images/hongturn.png",
     imageAlt: {
       ko: "홍턴 로고",
       en: "Hong Turn logo"
