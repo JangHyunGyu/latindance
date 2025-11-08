@@ -177,6 +177,29 @@ const VENUES = [
     ]
   },
   {
+    id: "seoul-havana",
+    name: { ko: "하바나", en: "Havana" },
+    region: { ko: "서울", en: "Seoul" },
+    city: { ko: "서울 마포구", en: "Mapo-gu" },
+    address: {
+      ko: "서울특별시 마포구 서교동 어울마당로 53 B1",
+      en: "B1, 53 Eoulmadang-ro, Seogyo-dong, Mapo-gu, Seoul"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "20년이 넘는 역사를 지닌 정통 라틴 댄스 전문 클럽으로, 이국적인 분위기에서 살사와 바차타를 즐기고 배울 수 있는 곳입니다.",
+      en: "Authentic Latin dance club with over 20 years of history where you can learn and enjoy salsa and bachata in an exotic atmosphere."
+    },
+    image: "assets/images/latindance_full_logo.png",
+    imageAlt: {
+      ko: "하바나 로고",
+      en: "Havana logo"
+    },
+    links: [
+      { type: "instagram", url: "https://www.instagram.com/club_havana/" }
+    ]
+  },
+  {
     id: "seoul-felizclub",
     name: { ko: "펠리스", en: "Feliz" },
     region: { ko: "서울", en: "Seoul" },
