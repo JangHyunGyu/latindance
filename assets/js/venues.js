@@ -8,12 +8,12 @@ const VENUES = [
       ko: "서울특별시 강남구 테헤란로6길 9 B1, B2",
       en: "B1-B2, 9 Teheran-ro 6-gil, Gangnam-gu, Seoul"
     },
-  styles: ["bachata"],
+    styles: ["salsa", "bachata"],
     summary: {
       ko: "강남과 홍대 센터 간에 강습 교차 수강 시스템을 운영하여 회원들의 편의성을 높이고 살사, 바차타 등 라틴 댄스를 체계적으로 가르치고 활발한 소셜 모임을 주최하는 아카데미형 2030 직장인 동호회입니다.",
       en: "Academy-style community for working professionals in their 20s and 30s that offers cross-enrollment between its Gangnam and Hongdae centers, delivering structured salsa and bachata training alongside active social gatherings."
     },
-  image: "assets/images/ever_latin.png",
+    image: "assets/images/ever_latin.png",
     imageAlt: {
       ko: "에버라틴 로고",
       en: "Everlatin logo"
@@ -23,6 +23,29 @@ const VENUES = [
       { type: "youtube", url: "https://www.youtube.com/@korealatindancetv1260" },
       { type: "instagram", url: "https://www.instagram.com/clublatin_everlatin/" },
       { type: "cafe", url: "https://m.cafe.daum.net/kwbsht/" }
+    ]
+  },
+  {
+    id: "seoul-latinsoul",
+    name: { ko: "라틴소울", en: "Latin Soul" },
+    region: { ko: "서울", en: "Seoul" },
+    city: { ko: "서울 마포구", en: "Mapo-gu" },
+    address: {
+      ko: "서울특별시 마포구 동교로 191 지하 1층",
+      en: "B1, 191 Donggyo-ro, Mapo-gu, Seoul"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "춤에 대한 열정을 바탕으로 다양한 사람들이 모여 살사, 바차타 등 라틴 댄스를 배우고 즐기며 활발하게 교류하는 친목 모임입니다.",
+      en: "Community of passionate dancers who gather in Seoul to learn, enjoy, and connect through salsa, bachata, and other Latin dances."
+    },
+    image: "assets/images/latindance_full_logo.png",
+    imageAlt: {
+      ko: "라틴소울 로고",
+      en: "Latin Soul logo"
+    },
+    links: [
+      { type: "instagram", url: "https://www.instagram.com/latinsoul_salsa/" }
     ]
   },
   {
@@ -284,7 +307,7 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-  ko: "체계적인 직강과 활발한 2030 회원 커뮤니티를 통해 누구나 즐겁게 라틴 댄스를 배우고 친목을 다질 수 있는 전문 아카데미입니다.",
+      ko: "체계적인 직강과 활발한 2030 회원 커뮤니티를 통해 누구나 즐겁게 라틴 댄스를 배우고 친목을 다질 수 있는 전문 아카데미입니다.",
       en: "Professional academy led by dancer couple Sora and Dalkong, offering structured instruction and an energetic 20s/30s community so anyone can learn Latin dance while building friendships."
     },
     image: "assets/images/latin_cielo.png",
