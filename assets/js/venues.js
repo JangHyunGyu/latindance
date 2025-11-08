@@ -213,7 +213,7 @@ const VENUES = [
       ko: "한국 최초의 살사 클럽을 표방하며, 다양한 라틴 댄스를 즐길 수 있는 깔끔하고 분위기 좋은 전문 라틴 댄스 바입니다.",
       en: "Self-described as Korea's first salsa club, this polished Latin dance bar offers a welcoming atmosphere for enjoying a wide range of Latin dances."
     },
-    image: "assets/images/latindance_full_logo.png",
+    image: "assets/images/macondo.png",
     imageAlt: {
       ko: "마콘도 로고",
       en: "Macondo logo"
