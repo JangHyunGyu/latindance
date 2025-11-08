@@ -224,6 +224,56 @@ const VENUES = [
     ]
   },
   {
+    id: "seoul-intothelatin",
+    name: { ko: "라틴속으로", en: "Into the Latin" },
+    region: { ko: "서울", en: "Seoul" },
+    city: { ko: "서울 마포구", en: "Mapo-gu" },
+    address: {
+      ko: "서울특별시 마포구 동교로 191",
+      en: "191 Donggyo-ro, Mapo-gu, Seoul"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "홍대를 중심으로 활발하게 운영되는, 오래된 역사와 체계적인 강습을 바탕으로 살사, 바차타 등의 라틴 댄스를 즐기는 대표적인 직장인/성인 취미 동호회입니다.",
+      en: "Long-running Hongdae-based hobby circle for working adults, offering structured lessons and vibrant socials for enjoying salsa, bachata, and more."
+    },
+    image: "assets/images/latindance_full_logo.png",
+    imageAlt: {
+      ko: "라틴속으로 로고",
+      en: "Into the Latin logo"
+    },
+    links: [
+      { type: "cafe", url: "https://m.cafe.daum.net/intothesalsa" },
+      { type: "instagram", url: "https://www.instagram.com/intothelatinittl/" },
+      { type: "instagram", url: "https://www.instagram.com/into_the_latin/" },
+      { type: "threads", url: "https://www.threads.com/@intothelatinittl?hl=ko" }
+    ]
+  },
+  {
+    id: "seoul-sulcorazon",
+    name: { ko: "술꼬라손", en: "Sul Corazon" },
+    region: { ko: "서울", en: "Seoul" },
+    city: { ko: "서울", en: "Seoul" },
+    address: {
+      ko: "서울특별시",
+      en: "Seoul"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "'꼬라손'은 라틴 문화에서 '심장' 또는 '마음'을 뜻하며, 바차타를 중심으로 서울 지역에서 활동하는 라틴댄스 팀이자 동호회입니다.",
+      en: "Named after the Spanish word for heart, Sul Corazon is a Seoul-based Latin dance team and community centered on bachata while sharing broader Latin culture."
+    },
+    image: "assets/images/latindance_full_logo.png",
+    imageAlt: {
+      ko: "술꼬라손 로고",
+      en: "Sul Corazon logo"
+    },
+    links: [
+      { type: "instagram", url: "https://www.instagram.com/sulcorazon_/" },
+      { type: "youtube", url: "https://www.youtube.com/@sulcorazon" }
+    ]
+  },
+  {
     id: "seoul-felizclub",
     name: { ko: "펠리스", en: "Feliz" },
     region: { ko: "서울", en: "Seoul" },
