@@ -284,7 +284,7 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-  ko: "'소라 & 달콩' 팀의 체계적인 직강과 활발한 2030 회원 커뮤니티를 통해 누구나 즐겁게 라틴 댄스를 배우고 친목을 다질 수 있는 전문 아카데미입니다.",
+  ko: "체계적인 직강과 활발한 2030 회원 커뮤니티를 통해 누구나 즐겁게 라틴 댄스를 배우고 친목을 다질 수 있는 전문 아카데미입니다.",
       en: "Professional academy led by dancer couple Sora and Dalkong, offering structured instruction and an energetic 20s/30s community so anyone can learn Latin dance while building friendships."
     },
     image: "assets/images/latin_cielo.png",
