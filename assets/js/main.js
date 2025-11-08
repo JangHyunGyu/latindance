@@ -17,6 +17,7 @@ const STRINGS = {
       bachatajuke: "바차주크"
     },
     linkLabels: {
+      homepage: "공식 홈페이지",
       website: "당근모임",
       cafe: "네이버 카페",
       instagram: "인스타그램",
@@ -46,6 +47,7 @@ const STRINGS = {
       bachatajuke: "Bachata Zouk"
     },
     linkLabels: {
+      homepage: "Official Website",
       website: "Karrot Group",
       cafe: "Naver Cafe",
       instagram: "Instagram",

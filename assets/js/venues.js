@@ -10,16 +10,16 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "국내 최대 규모의 2030 직장인 살사·바차타 동호회로, 강남과 홍대에서 체계적인 강습과 활발한 소셜 활동을 제공하는 아카데미형 커뮤니티입니다.",
-      en: "Korea's largest salsa and bachata community for working professionals in their 20s and 30s, offering structured instruction and lively socials across Gangnam and Hongdae."
+      ko: "강남과 홍대 센터 간에 강습 교차 수강 시스템을 운영하여 회원들의 편의성을 높이고 살사, 바차타 등 라틴 댄스를 체계적으로 가르치고 활발한 소셜 모임을 주최하는 아카데미형 2030 직장인 동호회입니다.",
+      en: "Academy-style community for working professionals in their 20s and 30s that offers cross-enrollment between its Gangnam and Hongdae centers, delivering structured salsa and bachata training alongside active social gatherings."
     },
-    image: "assets/images/latindance_full_logo.png",
+  image: "assets/images/ever_latin.png",
     imageAlt: {
       ko: "에버라틴 로고",
       en: "Everlatin logo"
     },
     links: [
-      { type: "website", url: "https://everlatin.com/" },
+      { type: "homepage", url: "https://everlatin.com/" },
       { type: "youtube", url: "https://www.youtube.com/@korealatindancetv1260" },
       { type: "instagram", url: "https://www.instagram.com/clublatin_everlatin/" },
       { type: "cafe", url: "https://m.cafe.daum.net/kwbsht/" }
