@@ -102,6 +102,31 @@ const VENUES = [
     ]
   },
   {
+    id: "seoul-felizclub",
+    name: { ko: "펠리스클럽", en: "Feliz Club" },
+    region: { ko: "서울", en: "Seoul" },
+    city: { ko: "서울 마포구", en: "Mapo-gu" },
+    address: {
+      ko: "서울특별시 마포구 월드컵북로2길 57 지하 1층",
+      en: "B1, 57 World Cup buk-ro 2-gil, Mapo-gu, Seoul"
+    },
+    styles: ["salsa", "bachata", "kizomba"],
+    summary: {
+      ko: "라틴 댄스를 배우고 즐길 수 있는 홍대의 대표적인 사교 클럽이자 종종 K-라틴 라이브 밴드 공연이나 특별한 댄스 이벤트가 열리기도 합니다.",
+      en: "Signature Hongdae social club for learning and enjoying Latin dance, known for hosting K-Latin live band shows and special dance events."
+    },
+    image: "assets/images/feliz.png",
+    imageAlt: {
+      ko: "펠리스클럽 로고",
+      en: "Feliz Club logo"
+    },
+    links: [
+      { type: "youtube", url: "https://www.youtube.com/@Felizclub" },
+      { type: "instagram", url: "https://www.instagram.com/felizclub0701/" },
+      { type: "cafe", url: "https://cafe.naver.com/felizclub" }
+    ]
+  },
+  {
     id: "daegu-asura",
     name: { ko: "라틴 아수라", en: "Latin Asura Daegu" },
     region: { ko: "대구", en: "Daegu" },
