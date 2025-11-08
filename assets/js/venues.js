@@ -52,6 +52,55 @@ const VENUES = [
     ]
   },
   {
+    id: "seoul-sda",
+    name: { ko: "SDA 살사댄스아카데미", en: "Salsa Dance Academy (SDA)" },
+    region: { ko: "서울", en: "Seoul" },
+    city: { ko: "서울 마포구", en: "Mapo-gu" },
+    address: {
+      ko: "서울특별시 마포구 동교동 199-1 현우빌딩",
+      en: "Hyunwoo Building, 199-1 Donggyo-dong, Mapo-gu, Seoul"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "홍대 인근에서 살사·바차타를 전문적으로 지도하며 정기 소셜과 워크숍을 운영하는 아카데미형 라틴 댄스 스튜디오입니다.",
+      en: "Academy-style Latin dance studio near Hongdae that offers structured salsa and bachata training alongside regular socials and workshops."
+    },
+    image: "assets/images/latindance_full_logo.png",
+    imageAlt: {
+      ko: "SDA 살사댄스아카데미 로고",
+      en: "SDA Salsa Dance Academy logo"
+    },
+    links: [
+      { type: "instagram", url: "https://www.instagram.com/salsadanceacademy.sda/" },
+      { type: "cafe", url: "https://m.cafe.daum.net/sdamu" },
+      { type: "facebook", url: "https://www.facebook.com/salsadanceacademy" }
+    ]
+  },
+  {
+    id: "seoul-bonita",
+    name: { ko: "라틴클럽 보니따", en: "Latin Club Bonita" },
+    region: { ko: "서울", en: "Seoul" },
+    city: { ko: "서울 마포구", en: "Mapo-gu" },
+    address: {
+      ko: "서울특별시 마포구 동교로 191",
+      en: "191 Donggyo-ro, Mapo-gu, Seoul"
+    },
+    styles: ["salsa", "bachata", "kizomba"],
+    summary: {
+      ko: "1999년부터 365일 매일 밤 살사, 바차타 등 다채로운 라틴 댄스 파티와 강습이 끊이지 않는 라틴 댄스의 성지이자 활기찬 소셜 클럽입니다.",
+      en: "Since 1999, a legendary Latin dance hotspot hosting nightly salsa, bachata, and more with non-stop parties and lessons in a vibrant social club setting."
+    },
+    image: "assets/images/latindance_full_logo.png",
+    imageAlt: {
+      ko: "라틴클럽 보니따 로고",
+      en: "Latin Club Bonita logo"
+    },
+    links: [
+      { type: "instagram", url: "https://www.instagram.com/jessica_latinclub_bonita/" },
+      { type: "facebook", url: "https://www.facebook.com/clubbonitaseoul" }
+    ]
+  },
+  {
     id: "daegu-asura",
     name: { ko: "라틴 아수라", en: "Latin Asura Daegu" },
     region: { ko: "대구", en: "Daegu" },
