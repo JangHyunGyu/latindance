@@ -62,8 +62,8 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "홍대 인근에서 살사·바차타를 전문적으로 지도하며 정기 소셜과 워크숍을 운영하는 아카데미형 라틴 댄스 스튜디오입니다.",
-      en: "Academy-style Latin dance studio near Hongdae that offers structured salsa and bachata training alongside regular socials and workshops."
+      ko: "20년 이상의 전통을 가진 홍대 기반의 살사댄스 동호회로, 개인의 이익보다 회원들의 즐거운 친목 활동에 중점을 두고 운영하는 것이 특징입니다.",
+      en: "Hongdae-based salsa community with over 20 years of history, prioritizing members' enjoyment and camaraderie over individual gain."
     },
     image: "assets/images/sda.png",
     imageAlt: {
