@@ -115,7 +115,7 @@ const VENUES = [
       ko: "하나의 특정 바에 고정되기보다는 홍대 일대 여러 바를 오가며 활동하는 지역 연합 동호회로, '초보자들의 성지'라 불릴 만큼 신규 회원 유입이 활발한 살사의 시작점입니다.",
       en: "Hongdae-based collective that rotates between multiple venues rather than one fixed bar, widely known as the 'sanctuary for beginners' where newcomers flock to start their salsa journey."
     },
-    image: "assets/images/latindance_full_logo.png",
+  image: "assets/images/hongturn.png",
     imageAlt: {
       ko: "SA 살사 댄스 클럽 로고",
       en: "SA Salsa Dance Club logo"
