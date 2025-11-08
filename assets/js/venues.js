@@ -115,7 +115,7 @@ const VENUES = [
       ko: "하나의 특정 바에 고정되기보다는 홍대 일대 여러 바를 오가며 활동하는 지역 연합 동호회로, '초보자들의 성지'라 불릴 만큼 신규 회원 유입이 활발한 살사의 시작점입니다.",
       en: "Hongdae-based collective that rotates between multiple venues rather than one fixed bar, widely known as the 'sanctuary for beginners' where newcomers flock to start their salsa journey."
     },
-    image: "assets/images/hongturn.png",
+  image: "assets/images/sa.png",
     imageAlt: {
       ko: "SA 살사 댄스 클럽 로고",
       en: "SA Salsa Dance Club logo"
@@ -190,7 +190,7 @@ const VENUES = [
       ko: "20년이 넘는 역사를 지닌 정통 라틴 댄스 전문 클럽으로, 이국적인 분위기에서 살사와 바차타를 즐기고 배울 수 있는 곳입니다.",
       en: "Authentic Latin dance club with over 20 years of history where you can learn and enjoy salsa and bachata in an exotic atmosphere."
     },
-    image: "assets/images/latindance_full_logo.png",
+    image: "assets/images/havana.png",
     imageAlt: {
       ko: "하바나 로고",
       en: "Havana logo"
@@ -237,7 +237,7 @@ const VENUES = [
       ko: "홍대를 중심으로 활발하게 운영되는, 오래된 역사와 체계적인 강습을 바탕으로 살사, 바차타 등의 라틴 댄스를 즐기는 대표적인 직장인/성인 취미 동호회입니다.",
       en: "Long-running Hongdae-based hobby circle for working adults, offering structured lessons and vibrant socials for enjoying salsa, bachata, and more."
     },
-    image: "assets/images/latindance_full_logo.png",
+    image: "assets/images/latin_into.png",
     imageAlt: {
       ko: "라틴속으로 로고",
       en: "Into the Latin logo"
@@ -260,10 +260,10 @@ const VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "'꼬라손'은 라틴 문화에서 '심장' 또는 '마음'을 뜻하며, 바차타를 중심으로 서울 지역에서 활동하는 라틴댄스 팀이자 동호회입니다.",
+      ko: "'꼬라손'은 라틴 문화에서 '심장' 또는 '마음'을 뜻하며, 바차타를 중심으로 서울 지역에서 활동하는 라틴댄스 동호회입니다.",
       en: "Named after the Spanish word for heart, Sul Corazon is a Seoul-based Latin dance team and community centered on bachata while sharing broader Latin culture."
     },
-    image: "assets/images/latindance_full_logo.png",
+    image: "assets/images/sulcorazon.png",
     imageAlt: {
       ko: "술꼬라손 로고",
       en: "Sul Corazon logo"
