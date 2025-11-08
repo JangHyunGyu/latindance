@@ -1,5 +1,31 @@
 const VENUES = [
   {
+    id: "seoul-everlatin",
+    name: { ko: "에버라틴", en: "Everlatin" },
+    region: { ko: "서울", en: "Seoul" },
+    city: { ko: "서울 강남구", en: "Gangnam-gu" },
+    address: {
+      ko: "서울특별시 강남구 테헤란로6길 9 B1, B2",
+      en: "B1-B2, 9 Teheran-ro 6-gil, Gangnam-gu, Seoul"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "국내 최대 규모의 2030 직장인 살사·바차타 동호회로, 강남과 홍대에서 체계적인 강습과 활발한 소셜 활동을 제공하는 아카데미형 커뮤니티입니다.",
+      en: "Korea's largest salsa and bachata community for working professionals in their 20s and 30s, offering structured instruction and lively socials across Gangnam and Hongdae."
+    },
+    image: "assets/images/latindance_full_logo.png",
+    imageAlt: {
+      ko: "에버라틴 로고",
+      en: "Everlatin logo"
+    },
+    links: [
+      { type: "website", url: "https://everlatin.com/" },
+      { type: "youtube", url: "https://www.youtube.com/@korealatindancetv1260" },
+      { type: "instagram", url: "https://www.instagram.com/clublatin_everlatin/" },
+      { type: "cafe", url: "https://m.cafe.daum.net/kwbsht/" }
+    ]
+  },
+  {
     id: "daegu-asura",
     name: { ko: "라틴 아수라", en: "Latin Asura Daegu" },
     region: { ko: "대구", en: "Daegu" },
