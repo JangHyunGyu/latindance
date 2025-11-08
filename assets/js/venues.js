@@ -274,6 +274,33 @@ const VENUES = [
     ]
   },
   {
+    id: "seoul-narionbachata",
+    name: { ko: "나리온 바차타", en: "Narion Bachata" },
+    region: { ko: "서울", en: "Seoul" },
+    city: { ko: "서울 강남구", en: "Gangnam-gu" },
+    address: {
+      ko: "서울특별시 강남구",
+      en: "Gangnam-gu, Seoul"
+    },
+    styles: ["bachata"],
+    summary: {
+      ko: "한국 최초로 센슈얼 바차타를 도입하고 체계적으로 가르치기 시작한 아카데미입니다.",
+      en: "Academy credited with introducing sensual bachata to Korea and providing structured training from day one."
+    },
+    image: "assets/images/narion.png",
+    imageAlt: {
+      ko: "나리온 바차타 로고",
+      en: "Narion Bachata logo"
+    },
+    links: [
+      { type: "youtube", url: "https://www.youtube.com/@_narison3107" },
+      { type: "instagram", url: "https://www.instagram.com/nari_son_dancer/" },
+      { type: "homepage", url: "https://litt.ly/sensualbachata" },
+      { type: "linktree", url: "https://linktr.ee/Narionbachata" },
+      { type: "cafe", url: "https://cafe.daum.net/salsainacademy" }
+    ]
+  },
+  {
     id: "seoul-felizclub",
     name: { ko: "펠리스", en: "Feliz" },
     region: { ko: "서울", en: "Seoul" },
