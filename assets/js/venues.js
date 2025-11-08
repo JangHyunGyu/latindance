@@ -274,6 +274,32 @@ const VENUES = [
     ]
   },
   {
+    id: "seoul-latincielo",
+    name: { ko: "라틴씨엘로", en: "Latin Cielo" },
+    region: { ko: "서울", en: "Seoul" },
+    city: { ko: "서울", en: "Seoul" },
+    address: {
+      ko: "서울특별시",
+      en: "Seoul"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+  ko: "'소라 & 달콩' 팀의 체계적인 직강과 활발한 2030 회원 커뮤니티를 통해 누구나 즐겁게 라틴 댄스를 배우고 친목을 다질 수 있는 전문 아카데미입니다.",
+      en: "Professional academy led by dancer couple Sora and Dalkong, offering structured instruction and an energetic 20s/30s community so anyone can learn Latin dance while building friendships."
+    },
+    image: "assets/images/latin_cielo.png",
+    imageAlt: {
+      ko: "라틴씨엘로 로고",
+      en: "Latin Cielo logo"
+    },
+    links: [
+      { type: "homepage", url: "https://www.latincielo.com" },
+      { type: "youtube", url: "https://www.youtube.com/@latincielo" },
+      { type: "instagram", url: "https://www.instagram.com/latin_cielo/" },
+      { type: "cafe", url: "https://cafe.naver.com/latinblack" }
+    ]
+  },
+  {
     id: "seoul-narionbachata",
     name: { ko: "나리온 바차타", en: "Narion Bachata" },
     region: { ko: "서울", en: "Seoul" },
