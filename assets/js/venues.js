@@ -39,7 +39,7 @@ const VENUES = [
       ko: "춤에 대한 열정을 바탕으로 다양한 사람들이 모여 살사, 바차타 등 라틴 댄스를 배우고 즐기며 활발하게 교류하는 친목 모임입니다.",
       en: "Community of passionate dancers who gather in Seoul to learn, enjoy, and connect through salsa, bachata, and other Latin dances."
     },
-    image: "assets/images/latindance_full_logo.png",
+    image: "assets/images/latin_soul.png",
     imageAlt: {
       ko: "라틴소울 로고",
       en: "Latin Soul logo"
