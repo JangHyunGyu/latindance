@@ -85,7 +85,7 @@ const VENUES = [
       ko: "서울특별시 마포구 동교로 191",
       en: "191 Donggyo-ro, Mapo-gu, Seoul"
     },
-    styles: ["salsa", "bachata", "kizomba"],
+    styles: ["salsa", "bachata"],
     summary: {
       ko: "1999년부터 365일 매일 밤 살사, 바차타 등 다채로운 라틴 댄스 파티와 강습이 끊이지 않는 라틴 댄스의 성지이자 활기찬 소셜 클럽입니다.",
       en: "Since 1999, a legendary Latin dance hotspot hosting nightly salsa, bachata, and more with non-stop parties and lessons in a vibrant social club setting."
@@ -103,22 +103,22 @@ const VENUES = [
   },
   {
     id: "seoul-felizclub",
-    name: { ko: "펠리스클럽", en: "Feliz Club" },
+  name: { ko: "펠리스", en: "Feliz" },
     region: { ko: "서울", en: "Seoul" },
     city: { ko: "서울 마포구", en: "Mapo-gu" },
     address: {
       ko: "서울특별시 마포구 월드컵북로2길 57 지하 1층",
       en: "B1, 57 World Cup buk-ro 2-gil, Mapo-gu, Seoul"
     },
-    styles: ["salsa", "bachata", "kizomba"],
+    styles: ["salsa", "bachata"],
     summary: {
       ko: "라틴 댄스를 배우고 즐길 수 있는 홍대의 대표적인 사교 클럽이자 종종 K-라틴 라이브 밴드 공연이나 특별한 댄스 이벤트가 열리기도 합니다.",
       en: "Signature Hongdae social club for learning and enjoying Latin dance, known for hosting K-Latin live band shows and special dance events."
     },
     image: "assets/images/feliz.png",
     imageAlt: {
-      ko: "펠리스클럽 로고",
-      en: "Feliz Club logo"
+      ko: "펠리스 로고",
+      en: "Feliz logo"
     },
     links: [
       { type: "youtube", url: "https://www.youtube.com/@Felizclub" },
