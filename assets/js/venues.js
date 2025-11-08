@@ -90,7 +90,7 @@ const VENUES = [
       ko: "1999년부터 365일 매일 밤 살사, 바차타 등 다채로운 라틴 댄스 파티와 강습이 끊이지 않는 라틴 댄스의 성지이자 활기찬 소셜 클럽입니다.",
       en: "Since 1999, a legendary Latin dance hotspot hosting nightly salsa, bachata, and more with non-stop parties and lessons in a vibrant social club setting."
     },
-    image: "assets/images/latindance_full_logo.png",
+    image: "assets/images/club_bonita.png",
     imageAlt: {
       ko: "라틴클럽 보니따 로고",
       en: "Latin Club Bonita logo"
