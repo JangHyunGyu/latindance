@@ -26,6 +26,32 @@ const VENUES = [
     ]
   },
   {
+    id: "seoul-withlatin",
+    name: { ko: "위드라틴", en: "With Latin" },
+    region: { ko: "서울", en: "Seoul" },
+    city: { ko: "서울 강남구", en: "Gangnam-gu" },
+    address: {
+      ko: "서울특별시 강남구 강남대로84길 24-4 지하 1층",
+      en: "B1, 24-4 Gangnam-daero 84-gil, Gangnam-gu, Seoul"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "2040 직장인 중심의 라틴 댄스 동호회로 '전 세계에서 가장 쉬운 커리큘럼'을 표방하며, 춤을 처음 접하는 왕초보도 부담 없이 시작할 수 있도록 돕습니다.",
+      en: "Latin dance community for office workers in their 20s to 40s, promoting the 'easiest curriculum in the world' so absolute beginners can start salsa and bachata without pressure."
+    },
+    image: "assets/images/latindance_full_logo.png",
+    imageAlt: {
+      ko: "위드라틴 로고",
+      en: "With Latin logo"
+    },
+    links: [
+      { type: "youtube", url: "https://www.youtube.com/@withlatindance" },
+      { type: "instagram", url: "https://www.instagram.com/with_latin_bachata/" },
+      { type: "cafe", url: "https://m.cafe.naver.com/ilikemake/1168" },
+      { type: "band", url: "https://www.band.us/@withlatin" }
+    ]
+  },
+  {
     id: "daegu-asura",
     name: { ko: "라틴 아수라", en: "Latin Asura Daegu" },
     region: { ko: "대구", en: "Daegu" },
