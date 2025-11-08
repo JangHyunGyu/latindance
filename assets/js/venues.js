@@ -143,7 +143,7 @@ const VENUES = [
       ko: "라틴 문화를 사랑하는 사람들이 모여 언어와 춤을 배우고 문화를 체험하는 라틴 컬쳐 커뮤니티입니다.",
       en: "Latin culture community where enthusiasts gather to learn language, dance, and immerse themselves in Latin cultural experiences."
     },
-    image: "assets/images/latindance_full_logo.png",
+  image: "assets/images/hongturn.png",
     imageAlt: {
       ko: "부에나 로고",
       en: "Buena logo"
