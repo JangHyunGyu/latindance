@@ -99,6 +99,30 @@ const SEOUL_VENUES = [
     ]
   },
   {
+    id: "seoul-turn",
+    name: { ko: "턴", en: "Turn" },
+    region: { ko: "서울", en: "Seoul" },
+    city: { ko: "서울 강남구", en: "Gangnam-gu" },
+    address: {
+      ko: "서울특별시 강남구 역삼로3길 17 삼영빌딩 B1",
+      en: "B1, Samyoung Building, 17 Yeoksam-ro 3-gil, Gangnam-gu, Seoul"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "2005년부터 운영된 강남턴으로도 알려진 라틴 클럽으로, 살사와 바차타의 성지라 불리며 실력 있는 댄서들이 모이는 곳입니다.",
+      en: "Opened in 2005 and also known as Gangnam Turn, this Latin club is revered as a hub for salsa and bachata where advanced dancers gather."
+    },
+    image: "assets/images/turn.png",
+    imageAlt: {
+      ko: "턴 라틴 클럽 로고",
+      en: "Turn Latin Club logo"
+    },
+    links: [
+      { type: "cafe", url: "https://cafe.daum.net/turnsalsa" },
+      { type: "instagram", url: "https://www.instagram.com/turn_latinclub_no.1/" }
+    ]
+  },
+  {
     id: "seoul-sda",
     name: { ko: "SDA 살사댄스아카데미", en: "Salsa Dance Academy (SDA)" },
     region: { ko: "서울", en: "Seoul" },
