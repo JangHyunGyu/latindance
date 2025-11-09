@@ -360,8 +360,8 @@ const SEOUL_VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "10,000명 이상의 초보자를 양성한 살사·바차타 전문 SK댄스아카데미는 체계적인 커리큘럼과 활발한 커뮤니티로 차별화된 댄스 문화를 선도합니다.",
-      en: "SK Dance Academy has trained over 10,000 beginners in salsa and bachata, leading a distinctive dance culture with its structured curriculum and vibrant community."
+      ko: "많은 수의 초보자를 양성한 살사·바차타 전문 SK댄스아카데미는 체계적인 커리큘럼과 활발한 커뮤니티로 차별화된 댄스 문화를 선도합니다.",
+      en: "SK Dance Academy has trained numerous beginners in salsa and bachata, leading a distinctive dance culture with its structured curriculum and vibrant community."
     },
     image: "assets/images/sk_academy.png",
     imageAlt: {
