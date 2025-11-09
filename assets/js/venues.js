@@ -1162,7 +1162,7 @@ const VENUES = [
   },
   {
     id: "ulsan-kizomba",
-  name: { ko: "울산키좀바", en: "Ulsan Kizomba" },
+    name: { ko: "울산키좀바", en: "Ulsan Kizomba" },
     region: { ko: "울산", en: "Ulsan" },
     city: { ko: "울산 남구", en: "Nam-gu, Ulsan" },
     address: {
@@ -1212,7 +1212,7 @@ const VENUES = [
   },
   {
     id: "ulsan-sabor",
-  name: { ko: "사보르", en: "Ulsan Sabor" },
+    name: { ko: "사보르", en: "Ulsan Sabor" },
     region: { ko: "울산", en: "Ulsan" },
     city: { ko: "울산 남구", en: "Nam-gu, Ulsan" },
     address: {
