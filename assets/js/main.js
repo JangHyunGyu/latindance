@@ -190,7 +190,7 @@ const resolveLinkLabel = (descriptor) => {
 
 const createLink = (descriptor, options = {}) => {
   const link = document.createElement("a");
-  const variant = options.variant === "chip" ? "chip" : "default";
+  const variant = options.variant === "default" ? "default" : "chip";
   link.className = "venue-card__link";
   if (variant === "chip") {
     link.classList.add("venue-card__link--chip");
@@ -285,7 +285,7 @@ const renderVenues = (venues) => {
     if (Array.isArray(venue.links) && venue.links.length) {
       const links = document.createElement("div");
       links.className = "venue-card__links";
-      const linkVariant = venue.linkDisplay === "chips" ? "chip" : "default";
+      const linkVariant = venue.linkDisplay === "buttons" ? "default" : "chip";
       if (linkVariant === "chip") {
         links.classList.add("venue-card__links--chips");
       }
