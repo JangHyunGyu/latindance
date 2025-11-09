@@ -32,6 +32,7 @@ const STRINGS = {
   threads: "Threads",
   linktree: "Linktree"
     },
+    mapInlineLink: "지도 보기",
     scrollTopLabel: "맨 위로",
     scrollTopTitle: "맨 위로 이동"
   },
@@ -65,6 +66,7 @@ const STRINGS = {
   threads: "Threads",
   linktree: "Linktree"
     },
+    mapInlineLink: "View map",
     scrollTopLabel: "Back to top",
     scrollTopTitle: "Scroll back to top"
   }
@@ -549,6 +551,17 @@ const renderVenues = (venues) => {
       meta.textContent = `${cityLabel}\n${addressLabel}`;
     } else {
       meta.textContent = cityLabel || addressLabel || "";
+    }
+    const hasFullAddress = typeof addressLabel === "string" && /\d/.test(addressLabel);
+    if (hasFullAddress) {
+      const mapLink = document.createElement("a");
+      mapLink.className = "venue-card__map-link";
+      mapLink.href = `https://map.kakao.com/?q=${encodeURIComponent(addressLabel)}`;
+      mapLink.target = "_blank";
+      mapLink.rel = "noopener";
+      mapLink.textContent = STRINGS.mapInlineLink;
+      meta.appendChild(document.createElement("br"));
+      meta.appendChild(mapLink);
     }
 
     const summary = document.createElement("p");
