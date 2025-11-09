@@ -123,6 +123,30 @@ const SEOUL_VENUES = [
     ]
   },
   {
+    id: "seoul-bachazouk",
+    name: { ko: "바차주크코리아", en: "Bachazouk Korea" },
+    region: { ko: "서울", en: "Seoul" },
+    city: { ko: "서울 강남구", en: "Gangnam-gu" },
+    address: {
+      ko: "서울특별시 강남구 테헤란로14길 29",
+      en: "29 Teheran-ro 14-gil, Gangnam-gu, Seoul"
+    },
+    styles: ["bachata", "zouk"],
+    summary: {
+      ko: "바차타와 주크를 전문적으로 가르치고 보급하며 활발한 소셜댄스 문화와 커뮤니티 활동으로 두 장르의 매력을 전파하는 단체입니다.",
+      en: "Group dedicated to teaching and promoting bachata and zouk while spreading both styles through vibrant social dance culture and community events."
+    },
+    image: "assets/images/bachazouk_korea.png",
+    imageAlt: {
+      ko: "바차주크코리아 로고",
+      en: "Bachazouk Korea logo"
+    },
+    links: [
+      { type: "youtube", url: "https://www.youtube.com/@soochata" },
+      { type: "instagram", url: "https://www.instagram.com/bachazouk_korea/" }
+    ]
+  },
+  {
     id: "seoul-sda",
     name: { ko: "SDA 살사댄스아카데미", en: "Salsa Dance Academy (SDA)" },
     region: { ko: "서울", en: "Seoul" },
