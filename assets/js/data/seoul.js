@@ -148,6 +148,30 @@ const SEOUL_VENUES = [
     ]
   },
   {
+    id: "seoul-lastdance",
+    name: { ko: "라스트댄스", en: "Last Dance" },
+    region: { ko: "서울", en: "Seoul" },
+    city: { ko: "서울 마포구", en: "Mapo-gu" },
+    address: {
+      ko: "서울특별시 마포구",
+      en: "Mapo-gu, Seoul"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "20~39세 회원들로 구성된 젊은 연령층과 기수별 체계적인 커리큘럼, MT와 파티 등을 포함한 다양한 교류 활동을 통해 춤과 친목을 동시에 즐길 수 있는 동호회입니다.",
+      en: "Community for members aged 20 to 39 that combines cohort-based structured curricula with exchanges like retreats and parties, making it easy to enjoy both dancing and social bonding."
+    },
+    image: "assets/images/lastdance.png",
+    imageAlt: {
+      ko: "라스트댄스 로고",
+      en: "Last Dance logo"
+    },
+    links: [
+      { type: "cafe", url: "https://cafe.naver.com/lastdancepeople" },
+      { type: "instagram", url: "https://www.instagram.com/lastdance_people/" }
+    ]
+  },
+  {
     id: "seoul-bonita",
     name: { ko: "보니따", en: "Bonita" },
     region: { ko: "서울", en: "Seoul" },
