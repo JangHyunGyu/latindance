@@ -1,0 +1,232 @@
+const BUSAN_VENUES = [
+  {
+    id: "busan-lalala",
+    name: { ko: "라라라살사", en: "LaLaLa Salsa" },
+    region: { ko: "부산", en: "Busan" },
+    city: { ko: "부산 부산진구", en: "Busanjin-gu" },
+    address: {
+      ko: "부산광역시 부산진구 부전로20번길 5층",
+      en: "5F, Bujeon-ro 20beon-gil, Busanjin-gu, Busan"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "주중 여러 차례 정모를 열어 다양한 시간대에 춤을 즐길 수 있고, 친밀한 동호회 분위기와 중년 강습, 교류 파티까지 운영하는 부산 라틴 커뮤니티입니다.",
+      en: "Busan Latin community hosting multiple weekly meetups across Gwangalli and Seomyeon, fostering close-knit friendships, offering middle-aged salsa sessions, and arranging exchange socials."
+    },
+    image: "assets/images/lalala.png",
+    imageAlt: {
+      ko: "라라라살사 로고",
+      en: "LaLaLa Salsa logo"
+    },
+    links: [
+      { type: "band", url: "https://www.band.us/@051salsa" }
+    ]
+  },
+  {
+    id: "busan-rueda",
+    name: { ko: "루에다", en: "Rueda" },
+    region: { ko: "부산", en: "Busan" },
+    city: { ko: "부산 부산진구", en: "Busanjin-gu" },
+    address: {
+      ko: "부산광역시 부산진구 신천대로62번길 42 2층",
+      en: "2F, 42 Sincheon-daero 62beon-gil, Busanjin-gu, Busan"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "상시 연습 환경, 전문 강사진, 다양한 국적의 회원, 연습 후 뒷풀이, SNS 기반 활발한 소통으로 즐겁게 살사·바차타를 배우고 교류하는 커뮤니티입니다.",
+      en: "Busan Seomyeon community welcoming an international mix of dancers with easy access, a free one-month beginner course, daily practice space, veteran instructors, and active socials across band and Instagram."
+    },
+    image: "assets/images/rueda.png",
+    imageAlt: {
+      ko: "루에다 부산 로고",
+      en: "Rueda Busan logo"
+    },
+    links: [
+      { type: "instagram", url: "https://www.instagram.com/rueda_busan/" },
+      { type: "blog", url: "https://blog.naver.com/hyunayab" },
+      { type: "facebook", url: "https://www.facebook.com/azucarinrueda/" },
+      { type: "band", url: "https://www.band.us/@ruedaclub" },
+      { type: "youtube", url: "https://www.youtube.com/@busan_rueda" }
+    ]
+  },
+  {
+    id: "busan-zouk",
+    name: { ko: "부산 주크", en: "Zouk Busan" },
+    region: { ko: "부산", en: "Busan" },
+    city: { ko: "부산", en: "Busan" },
+    address: {
+      ko: "",
+      en: ""
+    },
+    styles: ["brazilianjuke"],
+    summary: {
+      ko: "부산에서 브라질리언 주크의 매력을 나누며 정기 수업과 소셜을 운영하는 커뮤니티입니다.",
+      en: "Busan community sharing the beauty of Brazilian Zouk through regular classes and social gatherings."
+    },
+    image: "assets/images/busan_zouk.png",
+    imageAlt: {
+      ko: "부산 주크 로고",
+      en: "Zouk Busan logo"
+    },
+    links: [
+      { type: "instagram", url: "https://www.instagram.com/zoukbusan/" },
+      { type: "cafe", url: "https://cafe.naver.com/bbzouk" },
+      { type: "facebook", url: "https://www.facebook.com/groups/1131029938076175/" },
+      { type: "band", url: "https://band.us/@busanzouk" }
+    ]
+  },
+  {
+    id: "busan-nobless",
+    name: { ko: "노블레스", en: "Nobless" },
+    region: { ko: "부산", en: "Busan" },
+    city: { ko: "부산 부산진구", en: "Busanjin-gu" },
+    address: {
+      ko: "부산광역시 부산진구 양지로5번길 8 지하 1층",
+      en: "B1, 8 Yangji-ro 5beon-gil, Busanjin-gu, Busan"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "4050 세대를 위한 라틴댄스 동호회로 월요일마다 정기 모임을 열고, 살사·메렝게·바차타 강습과 와인·뷔페 파티 같은 사교 이벤트를 즐길 수 있는 커뮤니티입니다.",
+      en: "latin club for dancers in their 40s and 50s with Monday sessions, teaching salsa, merengue, and bachata alongside wine and buffet socials."
+    },
+    image: "assets/images/noblesse.png",
+    imageAlt: {
+      ko: "노블레스 부산 로고",
+      en: "Nobless Busan logo"
+    },
+    links: [
+      { type: "band", url: "https://www.band.us/@noblessbusan" }
+    ]
+  },
+  {
+    id: "busan-latino",
+    name: { ko: "라티노", en: "Latino" },
+    region: { ko: "부산", en: "Busan" },
+    city: { ko: "부산 부산진구", en: "Busanjin-gu" },
+    address: {
+      ko: "부산광역시 부산진구 양지로5번길 8 지하 1층",
+      en: "B1, 8 Yangji-ro 5beon-gil, Busanjin-gu, Busan"
+    },
+    styles: ["salsa", "bachata", "kizomba"],
+    summary: {
+      ko: "2001년부터 부산 살사의 메카로 자리 잡아 살사·바차타·키좀바 강습을 매일 열고, 초보자도 부담 없이 참여하는 활기찬 소셜과 정기 이벤트로 라틴 문화를 나누는 클럽입니다.",
+      en: "Founded in 2001 as the heart of Busan salsa, this club runs daily salsa, bachata, and kizomba classes, open socials for newcomers, and regular showcases that keep Latin culture thriving."
+    },
+    image: "assets/images/latino.png",
+    imageAlt: {
+      ko: "라티노 부산 로고",
+      en: "Latino Busan logo"
+    },
+    links: [
+      { type: "band", url: "https://www.band.us/band/8166230/post" },
+      { type: "instagram", url: "https://www.instagram.com/latino_salsa_club/" }
+    ]
+  },
+  {
+    id: "busan-salsafit",
+    name: { ko: "살사핏 댄스학원", en: "Salsafit Dance Academy" },
+    region: { ko: "부산", en: "Busan" },
+    city: { ko: "부산 부산진구", en: "Busanjin-gu" },
+    address: {
+      ko: "부산광역시 부산진구 신천대로 50번길 72",
+      en: "72 Sincheon-daero 50beon-gil, Busanjin-gu, Busan"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "체계적인 살사·바차타 커리큘럼과 피트니스 기반 트레이닝으로 기본기부터 소셜 응용까지 지도하고, 초보자도 환영하는 정규 수업을 운영하는 부산진구 라틴 댄스 학원입니다.",
+      en: "Busanjin-gu Latin dance academy pairing structured salsa and bachata curricula with fitness-inspired training, guiding students from fundamentals to social dancing while welcoming beginners year-round."
+    },
+    image: "assets/images/salsa_fit.png",
+    imageAlt: {
+      ko: "살사핏 로고",
+      en: "Salsafit logo"
+    },
+    links: [
+      { type: "instagram", url: "https://www.instagram.com/salsafitkorea/" },
+      { type: "blog", url: "https://blog.naver.com/salsafit" },
+      { type: "youtube", url: "https://www.youtube.com/@karinapark_korea" }
+    ]
+  },
+  {
+    id: "busan-lydance",
+    name: { ko: "LY댄스 스튜디오 부산", en: "LY Dance Studio Busan" },
+    region: { ko: "부산", en: "Busan" },
+    city: { ko: "부산 부산진구", en: "Busanjin-gu" },
+    address: {
+      ko: "부산광역시 부산진구 신천대로 108 지하 1층",
+      en: "B1, 108 Sincheon-daero, Busanjin-gu, Busan"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "부산진구 신천대로 인근에 자리한 라틴댄스 전문 스튜디오로, 네이버 카페·밴드와 인스타그램·유튜브 채널을 통해 소식을 공유하고 전문 강사진이 체계적인 살사·바차타 수업을 진행합니다.",
+      en: "Latin dance studio near Sincheon-daero in Busanjin-gu that shares updates via its Naver Cafe, Band, Instagram, and YouTube channels while its instructor team leads structured salsa and bachata programs."
+    },
+    image: "assets/images/ly_dance_studio.png",
+    imageAlt: {
+      ko: "LY댄스 스튜디오 부산 로고",
+      en: "LY Dance Studio Busan logo"
+    },
+    links: [
+      { type: "cafe", url: "https://cafe.naver.com/atsalsa" },
+      { type: "band", url: "https://www.band.us/@lydance" },
+      { type: "instagram", url: "https://www.instagram.com/largoysl_korea" },
+      { type: "youtube", url: "https://www.youtube.com/c/LargoTV" }
+    ]
+  },
+  {
+    id: "busan-mamboclub",
+    name: { ko: "맘보클럽", en: "Mambo Club Busan" },
+    region: { ko: "부산", en: "Busan" },
+    city: { ko: "부산 부산진구", en: "Busanjin-gu" },
+    address: {
+      ko: "부산광역시 부산진구 부전동 520-38",
+      en: "520-38 Bujeon-dong, Busanjin-gu, Busan"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "살사·바차타·키좀바 소셜과 워크숍을 주중에 열며, 초보자도 쉽게 어울릴 수 있는 친근한 분위기를 이어가는 부산 라틴 클럽입니다.",
+      en: "Busan Latin club hosting weeknight salsa, bachata, and kizomba socials and workshops, keeping the vibe friendly for newcomers."
+    },
+    image: "assets/images/mambo.png",
+    imageAlt: {
+      ko: "맘보클럽 로고",
+      en: "Mambo Club logo"
+    },
+    links: [
+      { type: "band", url: "https://www.band.us/@salsanight" }
+    ]
+  },
+  {
+    id: "busan-feeldance",
+    name: { ko: "필댄스 부산", en: "Feel Dance Busan" },
+    region: { ko: "부산", en: "Busan" },
+    city: { ko: "부산 부산진구", en: "Busanjin-gu" },
+    address: {
+      ko: "부산광역시 부산진구 부전로 95 이현빌딩 4층",
+      en: "4F, Ihyeon Building, 95 Bujeon-ro, Busanjin-gu, Busan"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "초보자도 부담 없이 살사·바차타를 배우고, 부산을 넘어 창원·대구 지부와도 연결되어 SNS로 활발히 소통하며 친목을 나누는 라틴 동호회입니다.",
+      en: "Latin social club for 20s and 30s across Busan, Changwon, and Daegu, welcoming absolute beginners to enjoy salsa and bachata, stay connected on social media, and build friendships through dance."
+    },
+    image: "assets/images/feeldance.png",
+    imageAlt: {
+      ko: "필댄스 로고",
+      en: "Feel Dance logo"
+    },
+    links: [
+      { type: "instagram", url: "https://www.instagram.com/feel_dance_korea/" },
+      { type: "cafe", url: "https://cafe.naver.com/fdsalsa" },
+      { type: "youtube", url: "https://www.youtube.com/@nanda_999" }
+    ]
+  }
+];
+
+if (typeof window !== "undefined") {
+  window.BUSAN_VENUES = BUSAN_VENUES;
+}
+
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = BUSAN_VENUES;
+}
