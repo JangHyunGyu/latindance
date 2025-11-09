@@ -101,7 +101,7 @@ const appendSvgChild = (svg, tag, attrs) => {
 const LINK_ICON_ALIASES = {
   instagramBachazouk: "instagram",
   homepage: "globe",
-  website: "globe",
+  website: "carrot",
   cafe: "cafe",
   band: "band",
   kakaotalk: "chat",
@@ -307,6 +307,31 @@ const LINK_ICON_FACTORIES = {
       y1: "19.5",
       x2: "14.5",
       y2: "19.5"
+    });
+  },
+  carrot: (svg) => {
+    appendSvgChild(svg, "path", {
+      d: "M9 6l2-2 2 2",
+      fill: "none"
+    });
+    appendSvgChild(svg, "path", {
+      d: "M12 4v3.5",
+      fill: "none"
+    });
+    const body = appendSvgChild(svg, "path", {
+      d: "M12 7.5c3.2 0 5 2.4 5 5.1 0 2.6-1.8 4.6-5 6.9-3.2-2.3-5-4.3-5-6.9 0-2.7 1.8-5.1 5-5.1z",
+      fill: "none"
+    });
+    body.setAttribute("stroke-linejoin", "round");
+    appendSvgChild(svg, "path", {
+      d: "M12 10.2c1.4 0 2.4 1 2.4 2.2 0 1.2-.9 2.1-2.4 3.1-1.5-1-2.4-1.9-2.4-3.1 0-1.2 1-2.2 2.4-2.2z",
+      fill: "none"
+    });
+    appendSvgChild(svg, "line", {
+      x1: "12",
+      y1: "13",
+      x2: "12",
+      y2: "17"
     });
   },
   default: (svg) => {
