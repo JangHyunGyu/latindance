@@ -22,8 +22,8 @@
   };
 
   var listName = isEnglish
-    ? 'Korea Latin Dance Venues Directory'
-    : '대한민국 라틴댄스 커뮤니티 디렉터리';
+  ? 'Korea Latin Dance Venues Directory'
+  : '대한민국 라틴댄스 커뮤니티 디렉터리';
 
   var countryName = isEnglish ? 'South Korea' : '대한민국';
 
@@ -108,10 +108,10 @@
       'mainEntity': [
         {
           '@type': 'Question',
-          'name': 'What does Latin Dance Hub provide?',
+          'name': 'What does Korea Latin Dance Hub provide?',
           'acceptedAnswer': {
             '@type': 'Answer',
-            'text': 'Latin Dance Hub curates official websites, social media links, and community channels for salsa, bachata, kizomba, and other Latin dance groups across South Korea.'
+            'text': 'Korea Latin Dance Hub curates official websites, social media links, and community channels for salsa, bachata, kizomba, and other Latin dance groups across South Korea.'
           }
         },
         {
