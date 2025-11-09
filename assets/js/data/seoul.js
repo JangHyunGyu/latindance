@@ -350,6 +350,32 @@ const SEOUL_VENUES = [
     ]
   },
   {
+    id: "seoul-skdanceacademy",
+    name: { ko: "SK댄스아카데미", en: "SK Dance Academy" },
+    region: { ko: "서울", en: "Seoul" },
+    city: { ko: "서울 마포구", en: "Mapo-gu, Seoul" },
+    address: {
+      ko: "서울특별시 마포구 와우산로29가길 13 2층",
+      en: "2F, 13 Wausan-ro 29ga-gil, Mapo-gu, Seoul"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "10,000명 이상의 초보자를 양성한 살사·바차타 전문 SK댄스아카데미는 체계적인 커리큘럼과 활발한 커뮤니티로 차별화된 댄스 문화를 선도합니다.",
+      en: "SK Dance Academy has trained over 10,000 beginners in salsa and bachata, leading a distinctive dance culture with its structured curriculum and vibrant community."
+    },
+    image: "assets/images/sk_academy.png",
+    imageAlt: {
+      ko: "SK댄스아카데미 로고",
+      en: "SK Dance Academy logo"
+    },
+    links: [
+      { type: "homepage", url: "http://sksalsa.com/" },
+      { type: "youtube", url: "https://www.youtube.com/@skdanceacademy" },
+      { type: "instagram", url: "https://www.instagram.com/skdance.academy/" },
+      { type: "blog", url: "https://blog.naver.com/new_salsa" }
+    ]
+  },
+  {
     id: "seoul-felizclub",
     name: { ko: "펠리스", en: "Feliz" },
     region: { ko: "서울", en: "Seoul" },
