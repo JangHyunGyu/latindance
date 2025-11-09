@@ -68,6 +68,47 @@ const STRINGS = {
   }
 }[LOCALE];
 
+const REGION_ORDER = {
+  ko: [
+    "서울",
+    "부산",
+    "대구",
+    "인천",
+    "광주",
+    "대전",
+    "울산",
+    "세종",
+    "경기",
+    "강원",
+    "충북",
+    "충남",
+    "전북",
+    "전남",
+    "경북",
+    "경남",
+    "제주"
+  ],
+  en: [
+    "Seoul",
+    "Busan",
+    "Daegu",
+    "Incheon",
+    "Gwangju",
+    "Daejeon",
+    "Ulsan",
+    "Sejong",
+    "Gyeonggi-do",
+    "Gangwon-do",
+    "Chungcheongbuk-do",
+    "Chungcheongnam-do",
+    "Jeollabuk-do",
+    "Jeollanam-do",
+    "Gyeongsangbuk-do",
+    "Gyeongsangnam-do",
+    "Jeju-do"
+  ]
+};
+
 // VENUES data is defined in assets/js/venues.js
 
 const regionSelect = document.querySelector("[data-filter-region]");
@@ -82,7 +123,25 @@ const populateRegions = () => {
   }
 
   const uniqueRegions = Array.from(new Set(VENUES.map((venue) => venue.region[LOCALE]))).sort(
-    (a, b) => a.localeCompare(b)
+    (a, b) => {
+      const order = REGION_ORDER[LOCALE] || [];
+      const indexA = order.indexOf(a);
+      const indexB = order.indexOf(b);
+
+      if (indexA === -1 && indexB === -1) {
+        return a.localeCompare(b);
+      }
+
+      if (indexA === -1) {
+        return 1;
+      }
+
+      if (indexB === -1) {
+        return -1;
+      }
+
+      return indexA - indexB;
+    }
   );
 
   const fragment = document.createDocumentFragment();
