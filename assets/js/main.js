@@ -11,7 +11,7 @@ const STRINGS = {
       salsa: "살사",
       bachata: "바차타",
   kizomba: "키좀바",
-      zouk: "줌바·주크",
+  zouk: "주크",
       linedance: "라인댄스",
       brazilianjuke: "브라질리언 주크",
       bachatajuke: "바차주크"
@@ -43,7 +43,7 @@ const STRINGS = {
       salsa: "Salsa",
       bachata: "Bachata",
       kizomba: "Kizomba",
-      zouk: "Zouk / Zumba",
+  zouk: "Zouk",
       linedance: "Line Dance",
       brazilianjuke: "Brazilian Zouk",
       bachatajuke: "Bachata Zouk"

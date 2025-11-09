@@ -131,7 +131,7 @@ const SEOUL_VENUES = [
       ko: "서울특별시 강남구 테헤란로14길 29",
       en: "29 Teheran-ro 14-gil, Gangnam-gu, Seoul"
     },
-    styles: ["bachata", "zouk"],
+  styles: ["bachatajuke"],
     summary: {
       ko: "바차타와 주크를 전문적으로 가르치고 보급하며 활발한 소셜댄스 문화와 커뮤니티 활동으로 두 장르의 매력을 전파하는 단체입니다.",
       en: "Group dedicated to teaching and promoting bachata and zouk while spreading both styles through vibrant social dance culture and community events."
@@ -155,7 +155,7 @@ const SEOUL_VENUES = [
       ko: "서울특별시 마포구",
       en: "Mapo-gu, Seoul"
     },
-    styles: ["zouk"],
+  styles: ["brazilianjuke"],
     summary: {
       ko: "2016년 한국 최초로 시작된 주크 전문 모임으로, 브라질리언 주크를 보급하고 활성화하기 위해 정기 강습과 소셜 파티를 열며 주크 문화의 중심 역할을 합니다.",
       en: "Founded in 2016 as Korea's first dedicated zouk community, it leads the promotion of Brazilian zouk through regular classes and social parties while anchoring the local zouk scene."
