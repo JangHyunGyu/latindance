@@ -72,6 +72,23 @@ const STRINGS = {
 
 const SVG_NS = "http://www.w3.org/2000/svg";
 
+const LINK_DISPLAY_ORDER = [
+  "homepage",
+  "website",
+  "map",
+  "youtube",
+  "instagram",
+  "instagramBachazouk",
+  "facebook",
+  "threads",
+  "blog",
+  "cafe",
+  "band",
+  "kakaotalk",
+  "linktree",
+  "store"
+];
+
 const appendSvgChild = (svg, tag, attrs) => {
   const node = document.createElementNS(SVG_NS, tag);
   Object.entries(attrs).forEach(([key, value]) => {
@@ -558,7 +575,21 @@ const renderVenues = (venues) => {
       if (linkVariant === "chip") {
         links.classList.add("venue-card__links--chips");
       }
-      venue.links.forEach((descriptor) => {
+      const sortedLinks = [...venue.links].sort((a, b) => {
+        const indexA = LINK_DISPLAY_ORDER.indexOf(a.type);
+        const indexB = LINK_DISPLAY_ORDER.indexOf(b.type);
+        if (indexA !== indexB) {
+          const safeIndexA = indexA === -1 ? Number.MAX_SAFE_INTEGER : indexA;
+          const safeIndexB = indexB === -1 ? Number.MAX_SAFE_INTEGER : indexB;
+          if (safeIndexA !== safeIndexB) {
+            return safeIndexA - safeIndexB;
+          }
+        }
+        const labelA = resolveLinkLabel(a).toLowerCase();
+        const labelB = resolveLinkLabel(b).toLowerCase();
+        return labelA.localeCompare(labelB, LOCALE === "ko" ? "ko-KR" : "en-US");
+      });
+      sortedLinks.forEach((descriptor) => {
         links.appendChild(createLink(descriptor, { variant: linkVariant }));
       });
       contentFragment.appendChild(links);
