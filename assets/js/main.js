@@ -33,11 +33,6 @@ const STRINGS = {
   linktree: "Linktree"
     },
     mapInlineLink: "지도 보기",
-    share: {
-      label: "공유하기",
-      success: "링크를 복사했어요.",
-      failure: "링크 복사에 실패했습니다. 직접 복사해 주세요."
-    },
     scrollTopLabel: "맨 위로",
     scrollTopTitle: "맨 위로 이동"
   },
@@ -72,11 +67,6 @@ const STRINGS = {
   linktree: "Linktree"
     },
     mapInlineLink: "View map",
-    share: {
-      label: "Share",
-      success: "Link copied to clipboard.",
-      failure: "Couldn't copy the link. Please copy it manually."
-    },
     scrollTopLabel: "Back to top",
     scrollTopTitle: "Scroll back to top"
   }
@@ -122,8 +112,7 @@ const LINK_ICON_ALIASES = {
   blog: "blog",
   map: "map",
   store: "bag",
-  linktree: "tree",
-  share: "share"
+  linktree: "tree"
 };
 
 const LINK_ICON_FACTORIES = {
@@ -347,20 +336,6 @@ const LINK_ICON_FACTORIES = {
       y2: "17"
     });
   },
-  share: (svg) => {
-    appendSvgChild(svg, "path", {
-      d: "M13 5l-2-2-2 2",
-      fill: "none"
-    });
-    appendSvgChild(svg, "path", {
-      d: "M11 3v10",
-      fill: "none"
-    });
-    appendSvgChild(svg, "path", {
-      d: "M7 11H6a3 3 0 00-3 3v3c0 1.1.9 2 2 2h10a2 2 0 002-2v-3a3 3 0 00-3-3h-1",
-      fill: "none"
-    });
-  },
   default: (svg) => {
     appendSvgChild(svg, "circle", {
       cx: "12",
@@ -555,89 +530,10 @@ const createLink = (descriptor, options = {}) => {
   return link;
 };
 
-const shareVenue = async (venue) => {
-  if (typeof window === "undefined") {
-    return;
-  }
-
-  const baseUrl = window.location.origin + window.location.pathname + window.location.search;
-  const shareUrl = `${baseUrl}#${venue.id}`;
-  const shareTitle = venue.name?.[LOCALE] || document.title || "";
-  const shareText = venue.summary?.[LOCALE] || "";
-
-  if (navigator.share) {
-    try {
-      await navigator.share({ title: shareTitle, text: shareText, url: shareUrl });
-      return;
-    } catch (error) {
-      if (error && error.name === "AbortError") {
-        return;
-      }
-    }
-  }
-
-  const copyToClipboard = async () => {
-    if (navigator.clipboard?.writeText) {
-      await navigator.clipboard.writeText(shareUrl);
-      window.alert(STRINGS.share.success);
-      return true;
-    }
-    return false;
-  };
-
-  try {
-    const copied = await copyToClipboard();
-    if (copied) {
-      return;
-    }
-  } catch (error) {
-    // Fallback below
-  }
-
-  try {
-    const textArea = document.createElement("textarea");
-    textArea.value = shareUrl;
-    textArea.setAttribute("readonly", "readonly");
-    textArea.style.position = "fixed";
-    textArea.style.opacity = "0";
-    document.body.appendChild(textArea);
-    textArea.select();
-    const successful = document.execCommand("copy");
-    document.body.removeChild(textArea);
-    window.alert(successful ? STRINGS.share.success : STRINGS.share.failure);
-  } catch (error) {
-    window.alert(STRINGS.share.failure);
-  }
-};
-
-const createShareButton = (venue, options = {}) => {
-  const button = document.createElement("button");
-  button.type = "button";
-  const variant = options.variant === "default" ? "default" : "chip";
-  button.className = "venue-card__link venue-card__share";
-  if (variant === "chip") {
-    button.classList.add("venue-card__link--chip", "venue-card__share--chip");
-  }
-  const iconNode = createLinkIcon("share");
-  if (iconNode) {
-    button.appendChild(iconNode);
-  }
-  const labelNode = document.createElement("span");
-  labelNode.className = "venue-card__link-label";
-  labelNode.textContent = STRINGS.share.label;
-  button.appendChild(labelNode);
-  button.addEventListener("click", () => {
-    shareVenue(venue);
-  });
-  return button;
-};
-
 const renderVenues = (venues) => {
   if (!resultsContainer) {
     return;
   }
-
-  resultsContainer.innerHTML = "";
 
   if (!venues.length) {
     const empty = document.createElement("p");
@@ -749,7 +645,6 @@ const renderVenues = (venues) => {
         links.appendChild(createLink(descriptor, { variant: linkVariant }));
       });
     }
-    links.appendChild(createShareButton(venue, { variant: linkVariant }));
     contentFragment.appendChild(links);
     card.appendChild(contentFragment);
     fragment.appendChild(card);
