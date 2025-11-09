@@ -68,46 +68,52 @@ const STRINGS = {
   }
 }[LOCALE];
 
-const REGION_ORDER = {
-  ko: [
-    "서울",
-    "부산",
-    "대구",
-    "인천",
-    "광주",
-    "대전",
-    "울산",
-    "세종",
-    "경기",
-    "강원",
-    "충북",
-    "충남",
-    "전북",
-    "전남",
-    "경북",
-    "경남",
-    "제주"
-  ],
-  en: [
-    "Seoul",
-    "Busan",
-    "Daegu",
-    "Incheon",
-    "Gwangju",
-    "Daejeon",
-    "Ulsan",
-    "Sejong",
-    "Gyeonggi-do",
-    "Gangwon-do",
-    "Chungcheongbuk-do",
-    "Chungcheongnam-do",
-    "Jeollabuk-do",
-    "Jeollanam-do",
-    "Gyeongsangbuk-do",
-    "Gyeongsangnam-do",
-    "Jeju-do"
-  ]
+const getGlobalObject = () => {
+  if (typeof globalThis !== "undefined") {
+    return globalThis;
+  }
+
+  if (typeof window !== "undefined") {
+    return window;
+  }
+
+  return this;
 };
+
+const globalObject = getGlobalObject();
+
+let REGION_ORDER = globalObject?.REGION_ORDER;
+if (typeof module !== "undefined" && module.exports && !REGION_ORDER) {
+  try {
+    REGION_ORDER = require("./constants").REGION_ORDER;
+  } catch (error) {
+    REGION_ORDER = undefined;
+  }
+}
+if (!REGION_ORDER) {
+  REGION_ORDER = { ko: [], en: [] };
+}
+
+let FilterUtils = globalObject?.FilterUtils;
+if (typeof module !== "undefined" && module.exports && !FilterUtils) {
+  try {
+    FilterUtils = require("./utils/filter-utils");
+  } catch (error) {
+    FilterUtils = undefined;
+  }
+}
+
+if (!FilterUtils) {
+  throw new Error("Filter utilities module is required for main.js.");
+}
+
+const {
+  normalizeRegionValue,
+  matchesFilters,
+  formatCount,
+  isCityRepeatedInAddress,
+  shuffleArray
+} = FilterUtils;
 
 // VENUES data is defined in assets/js/venues.js
 
@@ -161,56 +167,6 @@ const populateRegions = () => {
   }
 };
 
-const normalizeRegionValue = (value) => {
-  if (!value) {
-    return "all";
-  }
-
-  if (value === "all" || value === STRINGS.regionsAll) {
-    return "all";
-  }
-
-  return value;
-};
-
-const matchesFilters = (venue, { region, search }) => {
-  if (region && region !== "all" && venue.region[LOCALE] !== region) {
-    return false;
-  }
-
-  if (search) {
-    const target = [
-      venue.name[LOCALE],
-      venue.region[LOCALE],
-      venue.city[LOCALE],
-      venue.summary[LOCALE]
-    ]
-      .join(" ")
-      .toLowerCase();
-    if (!target.includes(search)) {
-      return false;
-    }
-  }
-
-  return true;
-};
-
-const formatCount = (count) => (count === 0 ? STRINGS.countEmpty : STRINGS.count(count));
-
-const isCityRepeatedInAddress = (cityLabel = "", addressLabel = "") => {
-  if (!cityLabel || !addressLabel) {
-    return false;
-  }
-
-  const tokens = cityLabel.split(/\s+/).filter(Boolean);
-  if (!tokens.length) {
-    return false;
-  }
-
-  const lowerAddress = addressLabel.toLowerCase();
-  return tokens.every((token) => lowerAddress.includes(token.toLowerCase()));
-};
-
 const createTag = (style) => {
   const tag = document.createElement("span");
   tag.className = "tag";
@@ -226,14 +182,6 @@ const createLink = (descriptor) => {
   link.rel = "noopener";
   link.textContent = STRINGS.linkLabels[descriptor.type] || descriptor.type;
   return link;
-};
-
-const shuffleArray = (items) => {
-  for (let i = items.length - 1; i > 0; i -= 1) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [items[i], items[j]] = [items[j], items[i]];
-  }
-  return items;
 };
 
 const renderVenues = (venues) => {
@@ -334,20 +282,24 @@ const renderVenues = (venues) => {
 };
 
 const applyFilters = () => {
-  const regionValue = normalizeRegionValue(regionSelect?.value || "all");
+  const regionValue = normalizeRegionValue(regionSelect?.value || "all", STRINGS.regionsAll);
   const searchValue = (searchInput?.value || "").trim().toLowerCase();
 
   const filtered = VENUES.filter((venue) =>
-    matchesFilters(venue, {
-      region: regionValue,
-      search: searchValue
-    })
+    matchesFilters(
+      venue,
+      {
+        region: regionValue,
+        search: searchValue
+      },
+      LOCALE
+    )
   );
 
   shuffleArray(filtered);
 
   if (countNode) {
-    countNode.textContent = formatCount(filtered.length);
+    countNode.textContent = formatCount(filtered.length, STRINGS);
   }
 
   renderVenues(filtered);
