@@ -155,7 +155,7 @@ const SEOUL_VENUES = [
       ko: "서울특별시 마포구",
       en: "Mapo-gu, Seoul"
     },
-  styles: ["brazilianjuke", "bachatajuke"],
+    styles: ["brazilianjuke", "bachatajuke"],
     summary: {
       ko: "2016년 한국 최초로 시작된 주크 전문 모임으로, 브라질리언 주크를 보급하고 활성화하기 위해 정기 강습과 소셜 파티를 열며 주크 문화의 중심 역할을 합니다.",
       en: "Founded in 2016 as Korea's first dedicated zouk community, it leads the promotion of Brazilian zouk through regular classes and social parties while anchoring the local zouk scene."
@@ -165,10 +165,25 @@ const SEOUL_VENUES = [
       ko: "주크서울 로고",
       en: "Zouk Seoul logo"
     },
+    linkDisplay: "chips",
     links: [
       { type: "cafe", url: "https://cafe.naver.com/zoukseoul" },
-      { type: "instagram", url: "https://www.instagram.com/zoukseoul/" },
-      { type: "instagramBachazouk", url: "https://www.instagram.com/bachazoukseoul/" },
+      {
+        type: "instagram",
+        url: "https://www.instagram.com/zoukseoul/",
+        label: {
+          ko: "인스타그램(공식)",
+          en: "Instagram (Official)"
+        }
+      },
+      {
+        type: "instagramBachazouk",
+        url: "https://www.instagram.com/bachazoukseoul/",
+        label: {
+          ko: "인스타그램(바차주크)",
+          en: "Instagram (Bachazouk)"
+        }
+      },
       { type: "blog", url: "https://m.blog.naver.com/zoukseoul" },
       { type: "facebook", url: "https://www.facebook.com/people/zoukseoul/100080266793226/" },
       { type: "youtube", url: "https://www.youtube.com/@ZoukSeoul" }

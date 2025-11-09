@@ -293,7 +293,13 @@ input:focus-visible {
   gap: 8px;
 }
 
+.venue-card__links--chips {
+  gap: 6px;
+}
+
 .venue-card__link {
+  display: inline-flex;
+  align-items: center;
   padding: 8px 12px;
   border-radius: var(--radius-sm);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -303,11 +309,25 @@ input:focus-visible {
   transition: background 160ms ease, color 160ms ease, border-color 160ms ease, transform 160ms ease;
 }
 
+.venue-card__link--chip {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  letter-spacing: 0.01em;
+}
+
 .venue-card__link:is(:hover, :focus-visible) {
   color: var(--color-text);
   border-color: var(--color-accent);
   background: var(--color-accent-soft);
   transform: translateY(-1px);
+}
+
+.venue-card__link--chip:is(:hover, :focus-visible) {
+  border-color: rgba(255, 124, 79, 0.55);
+  background: rgba(255, 124, 79, 0.22);
 }
 
 .venue-empty {

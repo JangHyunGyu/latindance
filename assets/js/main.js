@@ -176,13 +176,29 @@ const createTag = (style) => {
   return tag;
 };
 
-const createLink = (descriptor) => {
+const resolveLinkLabel = (descriptor) => {
+  if (descriptor.label) {
+    if (typeof descriptor.label === "string") {
+      return descriptor.label;
+    }
+    if (typeof descriptor.label === "object") {
+      return descriptor.label[LOCALE] || descriptor.label.en || descriptor.label.ko;
+    }
+  }
+  return STRINGS.linkLabels[descriptor.type] || descriptor.type;
+};
+
+const createLink = (descriptor, options = {}) => {
   const link = document.createElement("a");
+  const variant = options.variant === "chip" ? "chip" : "default";
   link.className = "venue-card__link";
+  if (variant === "chip") {
+    link.classList.add("venue-card__link--chip");
+  }
   link.href = descriptor.url;
   link.target = "_blank";
   link.rel = "noopener";
-  link.textContent = STRINGS.linkLabels[descriptor.type] || descriptor.type;
+  link.textContent = resolveLinkLabel(descriptor);
   return link;
 };
 
@@ -269,8 +285,12 @@ const renderVenues = (venues) => {
     if (Array.isArray(venue.links) && venue.links.length) {
       const links = document.createElement("div");
       links.className = "venue-card__links";
+      const linkVariant = venue.linkDisplay === "chips" ? "chip" : "default";
+      if (linkVariant === "chip") {
+        links.classList.add("venue-card__links--chips");
+      }
       venue.links.forEach((descriptor) => {
-        links.appendChild(createLink(descriptor));
+        links.appendChild(createLink(descriptor, { variant: linkVariant }));
       });
       contentFragment.appendChild(links);
       card.appendChild(contentFragment);
