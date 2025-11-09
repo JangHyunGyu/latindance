@@ -75,6 +75,30 @@ const SEOUL_VENUES = [
     ]
   },
   {
+    id: "seoul-latinparadise",
+    name: { ko: "라틴파라다이스", en: "Latin Paradise" },
+    region: { ko: "서울", en: "Seoul" },
+    city: { ko: "서울 강남구", en: "Gangnam-gu" },
+    address: {
+      ko: "서울특별시 강남구 역삼동 831-34 B1",
+      en: "B1, 831-34 Yeoksam-dong, Gangnam-gu, Seoul"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "강남 지역을 기반으로 활동하며 주로 강남역 인근의 제휴된 라틴 바나 연습실에서 정기 모임과 강습을 진행합니다.",
+      en: "Based in Gangnam, it hosts regular meetups and classes at partnered Latin bars and practice studios near Gangnam Station."
+    },
+    image: "assets/images/latin_paradise.png",
+    imageAlt: {
+      ko: "라틴파라다이스 로고",
+      en: "Latin Paradise logo"
+    },
+    links: [
+      { type: "cafe", url: "https://cafe.daum.net/LP" },
+      { type: "instagram", url: "https://www.instagram.com/latinparadise_lp/" }
+    ]
+  },
+  {
     id: "seoul-sda",
     name: { ko: "SDA 살사댄스아카데미", en: "Salsa Dance Academy (SDA)" },
     region: { ko: "서울", en: "Seoul" },
@@ -328,8 +352,8 @@ const SEOUL_VENUES = [
     region: { ko: "서울", en: "Seoul" },
     city: { ko: "서울 강남구", en: "Gangnam-gu" },
     address: {
-      ko: "서울특별시 강남구",
-      en: "Gangnam-gu, Seoul"
+      ko: "서울특별시 강남구 역삼동 640-18 4층",
+      en: "4F, 640-18 Yeoksam-dong, Gangnam-gu, Seoul"
     },
     styles: ["bachata"],
     summary: {
