@@ -510,7 +510,22 @@ const createLink = (descriptor, options = {}) => {
   }
   const labelNode = document.createElement("span");
   labelNode.className = "venue-card__link-label";
-  labelNode.textContent = resolveLinkLabel(descriptor);
+  const labelText = resolveLinkLabel(descriptor);
+  const suffixMatch = labelText.match(/^(.*?)(\s*\(.*\))$/);
+  if (suffixMatch && suffixMatch[2]) {
+    const prefix = suffixMatch[1]?.trimEnd() || "";
+    const suffix = suffixMatch[2].trim();
+    const suffixSpan = document.createElement("span");
+    suffixSpan.className = "venue-card__link-label-suffix";
+    suffixSpan.textContent = suffix;
+    if (prefix) {
+      labelNode.appendChild(document.createTextNode(prefix));
+      suffixSpan.classList.add("venue-card__link-label-suffix--spaced");
+    }
+    labelNode.appendChild(suffixSpan);
+  } else {
+    labelNode.textContent = labelText;
+  }
   link.appendChild(labelNode);
   return link;
 };

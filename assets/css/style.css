@@ -355,6 +355,24 @@ input:focus-visible {
   line-height: 1.1;
 }
 
+.venue-card__link-label-suffix {
+  display: inline;
+}
+
+.venue-card__link-label-suffix--spaced {
+  margin-left: 4px;
+}
+
+@media (max-width: 560px) {
+  .venue-card__link-label-suffix {
+    display: block;
+  }
+
+  .venue-card__link-label-suffix--spaced {
+    margin-left: 0;
+  }
+}
+
 .venue-card__link--chip {
   padding: 6px 14px;
   border-radius: 999px;
