@@ -1,34 +1,70 @@
 (function initializeFilterUtils(root) {
+  const toStringSafe = (value) => (value == null ? "" : String(value));
+
+  const normalizeRegionKey = (value) => toStringSafe(value).trim().toLowerCase();
+
+  const resolveRegionLabel = (regionData, locale) => {
+    if (!regionData) {
+      return "";
+    }
+
+    if (typeof regionData === "string") {
+      return regionData;
+    }
+
+    const directLocaleValue = regionData[locale];
+    if (directLocaleValue) {
+      return directLocaleValue;
+    }
+
+    const baseLocale = locale && locale.split("-")[0];
+    if (baseLocale && regionData[baseLocale]) {
+      return regionData[baseLocale];
+    }
+
+    return regionData.ko || regionData.en || "";
+  };
+
   const normalizeRegionValue = (value, regionsAllLabel) => {
-    if (!value) {
+    const normalizedLabel = normalizeRegionKey(regionsAllLabel);
+    const normalizedValue = normalizeRegionKey(value);
+
+    if (!normalizedValue) {
       return "all";
     }
 
-    if (value === "all" || value === regionsAllLabel) {
+    if (normalizedValue === "all" || (normalizedLabel && normalizedValue === normalizedLabel)) {
       return "all";
     }
 
-    return value;
+    return normalizedValue;
   };
 
   const matchesFilters = (venue, filters, locale) => {
-    const { region, search } = filters;
+    const normalizedRegionFilter = normalizeRegionKey(filters.region);
+    const searchValue = toStringSafe(filters.search).trim().toLowerCase();
 
-    if (region && region !== "all" && venue.region[locale] !== region) {
-      return false;
+    if (normalizedRegionFilter && normalizedRegionFilter !== "all") {
+      const venueRegion = resolveRegionLabel(venue.region, locale);
+      const normalizedVenueRegion = normalizeRegionKey(venueRegion);
+
+      if (!normalizedVenueRegion || normalizedVenueRegion !== normalizedRegionFilter) {
+        return false;
+      }
     }
 
-    if (search) {
-      const target = [
-        venue.name[locale],
-        venue.region[locale],
-        venue.city[locale],
-        venue.summary[locale]
+    if (searchValue) {
+      const searchTarget = [
+        venue.name?.[locale],
+        venue.region?.[locale],
+        venue.city?.[locale],
+        venue.summary?.[locale]
       ]
+        .filter(Boolean)
         .join(" ")
         .toLowerCase();
 
-      if (!target.includes(search)) {
+      if (!searchTarget.includes(searchValue)) {
         return false;
       }
     }
@@ -68,7 +104,9 @@
     matchesFilters,
     formatCount,
     isCityRepeatedInAddress,
-    shuffleArray
+    shuffleArray,
+    resolveRegionLabel,
+    normalizeRegionKey
   };
 
   if (root) {

@@ -420,7 +420,9 @@ const {
   matchesFilters,
   formatCount,
   isCityRepeatedInAddress,
-  shuffleArray
+  shuffleArray,
+  resolveRegionLabel,
+  normalizeRegionKey
 } = FilterUtils;
 
 // VENUES data is defined in assets/js/venues.js
@@ -432,18 +434,38 @@ const resultsContainer = document.getElementById("venue-results");
 const countNode = document.querySelector("[data-result-count]");
 
 const populateRegions = () => {
-  if (!regionSelect) {
+  if (!regionSelect || !Array.isArray(VENUES)) {
     return;
   }
 
-  const uniqueRegions = Array.from(new Set(VENUES.map((venue) => venue.region[LOCALE]))).sort(
-    (a, b) => {
-      const order = REGION_ORDER[LOCALE] || [];
-      const indexA = order.indexOf(a);
-      const indexB = order.indexOf(b);
+  const seenRegions = new Map();
+  for (let i = 0; i < VENUES.length; i += 1) {
+    const venue = VENUES[i];
+    const rawLabel = resolveRegionLabel(venue.region, LOCALE);
+    const label = rawLabel ? rawLabel.trim() : "";
+    if (!label) {
+      continue;
+    }
+
+    const key = normalizeRegionKey(label);
+    if (!key || seenRegions.has(key)) {
+      continue;
+    }
+
+    seenRegions.set(key, label);
+  }
+
+  const order = (REGION_ORDER[LOCALE] || []).map((label) => normalizeRegionKey(label));
+  const localeForSort = LOCALE === "ko" ? "ko-KR" : "en-US";
+
+  const uniqueRegions = Array.from(seenRegions.entries())
+    .map(([key, label]) => ({ key, label }))
+    .sort((a, b) => {
+      const indexA = order.indexOf(a.key);
+      const indexB = order.indexOf(b.key);
 
       if (indexA === -1 && indexB === -1) {
-        return a.localeCompare(b);
+        return a.label.localeCompare(b.label, localeForSort);
       }
 
       if (indexA === -1) {
@@ -455,14 +477,14 @@ const populateRegions = () => {
       }
 
       return indexA - indexB;
-    }
-  );
+    });
 
   const fragment = document.createDocumentFragment();
-  uniqueRegions.forEach((region) => {
+  uniqueRegions.forEach(({ key, label }) => {
     const option = document.createElement("option");
-    option.value = region;
-    option.textContent = region;
+    option.value = key;
+    option.textContent = label;
+    option.setAttribute("data-region-label", label);
     fragment.appendChild(option);
   });
 
