@@ -70,6 +70,268 @@ const STRINGS = {
   }
 }[LOCALE];
 
+const SVG_NS = "http://www.w3.org/2000/svg";
+
+const appendSvgChild = (svg, tag, attrs) => {
+  const node = document.createElementNS(SVG_NS, tag);
+  Object.entries(attrs).forEach(([key, value]) => {
+    node.setAttribute(key, value);
+  });
+  svg.appendChild(node);
+  return node;
+};
+
+const LINK_ICON_ALIASES = {
+  instagramBachazouk: "instagram",
+  homepage: "globe",
+  website: "globe",
+  cafe: "cafe",
+  band: "band",
+  kakaotalk: "chat",
+  threads: "threads",
+  youtube: "play",
+  blog: "blog",
+  map: "map",
+  store: "bag",
+  linktree: "tree"
+};
+
+const LINK_ICON_FACTORIES = {
+  instagram: (svg) => {
+    appendSvgChild(svg, "rect", {
+      x: "4",
+      y: "4",
+      width: "16",
+      height: "16",
+      rx: "4",
+      fill: "none"
+    });
+    appendSvgChild(svg, "circle", {
+      cx: "12",
+      cy: "12",
+      r: "4.2",
+      fill: "none"
+    });
+    const dot = appendSvgChild(svg, "circle", {
+      cx: "17",
+      cy: "7",
+      r: "1.2"
+    });
+    dot.setAttribute("stroke", "none");
+    dot.setAttribute("fill", "currentColor");
+  },
+  play: (svg) => {
+    appendSvgChild(svg, "rect", {
+      x: "3",
+      y: "7",
+      width: "18",
+      height: "10",
+      rx: "3",
+      fill: "none"
+    });
+    const triangle = appendSvgChild(svg, "polygon", {
+      points: "11,9 16,12 11,15"
+    });
+    triangle.setAttribute("fill", "currentColor");
+    triangle.setAttribute("stroke", "none");
+  },
+  facebook: (svg) => {
+    svg.setAttribute("stroke", "none");
+    svg.setAttribute("fill", "currentColor");
+    appendSvgChild(svg, "path", {
+      d: "M14 3h-4a4 4 0 00-4 4v3H4v4h2v7h4v-7h3l1-4h-4V7a1 1 0 011-1h3z"
+    });
+  },
+  chat: (svg) => {
+    appendSvgChild(svg, "path", {
+      d: "M5 6h14a2 2 0 012 2v7a2 2 0 01-2 2h-5l-4 3v-3H5a2 2 0 01-2-2V8a2 2 0 012-2z",
+      fill: "none"
+    });
+  },
+  cafe: (svg) => {
+    appendSvgChild(svg, "path", {
+      d: "M6 9h10v4a3 3 0 01-3 3H9a3 3 0 01-3-3V9z",
+      fill: "none"
+    });
+    appendSvgChild(svg, "path", {
+      d: "M16 11h1.2a2 2 0 010 4H16",
+      fill: "none"
+    });
+    appendSvgChild(svg, "line", {
+      x1: "6",
+      y1: "17",
+      x2: "17",
+      y2: "17"
+    });
+  },
+  band: (svg) => {
+    appendSvgChild(svg, "path", {
+      d: "M15 5v7.8a2.4 2.4 0 11-1.5-2.2V7h4V5z",
+      fill: "none"
+    });
+    const noteHead = appendSvgChild(svg, "circle", {
+      cx: "10",
+      cy: "16",
+      r: "2.1"
+    });
+    noteHead.setAttribute("stroke", "none");
+    noteHead.setAttribute("fill", "currentColor");
+  },
+  threads: (svg) => {
+    appendSvgChild(svg, "path", {
+      d: "M12 4c5 0 8 3 8 8s-3 8-8 8-8-3-8-8a8 8 0 016.6-7.86",
+      fill: "none"
+    });
+    appendSvgChild(svg, "path", {
+      d: "M13.2 9.1c1.8.3 2.7 1.6 2.7 2.9 0 2-1.4 3.6-3.9 3.6-2.2 0-3.4-1.1-3.4-2.4 0-1.4 1.1-2.3 2.7-2.3 1.7 0 2.8.9 2.8 2.6",
+      fill: "none"
+    });
+  },
+  globe: (svg) => {
+    appendSvgChild(svg, "circle", {
+      cx: "12",
+      cy: "12",
+      r: "8",
+      fill: "none"
+    });
+    appendSvgChild(svg, "line", {
+      x1: "12",
+      y1: "4.5",
+      x2: "12",
+      y2: "19.5"
+    });
+    appendSvgChild(svg, "line", {
+      x1: "4.5",
+      y1: "12",
+      x2: "19.5",
+      y2: "12"
+    });
+    appendSvgChild(svg, "path", {
+      d: "M8 6a6 6 0 000 12",
+      fill: "none"
+    });
+    appendSvgChild(svg, "path", {
+      d: "M16 6a6 6 0 010 12",
+      fill: "none"
+    });
+  },
+  blog: (svg) => {
+    appendSvgChild(svg, "rect", {
+      x: "5",
+      y: "4",
+      width: "14",
+      height: "16",
+      rx: "2",
+      fill: "none"
+    });
+    appendSvgChild(svg, "line", {
+      x1: "8",
+      y1: "8",
+      x2: "16",
+      y2: "8"
+    });
+    appendSvgChild(svg, "line", {
+      x1: "8",
+      y1: "12",
+      x2: "16",
+      y2: "12"
+    });
+    appendSvgChild(svg, "line", {
+      x1: "8",
+      y1: "16",
+      x2: "16",
+      y2: "16"
+    });
+  },
+  map: (svg) => {
+    appendSvgChild(svg, "path", {
+      d: "M12 4a5 5 0 00-5 5c0 3.8 5 10 5 10s5-6.2 5-10a5 5 0 00-5-5z",
+      fill: "none"
+    });
+    const pin = appendSvgChild(svg, "circle", {
+      cx: "12",
+      cy: "9",
+      r: "1.7"
+    });
+    pin.setAttribute("stroke", "none");
+    pin.setAttribute("fill", "currentColor");
+  },
+  bag: (svg) => {
+    appendSvgChild(svg, "rect", {
+      x: "6",
+      y: "8",
+      width: "12",
+      height: "10",
+      rx: "2",
+      fill: "none"
+    });
+    appendSvgChild(svg, "path", {
+      d: "M9 8V6a3 3 0 016 0v2",
+      fill: "none"
+    });
+  },
+  tree: (svg) => {
+    appendSvgChild(svg, "circle", {
+      cx: "12",
+      cy: "10",
+      r: "5",
+      fill: "none"
+    });
+    const trunk = appendSvgChild(svg, "rect", {
+      x: "11",
+      y: "14.5",
+      width: "2",
+      height: "5"
+    });
+    trunk.setAttribute("stroke", "none");
+    trunk.setAttribute("fill", "currentColor");
+    appendSvgChild(svg, "line", {
+      x1: "9.5",
+      y1: "19.5",
+      x2: "14.5",
+      y2: "19.5"
+    });
+  },
+  default: (svg) => {
+    appendSvgChild(svg, "circle", {
+      cx: "12",
+      cy: "12",
+      r: "8",
+      fill: "none"
+    });
+    appendSvgChild(svg, "line", {
+      x1: "8",
+      y1: "8",
+      x2: "8",
+      y2: "16"
+    });
+    appendSvgChild(svg, "path", {
+      d: "M12 9l4 3-4 3",
+      fill: "none"
+    });
+  }
+};
+
+const createLinkIcon = (type) => {
+  const key = LINK_ICON_ALIASES[type] || type;
+  const factory = LINK_ICON_FACTORIES[key] || LINK_ICON_FACTORIES.default;
+  if (!factory) {
+    return null;
+  }
+  const svg = document.createElementNS(SVG_NS, "svg");
+  svg.classList.add("venue-card__link-icon");
+  svg.setAttribute("viewBox", "0 0 24 24");
+  svg.setAttribute("focusable", "false");
+  svg.setAttribute("aria-hidden", "true");
+  svg.setAttribute("fill", "none");
+  svg.setAttribute("stroke", "currentColor");
+  svg.setAttribute("stroke-width", "1.6");
+  svg.setAttribute("stroke-linecap", "round");
+  svg.setAttribute("stroke-linejoin", "round");
+  factory(svg);
+  return svg;
+};
+
 const getGlobalObject = () => {
   if (typeof globalThis !== "undefined") {
     return globalThis;
@@ -198,7 +460,14 @@ const createLink = (descriptor, options = {}) => {
   link.href = descriptor.url;
   link.target = "_blank";
   link.rel = "noopener";
-  link.textContent = resolveLinkLabel(descriptor);
+  const iconNode = createLinkIcon(descriptor.type);
+  if (iconNode) {
+    link.appendChild(iconNode);
+  }
+  const labelNode = document.createElement("span");
+  labelNode.className = "venue-card__link-label";
+  labelNode.textContent = resolveLinkLabel(descriptor);
+  link.appendChild(labelNode);
   return link;
 };
 

@@ -300,6 +300,7 @@ input:focus-visible {
 .venue-card__link {
   display: inline-flex;
   align-items: center;
+  gap: 6px;
   padding: 8px 12px;
   border-radius: var(--radius-sm);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -307,6 +308,24 @@ input:focus-visible {
   font-size: 0.9rem;
   background: rgba(255, 255, 255, 0.04);
   transition: background 160ms ease, color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.venue-card__link-icon {
+  width: 1.05rem;
+  height: 1.05rem;
+  flex: 0 0 auto;
+}
+
+.venue-card__link-icon path,
+.venue-card__link-icon rect,
+.venue-card__link-icon circle,
+.venue-card__link-icon line,
+.venue-card__link-icon polygon {
+  vector-effect: non-scaling-stroke;
+}
+
+.venue-card__link-label {
+  line-height: 1.1;
 }
 
 .venue-card__link--chip {
