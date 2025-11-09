@@ -557,6 +557,8 @@ const renderVenues = (venues) => {
     return;
   }
 
+  resultsContainer.innerHTML = "";
+
   if (!venues.length) {
     const empty = document.createElement("p");
     empty.className = "venue-empty";
