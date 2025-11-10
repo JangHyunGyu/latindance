@@ -3,6 +3,21 @@ const { test, expect } = require('@playwright/test');
 const KOREAN_URL = 'https://latindance.kr/';
 const ENGLISH_URL = 'https://latindance.kr/index-en.html';
 
+const getButtonStyle = (page) =>
+  page.evaluate(() => {
+    const btn = document.querySelector('.scroll-top');
+    if (!btn) {
+      return null;
+    }
+    const styles = window.getComputedStyle(btn);
+    return {
+      background: styles.backgroundColor,
+      borderColor: styles.borderColor,
+      color: styles.color,
+      boxShadow: styles.boxShadow
+    };
+  });
+
 const verifyScrollTopBehavior = async (page, baseUrl, expectedTitleText, label = expectedTitleText) => {
   await page.goto(baseUrl, { waitUntil: 'networkidle' });
 
@@ -48,5 +63,77 @@ test.describe('Latindance scroll-top 버튼', () => {
 
   test('영문 페이지에서 스크롤', async ({ page }) => {
     await verifyScrollTopBehavior(page, ENGLISH_URL, 'Directory', '영문 페이지');
+  });
+});
+
+test.describe('Scroll-top 색상 복원', () => {
+  test('한국어 페이지에서 색상 유지', async ({ page }) => {
+    await page.goto(KOREAN_URL, { waitUntil: 'networkidle' });
+
+    await page.evaluate(() => {
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'auto' });
+    });
+
+    const button = page.locator('.scroll-top');
+    await expect(button).toBeVisible();
+
+    const initialStyle = await getButtonStyle(page);
+    expect(initialStyle).not.toBeNull();
+
+    await button.click();
+
+    await page.waitForFunction(() => (window.scrollY || window.pageYOffset || 0) < 20, undefined, {
+      timeout: 4000
+    });
+
+    await expect(button).toBeHidden();
+
+    await page.evaluate(() => {
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'auto' });
+    });
+
+    await expect(button).toBeVisible();
+
+    const afterStyle = await getButtonStyle(page);
+    expect(afterStyle).not.toBeNull();
+    expect(afterStyle.background).toBe(initialStyle.background);
+    expect(afterStyle.borderColor).toBe(initialStyle.borderColor);
+    expect(afterStyle.color).toBe(initialStyle.color);
+    expect(afterStyle.boxShadow).toBe(initialStyle.boxShadow);
+  });
+
+  test('영문 페이지에서 색상 유지', async ({ page }) => {
+    await page.goto(ENGLISH_URL, { waitUntil: 'networkidle' });
+
+    await page.evaluate(() => {
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'auto' });
+    });
+
+    const button = page.locator('.scroll-top');
+    await expect(button).toBeVisible();
+
+    const initialStyle = await getButtonStyle(page);
+    expect(initialStyle).not.toBeNull();
+
+    await button.click();
+
+    await page.waitForFunction(() => (window.scrollY || window.pageYOffset || 0) < 20, undefined, {
+      timeout: 4000
+    });
+
+    await expect(button).toBeHidden();
+
+    await page.evaluate(() => {
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'auto' });
+    });
+
+    await expect(button).toBeVisible();
+
+    const afterStyle = await getButtonStyle(page);
+    expect(afterStyle).not.toBeNull();
+    expect(afterStyle.background).toBe(initialStyle.background);
+    expect(afterStyle.borderColor).toBe(initialStyle.borderColor);
+    expect(afterStyle.color).toBe(initialStyle.color);
+    expect(afterStyle.boxShadow).toBe(initialStyle.boxShadow);
   });
 });

@@ -746,12 +746,20 @@ const initScrollTop = () => {
   const threshold = 200;
   let ticking = false;
 
+  const resetInlineStyles = () => {
+    button.style.background = "";
+    button.style.borderColor = "";
+    button.style.boxShadow = "";
+    button.style.color = "";
+  };
+
   const updateVisibility = () => {
     const scrollY = window.scrollY || window.pageYOffset || 0;
     if (scrollY > threshold) {
       button.classList.add("is-visible");
     } else {
       button.classList.remove("is-visible");
+      resetInlineStyles();
     }
     ticking = false;
   };
@@ -767,19 +775,22 @@ const initScrollTop = () => {
   updateVisibility();
 
   // 터치 디바이스용 hover 효과
-  button.addEventListener("touchstart", () => {
+  const applyTouchStyles = () => {
     button.style.background = 'rgba(255, 124, 79, 0.25)';
     button.style.borderColor = 'rgba(255, 124, 79, 0.4)';
     button.style.boxShadow = '0 6px 20px rgba(255, 124, 79, 0.3)';
     button.style.color = '#ff7c4f';
+  };
+
+  button.addEventListener("pointerdown", (event) => {
+    if (event.pointerType === "touch") {
+      applyTouchStyles();
+    }
   }, { passive: true });
 
-  button.addEventListener("touchend", () => {
-    button.style.background = '';
-    button.style.borderColor = '';
-    button.style.boxShadow = '';
-    button.style.color = '';
-  }, { passive: true });
+  ["pointerup", "pointercancel", "pointerleave"].forEach((eventName) => {
+    button.addEventListener(eventName, resetInlineStyles, { passive: true });
+  });
 
   button.addEventListener("click", (e) => {
     e.preventDefault();
@@ -788,6 +799,8 @@ const initScrollTop = () => {
       top: 0,
       behavior: prefersReducedMotion.matches ? "auto" : "smooth"
     });
+
+    resetInlineStyles();
   });
 };
 
