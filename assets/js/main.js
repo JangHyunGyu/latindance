@@ -890,6 +890,14 @@ const initInstallPrompt = () => {
 
   const copySet = inappCopy[LOCALE] || inappCopy.en;
 
+  if (isInAppBrowser) {
+    triggers.forEach((button) => button.setAttribute('hidden', ''));
+    if (inappNotice) {
+      inappNotice.setAttribute('hidden', '');
+    }
+    return;
+  }
+
   const updateAriaLabelledby = (sectionName) => {
     const activeSection = Array.from(sections).find((section) => section.dataset.installSection === sectionName && !section.hasAttribute('hidden'));
     if (!activeSection) {
@@ -1039,11 +1047,6 @@ const initInstallPrompt = () => {
 
   triggers.forEach((button) => {
     button.addEventListener('click', () => {
-      if (isInAppBrowser) {
-        showInappNotice();
-        return;
-      }
-
       if (isIos) {
         openModal('ios');
         return;
@@ -1060,12 +1063,6 @@ const initInstallPrompt = () => {
 
   if (isStandalone) {
     triggers.forEach((button) => button.setAttribute('hidden', ''));
-    return;
-  }
-
-  if (isInAppBrowser) {
-    triggers.forEach((button) => button.removeAttribute('hidden'));
-    showInappNotice();
     return;
   }
 
