@@ -1005,8 +1005,9 @@ const initInstallPrompt = () => {
     return;
   }
 
+  triggers.forEach((button) => button.removeAttribute('hidden'));
+
   if (isIos) {
-    triggers.forEach((button) => button.removeAttribute('hidden'));
     if (confirmButton) {
       confirmButton.setAttribute('hidden', '');
     }
