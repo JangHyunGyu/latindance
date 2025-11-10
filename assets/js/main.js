@@ -846,9 +846,6 @@ const initInstallPrompt = () => {
   const modal = document.querySelector('[data-install-modal]');
   const triggers = document.querySelectorAll('[data-install-trigger]');
   const inappNotice = document.querySelector('[data-inapp-notice]');
-  const inappMessage = inappNotice?.querySelector('[data-inapp-message]');
-  const inappAction = inappNotice?.querySelector('[data-inapp-action]');
-  const inappClose = inappNotice?.querySelector('[data-inapp-close]');
   if (!modal || !triggers.length) {
     return;
   }
@@ -868,27 +865,13 @@ const initInstallPrompt = () => {
   let focusableElements = [];
   const focusableSelector = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
-  const ua = (window.navigator.userAgent || '').toLowerCase();
-  const isIos = /iphone|ipad|ipod/i.test(ua);
-  const isAndroid = /android/.test(ua);
+  const isIos = /iphone|ipad|ipod/i.test((window.navigator.userAgent || ''));
   const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
   const isInAppBrowser = (() => {
+    const ua = (window.navigator.userAgent || '').toLowerCase();
     const matches = ['kakaotalk', 'instagram', 'fb_iab', 'line/'];
     return matches.some((signature) => ua.includes(signature));
   })();
-
-  const inappCopy = {
-    ko: {
-      default: '인앱 브라우저에서는 설치 안내가 제한됩니다. 오른쪽 상단 메뉴에서 "브라우저로 열기"를 누르거나 아래 버튼으로 Chrome에서 열어주세요.',
-      ios: 'iOS 인앱 브라우저에서는 Safari의 공유 버튼을 눌러 "브라우저에서 열기" 또는 "홈 화면에 추가"를 선택해 주세요.'
-    },
-    en: {
-      default: 'In-app browsers limit installation prompts. Use the menu to "Open in browser" or tap the button below to launch Chrome.',
-      ios: 'On iOS in-app browsers, tap the Safari share icon and choose "Open in Browser" or "Add to Home Screen".'
-    }
-  };
-
-  const copySet = inappCopy[LOCALE] || inappCopy.en;
 
   const updateAriaLabelledby = (sectionName) => {
     const activeSection = Array.from(sections).find((section) => section.dataset.installSection === sectionName && !section.hasAttribute('hidden'));
@@ -1007,40 +990,11 @@ const initInstallPrompt = () => {
     }
   });
 
-  const showInappNotice = () => {
-    if (!inappNotice) {
-      return;
-    }
-
-    inappNotice.removeAttribute('hidden');
-    document.body.classList.add('is-modal-open');
-
-    if (inappMessage) {
-      inappMessage.textContent = isIos ? copySet.ios : copySet.default;
-    }
-
-    if (inappAction) {
-      if (isIos) {
-        inappAction.setAttribute('hidden', '');
-      } else {
-        inappAction.removeAttribute('hidden');
-      }
-    }
-
-    const preferredFocus = (!isIos && inappAction && !inappAction.hasAttribute('hidden'))
-      ? inappAction
-      : inappClose;
-    window.setTimeout(() => {
-      if (preferredFocus && typeof preferredFocus.focus === 'function') {
-        preferredFocus.focus();
-      }
-    }, 0);
-  };
-
   triggers.forEach((button) => {
     button.addEventListener('click', () => {
-      if (isInAppBrowser) {
-        showInappNotice();
+      if (isInAppBrowser && inappNotice) {
+        inappNotice.removeAttribute('hidden');
+        document.body.classList.add('is-modal-open');
         return;
       }
 
@@ -1065,7 +1019,16 @@ const initInstallPrompt = () => {
 
   if (isInAppBrowser) {
     triggers.forEach((button) => button.removeAttribute('hidden'));
-    showInappNotice();
+    if (inappNotice) {
+      inappNotice.removeAttribute('hidden');
+      document.body.classList.add('is-modal-open');
+      const focusTarget = inappNotice.querySelector('.inapp-notice__action');
+      window.setTimeout(() => {
+        if (focusTarget && typeof focusTarget.focus === 'function') {
+          focusTarget.focus();
+        }
+      }, 0);
+    }
     return;
   }
 
@@ -1113,38 +1076,6 @@ const initInstallPrompt = () => {
     closeModal();
     triggers.forEach((button) => button.setAttribute('hidden', ''));
   });
-
-  if (inappAction && !isIos) {
-    inappAction.addEventListener('click', (event) => {
-      event.preventDefault();
-      const targetUrl = inappAction.getAttribute('href') || window.location.href;
-
-      if (isAndroid) {
-        const intentUrl = `intent://${targetUrl.replace(/^https?:\/\//, '')}#Intent;scheme=https;package=com.android.chrome;end`;
-        window.location.href = intentUrl;
-        window.setTimeout(() => {
-          window.location.href = targetUrl;
-        }, 1200);
-        return;
-      }
-
-      const popup = window.open(targetUrl, '_blank', 'noopener');
-      if (!popup) {
-        window.location.href = targetUrl;
-      }
-    });
-  }
-
-  if (inappClose) {
-    inappClose.addEventListener('click', () => {
-      inappNotice.setAttribute('hidden', '');
-      document.body.classList.remove('is-modal-open');
-      const firstTrigger = triggers[0];
-      if (firstTrigger && typeof firstTrigger.focus === 'function') {
-        firstTrigger.focus();
-      }
-    });
-  }
 };
 
 initInstallPrompt();
