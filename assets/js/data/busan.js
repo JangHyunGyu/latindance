@@ -33,7 +33,7 @@ const BUSAN_VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "상시 연습 환경, 숙련된 강사진, 다양한 국적의 회원, 활발한 뒷풀이 문화, 다양한 SNS 기반 소통으로 즐겁게 살사·바차타를 배우고 교류하는 커뮤니티입니다.",
+      ko: "지하철 접근이 쉬운 상시 개방 연습실과 베테랑 강사진, 다양한 국적의 회원이 함께하는 부산 라틴 커뮤니티입니다. 무료 1개월 입문반부터 정규 수업, 연습 후 뒷풀이와 SNS 소통까지 살사·바차타를 꾸준히 즐길 수 있는 환경을 제공하는 커뮤니티입니다.",
       en: "Busan Seomyeon community welcoming an international mix of dancers with easy access, a free one-month beginner course, daily practice space, veteran instructors, and active socials across band and Instagram."
     },
     image: "assets/images/rueda.png",
