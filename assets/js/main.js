@@ -845,7 +845,6 @@ initFooterDates();
 const initInstallPrompt = () => {
   const modal = document.querySelector('[data-install-modal]');
   const triggers = document.querySelectorAll('[data-install-trigger]');
-  const inappNotice = document.querySelector('[data-inapp-notice]');
   if (!modal || !triggers.length) {
     return;
   }
@@ -867,11 +866,6 @@ const initInstallPrompt = () => {
 
   const isIos = /iphone|ipad|ipod/i.test((window.navigator.userAgent || ''));
   const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
-  const isInAppBrowser = (() => {
-    const ua = (window.navigator.userAgent || '').toLowerCase();
-    const matches = ['kakaotalk', 'instagram', 'fb_iab', 'line/'];
-    return matches.some((signature) => ua.includes(signature));
-  })();
 
   const updateAriaLabelledby = (sectionName) => {
     const activeSection = Array.from(sections).find((section) => section.dataset.installSection === sectionName && !section.hasAttribute('hidden'));
@@ -992,12 +986,6 @@ const initInstallPrompt = () => {
 
   triggers.forEach((button) => {
     button.addEventListener('click', () => {
-      if (isInAppBrowser && inappNotice) {
-        inappNotice.removeAttribute('hidden');
-        document.body.classList.add('is-modal-open');
-        return;
-      }
-
       if (isIos) {
         openModal('ios');
         return;
@@ -1014,21 +1002,6 @@ const initInstallPrompt = () => {
 
   if (isStandalone) {
     triggers.forEach((button) => button.setAttribute('hidden', ''));
-    return;
-  }
-
-  if (isInAppBrowser) {
-    triggers.forEach((button) => button.removeAttribute('hidden'));
-    if (inappNotice) {
-      inappNotice.removeAttribute('hidden');
-      document.body.classList.add('is-modal-open');
-      const focusTarget = inappNotice.querySelector('.inapp-notice__action');
-      window.setTimeout(() => {
-        if (focusTarget && typeof focusTarget.focus === 'function') {
-          focusTarget.focus();
-        }
-      }, 0);
-    }
     return;
   }
 
@@ -1082,10 +1055,6 @@ initInstallPrompt();
 
 const registerServiceWorker = () => {
   if (!("serviceWorker" in navigator)) {
-    return;
-  }
-
-  if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone) {
     return;
   }
 
