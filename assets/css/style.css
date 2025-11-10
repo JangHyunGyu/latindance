@@ -104,6 +104,27 @@ input:focus-visible {
   background: rgba(255, 111, 97, 0.2);
 }
 
+.install-trigger {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 124, 79, 0.18);
+  color: var(--color-text);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+}
+
+.install-trigger:is(:hover, :focus-visible) {
+  background: rgba(255, 124, 79, 0.28);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.install-trigger[hidden] {
+  display: none !important;
+}
+
 .page {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -197,6 +218,157 @@ input:focus-visible {
 
 #venue-results {
   scroll-margin-top: 120px;
+}
+
+body.is-modal-open {
+  overflow: hidden;
+}
+
+.install-modal[hidden] {
+  display: none !important;
+}
+
+.install-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.install-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 7, 15, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.install-modal__dialog {
+  position: relative;
+  width: min(520px, calc(100% - 32px));
+  max-height: calc(100% - 64px);
+  overflow-y: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--color-surface-elevated);
+  padding: 32px;
+  box-shadow: 0 28px 60px rgba(4, 6, 14, 0.65);
+}
+
+.install-modal__close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: transparent;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.install-modal__close::before,
+.install-modal__close::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 16px;
+  height: 2px;
+  background: currentColor;
+}
+
+.install-modal__close::before {
+  transform: rotate(45deg);
+}
+
+.install-modal__close::after {
+  transform: rotate(-45deg);
+}
+
+.install-modal__section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.install-modal__section[hidden] {
+  display: none !important;
+}
+
+.install-modal__section h2 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.install-modal__section p {
+  margin: 0;
+  color: var(--color-muted);
+  line-height: 1.6;
+}
+
+.install-modal__benefits,
+.install-modal__steps {
+  margin: 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 8px;
+  color: var(--color-text);
+}
+
+.install-modal__benefits li,
+.install-modal__steps li {
+  line-height: 1.6;
+}
+
+.install-modal__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.install-modal__primary,
+.install-modal__secondary {
+  border-radius: var(--radius-sm);
+  padding: 10px 18px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.install-modal__primary {
+  border: none;
+  background: linear-gradient(135deg, #ff7c4f, #ff9b65);
+  color: #0a101f;
+}
+
+.install-modal__primary:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.install-modal__secondary {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  color: var(--color-text);
+}
+
+@media (max-width: 720px) {
+  .install-modal__dialog {
+    padding: 26px;
+  }
+
+  .install-modal__section h2 {
+    font-size: 1.2rem;
+  }
+
+  .install-modal__primary,
+  .install-modal__secondary {
+    flex: 1 1 100%;
+  }
 }
 
 .venue-card {

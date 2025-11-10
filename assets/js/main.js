@@ -842,6 +842,216 @@ const initFooterDates = () => {
 
 initFooterDates();
 
+const initInstallPrompt = () => {
+  const modal = document.querySelector('[data-install-modal]');
+  const triggers = document.querySelectorAll('[data-install-trigger]');
+  if (!modal || !triggers.length) {
+    return;
+  }
+
+  const dialog = modal.querySelector('.install-modal__dialog');
+  const overlay = modal.querySelector('.install-modal__overlay');
+  const closeButtons = modal.querySelectorAll('[data-install-close]');
+  const confirmButton = modal.querySelector('[data-install-confirm]');
+  const sections = modal.querySelectorAll('[data-install-section]');
+
+  if (!dialog || !sections.length) {
+    return;
+  }
+
+  let deferredPrompt = null;
+  let lastFocusedElement = null;
+  let focusableElements = [];
+  const focusableSelector = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+  const isIos = /iphone|ipad|ipod/i.test((window.navigator.userAgent || ''));
+  const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+
+  const updateAriaLabelledby = (sectionName) => {
+    const activeSection = Array.from(sections).find((section) => section.dataset.installSection === sectionName && !section.hasAttribute('hidden'));
+    if (!activeSection) {
+      return;
+    }
+    const heading = activeSection.querySelector('h2[id]');
+    if (heading) {
+      dialog.setAttribute('aria-labelledby', heading.id);
+    }
+  };
+
+  const isElementVisible = (element) => {
+    if (!element) {
+      return false;
+    }
+    if (element.hasAttribute('hidden') || element.getAttribute('aria-hidden') === 'true') {
+      return false;
+    }
+    if (element.closest('[hidden]')) {
+      return false;
+    }
+    return element.offsetParent !== null || element.getClientRects().length > 0;
+  };
+
+  const refreshFocusable = () => {
+    focusableElements = Array.from(dialog.querySelectorAll(focusableSelector)).filter(isElementVisible);
+  };
+
+  const showSection = (sectionName) => {
+    sections.forEach((section) => {
+      if (section.dataset.installSection === sectionName) {
+        section.removeAttribute('hidden');
+      } else {
+        section.setAttribute('hidden', '');
+      }
+    });
+    updateAriaLabelledby(sectionName);
+    refreshFocusable();
+  };
+
+  const focusFirstElement = () => {
+    refreshFocusable();
+    const firstFocusable = focusableElements[0] || dialog;
+    window.setTimeout(() => {
+      if (typeof firstFocusable.focus === 'function') {
+        firstFocusable.focus();
+      }
+    }, 0);
+  };
+
+  const handleFocusTrap = (event) => {
+    if (event.key !== 'Tab') {
+      return;
+    }
+
+    refreshFocusable();
+
+    if (!focusableElements.length) {
+      event.preventDefault();
+      dialog.focus();
+      return;
+    }
+
+    const first = focusableElements[0];
+    const last = focusableElements[focusableElements.length - 1];
+
+    if (event.shiftKey) {
+      if (document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      }
+    } else if (document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  };
+
+  const closeModal = () => {
+    if (modal.hasAttribute('hidden')) {
+      return;
+    }
+    dialog.removeEventListener('keydown', handleFocusTrap);
+    modal.setAttribute('aria-hidden', 'true');
+    modal.setAttribute('hidden', '');
+    document.body.classList.remove('is-modal-open');
+    focusableElements = [];
+    if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+      lastFocusedElement.focus();
+    }
+  };
+
+  const openModal = (sectionName) => {
+    showSection(sectionName);
+    modal.removeAttribute('hidden');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('is-modal-open');
+    lastFocusedElement = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    focusFirstElement();
+    dialog.addEventListener('keydown', handleFocusTrap);
+  };
+
+  closeButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      closeModal();
+    });
+  });
+
+  if (overlay) {
+    overlay.addEventListener('click', closeModal);
+  }
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !modal.hasAttribute('hidden')) {
+      closeModal();
+    }
+  });
+
+  triggers.forEach((button) => {
+    button.addEventListener('click', () => {
+      if (isIos) {
+        openModal('ios');
+        return;
+      }
+
+      if (deferredPrompt) {
+        openModal('ready');
+        return;
+      }
+
+      openModal('manual');
+    });
+  });
+
+  if (isStandalone) {
+    triggers.forEach((button) => button.setAttribute('hidden', ''));
+    return;
+  }
+
+  if (isIos) {
+    triggers.forEach((button) => button.removeAttribute('hidden'));
+    if (confirmButton) {
+      confirmButton.setAttribute('hidden', '');
+    }
+    return;
+  }
+
+  const handleInstall = async () => {
+    if (!deferredPrompt) {
+      showSection('manual');
+      focusFirstElement();
+      return;
+    }
+
+    confirmButton.disabled = true;
+    try {
+      deferredPrompt.prompt();
+      await deferredPrompt.userChoice;
+      deferredPrompt = null;
+      closeModal();
+    } catch (error) {
+      closeModal();
+    } finally {
+      confirmButton.disabled = false;
+    }
+  };
+
+  if (confirmButton) {
+    confirmButton.addEventListener('click', handleInstall);
+  }
+
+  window.addEventListener('beforeinstallprompt', (event) => {
+    event.preventDefault();
+    deferredPrompt = event;
+    triggers.forEach((button) => button.removeAttribute('hidden'));
+  });
+
+  window.addEventListener('appinstalled', () => {
+    deferredPrompt = null;
+    closeModal();
+    triggers.forEach((button) => button.setAttribute('hidden', ''));
+  });
+};
+
+initInstallPrompt();
+
 const registerServiceWorker = () => {
   if (!("serviceWorker" in navigator)) {
     return;

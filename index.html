@@ -141,6 +141,7 @@
 					<a class="site-nav__link is-active" href="index.html">한국어</a>
 					<a class="site-nav__link" href="index-en.html">English</a>
 				</nav>
+				<button type="button" class="install-trigger" data-install-trigger hidden>앱으로 설치</button>
 			</div>
 		</header>
 
@@ -192,6 +193,47 @@
 			</section>
 		</noscript>
 
+		<div class="install-modal" data-install-modal hidden aria-hidden="true">
+			<div class="install-modal__overlay" data-install-close></div>
+			<div class="install-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="install-modal-title-ready" tabindex="-1">
+				<button type="button" class="install-modal__close" aria-label="닫기" data-install-close></button>
+				<div class="install-modal__section" data-install-section="ready">
+					<h2 id="install-modal-title-ready">앱으로 설치해서 바로 열기</h2>
+					<p>홈 화면에 추가해두면 주소창 없이 독립 실행 화면으로 바로 열고, 오프라인에서도 최근 데이터를 확인할 수 있습니다.</p>
+					<ul class="install-modal__benefits">
+						<li>독립 실행 모드로 바로 열기</li>
+						<li>서비스 워커 캐시로 더 빠른 로딩</li>
+					</ul>
+					<div class="install-modal__actions">
+						<button type="button" class="install-modal__primary" data-install-confirm>설치 진행</button>
+						<button type="button" class="install-modal__secondary" data-install-close>닫기</button>
+					</div>
+				</div>
+				<div class="install-modal__section" data-install-section="manual" hidden>
+					<h2 id="install-modal-title-manual">홈 화면에 추가하는 방법</h2>
+					<ol class="install-modal__steps">
+						<li>브라우저 메뉴(⋮)를 연 다음 <strong>홈 화면에 추가</strong>를 선택합니다.</li>
+						<li>단축 아이콘 이름을 확인하고 <strong>추가</strong>를 누릅니다.</li>
+						<li>생성된 아이콘을 통해 언제든 한 번에 접속할 수 있습니다.</li>
+					</ol>
+					<div class="install-modal__actions">
+						<button type="button" class="install-modal__secondary" data-install-close>닫기</button>
+					</div>
+				</div>
+				<div class="install-modal__section" data-install-section="ios" hidden>
+					<h2 id="install-modal-title-ios">iOS에서 설치하는 방법</h2>
+					<ol class="install-modal__steps">
+						<li>사파리 하단의 <strong>공유</strong> 버튼을 누릅니다.</li>
+						<li>메뉴에서 <strong>홈 화면에 추가</strong>를 선택합니다.</li>
+						<li>아이콘 이름을 확인하고 <strong>추가</strong>를 누르면 홈 화면에 저장됩니다.</li>
+					</ol>
+					<div class="install-modal__actions">
+						<button type="button" class="install-modal__secondary" data-install-close>닫기</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<footer class="site-footer" role="contentinfo">
 			<p class="site-footer__text">© <span data-current-year>2025</span> 지역별 라틴댄스 모임 · ArcherLab</p>
 			<p class="site-footer__text site-footer__text--note" data-updated-note>링크는 2025년 10월 기준 공용 공개 채널을 참고했으며 변동될 수 있습니다.</p>
@@ -207,7 +249,7 @@
 		<script src="assets/js/utils/filter-utils.js?v=1" defer></script>
 		<script src="assets/js/venues.js?v=3" defer></script>
 		<script src="assets/js/structured-data.js?v=2" defer></script>
-		<script src="assets/js/main.js?v=7" defer></script>
+		<script src="assets/js/main.js?v=8" defer></script>
 		<script type="text/javascript" src="https://wcs.pstatic.net/wcslog.js"></script>
 		<script type="text/javascript">
 			if (!window.wcs_add) window.wcs_add = {};
