@@ -4,7 +4,7 @@ const CORE_ASSETS = [
   "./index.html",
   "./index-en.html",
   "./assets/css/style.css?v=101",
-  "./assets/js/main.js?v=9",
+  "./assets/js/main.js?v=10",
   "./assets/js/constants.js?v=1",
   "./assets/js/utils/filter-utils.js?v=1",
   "./assets/js/venues.js?v=3",

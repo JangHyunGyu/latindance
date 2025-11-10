@@ -240,17 +240,6 @@ body.is-modal-open {
   text-align: center;
 }
 
-.inapp-notice__card {
-  max-width: 420px;
-  width: 100%;
-  display: grid;
-  gap: 16px;
-  padding: 32px 28px;
-  border-radius: var(--radius-lg);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(15, 20, 34, 0.92);
-  box-shadow: 0 28px 60px rgba(3, 5, 12, 0.65);
-}
 
 .inapp-notice__card h2 {
   margin: 0;
@@ -267,8 +256,8 @@ body.is-modal-open {
   display: inline-block;
   margin: 0 auto;
   padding: 12px 22px;
-  border-radius: 999px;
-  background: #ffde00;
+  display: grid;
+  gap: 18px;
   color: #111;
   font-weight: 700;
   text-decoration: none;
@@ -302,6 +291,55 @@ body.is-modal-open {
   inset: 0;
   background: rgba(5, 7, 15, 0.7);
   backdrop-filter: blur(4px);
+}
+.inapp-notice__action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: #ffde00;
+  color: #111;
+  font-weight: 700;
+  text-decoration: none;
+  min-width: 200px;
+}
+
+.inapp-notice__action[hidden] {
+  display: none !important;
+}
+
+.inapp-notice__secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: transparent;
+  color: var(--color-text);
+  font-weight: 600;
+  cursor: pointer;
+  min-width: 180px;
+}
+
+@media (max-width: 480px) {
+  .inapp-notice__card {
+    padding: 26px 22px;
+  }
+
+  .inapp-notice__card h2 {
+    font-size: 1.25rem;
+  }
+
+  .inapp-notice__actions {
+    gap: 10px;
+  }
+
+  .inapp-notice__action,
+  .inapp-notice__secondary {
+    min-width: 100%;
+  }
 }
 
 .install-modal__dialog {

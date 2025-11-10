@@ -137,8 +137,11 @@
 								<div class="inapp-notice" data-inapp-notice hidden>
 									<div class="inapp-notice__card">
 										<h2>📱 Open in your browser to install</h2>
-										<p>The in-app browser does not support installation prompts. Tap the button below to continue in Chrome or Safari.</p>
-										<a class="inapp-notice__action" href="https://latindance.kr/index-en.html" target="_blank" rel="noopener">🌐 Open in browser</a>
+										<p data-inapp-message>The in-app browser limits installation prompts. Use the button below to switch to Chrome.</p>
+										<div class="inapp-notice__actions">
+											<a class="inapp-notice__action" data-inapp-action href="https://latindance.kr/index-en.html" target="_blank" rel="noopener">🌐 Open in browser</a>
+											<button type="button" class="inapp-notice__secondary" data-inapp-close>Continue here</button>
+										</div>
 									</div>
 								</div>
 								<header class="site-header" role="banner">
@@ -255,7 +258,7 @@
 								<script src="assets/js/utils/filter-utils.js?v=1" defer></script>
 								<script src="assets/js/venues.js?v=3" defer></script>
 								<script src="assets/js/structured-data.js?v=2" defer></script>
-								<script src="assets/js/main.js?v=9" defer></script>
+								<script src="assets/js/main.js?v=10" defer></script>
 								<script type="text/javascript" src="https://wcs.pstatic.net/wcslog.js"></script>
 								<script type="text/javascript">
 									if (!window.wcs_add) window.wcs_add = {};
