@@ -1,0 +1,23 @@
+{
+  "name": "지역별 라틴댄스 모임",
+  "short_name": "Latindance",
+  "lang": "ko",
+  "start_url": "index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0f1424",
+  "theme_color": "#0f1424",
+  "description": "지역별 라틴댄스 클럽과 동호회 정보를 탐색할 수 있는 양언어 디렉터리입니다.",
+  "icons": [
+    {
+      "src": "assets/images/latindance_profile_logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/latindance_full_logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
