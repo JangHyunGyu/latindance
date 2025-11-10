@@ -805,3 +805,39 @@ const initScrollTop = () => {
 };
 
 initScrollTop();
+
+const initFooterDates = () => {
+  const yearNodes = document.querySelectorAll('[data-current-year]');
+  if (!yearNodes.length) {
+    return;
+  }
+
+  const now = new Date();
+  const year = now.getFullYear();
+  yearNodes.forEach((node) => {
+    node.textContent = String(year);
+  });
+
+  const noteNodes = document.querySelectorAll('[data-updated-note]');
+  if (!noteNodes.length) {
+    return;
+  }
+
+  const monthIndex = now.getMonth() + 1;
+
+  if (LOCALE === "ko") {
+    const noteText = `링크는 ${year}년 ${monthIndex}월 기준 공용 공개 채널을 참고했으며 변동될 수 있습니다.`;
+    noteNodes.forEach((node) => {
+      node.textContent = noteText;
+    });
+    return;
+  }
+
+  const monthName = new Intl.DateTimeFormat("en", { month: "long" }).format(now);
+  const noteText = `All listings were verified in ${monthName} ${year} and may change without notice.`;
+  noteNodes.forEach((node) => {
+    node.textContent = noteText;
+  });
+};
+
+initFooterDates();
