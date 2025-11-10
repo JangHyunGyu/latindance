@@ -33,7 +33,7 @@ const BUSAN_VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "지하철 접근이 쉬운 상시 개방 연습실과 베테랑 강사진, 다양한 국적의 회원이 함께하는 부산 라틴 커뮤니티입니다. 무료 1개월 입문반부터 정규 수업, 연습 후 뒷풀이와 SNS 소통까지 살사·바차타를 꾸준히 즐길 수 있는 환경을 제공하는 커뮤니티입니다.",
+      ko: "베테랑 강사진, 다양한 국적의 회원이 함께하며 무료 1개월 입문반부터 정규 수업, 활발한 뒷풀이와 SNS 소통까지 살사·바차타를 꾸준히 즐길 수 있는 커뮤니티입니다.",
       en: "This Seomyeon-based Latin community pairs subway-friendly, always-open practice rooms with veteran instructors and an international roster of members. From a free one-month beginner course to regular classes, post-practice hangouts, and lively Band and Instagram updates, it keeps salsa and bachata energy going year-round."
     },
     image: "assets/images/rueda.png",
