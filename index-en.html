@@ -35,7 +35,6 @@
 								<link rel="icon" type="image/png" href="assets/images/latindance_full_logo.png">
 								<link rel="icon" type="image/png" sizes="32x32" href="assets/images/latindance_full_logo.png">
 								<link rel="apple-touch-icon" sizes="180x180" href="assets/images/latindance_full_logo.png">
-								<link rel="manifest" href="manifest.json">
 				<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Pretendard:wght@400;500;600;700&display=swap" rel="stylesheet">
 				<link rel="stylesheet" href="assets/css/style.css?v=9">
 				<link rel="alternate" hreflang="ko" href="https://latindance.kr/" />
@@ -43,6 +42,17 @@
 								<link rel="alternate" hreflang="x-default" href="https://latindance.kr/index-en.html" />
 								<script async src="https://www.googletagmanager.com/gtag/js?id=G-197LKDJGPJ"></script>
 								<script defer src="assets/js/ga.js"></script>
+								<script>
+									(function () {
+										if (window.location.protocol === 'file:') {
+											return;
+										}
+										const link = document.createElement('link');
+										link.rel = 'manifest';
+										link.href = 'manifest.json';
+										document.head.appendChild(link);
+									}());
+								</script>
 								<script type="application/ld+json">
 									{
 										"@context": "https://schema.org",
