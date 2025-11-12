@@ -1,10 +1,10 @@
-const CACHE_NAME = "latindance-static-v1";
+const CACHE_NAME = "latindance-static-v2";
 const CORE_ASSETS = [
   "./",
   "./index.html",
   "./index-en.html",
-  "./assets/css/style.css?v=101",
-  "./assets/js/main.js?v=8",
+  "./assets/css/style.css?v=102",
+  "./assets/js/main.js?v=9",
   "./assets/js/constants.js?v=1",
   "./assets/js/utils/filter-utils.js?v=1",
   "./assets/js/venues.js?v=3",
