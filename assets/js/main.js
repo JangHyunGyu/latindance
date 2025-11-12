@@ -433,6 +433,85 @@ const filterForm = document.querySelector(".filter-form");
 const resultsContainer = document.getElementById("venue-results");
 const countNode = document.querySelector("[data-result-count]");
 
+const supportsImagePreload = typeof window !== "undefined" && typeof window.Image === "function";
+const preloadedImageSources = supportsImagePreload ? new Set() : null;
+const queuedImageSources = supportsImagePreload ? new Set() : null;
+const imagePreloadQueue = supportsImagePreload ? [] : null;
+
+const enqueueImagePreload = (src) => {
+  if (!supportsImagePreload || !src) {
+    return;
+  }
+  if (preloadedImageSources.has(src) || queuedImageSources.has(src)) {
+    return;
+  }
+  imagePreloadQueue.push(src);
+  queuedImageSources.add(src);
+};
+
+const processImagePreloadQueue = () => {
+  if (!supportsImagePreload || !imagePreloadQueue.length) {
+    return;
+  }
+
+  const src = imagePreloadQueue.shift();
+  if (!src) {
+    return;
+  }
+
+  queuedImageSources.delete(src);
+
+  preloadedImageSources.add(src);
+
+  try {
+    const preloadImage = new window.Image();
+    preloadImage.decoding = "async";
+    preloadImage.loading = "eager";
+    preloadImage.src = src;
+    const finalize = () => {
+      preloadImage.onload = null;
+      preloadImage.onerror = null;
+      scheduleImagePreload();
+    };
+    preloadImage.onload = finalize;
+    preloadImage.onerror = finalize;
+  } catch (error) {
+    scheduleImagePreload();
+  }
+};
+
+const scheduleImagePreload = () => {
+  if (!supportsImagePreload || !imagePreloadQueue.length) {
+    return;
+  }
+
+  if (typeof window.requestIdleCallback === "function") {
+    window.requestIdleCallback(() => {
+      processImagePreloadQueue();
+    }, { timeout: 1500 });
+    return;
+  }
+
+  window.setTimeout(() => {
+    processImagePreloadQueue();
+  }, 200);
+};
+
+if (supportsImagePreload && Array.isArray(VENUES)) {
+  VENUES.forEach((venue) => {
+    if (venue && typeof venue.image === "string") {
+      enqueueImagePreload(venue.image);
+    }
+  });
+}
+
+const startImagePreloading = () => {
+  if (!supportsImagePreload || !imagePreloadQueue.length) {
+    return;
+  }
+  scheduleImagePreload();
+};
+
 const populateRegions = () => {
   if (!regionSelect || !Array.isArray(VENUES)) {
     return;
@@ -568,7 +647,7 @@ const renderVenues = (venues) => {
   }
 
   const fragment = document.createDocumentFragment();
-  venues.forEach((venue) => {
+  venues.forEach((venue, index) => {
     const card = document.createElement("article");
     card.className = "venue-card";
     card.id = venue.id;
@@ -621,6 +700,7 @@ const renderVenues = (venues) => {
     const contentFragment = document.createDocumentFragment();
 
     if (venue.image) {
+      enqueueImagePreload(venue.image);
       const media = document.createElement("figure");
       media.className = "venue-card__media";
 
@@ -628,7 +708,12 @@ const renderVenues = (venues) => {
       img.className = "venue-card__image";
       img.src = venue.image;
       img.alt = venue.imageAlt?.[LOCALE] || venue.name[LOCALE];
-      img.loading = "lazy";
+      const shouldEagerLoad = index < 4;
+      img.loading = shouldEagerLoad ? "eager" : "lazy";
+      img.decoding = "async";
+      if (shouldEagerLoad && typeof img.fetchPriority === "string") {
+        img.fetchPriority = "high";
+      }
       if (venue.imageFit === "contain") {
         img.classList.add("venue-card__image--contain");
       }
@@ -736,6 +821,18 @@ window.addEventListener('pageshow', (event) => {
     setTimeout(applyFilters, 0);
   }
 });
+
+if (supportsImagePreload && typeof document !== "undefined") {
+  const handleReadyState = () => {
+    startImagePreloading();
+  };
+
+  if (document.readyState === "complete" || document.readyState === "interactive") {
+    handleReadyState();
+  } else {
+    document.addEventListener("DOMContentLoaded", handleReadyState, { once: true });
+  }
+}
 
 // 맨위로 가기 버튼
 const initScrollTop = () => {
