@@ -264,6 +264,55 @@ const SEOUL_VENUES = [
     ]
   },
   {
+    id: "seoul-latinaclass",
+    name: { ko: "라틴 에이클래스", en: "Latin A Class" },
+    region: { ko: "서울", en: "Seoul" },
+    city: { ko: "서울 강남구", en: "Gangnam-gu, Seoul" },
+    address: {
+      ko: "서울특별시 강남구 테헤란로6길 9",
+      en: "9 Teheran-ro 6-gil, Gangnam-gu, Seoul"
+    },
+    styles: ["salsa", "bachata", "kizomba"],
+    image: "assets/images/latin_a.png",
+    imageAlt: {
+      ko: "라틴 에이클래스 로고",
+      en: "Latin A Class logo"
+    },
+    summary: {
+      ko: "대한민국에서 가장 큰 규모의 라틴 댄스 클럽 및 동호회로, 살사, 바차타, 키좀바 등의 라틴 댄스를 즐기고 배울 수 있는 곳입니다.",
+      en: "One of South Korea's largest Latin dance clubs and communities where dancers can learn and enjoy salsa, bachata, kizomba, and more."
+    },
+    links: [
+      { type: "instagram", url: "https://www.instagram.com/latin_a_class/" }
+    ]
+  },
+  {
+    id: "seoul-senbarico",
+    name: { ko: "센바리코", en: "Senbarico" },
+    region: { ko: "서울", en: "Seoul" },
+    city: { ko: "서울 강남구", en: "Gangnam-gu, Seoul" },
+    address: {
+      ko: "서울특별시 강남구",
+      en: "Gangnam-gu, Seoul"
+    },
+    styles: ["bachata"],
+    image: "assets/images/senbarico.png",
+    imageAlt: {
+      ko: "센바리코 로고",
+      en: "Senbarico logo"
+    },
+    summary: {
+      ko: "전세계적으로 유행하는 센슈얼 바차타를 배울 수 있는 강남 기반의 동호회로, 트렌디한 라틴 댄스를 배우고 즐길 수 있습니다.",
+      en: "Gangnam-based community dedicated to the globally popular sensual bachata, offering a place to learn and enjoy this modern Latin dance style."
+    },
+    links: [
+      { type: "instagram", url: "https://www.instagram.com/senbarico" },
+      { type: "cafe", url: "https://cafe.daum.net/senbarico1" },
+      { type: "youtube", url: "https://www.youtube.com/@ysenbaricobachata4010" },
+      { type: "facebook", url: "https://www.facebook.com/senbarico/" }
+    ]
+  },
+  {
     id: "seoul-salatindanceclub",
     name: { ko: "SA 살사 댄스 클럽", en: "SA Salsa Dance Club" },
     region: { ko: "서울", en: "Seoul" },
