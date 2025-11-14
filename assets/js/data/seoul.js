@@ -278,6 +278,7 @@ const SEOUL_VENUES = [
       ko: "라틴 에이클래스 로고",
       en: "Latin A Class logo"
     },
+    imageFit: "contain",
     summary: {
       ko: "대한민국에서 가장 큰 규모의 라틴 댄스 클럽 및 동호회로, 살사, 바차타, 키좀바 등의 라틴 댄스를 즐기고 배울 수 있는 곳입니다.",
       en: "One of South Korea's largest Latin dance clubs and communities where dancers can learn and enjoy salsa, bachata, kizomba, and more."
@@ -301,6 +302,7 @@ const SEOUL_VENUES = [
       ko: "센바리코 로고",
       en: "Senbarico logo"
     },
+    imageFit: "contain",
     summary: {
       ko: "전세계적으로 유행하는 센슈얼 바차타를 배울 수 있는 강남 기반의 동호회로, 트렌디한 라틴 댄스를 배우고 즐길 수 있습니다.",
       en: "Gangnam-based community dedicated to the globally popular sensual bachata, offering a place to learn and enjoy this modern Latin dance style."
