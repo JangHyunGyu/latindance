@@ -791,7 +791,17 @@ const renderVenues = (venues) => {
         }
 
         contactLinks.forEach((descriptor) => {
-          const contactLink = createLink(descriptor, { variant: "default" });
+          const resolvedDescriptor = descriptor.label
+            ? descriptor
+            : {
+                ...descriptor,
+                label:
+                  venue.name?.[LOCALE] ||
+                  venue.name?.en ||
+                  venue.name?.ko ||
+                  STRINGS.contactFallback
+              };
+          const contactLink = createLink(resolvedDescriptor, { variant: "default" });
           contactLink.classList.add("venue-card__link--contact");
           contactGrid.appendChild(contactLink);
         });
