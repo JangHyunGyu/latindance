@@ -123,7 +123,16 @@ const DAEGU_VENUES = [
         type: "website",
         url: "https://www.daangn.com/kr/group/%EB%8C%80%EA%B5%AC%EC%82%B4%EC%82%AC-%EB%B0%94%EC%B0%A8%ED%83%80-%EB%9D%BC%ED%8B%B4%EB%8C%84%EC%8A%A4-%EA%BC%B0%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4-d8prbg7m6nqo/?in=%EC%9C%A8%ED%95%98%EB%8F%99-5616"
       },
-      { type: "instagram", url: "https://www.instagram.com/latin_moving/" }
+      { type: "instagram", url: "https://www.instagram.com/latin_moving/" },
+      { type: "band", url: "https://www.band.us/@latinmoving" },
+      {
+        type: "phone",
+        url: "tel:010-2502-8156",
+        label: {
+          ko: "달밤",
+          en: "Dalbam"
+        }
+      }
     ]
   },
   {
