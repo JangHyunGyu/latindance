@@ -14,7 +14,7 @@ const GYEONGGI_VENUES = [
       en: "Community based in Suwon's Ingye-dong where newcomers can learn salsa and bachata comfortably, then keep dancing through small practice groups and weekend socials."
     },
     image: "assets/images/suladan.png",
-    imageFit: "contain",
+    imageFit: "cover",
     imageAlt: {
       ko: "수라댄 로고",
       en: "Suradan logo"
