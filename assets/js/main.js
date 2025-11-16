@@ -784,11 +784,16 @@ const renderVenues = (venues) => {
         contactTitle.textContent = STRINGS.linkLabels.phone;
         contactBlock.appendChild(contactTitle);
 
+        const contactGrid = document.createElement("div");
+        contactGrid.className = "venue-card__contacts-grid";
+
         contactLinks.forEach((descriptor) => {
           const contactLink = createLink(descriptor, { variant: "default" });
           contactLink.classList.add("venue-card__link--contact");
-          contactBlock.appendChild(contactLink);
+          contactGrid.appendChild(contactLink);
         });
+
+        contactBlock.appendChild(contactGrid);
 
         contentFragment.appendChild(contactBlock);
       }

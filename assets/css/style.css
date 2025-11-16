@@ -331,13 +331,19 @@ input:focus-visible {
 }
 
 .venue-card__contacts {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   padding: 14px 18px;
   border-radius: var(--radius-sm);
   border: 1px dashed rgba(255, 255, 255, 0.25);
   background: rgba(255, 255, 255, 0.04);
+}
+
+.venue-card__contacts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
 }
 
 .venue-card__contacts-title {
@@ -346,11 +352,11 @@ input:focus-visible {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-subtle);
-  width: 100%;
 }
 
 .venue-card__link--contact {
   justify-content: center;
+  width: 100%;
   border-color: rgba(255, 124, 79, 0.6);
   color: var(--color-text);
   background: rgba(255, 124, 79, 0.16);
@@ -359,6 +365,12 @@ input:focus-visible {
 @media (max-width: 600px) {
   .venue-card__link--contact {
     width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .venue-card__contacts-grid {
+    grid-template-columns: 1fr;
   }
 }
 
