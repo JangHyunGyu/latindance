@@ -61,7 +61,15 @@ const DAEGU_VENUES = [
       { type: "band", url: "https://www.band.us/band/88118947/intro" },
       { type: "instagram", url: "https://www.instagram.com/latinclub_baya/" },
       { type: "youtube", url: "https://www.youtube.com/@latinclub_baya" },
-      { type: "cafe", url: "https://cafe.naver.com/daegulatin" }
+      { type: "cafe", url: "https://cafe.naver.com/daegulatin" },
+      {
+        type: "phone",
+        url: "tel:010-6689-8104",
+        label: {
+          ko: "엠제이",
+          en: "MJ"
+        }
+      }
     ]
   },
   {
@@ -166,7 +174,15 @@ const DAEGU_VENUES = [
       en: "Club Babaroo logo"
     },
     links: [
-      { type: "cafe", url: "https://cafe.naver.com/busanholics" }
+      { type: "cafe", url: "https://cafe.naver.com/busanholics" },
+      {
+        type: "phone",
+        url: "tel:010-4483-8342",
+        label: {
+          ko: "쿠마",
+          en: "Kuma"
+        }
+      }
     ]
   },
   {
@@ -219,7 +235,15 @@ const DAEGU_VENUES = [
         type: "website",
         url: "https://www.daangn.com/kr/local-profile/ny%EC%82%B4%EC%82%AC%EB%8C%84%EC%8A%A4%ED%95%99%EC%9B%90-1312301"
       },
-      { type: "store", url: "https://smartstore.naver.com/nysalsa/products/6030784833?" }
+      { type: "store", url: "https://smartstore.naver.com/nysalsa/products/6030784833?" },
+      {
+        type: "phone",
+        url: "tel:010-5503-0013",
+        label: {
+          ko: "NY 살사",
+          en: "NY Salsa"
+        }
+      }
     ]
   },
   {
@@ -304,7 +328,8 @@ const DAEGU_VENUES = [
     },
     links: [
       { type: "instagram", url: "https://www.instagram.com/feel_dance_korea/" },
-      { type: "cafe", url: "https://cafe.naver.com/fdsalsa" }
+      { type: "cafe", url: "https://cafe.naver.com/fdsalsa" },
+      { type: "phone", url: "tel:010-6602-0724" }
     ]
   }
 ];

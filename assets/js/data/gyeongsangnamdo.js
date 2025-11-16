@@ -44,7 +44,8 @@ const GYEONGSANGNAMDO_VENUES = [
     },
     links: [
       { type: "instagram", url: "https://www.instagram.com/feeldance_changwon_official/" },
-      { type: "cafe", url: "https://cafe.naver.com/fdsalsa" }
+      { type: "cafe", url: "https://cafe.naver.com/fdsalsa" },
+      { type: "phone", url: "tel:010-6602-0724" }
     ]
   },
   {

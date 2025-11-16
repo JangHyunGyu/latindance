@@ -30,9 +30,10 @@ const STRINGS = {
       blog: "네이버 블로그",
   kakaotalk: "카카오톡",
   threads: "Threads",
-  linktree: "Linktree",
-  phone: "연락처"
+	linktree: "Linktree",
+	phone: "연락처"
     },
+    contactFallback: "전화 문의",
     mapInlineLink: "지도 보기",
     scrollTopLabel: "맨 위로",
     scrollTopTitle: "맨 위로 이동"
@@ -65,9 +66,10 @@ const STRINGS = {
       blog: "Naver Blog",
   kakaotalk: "KakaoTalk",
   threads: "Threads",
-  linktree: "Linktree",
-  phone: "Phone"
+	linktree: "Linktree",
+	phone: "Phone"
     },
+    contactFallback: "Call",
     mapInlineLink: "View map",
     scrollTopLabel: "Back to top",
     scrollTopTitle: "Scroll back to top"
@@ -613,6 +615,9 @@ const resolveLinkLabel = (descriptor) => {
     if (typeof descriptor.label === "object") {
       return descriptor.label[LOCALE] || descriptor.label.en || descriptor.label.ko;
     }
+  }
+  if (descriptor.type === "phone" && STRINGS.contactFallback) {
+    return STRINGS.contactFallback;
   }
   return STRINGS.linkLabels[descriptor.type] || descriptor.type;
 };

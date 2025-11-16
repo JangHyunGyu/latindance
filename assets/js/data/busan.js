@@ -218,7 +218,8 @@ const BUSAN_VENUES = [
     links: [
       { type: "instagram", url: "https://www.instagram.com/feel_dance_korea/" },
       { type: "cafe", url: "https://cafe.naver.com/fdsalsa" },
-      { type: "youtube", url: "https://www.youtube.com/@nanda_999" }
+      { type: "youtube", url: "https://www.youtube.com/@nanda_999" },
+      { type: "phone", url: "tel:010-6602-0724" }
     ]
   }
 ];
