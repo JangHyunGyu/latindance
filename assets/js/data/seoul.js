@@ -284,7 +284,14 @@ const SEOUL_VENUES = [
       en: "One of South Korea's largest Latin dance clubs and communities where dancers can learn and enjoy salsa, bachata, kizomba, and more."
     },
     links: [
-      { type: "instagram", url: "https://www.instagram.com/latin_a_class/" },
+      {
+        type: "instagram",
+        url: "https://www.instagram.com/latin_a_class/",
+        label: {
+          ko: "인스타그램(라틴에이클래스)",
+          en: "Instagram (Latin A Class)"
+        }
+      },
       {
         type: "instagram",
         url: "https://www.instagram.com/latin_gangnam/",
