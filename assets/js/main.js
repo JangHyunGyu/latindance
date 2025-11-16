@@ -773,24 +773,31 @@ const renderVenues = (venues) => {
       });
 
       const contactLinks = sortedLinks.filter((descriptor) => descriptor.type === "phone");
-      const socialLinks = sortedLinks.filter((descriptor) => descriptor.type !== "phone");
+      const kakaoLinks = sortedLinks.filter((descriptor) => descriptor.type === "kakaotalk");
+      const socialLinks = sortedLinks.filter(
+        (descriptor) => descriptor.type !== "phone" && descriptor.type !== "kakaotalk"
+      );
 
-      if (contactLinks.length) {
-        const contactBlock = document.createElement("div");
-        contactBlock.className = "venue-card__contacts";
+      const appendContactSection = (links, titleText) => {
+        if (!links.length) {
+          return;
+        }
+
+  const contactBlock = document.createElement("div");
+  contactBlock.className = "venue-card__contacts";
 
         const contactTitle = document.createElement("p");
         contactTitle.className = "venue-card__contacts-title";
-        contactTitle.textContent = STRINGS.linkLabels.phone;
+        contactTitle.textContent = titleText;
         contactBlock.appendChild(contactTitle);
 
         const contactGrid = document.createElement("div");
         contactGrid.className = "venue-card__contacts-grid";
-        if (contactLinks.length === 1) {
+        if (links.length === 1) {
           contactGrid.classList.add("venue-card__contacts-grid--single");
         }
 
-        contactLinks.forEach((descriptor) => {
+        links.forEach((descriptor) => {
           const resolvedDescriptor = descriptor.label
             ? descriptor
             : {
@@ -807,9 +814,11 @@ const renderVenues = (venues) => {
         });
 
         contactBlock.appendChild(contactGrid);
-
         contentFragment.appendChild(contactBlock);
-      }
+      };
+
+      appendContactSection(contactLinks, STRINGS.linkLabels.phone || STRINGS.contactFallback);
+      appendContactSection(kakaoLinks, STRINGS.linkLabels.kakaotalk || "KakaoTalk");
 
       if (socialLinks.length) {
         const links = document.createElement("div");
