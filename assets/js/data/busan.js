@@ -19,7 +19,15 @@ const BUSAN_VENUES = [
       en: "LaLaLa Salsa logo"
     },
     links: [
-      { type: "band", url: "https://www.band.us/@051salsa" }
+      { type: "band", url: "https://www.band.us/@051salsa" },
+      {
+        type: "phone",
+        url: "tel:010-3563-7749",
+        label: {
+          ko: "결",
+          en: "Gyeol"
+        }
+      }
     ]
   },
   {
@@ -46,7 +54,15 @@ const BUSAN_VENUES = [
       { type: "blog", url: "https://blog.naver.com/hyunayab" },
       { type: "facebook", url: "https://www.facebook.com/azucarinrueda/" },
       { type: "band", url: "https://www.band.us/@ruedaclub" },
-      { type: "youtube", url: "https://www.youtube.com/@busan_rueda" }
+      { type: "youtube", url: "https://www.youtube.com/@busan_rueda" },
+      {
+        type: "phone",
+        url: "tel:010-2577-8706",
+        label: {
+          ko: "루에다",
+          en: "Rueda"
+        }
+      }
     ]
   },
   {
@@ -95,7 +111,15 @@ const BUSAN_VENUES = [
       en: "Nobless Busan logo"
     },
     links: [
-      { type: "band", url: "https://www.band.us/@noblessbusan" }
+      { type: "band", url: "https://www.band.us/@noblessbusan" },
+      {
+        type: "phone",
+        url: "tel:010-7159-0765",
+        label: {
+          ko: "소머즈",
+          en: "Somers"
+        }
+      }
     ]
   },
   {
