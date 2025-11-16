@@ -13,13 +13,39 @@ const GYEONGGI_VENUES = [
       ko: "수원 인계동의 스튜디오에서 초보자도 부담 없이 살사와 바차타를 배우고, 소규모 연습 모임과 주말 소셜로 지역 라틴 문화를 나누는 커뮤니티입니다.",
       en: "Community based in Suwon's Ingye-dong where newcomers can learn salsa and bachata comfortably, then keep dancing through small practice groups and weekend socials."
     },
-    image: "assets/images/latindance_full_logo.png",
+    image: "assets/images/suladan.png",
     imageFit: "contain",
     imageAlt: {
       ko: "수라댄 로고",
       en: "Suradan logo"
     },
-    links: []
+    links: [
+      { type: "cafe", url: "https://m.cafe.daum.net/dk2094" },
+      {
+        type: "kakaotalk",
+        url: "https://open.kakao.com/o/ads944",
+        label: {
+          ko: "카카오톡 다비드",
+          en: "KakaoTalk David"
+        }
+      },
+      {
+        type: "phone",
+        url: "tel:010-9655-2969",
+        label: {
+          ko: "다비드",
+          en: "David"
+        }
+      },
+      {
+        type: "kakaotalk",
+        url: "https://open.kakao.com/o/syu9906",
+        label: {
+          ko: "카카오톡 로제",
+          en: "KakaoTalk Roje"
+        }
+      }
+    ]
   }
 ];
 
