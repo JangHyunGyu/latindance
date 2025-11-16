@@ -346,6 +346,10 @@ input:focus-visible {
   gap: 10px;
 }
 
+.venue-card__contacts-grid--single {
+  grid-template-columns: 1fr;
+}
+
 .venue-card__contacts-title {
   margin: 0;
   font-size: 0.8rem;
@@ -368,7 +372,7 @@ input:focus-visible {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 360px) {
   .venue-card__contacts-grid {
     grid-template-columns: 1fr;
   }

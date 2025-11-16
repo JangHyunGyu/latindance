@@ -31,9 +31,9 @@ const STRINGS = {
   kakaotalk: "카카오톡",
   threads: "Threads",
 	linktree: "Linktree",
-	phone: "연락처"
+  phone: "전화 문의"
     },
-    contactFallback: "전화 문의",
+  contactFallback: "전화 문의",
     mapInlineLink: "지도 보기",
     scrollTopLabel: "맨 위로",
     scrollTopTitle: "맨 위로 이동"
@@ -786,6 +786,9 @@ const renderVenues = (venues) => {
 
         const contactGrid = document.createElement("div");
         contactGrid.className = "venue-card__contacts-grid";
+        if (contactLinks.length === 1) {
+          contactGrid.classList.add("venue-card__contacts-grid--single");
+        }
 
         contactLinks.forEach((descriptor) => {
           const contactLink = createLink(descriptor, { variant: "default" });
