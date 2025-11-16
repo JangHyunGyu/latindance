@@ -32,8 +32,8 @@ const DAEGU_VENUES = [
         type: "phone",
         url: "tel:010-2350-5055",
         label: {
-          ko: "연락처(달빛영희)",
-          en: "Phone (Dalbit Younghee)"
+          ko: "달빛영희",
+          en: "Dalbit Younghee"
         }
       },
       {
