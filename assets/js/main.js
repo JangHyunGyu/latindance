@@ -31,9 +31,9 @@ const STRINGS = {
   kakaotalk: "카카오톡",
   threads: "Threads",
 	linktree: "Linktree",
-  phone: "전화 문의"
+  phone: "전화문의"
     },
-  contactFallback: "전화 문의",
+  contactFallback: "전화문의",
     mapInlineLink: "지도 보기",
     scrollTopLabel: "맨 위로",
     scrollTopTitle: "맨 위로 이동"
