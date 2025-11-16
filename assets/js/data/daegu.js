@@ -48,7 +48,8 @@ const DAEGU_VENUES = [
     links: [
       { type: "band", url: "https://www.band.us/band/88118947/intro" },
       { type: "instagram", url: "https://www.instagram.com/latinclub_baya/" },
-      { type: "youtube", url: "https://www.youtube.com/@latinclub_baya" }
+      { type: "youtube", url: "https://www.youtube.com/@latinclub_baya" },
+      { type: "cafe", url: "https://cafe.naver.com/daegulatin" }
     ]
   },
   {
