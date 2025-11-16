@@ -985,7 +985,7 @@ const initFooterDates = () => {
 
 initFooterDates();
 
-const registerServiceWorker = () => {
+const cleanupServiceWorkers = () => {
   if (!("serviceWorker" in navigator)) {
     return;
   }
@@ -994,11 +994,24 @@ const registerServiceWorker = () => {
     return;
   }
 
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("service-worker.js").catch(() => {
-      /* noop */
-    });
-  });
+  const unregisterAll = () => {
+    navigator.serviceWorker
+      .getRegistrations()
+      .then((registrations) => {
+        registrations.forEach((registration) => {
+          registration.unregister();
+        });
+      })
+      .catch(() => {
+        /* noop */
+      });
+  };
+
+  if (document.readyState === "complete") {
+    unregisterAll();
+  } else {
+    window.addEventListener("load", unregisterAll);
+  }
 };
 
-registerServiceWorker();
+cleanupServiceWorkers();
