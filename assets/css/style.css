@@ -330,6 +330,31 @@ input:focus-visible {
   gap: 8px;
 }
 
+.venue-card__contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 18px;
+  border-radius: var(--radius-sm);
+  border: 1px dashed rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.venue-card__contacts-title {
+  margin: 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-subtle);
+}
+
+.venue-card__link--contact {
+  width: fit-content;
+  border-color: rgba(255, 124, 79, 0.6);
+  color: var(--color-text);
+  background: rgba(255, 124, 79, 0.16);
+}
+
 .venue-card__links--chips {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(156px, 1fr));

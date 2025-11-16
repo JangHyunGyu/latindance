@@ -751,12 +751,6 @@ const renderVenues = (venues) => {
     contentFragment.appendChild(tags);
 
     const linkDescriptors = Array.isArray(venue.links) ? [...venue.links] : [];
-    const links = document.createElement("div");
-    links.className = "venue-card__links";
-    const linkVariant = venue.linkDisplay === "buttons" ? "default" : "chip";
-    if (linkVariant === "chip") {
-      links.classList.add("venue-card__links--chips");
-    }
     if (linkDescriptors.length) {
       const sortedLinks = linkDescriptors.sort((a, b) => {
         const indexA = LINK_DISPLAY_ORDER.indexOf(a.type);
@@ -772,11 +766,41 @@ const renderVenues = (venues) => {
         const labelB = resolveLinkLabel(b).toLowerCase();
         return labelA.localeCompare(labelB, LOCALE === "ko" ? "ko-KR" : "en-US");
       });
-      sortedLinks.forEach((descriptor) => {
-        links.appendChild(createLink(descriptor, { variant: linkVariant }));
-      });
+
+      const contactLinks = sortedLinks.filter((descriptor) => descriptor.type === "phone");
+      const socialLinks = sortedLinks.filter((descriptor) => descriptor.type !== "phone");
+
+      if (contactLinks.length) {
+        const contactBlock = document.createElement("div");
+        contactBlock.className = "venue-card__contacts";
+
+        const contactTitle = document.createElement("p");
+        contactTitle.className = "venue-card__contacts-title";
+        contactTitle.textContent = STRINGS.linkLabels.phone;
+        contactBlock.appendChild(contactTitle);
+
+        contactLinks.forEach((descriptor) => {
+          const contactLink = createLink(descriptor, { variant: "default" });
+          contactLink.classList.add("venue-card__link--contact");
+          contactBlock.appendChild(contactLink);
+        });
+
+        contentFragment.appendChild(contactBlock);
+      }
+
+      if (socialLinks.length) {
+        const links = document.createElement("div");
+        links.className = "venue-card__links";
+        const linkVariant = venue.linkDisplay === "buttons" ? "default" : "chip";
+        if (linkVariant === "chip") {
+          links.classList.add("venue-card__links--chips");
+        }
+        socialLinks.forEach((descriptor) => {
+          links.appendChild(createLink(descriptor, { variant: linkVariant }));
+        });
+        contentFragment.appendChild(links);
+      }
     }
-    contentFragment.appendChild(links);
     card.appendChild(contentFragment);
     fragment.appendChild(card);
   });
