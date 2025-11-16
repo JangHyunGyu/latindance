@@ -22,27 +22,11 @@ const GYEONGGI_VENUES = [
     links: [
       { type: "cafe", url: "https://m.cafe.daum.net/dk2094" },
       {
-        type: "kakaotalk",
-        url: "https://open.kakao.com/o/ads944",
-        label: {
-          ko: "카카오톡 다비드",
-          en: "KakaoTalk David"
-        }
-      },
-      {
         type: "phone",
         url: "tel:010-9655-2969",
         label: {
           ko: "다비드",
           en: "David"
-        }
-      },
-      {
-        type: "kakaotalk",
-        url: "https://open.kakao.com/o/syu9906",
-        label: {
-          ko: "카카오톡 로제",
-          en: "KakaoTalk Roje"
         }
       }
     ]
