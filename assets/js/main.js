@@ -30,7 +30,8 @@ const STRINGS = {
       blog: "네이버 블로그",
   kakaotalk: "카카오톡",
   threads: "Threads",
-  linktree: "Linktree"
+  linktree: "Linktree",
+  phone: "연락처"
     },
     mapInlineLink: "지도 보기",
     scrollTopLabel: "맨 위로",
@@ -64,7 +65,8 @@ const STRINGS = {
       blog: "Naver Blog",
   kakaotalk: "KakaoTalk",
   threads: "Threads",
-  linktree: "Linktree"
+  linktree: "Linktree",
+  phone: "Phone"
     },
     mapInlineLink: "View map",
     scrollTopLabel: "Back to top",
@@ -78,6 +80,7 @@ const LINK_DISPLAY_ORDER = [
   "homepage",
   "website",
   "map",
+  "phone",
   "youtube",
   "instagram",
   "instagramBachazouk",
@@ -111,6 +114,7 @@ const LINK_ICON_ALIASES = {
   youtube: "play",
   blog: "blog",
   map: "map",
+  phone: "phone",
   store: "bag",
   linktree: "tree"
 };
@@ -274,6 +278,24 @@ const LINK_ICON_FACTORIES = {
     });
     pin.setAttribute("stroke", "none");
     pin.setAttribute("fill", "currentColor");
+  },
+  phone: (svg) => {
+    appendSvgChild(svg, "path", {
+      d: "M8 4h8a2 2 0 012 2v12a2 2 0 01-2 2H8a2 2 0 01-2-2V6a2 2 0 012-2z",
+      fill: "none"
+    });
+    appendSvgChild(svg, "line", {
+      x1: "10",
+      y1: "6",
+      x2: "14",
+      y2: "6"
+    });
+    appendSvgChild(svg, "line", {
+      x1: "12",
+      y1: "18",
+      x2: "12",
+      y2: "18"
+    });
   },
   bag: (svg) => {
     appendSvgChild(svg, "rect", {

@@ -21,6 +21,22 @@ const DAEGU_VENUES = [
     links: [
       { type: "band", url: "https://www.band.us/band/70307600/post" },
       {
+        type: "instagram",
+        url: "https://www.instagram.com/asurazang02/",
+        label: {
+          ko: "인스타그램(라틴아수라)",
+          en: "Instagram (Latin Asura)"
+        }
+      },
+      {
+        type: "phone",
+        url: "tel:010-2350-5055",
+        label: {
+          ko: "연락처(달빛영희)",
+          en: "Phone (Dalbit Younghee)"
+        }
+      },
+      {
         type: "website",
         url: "https://www.daangn.com/kr/group/%EB%8C%80%EA%B5%AC%EB%9D%BC%ED%8B%B4%EC%95%84%EC%88%98%EB%9D%BC-%EC%82%B4%EC%82%AC%EB%B0%94%EC%B0%A8%ED%83%80-w26qjxjaijq4/"
       }
