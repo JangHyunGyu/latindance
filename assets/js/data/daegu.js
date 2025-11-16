@@ -96,7 +96,15 @@ const DAEGU_VENUES = [
         type: "cafe",
         url: "https://cafe.naver.com/salsadrama?iframe_url=/MyCafeIntro.nhn%3Fclubid=29348479"
       },
-      { type: "instagram", url: "https://www.instagram.com/salsadrama2010/" }
+      { type: "instagram", url: "https://www.instagram.com/salsadrama2010/" },
+      {
+        type: "phone",
+        url: "tel:010-5037-6275",
+        label: {
+          ko: "수르",
+          en: "Ssur"
+        }
+      }
     ]
   },
   {
