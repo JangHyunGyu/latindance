@@ -24,7 +24,23 @@ const GYEONGSANGBUKDO_VENUES = [
       { type: "band", url: "https://www.band.us/@no1kumiarte" },
       { type: "cafe", url: "https://cafe.naver.com/gumiarte" },
       { type: "blog", url: "https://m.blog.naver.com/lch5262" },
-      { type: "youtube", url: "https://www.youtube.com/@salsaltv2134" }
+      { type: "youtube", url: "https://www.youtube.com/@salsaltv2134" },
+      {
+        type: "phone",
+        url: "tel:010-9880-5262",
+        label: {
+          ko: "살살",
+          en: "Salsal"
+        }
+      },
+      {
+        type: "phone",
+        url: "tel:010-5552-2336",
+        label: {
+          ko: "열열",
+          en: "Yeolyeol"
+        }
+      }
     ]
   },
   {
