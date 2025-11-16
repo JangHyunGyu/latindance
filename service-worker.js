@@ -1,4 +1,5 @@
-const CACHE_NAME = "latindance-static-v2";
+const CACHE_NAME = "latindance-static-v3";
+const NETWORK_NO_CACHE_HEADER = "no-store, no-cache, must-revalidate";
 const CORE_ASSETS = [
   "./",
   "./index.html",
@@ -38,6 +39,22 @@ self.addEventListener("activate", (event) => {
   );
 });
 
+const applyNoCacheHeaders = (response) => {
+  if (!response || response.type === "opaque") {
+    return response;
+  }
+  const headers = new Headers(response.headers);
+  headers.set("Cache-Control", NETWORK_NO_CACHE_HEADER);
+  headers.set("Pragma", "no-cache");
+  headers.set("Expires", "0");
+
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers
+  });
+};
+
 self.addEventListener("fetch", (event) => {
   const { request } = event;
   if (request.method !== "GET") {
@@ -50,34 +67,32 @@ self.addEventListener("fetch", (event) => {
   }
 
   event.respondWith(
-    caches.match(request).then((cachedResponse) => {
-      if (cachedResponse) {
-        return cachedResponse;
-      }
-
-      return fetch(request)
-        .then((networkResponse) => {
-          if (
-            !networkResponse ||
-            networkResponse.status !== 200 ||
-            networkResponse.type === "opaque"
-          ) {
-            return networkResponse;
-          }
-
-          const responseClone = networkResponse.clone();
-          caches.open(CACHE_NAME).then((cache) => {
-            cache.put(request, responseClone);
-          });
-
+    fetch(request, { cache: "no-store" })
+      .then((networkResponse) => {
+        if (!networkResponse || networkResponse.type === "opaque") {
           return networkResponse;
-        })
-        .catch(() => {
+        }
+
+        const responseForReturn = applyNoCacheHeaders(networkResponse.clone());
+
+        if (networkResponse.status === 200) {
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(request, networkResponse.clone());
+          });
+        }
+
+        return responseForReturn;
+      })
+      .catch(() => {
+        return caches.match(request).then((cachedResponse) => {
+          if (cachedResponse) {
+            return cachedResponse;
+          }
           if (request.mode === "navigate") {
             return caches.match("./index.html");
           }
           return undefined;
         });
-    })
+      })
   );
 });
