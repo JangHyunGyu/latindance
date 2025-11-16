@@ -168,6 +168,14 @@ const DAEGU_VENUES = [
       {
         type: "facebook",
         url: "https://www.facebook.com/p/LatinPub-SHINE-100039631676264/?locale=ml_IN&_rdr"
+      },
+      {
+        type: "phone",
+        url: "tel:010-5503-0013",
+        label: {
+          ko: "라틴펍 샤인",
+          en: "Latin Pub SHINE"
+        }
       }
     ]
   },
