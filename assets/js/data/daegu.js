@@ -289,7 +289,23 @@ const DAEGU_VENUES = [
       en: "Daegu Juke logo"
     },
     links: [
-      { type: "band", url: "https://www.band.us/band/97302785/post" }
+      { type: "band", url: "https://www.band.us/band/97302785/post" },
+      {
+        type: "phone",
+        url: "tel:010-4887-9171",
+        label: {
+          ko: "탐앤제리",
+          en: "Tom & Jerry"
+        }
+      },
+      {
+        type: "phone",
+        url: "tel:010-2292-7202",
+        label: {
+          ko: "레인보우",
+          en: "Rainbow"
+        }
+      }
     ]
   },
   {
