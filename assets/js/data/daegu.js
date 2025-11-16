@@ -22,11 +22,7 @@ const DAEGU_VENUES = [
       { type: "band", url: "https://www.band.us/band/70307600/post" },
       {
         type: "instagram",
-        url: "https://www.instagram.com/asurazang02/",
-        label: {
-          ko: "인스타그램(라틴아수라)",
-          en: "Instagram (Latin Asura)"
-        }
+        url: "https://www.instagram.com/asurazang02/"
       },
       {
         type: "phone",
