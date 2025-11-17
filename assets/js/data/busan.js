@@ -168,6 +168,14 @@ const BUSAN_VENUES = [
     links: [
       { type: "instagram", url: "https://www.instagram.com/salsafitkorea/" },
       { type: "blog", url: "https://blog.naver.com/salsafit" },
+      {
+        type: "phone",
+        url: "tel:051-802-3699",
+        label: {
+          ko: "살사핏",
+          en: "Salsafit"
+        }
+      },
       { type: "youtube", url: "https://www.youtube.com/@karinapark_korea" }
     ]
   },
