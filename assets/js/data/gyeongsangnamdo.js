@@ -142,7 +142,15 @@ const GYEONGSANGNAMDO_VENUES = [
     },
     links: [
       { type: "band", url: "https://www.band.us/band/58556160" },
-      { type: "cafe", url: "https://cafe.naver.com/jinjulatin" }
+      { type: "cafe", url: "https://cafe.naver.com/jinjulatin" },
+      {
+        type: "phone",
+        url: "tel:010-3246-8673",
+        label: {
+          ko: "또리",
+          en: "Ddori"
+        }
+      }
     ]
   },
   {
