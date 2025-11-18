@@ -84,7 +84,15 @@ const GYEONGSANGNAMDO_VENUES = [
     },
     links: [
       { type: "website", url: "https://litt.ly/lunadance" },
-      { type: "instagram", url: "https://www.instagram.com/latindance_luna/" }
+      { type: "instagram", url: "https://www.instagram.com/latindance_luna/" },
+      {
+        type: "phone",
+        url: "tel:0507-1414-5104",
+        label: {
+          ko: "루나댄스",
+          en: "Luna Dance"
+        }
+      }
     ]
   },
   {
