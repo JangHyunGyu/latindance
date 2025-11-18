@@ -88,7 +88,15 @@ const BUSAN_VENUES = [
       { type: "instagram", url: "https://www.instagram.com/zoukbusan/" },
       { type: "cafe", url: "https://cafe.naver.com/bbzouk" },
       { type: "facebook", url: "https://www.facebook.com/groups/1131029938076175/" },
-      { type: "band", url: "https://band.us/@busanzouk" }
+      { type: "band", url: "https://band.us/@busanzouk" },
+      {
+        type: "phone",
+        url: "tel:010-8530-5840",
+        label: {
+          ko: "사랑마녀",
+          en: "Sarangmanyeo"
+        }
+      }
     ]
   },
   {
@@ -210,7 +218,15 @@ const BUSAN_VENUES = [
       { type: "cafe", url: "https://cafe.naver.com/atsalsa" },
       { type: "band", url: "https://www.band.us/@lydance" },
       { type: "instagram", url: "https://www.instagram.com/largoysl_korea" },
-      { type: "youtube", url: "https://www.youtube.com/c/LargoTV" }
+      { type: "youtube", url: "https://www.youtube.com/c/LargoTV" },
+      {
+        type: "phone",
+        url: "tel:070-8095-2051",
+        label: {
+          ko: "LY댄스",
+          en: "LY Dance"
+        }
+      }
     ]
   },
   {
