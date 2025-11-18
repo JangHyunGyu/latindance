@@ -755,7 +755,12 @@ const renderVenues = (venues) => {
     }
     contentFragment.appendChild(tags);
 
-    const linkDescriptors = Array.isArray(venue.links) ? [...venue.links] : [];
+    const linkDescriptors = Array.isArray(venue.links)
+      ? venue.links.map((descriptor, originalIndex) => ({
+          ...descriptor,
+          __originalIndex: originalIndex
+        }))
+      : [];
     if (linkDescriptors.length) {
       const sortedLinks = linkDescriptors.sort((a, b) => {
         const indexA = LINK_DISPLAY_ORDER.indexOf(a.type);
@@ -766,6 +771,20 @@ const renderVenues = (venues) => {
           if (safeIndexA !== safeIndexB) {
             return safeIndexA - safeIndexB;
           }
+        }
+        const resolveOrder = (descriptor) => {
+          if (typeof descriptor.displayOrder === "number") {
+            return descriptor.displayOrder;
+          }
+          if (typeof descriptor.__originalIndex === "number") {
+            return descriptor.__originalIndex;
+          }
+          return Number.MAX_SAFE_INTEGER;
+        };
+        const orderA = resolveOrder(a);
+        const orderB = resolveOrder(b);
+        if (orderA !== orderB) {
+          return orderA - orderB;
         }
         const labelA = resolveLinkLabel(a).toLowerCase();
         const labelB = resolveLinkLabel(b).toLowerCase();

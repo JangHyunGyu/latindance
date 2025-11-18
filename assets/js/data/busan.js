@@ -59,8 +59,8 @@ const BUSAN_VENUES = [
         type: "phone",
         url: "tel:010-2577-8706",
         label: {
-          ko: "루에다",
-          en: "Rueda"
+          ko: "팍찐",
+          en: "Pakjin"
         }
       }
     ]
