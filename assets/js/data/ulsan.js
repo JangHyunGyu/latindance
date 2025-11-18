@@ -100,6 +100,22 @@ const ULSAN_VENUES = [
           ko: "LY댄스 울산",
           en: "LY Dance Ulsan"
         }
+      },
+      {
+        type: "phone",
+        url: "tel:010-4418-2233",
+        label: {
+          ko: "입생로랑",
+          en: "Yves Saint Laurent"
+        }
+      },
+      {
+        type: "phone",
+        url: "tel:010-2798-8387",
+        label: {
+          ko: "라르고",
+          en: "Largo"
+        }
       }
     ]
   },
