@@ -131,6 +131,37 @@ const BUSAN_VENUES = [
     ]
   },
   {
+    id: "busan-bliss",
+    name: { ko: "블리스", en: "Bliss" },
+    region: { ko: "부산", en: "Busan" },
+    city: { ko: "부산 부산진구", en: "Busanjin-gu" },
+    address: {
+      ko: "부산광역시 부산진구 부전동 520-31 4층",
+      en: "4F, 520-31 Bujeon-dong, Busanjin-gu, Busan"
+    },
+    styles: ["salsa", "bachata", "kizomba"],
+    summary: {
+      ko: "부전동 전용 스튜디오에서 살사·바차타·키좀바를 소규모 정규반과 야간 소셜로 운영해 퇴근 후에도 쉽게 즐길 수 있는 라틴 커뮤니티입니다.",
+      en: "Fourth-floor studio in Bujeon-dong running small-group salsa, bachata, and kizomba classes plus after-work socials, making it easy for dancers to drop in and connect."
+    },
+    image: "assets/images/latindance_profile_logo.png",
+    imageAlt: {
+      ko: "블리스 라틴댄스 로고",
+      en: "Bliss Latin Dance logo"
+    },
+    links: [
+      { type: "band", url: "https://www.band.us/band/99275551/post" },
+      {
+        type: "phone",
+        url: "tel:010-7148-0991",
+        label: {
+          ko: "스윗",
+          en: "Sweet"
+        }
+      }
+    ]
+  },
+  {
     id: "busan-latino",
     name: { ko: "라티노", en: "Latino" },
     region: { ko: "부산", en: "Busan" },
