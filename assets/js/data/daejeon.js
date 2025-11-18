@@ -24,7 +24,7 @@ const DAEJEON_VENUES = [
       { type: "facebook", url: "https://www.facebook.com/DaejeonLatin/" },
       {
         type: "cafe",
-        url: "https://m.cafe.naver.com/ca-fe/daejeonratinclub"
+        url: "https://cafe.naver.com/daejeonratinclub"
       }
     ]
   }
