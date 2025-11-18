@@ -113,8 +113,8 @@ const BUSAN_VENUES = [
     region: { ko: "부산", en: "Busan" },
     city: { ko: "부산 부산진구", en: "Busanjin-gu" },
     address: {
-      ko: "부산광역시 부산진구 양지로5번길 8 지하 1층",
-      en: "B1, 8 Yangji-ro 5beon-gil, Busanjin-gu, Busan"
+      ko: "부산광역시 부산진구 신천대로 102번길 37",
+      en: "37 Sincheon-daero 102beon-gil, Busanjin-gu, Busan"
     },
     styles: ["salsa", "bachata"],
     summary: {
