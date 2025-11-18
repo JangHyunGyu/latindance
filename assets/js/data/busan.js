@@ -185,14 +185,6 @@ const BUSAN_VENUES = [
       { type: "instagram", url: "https://www.instagram.com/latino_salsa_club/" },
       {
         type: "phone",
-        url: "tel:010-3938-2405",
-        label: {
-          ko: "사이먼",
-          en: "Simon"
-        }
-      },
-      {
-        type: "phone",
         url: "tel:010-2573-5559",
         label: {
           ko: "라띠노",
