@@ -280,7 +280,15 @@ const BUSAN_VENUES = [
       en: "Mambo Club logo"
     },
     links: [
-      { type: "band", url: "https://www.band.us/@salsanight" }
+      { type: "band", url: "https://www.band.us/@salsanight" },
+      {
+        type: "phone",
+        url: "tel:010-2566-2444",
+        label: {
+          ko: "젬스",
+          en: "Gems"
+        }
+      }
     ]
   },
   {
