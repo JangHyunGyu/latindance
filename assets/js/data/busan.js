@@ -144,7 +144,7 @@ const BUSAN_VENUES = [
       ko: "부전동 전용 스튜디오에서 살사·바차타·키좀바를 소규모 정규반과 야간 소셜로 운영해 퇴근 후에도 쉽게 즐길 수 있는 라틴 커뮤니티입니다.",
       en: "Fourth-floor studio in Bujeon-dong running small-group salsa, bachata, and kizomba classes plus after-work socials, making it easy for dancers to drop in and connect."
     },
-    image: "assets/images/latindance_profile_logo.png",
+  image: "assets/images/bliss.png",
     imageAlt: {
       ko: "블리스 라틴댄스 로고",
       en: "Bliss Latin Dance logo"
