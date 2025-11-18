@@ -143,7 +143,15 @@ const GYEONGSANGNAMDO_VENUES = [
     },
     links: [
       { type: "band", url: "https://www.band.us/band/96265289" },
-      { type: "instagram", url: "https://www.instagram.com/jinjulatindance/" }
+      { type: "instagram", url: "https://www.instagram.com/jinjulatindance/" },
+      {
+        type: "phone",
+        url: "tel:010-2808-9679",
+        label: {
+          ko: "진라댄",
+          en: "Jinradan"
+        }
+      }
     ]
   }
 ];

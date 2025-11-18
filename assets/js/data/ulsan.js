@@ -92,7 +92,15 @@ const ULSAN_VENUES = [
       { type: "cafe", url: "https://cafe.naver.com/atsalsa" },
       { type: "band", url: "https://www.band.us/@lydance" },
       { type: "instagram", url: "https://www.instagram.com/largoysl_korea" },
-      { type: "youtube", url: "https://www.youtube.com/c/LargoTV" }
+      { type: "youtube", url: "https://www.youtube.com/c/LargoTV" },
+      {
+        type: "phone",
+        url: "tel:070-8095-2051",
+        label: {
+          ko: "LY댄스 울산",
+          en: "LY Dance Ulsan"
+        }
+      }
     ]
   },
   {
