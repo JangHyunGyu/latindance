@@ -75,6 +75,31 @@ const SEOUL_VENUES = [
     ]
   },
   {
+    id: "seoul-bestlatin",
+    name: { ko: "베스트라틴", en: "Best Latin" },
+    region: { ko: "서울", en: "Seoul" },
+    city: { ko: "서울 강남구", en: "Gangnam-gu" },
+    address: {
+      ko: "서울특별시 강남구",
+      en: "Gangnam-gu, Seoul"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "살사, 바차타, 방송댄스를 즐기며 춤을 처음 접하는 분들도 부담 없이 시작할 수 있는 젊고 따뜻한 감성의 댄스 동호회입니다.",
+      en: "Young and welcoming dance club near Gangnam where newcomers can start salsa, bachata, and K-pop performance dance without pressure."
+    },
+    image: "assets/images/best_latin.png",
+    imageAlt: {
+      ko: "베스트라틴 로고",
+      en: "Best Latin logo"
+    },
+    links: [
+      { type: "youtube", url: "https://www.youtube.com/@%EB%B2%A0%EC%8A%A4%ED%8A%B8%EB%9D%BC%ED%8B%B4" },
+      { type: "instagram", url: "https://www.instagram.com/bestlatin2026" },
+      { type: "cafe", url: "https://cafe.naver.com/almaibre" }
+    ]
+  },
+  {
     id: "seoul-latinparadise",
     name: { ko: "라틴파라다이스", en: "Latin Paradise" },
     region: { ko: "서울", en: "Seoul" },
