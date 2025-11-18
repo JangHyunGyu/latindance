@@ -102,8 +102,8 @@ const BUSAN_VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "4050 세대를 위한 라틴댄스 동호회로 월요일마다 정기 모임을 열고, 살사·메렝게·바차타 강습과 와인·뷔페 파티 같은 사교 이벤트를 즐길 수 있는 커뮤니티입니다.",
-      en: "latin club for dancers in their 40s and 50s with Monday sessions, teaching salsa, merengue, and bachata alongside wine and buffet socials."
+      ko: "4050 세대를 위한 라틴댄스 동호회로 월요일마다 정기 모임을 열고, 살사·바차타 강습과 와인·뷔페 파티 같은 사교 이벤트를 즐길 수 있는 커뮤니티입니다.",
+      en: "latin club for dancers in their 40s and 50s with Monday sessions, teaching salsa, bachata alongside wine and buffet socials."
     },
     image: "assets/images/noblesse.png",
     imageAlt: {
