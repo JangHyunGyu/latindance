@@ -20,7 +20,15 @@ const GYEONGSANGNAMDO_VENUES = [
     },
     links: [
       { type: "instagram", url: "https://www.instagram.com/latin.blossom/" },
-      { type: "band", url: "https://www.band.us/@latinblossom" }
+      { type: "band", url: "https://www.band.us/@latinblossom" },
+      {
+        type: "phone",
+        url: "tel:010-4172-8675",
+        label: {
+          ko: "김실장",
+          en: "Manager Kim"
+        }
+      }
     ]
   },
   {
