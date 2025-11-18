@@ -21,7 +21,11 @@ const DAEJEON_VENUES = [
     links: [
       { type: "youtube", url: "https://www.youtube.com/@korealatincouple" },
       { type: "instagram", url: "https://www.instagram.com/daejeonlatinclub/" },
-      { type: "facebook", url: "https://www.facebook.com/DaejeonLatin/" }
+      { type: "facebook", url: "https://www.facebook.com/DaejeonLatin/" },
+      {
+        type: "cafe",
+        url: "https://m.cafe.naver.com/ca-fe/daejeonratinclub"
+      }
     ]
   }
 ];
