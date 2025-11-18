@@ -22,10 +22,18 @@
   };
 
   var listName = isEnglish
-  ? 'Korea Latin Dance Venues Directory'
-  : '대한민국 라틴댄스 커뮤니티 디렉터리';
+    ? 'Korea Latin Dance Venues Directory'
+    : '대한민국 라틴댄스 커뮤니티 디렉터리';
 
   var countryName = isEnglish ? 'South Korea' : '대한민국';
+  var pageId = baseUrl + '#page';
+
+  function slugify(value) {
+    return String(value || '')
+      .toLowerCase()
+      .replace(/[^a-z0-9가-힣]+/g, '-')
+      .replace(/^-+|-+$/g, '') || 'region';
+  }
 
   function pickPrimaryLink(venue) {
     if (!Array.isArray(venue.links)) {
@@ -100,6 +108,81 @@
     'itemListElement': listItems
   };
 
+  var regionMap = window.VENUES.reduce(function (acc, venue) {
+    var regionName = venue.region && venue.region[langKey]
+      ? venue.region[langKey]
+      : countryName;
+    if (!acc[regionName]) {
+      acc[regionName] = [];
+    }
+    acc[regionName].push(venue);
+    return acc;
+  }, {});
+
+  var regionCollections = Object.keys(regionMap).map(function (regionName) {
+    var venuesInRegion = regionMap[regionName];
+    var slug = slugify(regionName);
+    var regionId = baseUrl + '#region-' + slug;
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      '@id': regionId,
+      'name': isEnglish
+        ? regionName + ' Latin dance clubs'
+        : regionName + ' 라틴댄스 모임',
+      'url': regionId,
+      'inLanguage': isEnglish ? 'en-US' : 'ko-KR',
+      'isPartOf': { '@id': pageId },
+      'description': isEnglish
+        ? 'Directory of salsa, bachata, and kizomba communities operating in ' + regionName + '.'
+        : regionName + '에서 활동하는 살사·바차타·키좀바 커뮤니티 모음입니다.',
+      'about': {
+        '@type': 'Place',
+        'name': regionName,
+        'address': {
+          '@type': 'PostalAddress',
+          'addressRegion': regionName,
+          'addressCountry': countryName
+        }
+      },
+      'itemListElement': venuesInRegion.map(function (venue, idx) {
+        return {
+          '@type': 'ListItem',
+          'position': idx + 1,
+          'name': venue.name && venue.name[langKey] ? venue.name[langKey] : venue.id,
+          'url': baseUrl + '#' + venue.id
+        };
+      })
+    };
+  });
+
+  var siteNavData = {
+    '@context': 'https://schema.org',
+    '@type': 'SiteNavigationElement',
+    'name': isEnglish
+      ? 'Korea Latin Dance Hub navigation'
+      : '지역별 라틴댄스 모임 내비게이션',
+    'url': baseUrl,
+    'about': countryName,
+    'hasPart': [
+      {
+        '@type': 'WebPage',
+        'name': isEnglish ? 'Korean directory' : '한국어 디렉터리',
+        'url': 'https://latindance.kr/'
+      },
+      {
+        '@type': 'WebPage',
+        'name': isEnglish ? 'English directory' : '영문 디렉터리',
+        'url': 'https://latindance.kr/index-en.html'
+      },
+      {
+        '@type': 'WebPage',
+        'name': isEnglish ? 'Latin dance link collection' : '라틴댄스 링크 모음',
+        'url': baseUrl + '#venue-results'
+      }
+    ]
+  };
+
   var faqData;
   if (isEnglish) {
     faqData = {
@@ -108,26 +191,26 @@
       'mainEntity': [
         {
           '@type': 'Question',
-          'name': 'What does Korea Latin Dance Hub provide?',
+          'name': 'What information does latindance.kr highlight?',
           'acceptedAnswer': {
             '@type': 'Answer',
-            'text': 'Korea Latin Dance Hub curates official websites, social media links, and community channels for salsa, bachata, kizomba, and other Latin dance groups across South Korea.'
+            'text': 'latindance.kr highlights official websites, Instagram, YouTube, Naver Cafe, and map links for salsa, bachata, kizomba, and Brazilian zouk communities across Seoul, Busan, Daegu, Daejeon, and Jeju.'
           }
         },
         {
           '@type': 'Question',
-          'name': 'How do I find Latin dance socials in a specific city?',
+          'name': 'Is it beginner friendly for salsa or bachata?',
           'acceptedAnswer': {
             '@type': 'Answer',
-            'text': 'Use the region filter or type a city name into the search bar to see clubs, studios, and socials operating in that location.'
+            'text': 'Yes. The bilingual filters surface after-work socials, 20s–40s clubs, and introductory courses so new dancers can pick a studio without pressure and contact instructors directly.'
           }
         },
         {
           '@type': 'Question',
-          'name': 'Can I submit a new Latin dance club or event?',
+          'name': 'How do I suggest a new Korean Latin dance club?',
           'acceptedAnswer': {
             '@type': 'Answer',
-            'text': 'Yes. Send your club or event details to hyungyu@archerlab.dev and the directory will be updated after verification.'
+            'text': 'Email hyungyu@archerlab.dev with your club name, city, and social links. Verified listings are added to latindance.kr and included in the structured directory feeds that search engines read.'
           }
         }
       ]
@@ -139,26 +222,26 @@
       'mainEntity': [
         {
           '@type': 'Question',
-          'name': '라틴댄스 허브에서는 어떤 정보를 찾을 수 있나요?',
+              'name': 'latindance.kr에서는 어떤 라틴댄스 정보를 찾을 수 있나요?',
           'acceptedAnswer': {
             '@type': 'Answer',
-            'text': '라틴댄스 허브는 전국 살사, 바차타, 키좀바 등 라틴댄스 동호회와 클럽의 공식 사이트, SNS, 커뮤니티 채널을 한 곳에 모아 제공합니다.'
+                'text': 'latindance.kr은 서울, 부산, 대구, 경남, 제주까지 살사·바차타·키좀바·주크 동호회의 공식 사이트, 인스타그램, 유튜브, 네이버 카페, 지도 링크를 한 번에 비교할 수 있는 디렉터리입니다.'
           }
         },
         {
           '@type': 'Question',
-          'name': '특정 도시의 라틴댄스 소셜을 어떻게 찾나요?',
+              'name': '살사나 바차타를 처음 배우는 사람도 latindance.kr로 시작할 수 있나요?',
           'acceptedAnswer': {
             '@type': 'Answer',
-            'text': '필터에서 지역을 선택하거나 검색창에 도시 이름을 입력하면 해당 지역에서 활동 중인 클럽과 소셜 정보를 확인할 수 있습니다.'
+                'text': '지역·장르 필터와 검색창에 도시나 키워드를 입력하면 초보 전용 강습, 2040 직장인 동호회, 주말 소셜 일정까지 UI 변경 없이 확인하고 담당자에게 바로 문의할 수 있습니다.'
           }
         },
         {
           '@type': 'Question',
-          'name': '새로운 라틴댄스 모임을 제보할 수 있나요?',
+              'name': '새로운 라틴댄스 모임을 제보하거나 연락처를 업데이트하려면?',
           'acceptedAnswer': {
             '@type': 'Answer',
-            'text': '가능합니다. hyungyu@archerlab.dev 로 모임 정보를 보내주시면 검토 후 디렉터리에 추가됩니다.'
+                'text': 'hyungyu@archerlab.dev 로 모임명, 도시, SNS·지도 링크를 보내주시면 검토 후 latindance.kr 구조화 데이터와 디렉터리에 반영되어 검색엔진에도 함께 노출됩니다.'
           }
         }
       ]
@@ -176,5 +259,7 @@
   }
 
   injectStructuredData(itemListData);
+  regionCollections.forEach(injectStructuredData);
+  injectStructuredData(siteNavData);
   injectStructuredData(faqData);
 })();
