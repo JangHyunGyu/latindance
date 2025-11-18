@@ -2,6 +2,7 @@
   const sources = [];
   const moduleLoaders = [
   ["./data/seoul", "SEOUL_VENUES"],
+  ["./data/daejeon", "DAEJEON_VENUES"],
   ["./data/gyeonggi", "GYEONGGI_VENUES"],
     ["./data/daegu", "DAEGU_VENUES"],
     ["./data/gyeongsangbukdo", "GYEONGSANGBUKDO_VENUES"],
