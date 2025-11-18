@@ -233,6 +233,14 @@ const DAEGU_VENUES = [
       {
         type: "website",
         url: "https://karrotmarket.com/kr/group/%EB%8C%80%EA%B5%AC%EB%9D%BC%ED%8B%B4%EB%8C%84%EC%8A%A4-%EC%82%B4%EC%82%AC%EB%B0%94%EC%B0%A8%ED%83%80-m-n-3r61i1xewiur/?in=%EB%82%A8%EC%82%B0%EB%8F%99-5682"
+      },
+      {
+        type: "phone",
+        url: "tel:050430423385",
+        label: {
+          ko: "M&N",
+          en: "M&N"
+        }
       }
     ]
   },
