@@ -62,6 +62,14 @@ const BUSAN_VENUES = [
           ko: "팍찐",
           en: "Pakjin"
         }
+      },
+      {
+        type: "phone",
+        url: "tel:010-7266-0885",
+        label: {
+          ko: "아수까",
+          en: "Asuka"
+        }
       }
     ]
   },
