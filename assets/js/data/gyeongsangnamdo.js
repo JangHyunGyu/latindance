@@ -45,7 +45,22 @@ const GYEONGSANGNAMDO_VENUES = [
     links: [
       { type: "instagram", url: "https://www.instagram.com/feeldance_changwon_official/" },
       { type: "cafe", url: "https://cafe.naver.com/fdsalsa" },
-      { type: "phone", url: "tel:010-6602-0724" }
+      {
+        type: "phone",
+        url: "tel:010-6602-0724",
+        label: {
+          ko: "난다",
+          en: "Nanda"
+        }
+      },
+      {
+        type: "phone",
+        url: "tel:010-8668-9846",
+        label: {
+          ko: "나라",
+          en: "Nara"
+        }
+      }
     ]
   },
   {
@@ -95,7 +110,15 @@ const GYEONGSANGNAMDO_VENUES = [
       { type: "facebook", url: "https://www.facebook.com/gimhaesalsa" },
       { type: "band", url: "https://www.band.us/@salsaamor" },
       { type: "youtube", url: "https://www.youtube.com/user/wedori" },
-      { type: "cafe", url: "https://cafe.naver.com/goldlatin" }
+      { type: "cafe", url: "https://cafe.naver.com/goldlatin" },
+      {
+        type: "phone",
+        url: "tel:010-2372-1018",
+        label: {
+          ko: "시월비",
+          en: "Siwolbi"
+        }
+      }
     ]
   },
   {

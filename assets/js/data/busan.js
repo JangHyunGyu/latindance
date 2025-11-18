@@ -159,6 +159,14 @@ const BUSAN_VENUES = [
           ko: "사이먼",
           en: "Simon"
         }
+      },
+      {
+        type: "phone",
+        url: "tel:010-2573-5559",
+        label: {
+          ko: "라띠노",
+          en: "Lattino"
+        }
       }
     ]
   },
@@ -275,7 +283,22 @@ const BUSAN_VENUES = [
       { type: "instagram", url: "https://www.instagram.com/feel_dance_korea/" },
       { type: "cafe", url: "https://cafe.naver.com/fdsalsa" },
       { type: "youtube", url: "https://www.youtube.com/@nanda_999" },
-      { type: "phone", url: "tel:010-6602-0724" }
+      {
+        type: "phone",
+        url: "tel:010-6602-0724",
+        label: {
+          ko: "난다",
+          en: "Nanda"
+        }
+      },
+      {
+        type: "phone",
+        url: "tel:010-8668-9846",
+        label: {
+          ko: "나라",
+          en: "Nara"
+        }
+      }
     ]
   }
 ];

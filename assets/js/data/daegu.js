@@ -370,7 +370,22 @@ const DAEGU_VENUES = [
     links: [
       { type: "instagram", url: "https://www.instagram.com/feel_dance_korea/" },
       { type: "cafe", url: "https://cafe.naver.com/fdsalsa" },
-      { type: "phone", url: "tel:010-6602-0724" }
+      {
+        type: "phone",
+        url: "tel:010-6602-0724",
+        label: {
+          ko: "난다",
+          en: "Nanda"
+        }
+      },
+      {
+        type: "phone",
+        url: "tel:010-8668-9846",
+        label: {
+          ko: "나라",
+          en: "Nara"
+        }
+      }
     ]
   }
 ];
