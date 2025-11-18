@@ -143,7 +143,15 @@ const BUSAN_VENUES = [
     },
     links: [
       { type: "band", url: "https://www.band.us/band/8166230/post" },
-      { type: "instagram", url: "https://www.instagram.com/latino_salsa_club/" }
+      { type: "instagram", url: "https://www.instagram.com/latino_salsa_club/" },
+      {
+        type: "phone",
+        url: "tel:010-3938-2405",
+        label: {
+          ko: "사이먼",
+          en: "Simon"
+        }
+      }
     ]
   },
   {
