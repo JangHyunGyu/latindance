@@ -303,6 +303,22 @@ const DAEGU_VENUES = [
       {
         type: "blog",
         url: "https://m.blog.naver.com/PostList.naver?blogId=babaru00&tab=1"
+      },
+      {
+        type: "phone",
+        url: "tel:010-4089-6584",
+        label: {
+          ko: "엘라",
+          en: "Ella"
+        }
+      },
+      {
+        type: "phone",
+        url: "tel:010-3542-2628",
+        label: {
+          ko: "하이젠",
+          en: "Haizen"
+        }
       }
     ]
   },
