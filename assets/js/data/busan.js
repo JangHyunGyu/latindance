@@ -114,10 +114,10 @@ const BUSAN_VENUES = [
       { type: "band", url: "https://www.band.us/@noblessbusan" },
       {
         type: "phone",
-        url: "tel:010-7159-0765",
+        url: "tel:010-4805-2809",
         label: {
-          ko: "소머즈",
-          en: "Somers"
+          ko: "굿잡",
+          en: "Goodjob"
         }
       }
     ]
