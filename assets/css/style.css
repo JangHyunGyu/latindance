@@ -397,6 +397,14 @@ input:focus-visible {
   transition: background 160ms ease, color 160ms ease, border-color 160ms ease, transform 160ms ease;
 }
 
+.venue-card__link--disabled {
+  cursor: default;
+  pointer-events: none;
+  border-style: dashed;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.06);
+}
+
 button.venue-card__link {
   cursor: pointer;
   font-family: inherit;
@@ -450,6 +458,12 @@ button.venue-card__link {
   justify-content: center;
   text-align: center;
   width: 100%;
+}
+
+.venue-card__link--chip.venue-card__link--disabled {
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .venue-card__links--chips .venue-card__link-icon {

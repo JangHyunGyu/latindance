@@ -623,15 +623,22 @@ const resolveLinkLabel = (descriptor) => {
 };
 
 const createLink = (descriptor, options = {}) => {
-  const link = document.createElement("a");
   const variant = options.variant === "default" ? "default" : "chip";
+  const isDisabled = Boolean(descriptor.disableLink || !descriptor.url);
+  const link = document.createElement(isDisabled ? "div" : "a");
   link.className = "venue-card__link";
   if (variant === "chip") {
     link.classList.add("venue-card__link--chip");
   }
-  link.href = descriptor.url;
-  link.target = "_blank";
-  link.rel = "noopener";
+  if (isDisabled) {
+    link.classList.add("venue-card__link--disabled");
+    link.setAttribute("aria-disabled", "true");
+    link.tabIndex = -1;
+  } else {
+    link.href = descriptor.url;
+    link.target = "_blank";
+    link.rel = "noopener";
+  }
   const iconNode = createLinkIcon(descriptor.type);
   if (iconNode) {
     link.appendChild(iconNode);
