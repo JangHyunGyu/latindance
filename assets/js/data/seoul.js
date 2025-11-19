@@ -549,6 +549,14 @@ const SEOUL_VENUES = [
       { type: "homepage", url: "https://www.latincielo.com" },
       { type: "youtube", url: "https://www.youtube.com/@latincielo" },
       { type: "instagram", url: "https://www.instagram.com/latin_cielo/" },
+      {
+        type: "kakaotalk",
+        url: "https://open.kakao.com/o/g3N6tOXd",
+        label: {
+          ko: "오픈톡(수업&행사)",
+          en: "Open Talk (Classes & Events)"
+        }
+      },
       { type: "cafe", url: "https://cafe.naver.com/latinblack" }
     ]
   },
