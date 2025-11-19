@@ -36,7 +36,9 @@ const STRINGS = {
   contactFallback: "전화문의",
     mapInlineLink: "지도 보기",
     scrollTopLabel: "맨 위로",
-    scrollTopTitle: "맨 위로 이동"
+    scrollTopTitle: "맨 위로 이동",
+    disabledLinkBadge: "텍스트 안내",
+    disabledLinkTitle: "이 항목은 정보만 제공되며 클릭할 수 없습니다."
   },
   en: {
     regionsAll: "All regions",
@@ -72,7 +74,9 @@ const STRINGS = {
     contactFallback: "Call",
     mapInlineLink: "View map",
     scrollTopLabel: "Back to top",
-    scrollTopTitle: "Scroll back to top"
+    scrollTopTitle: "Scroll back to top",
+    disabledLinkBadge: "Text only",
+    disabledLinkTitle: "This chip is informational and cannot be clicked."
   }
 }[LOCALE];
 
@@ -624,6 +628,7 @@ const resolveLinkLabel = (descriptor) => {
 
 const createLink = (descriptor, options = {}) => {
   const variant = options.variant === "default" ? "default" : "chip";
+  const labelText = resolveLinkLabel(descriptor);
   const isDisabled = Boolean(descriptor.disableLink || !descriptor.url);
   const link = document.createElement(isDisabled ? "div" : "a");
   link.className = "venue-card__link";
@@ -634,6 +639,12 @@ const createLink = (descriptor, options = {}) => {
     link.classList.add("venue-card__link--disabled");
     link.setAttribute("aria-disabled", "true");
     link.tabIndex = -1;
+    if (STRINGS.disabledLinkTitle) {
+      link.setAttribute("title", STRINGS.disabledLinkTitle);
+    }
+    if (labelText && STRINGS.disabledLinkBadge) {
+      link.setAttribute("aria-label", `${labelText} (${STRINGS.disabledLinkBadge})`);
+    }
   } else {
     link.href = descriptor.url;
     link.target = "_blank";
@@ -645,7 +656,6 @@ const createLink = (descriptor, options = {}) => {
   }
   const labelNode = document.createElement("span");
   labelNode.className = "venue-card__link-label";
-  const labelText = resolveLinkLabel(descriptor);
   const suffixMatch = labelText.match(/^(.*?)(\s*\(.*\))$/);
   if (suffixMatch && suffixMatch[2]) {
     const prefix = suffixMatch[1]?.trimEnd() || "";
@@ -662,6 +672,12 @@ const createLink = (descriptor, options = {}) => {
     labelNode.textContent = labelText;
   }
   link.appendChild(labelNode);
+  if (isDisabled && STRINGS.disabledLinkBadge) {
+    const badge = document.createElement("span");
+    badge.className = "venue-card__link-badge";
+    badge.textContent = STRINGS.disabledLinkBadge;
+    link.appendChild(badge);
+  }
   return link;
 };
 

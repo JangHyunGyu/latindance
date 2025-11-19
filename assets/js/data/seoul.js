@@ -557,15 +557,6 @@ const SEOUL_VENUES = [
           en: "Open Talk (Classes & Events)"
         }
       },
-      {
-        type: "kakaotalk",
-        url: "https://open.kakao.com/me/dalkong07",
-        disableLink: true,
-        label: {
-          ko: "달콩(dalkong07)",
-          en: "Dalkong (dalkong07)"
-        }
-      },
       { type: "cafe", url: "https://cafe.naver.com/latinblack" }
     ]
   },
