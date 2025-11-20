@@ -457,7 +457,15 @@ var SEOUL_VENUES = [
       en: "Havana logo"
     },
     links: [
-      { type: "instagram", url: "https://www.instagram.com/club_havana/" }
+      { type: "instagram", url: "https://www.instagram.com/club_havana/" },
+      {
+        type: "phone",
+        url: "tel:02-335-6709",
+        label: {
+          ko: "문의",
+          en: "Contact"
+        }
+      }
     ]
   },
   {
