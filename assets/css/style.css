@@ -618,7 +618,15 @@ button.venue-card__link {
   color: rgba(255, 255, 255, 0.9) !important;
 }
 
-button.scroll-top.is-visible:hover,
+@media (hover: hover) {
+  button.scroll-top.is-visible:hover {
+    background: rgba(255, 124, 79, 0.25) !important;
+    border-color: rgba(255, 124, 79, 0.4) !important;
+    box-shadow: 0 6px 20px rgba(255, 124, 79, 0.3) !important;
+    color: #ff7c4f !important;
+  }
+}
+
 button.scroll-top.is-visible:active {
   background: rgba(255, 124, 79, 0.25) !important;
   border-color: rgba(255, 124, 79, 0.4) !important;
