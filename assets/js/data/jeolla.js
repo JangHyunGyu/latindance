@@ -13,7 +13,7 @@ var JEOLLA_VENUES = [
       ko: "순천 지역에서 살사와 바차타를 즐길 수 있는 라틴댄스 동호회입니다.",
       en: "Latin dance community in Suncheon where you can enjoy salsa and bachata."
     },
-    image: "assets/images/placeholder_venue.png",
+    image: "assets/images/suncheon_latin.png",
     imageAlt: {
       ko: "순천라틴댄스 로고",
       en: "Suncheon Latin Dance logo"
