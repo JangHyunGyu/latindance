@@ -45,7 +45,7 @@ var JEOLLA_VENUES = [
       ko: "전주 지역의 라틴댄스 동호회입니다.",
       en: "Latin dance community in Jeonju."
     },
-    image: "assets/images/placeholder_venue.png",
+    image: "assets/images/junjulatindanceclub.png",
     imageAlt: {
       ko: "전주라틴댄스클럽 로고",
       en: "Jeonju Latin Dance Club logo"
@@ -78,7 +78,7 @@ var JEOLLA_VENUES = [
       ko: "광주 지역의 라틴댄스 모임입니다.",
       en: "Latin dance community in Gwangju."
     },
-    image: "assets/images/placeholder_venue.png",
+    image: "assets/images/mayan.png",
     imageAlt: {
       ko: "마얀 로고",
       en: "Mayan logo"
