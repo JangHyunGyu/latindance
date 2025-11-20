@@ -19,7 +19,15 @@ var ULSAN_VENUES = [
       en: "Laul logo"
     },
     links: [
-      { type: "band", url: "https://band.us/@laul" }
+      { type: "band", url: "https://band.us/@laul" },
+      {
+        type: "phone",
+        url: "tel:010-8548-7522",
+        label: {
+          ko: "햇님이",
+          en: "Haetnimi"
+        }
+      }
     ]
   },
   {
@@ -42,7 +50,15 @@ var ULSAN_VENUES = [
       en: "Fuego logo"
     },
     links: [
-      { type: "band", url: "https://band.us/@fuegouskr" }
+      { type: "band", url: "https://band.us/@fuegouskr" },
+      {
+        type: "phone",
+        url: "tel:010-4303-0747",
+        label: {
+          ko: "모니카",
+          en: "Monica"
+        }
+      }
     ]
   },
   {

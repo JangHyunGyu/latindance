@@ -144,7 +144,15 @@ var SEOUL_VENUES = [
     },
     links: [
       { type: "cafe", url: "https://cafe.daum.net/turnsalsa" },
-      { type: "instagram", url: "https://www.instagram.com/turn_latinclub_no.1/" }
+      { type: "instagram", url: "https://www.instagram.com/turn_latinclub_no.1/" },
+      {
+        type: "phone",
+        url: "tel:02-557-2228",
+        label: {
+          ko: "문의",
+          en: "Contact"
+        }
+      }
     ]
   },
   {
