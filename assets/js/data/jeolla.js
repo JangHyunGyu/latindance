@@ -84,6 +84,10 @@ var JEOLLA_VENUES = [
       en: "Mayan logo"
     },
     links: [
+      { type: "homepage", url: "http://mayan.alltheway.kr/" },
+      { type: "cafe", url: "https://m.cafe.daum.net/mayan/" },
+      { type: "band", url: "https://www.band.us/@z7" },
+      { type: "youtube", url: "https://www.youtube.com/@arie777" },
       { type: "instagram", url: "https://www.instagram.com/mayan_dance_official/" },
       {
         type: "phone",
