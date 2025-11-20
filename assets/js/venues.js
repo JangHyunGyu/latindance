@@ -8,7 +8,8 @@
     ["./data/gyeongsangbukdo", "GYEONGSANGBUKDO_VENUES"],
     ["./data/gyeongsangnamdo", "GYEONGSANGNAMDO_VENUES"],
     ["./data/busan", "BUSAN_VENUES"],
-    ["./data/ulsan", "ULSAN_VENUES"]
+    ["./data/ulsan", "ULSAN_VENUES"],
+    ["./data/jeolla", "JEOLLA_VENUES"]
   ];
 
   if (typeof module !== "undefined" && module.exports) {
