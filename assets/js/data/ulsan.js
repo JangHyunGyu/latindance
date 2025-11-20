@@ -1,4 +1,4 @@
-const ULSAN_VENUES = [
+var ULSAN_VENUES = [
   {
     id: "ulsan-laul",
     name: { ko: "라울", en: "Laul" },

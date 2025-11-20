@@ -608,24 +608,22 @@ button.venue-card__link {
   transform: translateY(0);
 }
 
-button.scroll-top.is-visible:hover,
-button.scroll-top.is-visible:active {
-  background: rgba(255, 124, 79, 0.25) !important;
-  border-color: rgba(255, 124, 79, 0.4) !important;
-  box-shadow: 0 6px 20px rgba(255, 124, 79, 0.3) !important;
-  color: #ff7c4f !important;
-}
-
-.scroll-top.is-visible:active {
-  transform: scale(0.95);
-}
-
 .scroll-top:focus,
 .scroll-top:focus-visible,
 .scroll-top:focus-within {
   outline: none !important;
   box-shadow: 0 4px 16px rgba(3, 6, 14, 0.5) !important;
   border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  background: rgba(30, 43, 70, 0.85) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+button.scroll-top.is-visible:hover,
+button.scroll-top.is-visible:active {
+  background: rgba(255, 124, 79, 0.25) !important;
+  border-color: rgba(255, 124, 79, 0.4) !important;
+  box-shadow: 0 6px 20px rgba(255, 124, 79, 0.3) !important;
+  color: #ff7c4f !important;
 }
 
 button.scroll-top::-moz-focus-inner {

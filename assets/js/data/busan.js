@@ -1,4 +1,4 @@
-const BUSAN_VENUES = [
+var BUSAN_VENUES = [
   {
     id: "busan-lalala",
     name: { ko: "라라라살사", en: "LaLaLa Salsa" },

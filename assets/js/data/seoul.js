@@ -1,4 +1,4 @@
-const SEOUL_VENUES = [
+var SEOUL_VENUES = [
   {
     id: "seoul-everlatin",
     name: { ko: "에버라틴", en: "Everlatin" },

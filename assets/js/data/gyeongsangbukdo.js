@@ -1,4 +1,4 @@
-const GYEONGSANGBUKDO_VENUES = [
+var GYEONGSANGBUKDO_VENUES = [
   {
     id: "gumi-arte",
     name: { ko: "구미 아르떼", en: "Gumi Arte" },

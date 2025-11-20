@@ -1,4 +1,4 @@
-const DAEJEON_VENUES = [
+var DAEJEON_VENUES = [
   {
     id: "daejeon-latinclub",
     name: { ko: "대전라틴클럽", en: "Daejeon Latin Club" },

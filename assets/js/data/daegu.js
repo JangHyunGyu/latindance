@@ -1,4 +1,4 @@
-const DAEGU_VENUES = [
+var DAEGU_VENUES = [
   {
     id: "daegu-asura",
     name: { ko: "라틴 아수라", en: "Latin Asura Daegu" },

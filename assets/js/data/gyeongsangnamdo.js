@@ -1,4 +1,4 @@
-const GYEONGSANGNAMDO_VENUES = [
+var GYEONGSANGNAMDO_VENUES = [
   {
     id: "latinblossom",
     name: { ko: "라틴블라썸", en: "Latin Blossom" },
