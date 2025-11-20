@@ -373,7 +373,15 @@ var DAEGU_VENUES = [
       en: "Viva Salsa Daegu logo"
     },
     links: [
-      { type: "band", url: "https://www.band.us/@vivasalsaindaegu" }
+      { type: "band", url: "https://www.band.us/@vivasalsaindaegu" },
+      {
+        type: "phone",
+        url: "tel:010-2823-4423",
+        label: {
+          ko: "왼발",
+          en: "Wenbal"
+        }
+      }
     ]
   },
   {
