@@ -31,5 +31,23 @@ var GANGWON_VENUES = [
         }
       }
     ]
+  },
+  {
+    id: "gangwon-muyrico",
+    name: { ko: "무이리코", en: "Muy Rico" },
+    region: { ko: "강원", en: "Gangwon-do" },
+    city: { ko: "강원 강릉시", en: "Gangneung" },
+    address: {
+      ko: "강원특별자치도 강릉시 경강로 2221번길 9-1",
+      en: "9-1, Gyeonggang-ro 2221beon-gil, Gangneung-si, Gangwon-do"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "강릉에서 활동하는 라틴댄스 동호회입니다.",
+      en: "Latin dance community in Gangneung."
+    },
+    links: [
+      { type: "website", url: "https://www.daangn.com/kr/groups/QdYvQLmj?utm_medium=copy_link" }
+    ]
   }
 ];
