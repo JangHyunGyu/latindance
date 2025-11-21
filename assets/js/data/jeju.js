@@ -57,5 +57,37 @@ var JEJU_VENUES = [
         }
       }
     ]
+  },
+  {
+    id: "jeju-salsa-academy",
+    name: { ko: "제주살사댄스아카데미", en: "Jeju Salsa Dance Academy" },
+    region: { ko: "제주", en: "Jeju-do" },
+    city: { ko: "제주시", en: "Jeju City" },
+    address: {
+      ko: "제주특별자치도 제주시 중앙로 242, 3층",
+      en: "3F, 242 Jungang-ro, Jeju-si, Jeju-do"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "제주에서 살사와 바차타를 배울 수 있는 아카데미입니다.",
+      en: "An academy where you can learn Salsa and Bachata in Jeju."
+    },
+    image: "assets/images/jeju_salsa.png",
+    imageAlt: {
+      ko: "제주살사댄스아카데미 로고",
+      en: "Jeju Salsa Dance Academy logo"
+    },
+    links: [
+      { type: "cafe", url: "https://cafe.daum.net/jejusda" },
+      { type: "facebook", url: "https://www.facebook.com/Jejusda/" },
+      {
+        type: "phone",
+        url: "tel:010-5663-0851",
+        label: {
+          ko: "엠마",
+          en: "Emma"
+        }
+      }
+    ]
   }
 ];
