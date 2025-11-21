@@ -13,6 +13,11 @@ var JEJU_VENUES = [
       ko: "제주에서 바차타와 살사를 즐길 수 있는 동호회입니다.",
       en: "A community where you can enjoy Bachata and Salsa in Jeju."
     },
+    image: "assets/images/jeju_bachata.png",
+    imageAlt: {
+      ko: "제주바차타 로고",
+      en: "Jeju Bachata logo"
+    },
     links: [
       { type: "cafe", url: "https://cafe.naver.com/jejubachata" },
       { type: "instagram", url: "https://www.instagram.com/jeju_bachata/" },
