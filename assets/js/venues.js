@@ -10,7 +10,8 @@
     ["./data/busan", "BUSAN_VENUES"],
     ["./data/ulsan", "ULSAN_VENUES"],
     ["./data/jeolla", "JEOLLA_VENUES"],
-    ["./data/jeju", "JEJU_VENUES"]
+    ["./data/jeju", "JEJU_VENUES"],
+    ["./data/incheon", "INCHEON_VENUES"]
   ];
 
   if (typeof module !== "undefined" && module.exports) {
