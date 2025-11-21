@@ -5,7 +5,7 @@ var JEOLLA_VENUES = [
     region: { ko: "전라", en: "Jeolla" },
     city: { ko: "전남 순천시", en: "Suncheon" },
     address: {
-      ko: "전라남도 순천시 하대석길 35 B1",
+      ko: "전남 순천시 하대석길 35 B1",
       en: "B1, 35 Hadaeseok-gil, Suncheon-si, Jeollanam-do"
     },
     styles: ["salsa", "bachata"],
