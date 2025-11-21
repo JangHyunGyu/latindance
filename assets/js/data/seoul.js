@@ -539,7 +539,15 @@ var SEOUL_VENUES = [
     },
     links: [
       { type: "instagram", url: "https://www.instagram.com/sulcorazon_/" },
-      { type: "youtube", url: "https://www.youtube.com/@sulcorazon" }
+      { type: "youtube", url: "https://www.youtube.com/@sulcorazon" },
+      {
+        type: "phone",
+        url: "tel:010-3866-2906",
+        label: {
+          ko: "뽀대용수",
+          en: "Bbodaeyongsu"
+        }
+      }
     ]
   },
   {
