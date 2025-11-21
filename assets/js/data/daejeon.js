@@ -34,7 +34,7 @@ var DAEJEON_VENUES = [
     region: { ko: "대전", en: "Daejeon" },
     city: { ko: "대전 유성구", en: "Yuseong-gu, Daejeon" },
     address: {
-      ko: "대전시 유성구 장대동 353-1 B1",
+      ko: "대전광역시 유성구 장대동 353-1 B1",
       en: "B1, 353-1 Jangdae-dong, Yuseong-gu, Daejeon"
     },
     styles: ["salsa", "bachata"],
