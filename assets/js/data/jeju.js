@@ -64,7 +64,7 @@ var JEJU_VENUES = [
     region: { ko: "제주", en: "Jeju-do" },
     city: { ko: "제주시", en: "Jeju City" },
     address: {
-      ko: "제주특별자치도 제주시 중앙로 242, 3층",
+      ko: "제주특별자치도 제주시 중앙로 242, 하바나 3층",
       en: "3F, 242 Jungang-ro, Jeju-si, Jeju-do"
     },
     styles: ["salsa", "bachata"],
