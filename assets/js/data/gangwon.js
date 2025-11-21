@@ -46,6 +46,11 @@ var GANGWON_VENUES = [
       ko: "강릉에서 활동하는 라틴댄스 동호회입니다.",
       en: "Latin dance community in Gangneung."
     },
+    image: "assets/images/muyirico.png",
+    imageAlt: {
+      ko: "무이리코 로고",
+      en: "Muy Rico logo"
+    },
     links: [
       { type: "website", url: "https://www.daangn.com/kr/groups/QdYvQLmj?utm_medium=copy_link" }
     ]
