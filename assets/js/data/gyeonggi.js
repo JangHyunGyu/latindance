@@ -29,6 +29,41 @@ var GYEONGGI_VENUES = [
         }
       }
     ]
+  },
+  {
+    id: "gyeonggi-latink",
+    name: { ko: "라틴K", en: "Latin K" },
+    region: { ko: "경기", en: "Gyeonggi-do" },
+    city: { ko: "경기 수원시", en: "Suwon" },
+    address: {
+      ko: "경기도 수원시 인계동",
+      en: "Ingye-dong, Suwon-si, Gyeonggi-do"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "수원 인계동에서 활동하는 라틴댄스 동호회입니다.",
+      en: "Latin dance community in Ingye-dong, Suwon."
+    },
+    image: "assets/images/latin_k.png",
+    imageAlt: {
+      ko: "라틴K 로고",
+      en: "Latin K logo"
+    },
+    links: [
+      { type: "band", url: "https://band.us/@suwonlatindancek" },
+      { type: "map", url: "https://naver.me/FxC9ttZ0" },
+      { type: "youtube", url: "https://www.youtube.com/@tensiontv82" },
+      { type: "instagram", url: "https://www.instagram.com/tensiontv_bachata.salsa" },
+      { type: "facebook", url: "https://www.facebook.com/profile.php?id=100000640355772" },
+      {
+        type: "phone",
+        url: "tel:010-6484-2634",
+        label: {
+          ko: "텐션",
+          en: "Tension"
+        }
+      }
+    ]
   }
 ];
 
