@@ -27,6 +27,39 @@ var DAEJEON_VENUES = [
         url: "https://cafe.naver.com/daejeonratinclub"
       }
     ]
+  },
+  {
+    id: "daejeon-latinfactory",
+    name: { ko: "라틴팩토리", en: "Latin Factory" },
+    region: { ko: "대전", en: "Daejeon" },
+    city: { ko: "대전 유성구", en: "Yuseong-gu, Daejeon" },
+    address: {
+      ko: "대전시 유성구 장대동 353-1 B1",
+      en: "B1, 353-1 Jangdae-dong, Yuseong-gu, Daejeon"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "대전 유성구에서 활동하는 라틴댄스 동호회입니다.",
+      en: "Latin dance community in Yuseong-gu, Daejeon."
+    },
+    image: "assets/images/latin_factory.png",
+    imageAlt: {
+      ko: "라틴팩토리 로고",
+      en: "Latin Factory logo"
+    },
+    links: [
+      { type: "cafe", url: "https://cafe.naver.com/latinfactory" },
+      { type: "instagram", url: "https://www.instagram.com/latinfactory_air/" },
+      { type: "threads", url: "https://www.threads.net/@latinfactory_air" },
+      {
+        type: "phone",
+        url: "tel:010-5433-5383",
+        label: {
+          ko: "에어",
+          en: "Air"
+        }
+      }
+    ]
   }
 ];
 
