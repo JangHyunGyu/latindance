@@ -10,6 +10,7 @@
     ["./data/busan", "BUSAN_VENUES"],
     ["./data/ulsan", "ULSAN_VENUES"],
     ["./data/jeolla", "JEOLLA_VENUES"],
+    ["./data/gwangju", "GWANGJU_VENUES"],
     ["./data/jeju", "JEJU_VENUES"],
     ["./data/incheon", "INCHEON_VENUES"],
     ["./data/gangwon", "GANGWON_VENUES"],
