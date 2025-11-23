@@ -578,6 +578,81 @@ const startImagePreloading = () => {
   scheduleImagePreload();
 };
 
+const initCustomSelect = () => {
+  if (!regionSelect) return;
+
+  // Check if already initialized
+  if (regionSelect.nextElementSibling && regionSelect.nextElementSibling.classList.contains("custom-select")) {
+    return;
+  }
+
+  const wrapper = document.createElement("div");
+  wrapper.className = "custom-select";
+  
+  const trigger = document.createElement("div");
+  trigger.className = "custom-select-trigger";
+  
+  const optionsContainer = document.createElement("div");
+  optionsContainer.className = "custom-select-options";
+
+  wrapper.appendChild(trigger);
+  wrapper.appendChild(optionsContainer);
+
+  regionSelect.parentNode.insertBefore(wrapper, regionSelect.nextSibling);
+  regionSelect.classList.add("is-hidden");
+
+  const updateOptions = () => {
+    optionsContainer.innerHTML = "";
+    Array.from(regionSelect.options).forEach((option) => {
+      const customOption = document.createElement("div");
+      customOption.className = "custom-option";
+      customOption.textContent = option.text;
+      customOption.dataset.value = option.value;
+      
+      if (option.selected) {
+        customOption.classList.add("is-selected");
+        trigger.textContent = option.text;
+      }
+
+      customOption.addEventListener("click", (e) => {
+        e.stopPropagation();
+        regionSelect.value = customOption.dataset.value;
+        
+        trigger.textContent = customOption.textContent;
+        wrapper.classList.remove("is-open");
+        
+        const siblings = optionsContainer.querySelectorAll(".custom-option");
+        siblings.forEach((opt) => opt.classList.remove("is-selected"));
+        customOption.classList.add("is-selected");
+
+        regionSelect.dispatchEvent(new Event("change"));
+      });
+
+      optionsContainer.appendChild(customOption);
+    });
+
+    if (!trigger.textContent && regionSelect.options.length > 0) {
+      const selected = regionSelect.options[regionSelect.selectedIndex];
+      if (selected) {
+        trigger.textContent = selected.text;
+      }
+    }
+  };
+
+  updateOptions();
+
+  trigger.addEventListener("click", (e) => {
+    e.stopPropagation();
+    wrapper.classList.toggle("is-open");
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!wrapper.contains(e.target)) {
+      wrapper.classList.remove("is-open");
+    }
+  });
+};
+
 const populateRegions = () => {
   if (!regionSelect || !Array.isArray(VENUES)) {
     return;
@@ -640,6 +715,8 @@ const populateRegions = () => {
   if (!regionSelect.value || regionSelect.value === "") {
     regionSelect.value = "all";
   }
+
+  initCustomSelect();
 };
 
 const createTag = (style) => {
