@@ -13,6 +13,11 @@ var CHUNGNAM_VENUES = [
       ko: "천안에서 활동하는 라틴댄스 동호회입니다.",
       en: "Latin dance community in Cheonan."
     },
+    image: "assets/images/salsa_concept.png",
+    imageAlt: {
+      ko: "살사컨셉 로고",
+      en: "Salsa Concept logo"
+    },
     links: [
       { type: "cafe", url: "https://cafe.naver.com/salsaconceptbaile" },
       {
