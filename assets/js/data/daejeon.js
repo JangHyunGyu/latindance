@@ -60,6 +60,37 @@ var DAEJEON_VENUES = [
         }
       }
     ]
+  },
+  {
+    id: "daejeon-noche",
+    name: { ko: "노체", en: "Noche" },
+    region: { ko: "대전", en: "Daejeon" },
+    city: { ko: "대전 서구", en: "Seo-gu, Daejeon" },
+    address: {
+      ko: "대전광역시 서구 둔산로 31번길 66 3층",
+      en: "3F, 66 Dunsan-ro 31beon-gil, Seo-gu, Daejeon"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "대전 서구 둔산동에서 활동하는 라틴댄스 동호회입니다.",
+      en: "Latin dance community in Dunsan-dong, Seo-gu, Daejeon."
+    },
+    image: "assets/images/noche.png",
+    imageAlt: {
+      ko: "노체 로고",
+      en: "Noche logo"
+    },
+    links: [
+      { type: "cafe", url: "https://cafe.naver.com/djnoche" },
+      {
+        type: "phone",
+        url: "tel:010-3409-2312",
+        label: {
+          ko: "줄리안",
+          en: "Julian"
+        }
+      }
+    ]
   }
 ];
 
