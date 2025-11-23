@@ -173,8 +173,8 @@ var DAEGU_VENUES = [
         type: "phone",
         url: "tel:010-5503-0013",
         label: {
-          ko: "라틴펍 샤인",
-          en: "Latin Pub SHINE"
+          ko: "히따노",
+          en: "Hitano"
         }
       }
     ]
