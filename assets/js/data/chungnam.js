@@ -36,7 +36,7 @@ var CHUNGNAM_VENUES = [
     region: { ko: "충남", en: "Chungnam" },
     city: { ko: "충남 천안시", en: "Cheonan" },
     address: {
-      ko: "충청남도 천안시 동남구 터미널6길 19 지하1층",
+      ko: "충남 천안시 동남구 터미널6길 19 지하1층",
       en: "B1, 19 Terminal 6-gil, Dongnam-gu, Cheonan-si, Chungcheongnam-do"
     },
     styles: ["salsa", "bachata"],
