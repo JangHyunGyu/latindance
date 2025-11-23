@@ -286,6 +286,11 @@ input:focus-visible {
   padding: 8px;
 }
 
+/* Korean specific grid layout (shorter text allows more columns) */
+html[lang="ko"] .custom-select-options {
+  grid-template-columns: repeat(4, 1fr);
+}
+
 .custom-select.is-open .custom-select-options {
   opacity: 1;
   visibility: visible;
