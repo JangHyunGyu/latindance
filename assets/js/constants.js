@@ -51,8 +51,7 @@
       "Gangwon-do",
       "Chungcheongbuk-do",
       "Chungcheongnam-do",
-      "Jeollabuk-do",
-      "Jeollanam-do",
+      "Jeolla-do",
       "Gyeongsangbuk-do",
       "Gyeongsangnam-do",
       "Jeju-do"

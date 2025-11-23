@@ -6,7 +6,9 @@
   const REGION_TRANSLATIONS = {
     es: {
       "Seoul": "Seúl",
-      "Busan": "Busán"
+      "Busan": "Busán",
+      "Chungnam": "Chungcheongnam-do",
+      "Jeolla": "Jeolla-do"
     }
   };
 
