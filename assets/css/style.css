@@ -281,7 +281,7 @@ input:focus-visible {
 
   /* Grid Layout for Mobile */
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 6px;
   padding: 8px;
 }
@@ -298,10 +298,10 @@ html[lang="ko"] .custom-select-options {
 }
 
 .custom-option {
-  padding: 12px 8px;
+  padding: 10px 4px;
   cursor: pointer;
   transition: all 0.15s ease;
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.8);
   border-radius: 12px;
   text-align: center;
@@ -309,6 +309,9 @@ html[lang="ko"] .custom-select-options {
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.02);
+  word-break: break-word;
+  line-height: 1.2;
+  min-height: 44px;
 }
 
 .custom-option:first-child {
