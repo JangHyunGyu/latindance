@@ -113,6 +113,11 @@ var JEOLLA_VENUES = [
       ko: "전주에서 활동하는 라틴댄스 동호회입니다.",
       en: "Latin dance community in Jeonju."
     },
+    image: "assets/images/latin_cruise.png",
+    imageAlt: {
+      ko: "라틴크루즈 로고",
+      en: "Latin Cruise logo"
+    },
     links: [
       { type: "cafe", url: "https://m.cafe.naver.com/jueonjuinsalsa" },
       {
