@@ -37,6 +37,25 @@
       "Gyeongsangbuk-do",
       "Gyeongsangnam-do",
       "Jeju-do"
+    ],
+    es: [
+      "Seúl",
+      "Busán",
+      "Daegu",
+      "Incheon",
+      "Gwangju",
+      "Daejeon",
+      "Ulsan",
+      "Sejong",
+      "Gyeonggi-do",
+      "Gangwon-do",
+      "Chungcheongbuk-do",
+      "Chungcheongnam-do",
+      "Jeollabuk-do",
+      "Jeollanam-do",
+      "Gyeongsangbuk-do",
+      "Gyeongsangnam-do",
+      "Jeju-do"
     ]
   };
 

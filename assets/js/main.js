@@ -1,5 +1,5 @@
 const docLang = (document.documentElement.lang || "en").toLowerCase();
-const LOCALE = docLang.startsWith("ko") ? "ko" : "en";
+const LOCALE = docLang.startsWith("ko") ? "ko" : (docLang.startsWith("es") ? "es" : "en");
 
 const STRINGS = {
   ko: {
@@ -77,6 +77,44 @@ const STRINGS = {
     scrollTopTitle: "Scroll back to top",
     disabledLinkBadge: "Text only",
     disabledLinkTitle: "This chip is informational and cannot be clicked."
+  },
+  es: {
+    regionsAll: "Todas las regiones",
+    count: (n) => `${n} comunidades listadas.`,
+    countEmpty: "No se encontraron comunidades que coincidan con sus filtros.",
+    emptyMessage: "Intente ajustar los filtros o las palabras clave de búsqueda.",
+    styles: {
+      salsa: "Salsa",
+      bachata: "Bachata",
+      kizomba: "Kizomba",
+      zouk: "Zouk",
+      linedance: "Line Dance",
+      brazilianjuke: "Zouk Brasileño",
+      bachatajuke: "Bachata Zouk"
+    },
+    linkLabels: {
+      homepage: "Sitio web oficial",
+      website: "Grupo Karrot",
+      cafe: "Naver Cafe",
+      instagram: "Instagram",
+      instagramBachazouk: "Instagram (Bachazouk)",
+      map: "Mapa",
+      band: "Naver Band",
+      facebook: "Facebook",
+      youtube: "YouTube",
+      store: "Tienda Naver",
+      blog: "Blog de Naver",
+      kakaotalk: "KakaoTalk",
+      threads: "Threads",
+      linktree: "Linktree",
+      phone: "Teléfono"
+    },
+    contactFallback: "Llamar",
+    mapInlineLink: "Ver mapa",
+    scrollTopLabel: "Volver arriba",
+    scrollTopTitle: "Desplazarse hacia arriba",
+    disabledLinkBadge: "Solo texto",
+    disabledLinkTitle: "Este chip es informativo y no se puede hacer clic."
   }
 }[LOCALE];
 
@@ -705,12 +743,12 @@ const renderVenues = (venues) => {
 
     const name = document.createElement("h3");
     name.className = "venue-card__name";
-    name.textContent = venue.name[LOCALE];
+    name.textContent = venue.name[LOCALE] || venue.name.en || venue.name.ko;
 
     const meta = document.createElement("p");
     meta.className = "venue-card__meta";
-    const cityLabel = venue.city?.[LOCALE] || "";
-    const addressLabel = venue.address?.[LOCALE];
+    const cityLabel = venue.city?.[LOCALE] || venue.city?.en || venue.city?.ko || "";
+    const addressLabel = venue.address?.[LOCALE] || venue.address?.en || venue.address?.ko;
     if (addressLabel && isCityRepeatedInAddress(cityLabel, addressLabel)) {
       meta.textContent = addressLabel;
     } else if (addressLabel && cityLabel) {
@@ -732,13 +770,14 @@ const renderVenues = (venues) => {
 
     const summary = document.createElement("p");
     summary.className = "venue-card__summary";
-    summary.textContent = venue.summary[LOCALE];
+    summary.textContent = venue.summary[LOCALE] || venue.summary.en || venue.summary.ko;
 
     let scheduleNode = null;
-    if (venue.schedule?.[LOCALE]) {
+    const scheduleText = venue.schedule?.[LOCALE] || venue.schedule?.en || venue.schedule?.ko;
+    if (scheduleText) {
       scheduleNode = document.createElement("p");
       scheduleNode.className = "venue-card__schedule";
-      scheduleNode.textContent = venue.schedule[LOCALE];
+      scheduleNode.textContent = scheduleText;
     }
 
     const tags = document.createElement("div");
@@ -757,7 +796,7 @@ const renderVenues = (venues) => {
       const img = document.createElement("img");
       img.className = "venue-card__image";
       img.src = venue.image;
-      img.alt = venue.imageAlt?.[LOCALE] || venue.name[LOCALE];
+      img.alt = venue.imageAlt?.[LOCALE] || venue.imageAlt?.en || venue.imageAlt?.ko || venue.name[LOCALE] || venue.name.en || venue.name.ko;
       const shouldEagerLoad = index < 4;
       img.loading = shouldEagerLoad ? "eager" : "lazy";
       img.decoding = "async";

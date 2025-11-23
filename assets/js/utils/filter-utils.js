@@ -3,6 +3,13 @@
 
   const normalizeRegionKey = (value) => toStringSafe(value).trim().toLowerCase();
 
+  const REGION_TRANSLATIONS = {
+    es: {
+      "Seoul": "Seúl",
+      "Busan": "Busán"
+    }
+  };
+
   const resolveRegionLabel = (regionData, locale) => {
     if (!regionData) {
       return "";
@@ -22,7 +29,12 @@
       return regionData[baseLocale];
     }
 
-    return regionData.ko || regionData.en || "";
+    const fallback = regionData.en || regionData.ko || "";
+    if (baseLocale === "es" && REGION_TRANSLATIONS.es[fallback]) {
+      return REGION_TRANSLATIONS.es[fallback];
+    }
+
+    return fallback;
   };
 
   const normalizeRegionValue = (value, regionsAllLabel) => {
