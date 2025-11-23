@@ -1166,6 +1166,15 @@ const initFooterDates = () => {
     return;
   }
 
+  if (LOCALE === "es") {
+    const monthName = new Intl.DateTimeFormat("es", { month: "long" }).format(now);
+    const noteText = `Todos los listados fueron verificados en ${monthName} de ${year} y pueden cambiar sin previo aviso.`;
+    noteNodes.forEach((node) => {
+      node.textContent = noteText;
+    });
+    return;
+  }
+
   const monthName = new Intl.DateTimeFormat("en", { month: "long" }).format(now);
   const noteText = `All listings were verified in ${monthName} ${year} and may change without notice.`;
   noteNodes.forEach((node) => {
