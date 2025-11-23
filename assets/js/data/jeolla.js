@@ -144,6 +144,11 @@ var JEOLLA_VENUES = [
       ko: "광주에서 활동하는 라틴댄스 동호회입니다.",
       en: "Latin dance community in Gwangju."
     },
+    image: "assets/images/delaluz.png",
+    imageAlt: {
+      ko: "델라루즈 로고",
+      en: "De La Luz logo"
+    },
     links: [
       { type: "cafe", url: "https://cafe.naver.com/gwangjulatinsalsa" },
       {
