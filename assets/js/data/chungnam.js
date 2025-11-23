@@ -5,7 +5,7 @@ var CHUNGNAM_VENUES = [
     region: { ko: "충남", en: "Chungnam" },
     city: { ko: "충남 천안시", en: "Cheonan" },
     address: {
-      ko: "충청남도 천안시 서북구 원두정9길 3 천안턴바",
+      ko: "충남 천안시 서북구 원두정9길 3 천안턴바",
       en: "Cheonan Turn Bar, 3 Wondujeong 9-gil, Seobuk-gu, Cheonan-si, Chungcheongnam-do"
     },
     styles: ["salsa", "bachata"],
