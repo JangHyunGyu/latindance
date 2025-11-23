@@ -136,6 +136,8 @@ input:focus-visible {
 }
 
 .filters {
+  position: relative;
+  z-index: 20;
   padding: 32px;
   border-radius: var(--radius-lg);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -143,6 +145,7 @@ input:focus-visible {
   box-shadow: var(--shadow-md);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+  overflow: visible;
 }
 
 .filter-form {
@@ -312,6 +315,16 @@ input:focus-visible {
 /* Hide native select when custom is active */
 .filter-form select.is-hidden {
   display: none;
+}
+
+/* Desktop: Use native select instead of custom select */
+@media (min-width: 768px) {
+  .custom-select {
+    display: none !important;
+  }
+  .filter-form select.is-hidden {
+    display: block !important;
+  }
 }
 
 .results {
