@@ -164,10 +164,13 @@
 				<p>Para ayudar a los viajeros y expatriados a encontrar opciones confiables de baile latino por nombre de ciudad, Korea Latin Dance Hub registra resúmenes para cada consulta importante de "ciudad + baile latino" desde Seúl y Busan hasta Jeju y Jeonbuk.</p>
 			</section>
 
-			<section id="venue-results" class="venue-grid" aria-label="Lista de comunidades de baile latino" aria-live="polite">
-				<!-- JavaScript will populate this list -->
+			<section class="results" aria-live="polite">
+				<div class="results__header">
+					<h2 class="results__title">Directorio</h2>
+					<p class="results__count" data-result-count>0 comunidades listadas.</p>
+				</div>
+				<div id="venue-results" class="venue-grid" role="list"></div>
 			</section>
-			<div class="venue-count" data-result-count aria-live="polite"></div>
 		</main>
 
 		<footer class="site-footer" role="contentinfo">
