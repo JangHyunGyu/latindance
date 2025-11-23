@@ -70,8 +70,8 @@ var JEOLLA_VENUES = [
     region: { ko: "전라", en: "Jeolla" },
     city: { ko: "광주", en: "Gwangju" },
     address: {
-      ko: "광주광역시 남구 천변좌로428번길 6",
-      en: "6 Cheonbyeonjwa-ro 428beon-gil, Nam-gu, Gwangju"
+      ko: "광주광역시 동구 황금동 84번지 3층",
+      en: "3F, 84 Hwanggeum-dong, Dong-gu, Gwangju"
     },
     styles: ["salsa", "bachata"],
     summary: {
@@ -95,6 +95,58 @@ var JEOLLA_VENUES = [
         label: {
           ko: "아리",
           en: "Ari"
+        }
+      }
+    ]
+  },
+  {
+    id: "jeonbuk-latin-cruise",
+    name: { ko: "라틴크루즈", en: "Latin Cruise" },
+    region: { ko: "전라", en: "Jeolla" },
+    city: { ko: "전북 전주시", en: "Jeonju" },
+    address: {
+      ko: "전주시 덕진구 명륜4길 17-25 3층 바일란도빠",
+      en: "3F Bailando Bar, 17-25 Myeongnyun 4-gil, Deokjin-gu, Jeonju-si, Jeollabuk-do"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "전주에서 활동하는 라틴댄스 동호회입니다.",
+      en: "Latin dance community in Jeonju."
+    },
+    links: [
+      { type: "cafe", url: "https://m.cafe.naver.com/jueonjuinsalsa" },
+      {
+        type: "phone",
+        url: "tel:010-3703-5240",
+        label: {
+          ko: "그리셀",
+          en: "Grisel"
+        }
+      }
+    ]
+  },
+  {
+    id: "gwangju-delaluz",
+    name: { ko: "델라루즈", en: "De La Luz" },
+    region: { ko: "전라", en: "Jeolla" },
+    city: { ko: "광주", en: "Gwangju" },
+    address: {
+      ko: "광주광역시 동구 문화전당로 23번길 38-1 5층",
+      en: "5F, 38-1 Munhwajeondang-ro 23beon-gil, Dong-gu, Gwangju"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "광주에서 활동하는 라틴댄스 동호회입니다.",
+      en: "Latin dance community in Gwangju."
+    },
+    links: [
+      { type: "cafe", url: "https://cafe.naver.com/gwangjulatinsalsa" },
+      {
+        type: "phone",
+        url: "tel:010-5184-0040",
+        label: {
+          ko: "글로리아",
+          en: "Gloria"
         }
       }
     ]

@@ -12,7 +12,8 @@
     ["./data/jeolla", "JEOLLA_VENUES"],
     ["./data/jeju", "JEJU_VENUES"],
     ["./data/incheon", "INCHEON_VENUES"],
-    ["./data/gangwon", "GANGWON_VENUES"]
+    ["./data/gangwon", "GANGWON_VENUES"],
+    ["./data/chungnam", "CHUNGNAM_VENUES"]
   ];
 
   if (typeof module !== "undefined" && module.exports) {
