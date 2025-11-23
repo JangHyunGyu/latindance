@@ -58,8 +58,8 @@ var JEOLLA_VENUES = [
         type: "phone",
         url: "tel:010-9437-1036",
         label: {
-          ko: "문의",
-          en: "Contact"
+          ko: "로사",
+          en: "Rosa"
         }
       }
     ]
@@ -105,7 +105,7 @@ var JEOLLA_VENUES = [
     region: { ko: "전라", en: "Jeolla" },
     city: { ko: "전북 전주시", en: "Jeonju" },
     address: {
-      ko: "전주시 덕진구 명륜4길 17-25 3층 바일란도빠",
+      ko: "전북 전주시 덕진구 명륜4길 17-25 3층 바일란도빠",
       en: "3F Bailando Bar, 17-25 Myeongnyun 4-gil, Deokjin-gu, Jeonju-si, Jeollabuk-do"
     },
     styles: ["salsa", "bachata"],
