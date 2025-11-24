@@ -42,8 +42,8 @@ var JEOLLA_VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "전주 지역의 라틴댄스 동호회입니다.",
-      en: "Latin dance community in Jeonju."
+      ko: "전북 지역 최초의 대규모 살사 동호회로 시작하여, 회원들이 직접 전용 공간을 마련해 자발적이고 열정적인 라틴 댄스 문화를 이어가는 동호회입니다.",
+      en: "Starting as the first large-scale salsa club in Jeonbuk, members have created their own dedicated space to continue a voluntary and passionate Latin dance culture."
     },
     image: "assets/images/junjulatindanceclub.png",
     imageAlt: {
@@ -75,8 +75,8 @@ var JEOLLA_VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "전주에서 활동하는 라틴댄스 동호회입니다.",
-      en: "Latin dance community in Jeonju."
+      ko: "전주 최대규모의 살사, 바차타, 키좀바, 탱고 등 다양한 라틴 댄스를 즐길 수 있는 전주 지역 직장인 취미 동호회입니다.",
+      en: "The largest Latin dance club in Jeonju where office workers can enjoy various dances like salsa, bachata, kizomba, and tango."
     },
     image: "assets/images/latin_cruise.png",
     imageAlt: {
