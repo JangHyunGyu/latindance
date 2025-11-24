@@ -1,4 +1,64 @@
+const LANGUAGE_STORAGE_KEY = "latindance:language";
+
+const getStoredLanguage = () => {
+  try {
+    return localStorage.getItem(LANGUAGE_STORAGE_KEY);
+  } catch (error) {
+    return null;
+  }
+};
+
+const setStoredLanguage = (code) => {
+  try {
+    localStorage.setItem(LANGUAGE_STORAGE_KEY, code);
+  } catch (error) {
+    // Ignore
+  }
+};
+
+const detectBrowserLanguage = () => {
+  const candidate = Array.isArray(navigator.languages) && navigator.languages.length
+    ? navigator.languages[0]
+    : navigator.language || navigator.userLanguage || "";
+
+  if (!candidate) return null;
+
+  const lowered = candidate.toLowerCase();
+  if (lowered.startsWith("ko")) return "ko";
+  if (lowered.startsWith("es")) return "es";
+  return "en";
+};
+
 const docLang = (document.documentElement.lang || "en").toLowerCase();
+const storedLang = getStoredLanguage();
+const browserLang = detectBrowserLanguage();
+const preferredLang = storedLang || browserLang;
+
+if (preferredLang) {
+  let targetFile = "index-en.html";
+  if (preferredLang === "ko") targetFile = "index.html";
+  else if (preferredLang === "es") targetFile = "index-es.html";
+
+  const path = window.location.pathname;
+  const isRoot = path.endsWith("/") || path.endsWith("index.html");
+  const isEn = path.endsWith("index-en.html");
+  const isEs = path.endsWith("index-es.html");
+
+  let shouldRedirect = false;
+  if (targetFile === "index.html" && !isRoot) shouldRedirect = true;
+  if (targetFile === "index-en.html" && !isEn) shouldRedirect = true;
+  if (targetFile === "index-es.html" && !isEs) shouldRedirect = true;
+
+  if (shouldRedirect) {
+    setStoredLanguage(preferredLang);
+    if (targetFile === "index.html") {
+      window.location.replace("./");
+    } else {
+      window.location.replace(targetFile);
+    }
+  }
+}
+
 const LOCALE = docLang.startsWith("ko") ? "ko" : (docLang.startsWith("es") ? "es" : "en");
 
 const STRINGS = {
@@ -21,24 +81,25 @@ const STRINGS = {
       website: "당근모임",
       cafe: "네이버 카페",
       instagram: "인스타그램",
-  instagramBachazouk: "인스타그램(바차주크)",
+      instagramBachazouk: "인스타그램(바차주크)",
       map: "카카오맵",
       band: "네이버 밴드",
       facebook: "페이스북",
       youtube: "유튜브",
       store: "네이버 스토어",
       blog: "네이버 블로그",
-  kakaotalk: "카카오톡",
-  threads: "Threads",
-	linktree: "Linktree",
-  phone: "전화문의"
+      kakaotalk: "카카오톡",
+      threads: "Threads",
+      linktree: "Linktree",
+      phone: "전화문의"
     },
-  contactFallback: "전화문의",
+    contactFallback: "전화문의",
     mapInlineLink: "지도 보기",
     scrollTopLabel: "맨 위로",
     scrollTopTitle: "맨 위로 이동",
     disabledLinkBadge: "텍스트 안내",
-    disabledLinkTitle: "이 항목은 정보만 제공되며 클릭할 수 없습니다."
+    disabledLinkTitle: "이 항목은 정보만 제공되며 클릭할 수 없습니다.",
+    loadMore: "더 보기"
   },
   en: {
     regionsAll: "All regions",
@@ -49,7 +110,7 @@ const STRINGS = {
       salsa: "Salsa",
       bachata: "Bachata",
       kizomba: "Kizomba",
-  zouk: "Zouk",
+      zouk: "Zouk",
       linedance: "Line Dance",
       brazilianjuke: "Brazilian Zouk",
       bachatajuke: "Bachata Zouk"
@@ -59,24 +120,25 @@ const STRINGS = {
       website: "Karrot Group",
       cafe: "Naver Cafe",
       instagram: "Instagram",
-  instagramBachazouk: "Instagram (Bachazouk)",
+      instagramBachazouk: "Instagram (Bachazouk)",
       map: "Map",
       band: "Naver Band",
       facebook: "Facebook",
       youtube: "YouTube",
       store: "Naver Store",
       blog: "Naver Blog",
-  kakaotalk: "KakaoTalk",
-  threads: "Threads",
-	linktree: "Linktree",
-	phone: "Phone"
+      kakaotalk: "KakaoTalk",
+      threads: "Threads",
+      linktree: "Linktree",
+      phone: "Phone"
     },
     contactFallback: "Call",
     mapInlineLink: "View map",
     scrollTopLabel: "Back to top",
     scrollTopTitle: "Scroll back to top",
     disabledLinkBadge: "Text only",
-    disabledLinkTitle: "This chip is informational and cannot be clicked."
+    disabledLinkTitle: "This chip is informational and cannot be clicked.",
+    loadMore: "Load More"
   },
   es: {
     regionsAll: "Todas las regiones",
@@ -114,7 +176,8 @@ const STRINGS = {
     scrollTopLabel: "Volver arriba",
     scrollTopTitle: "Desplazarse hacia arriba",
     disabledLinkBadge: "Solo texto",
-    disabledLinkTitle: "Este chip es informativo y no se puede hacer clic."
+    disabledLinkTitle: "Este chip es informativo y no se puede hacer clic.",
+    loadMore: "Cargar más"
   }
 }[LOCALE];
 
@@ -499,6 +562,38 @@ const filterForm = document.querySelector(".filter-form");
 const resultsContainer = document.getElementById("venue-results");
 const countNode = document.querySelector("[data-result-count]");
 
+let currentFilteredVenues = [];
+let currentOffset = 0;
+const PAGE_SIZE = 12;
+const loadMoreButton = document.createElement("button");
+loadMoreButton.className = "btn-load-more";
+loadMoreButton.style.display = "none";
+loadMoreButton.type = "button";
+
+const resultsSection = document.querySelector(".results");
+if (resultsSection) {
+  resultsSection.appendChild(loadMoreButton);
+  loadMoreButton.addEventListener("click", () => {
+    renderNextPage();
+  });
+}
+
+const updateLoadMoreButton = () => {
+  if (currentOffset >= currentFilteredVenues.length) {
+    loadMoreButton.style.display = "none";
+  } else {
+    loadMoreButton.style.display = "block";
+    loadMoreButton.textContent = STRINGS.loadMore;
+  }
+};
+
+const renderNextPage = () => {
+  const nextChunk = currentFilteredVenues.slice(currentOffset, currentOffset + PAGE_SIZE);
+  renderVenues(nextChunk, true);
+  currentOffset += PAGE_SIZE;
+  updateLoadMoreButton();
+};
+
 const supportsImagePreload = typeof window !== "undefined" && typeof window.Image === "function";
 const preloadedImageSources = supportsImagePreload ? new Set() : null;
 const queuedImageSources = supportsImagePreload ? new Set() : null;
@@ -588,10 +683,10 @@ const initCustomSelect = () => {
 
   const wrapper = document.createElement("div");
   wrapper.className = "custom-select";
-  
+
   const trigger = document.createElement("div");
   trigger.className = "custom-select-trigger";
-  
+
   const optionsContainer = document.createElement("div");
   optionsContainer.className = "custom-select-options";
 
@@ -608,7 +703,7 @@ const initCustomSelect = () => {
       customOption.className = "custom-option";
       customOption.textContent = option.text;
       customOption.dataset.value = option.value;
-      
+
       if (option.selected) {
         customOption.classList.add("is-selected");
         trigger.textContent = option.text;
@@ -617,10 +712,10 @@ const initCustomSelect = () => {
       customOption.addEventListener("click", (e) => {
         e.stopPropagation();
         regionSelect.value = customOption.dataset.value;
-        
+
         trigger.textContent = customOption.textContent;
         wrapper.classList.remove("is-open");
-        
+
         const siblings = optionsContainer.querySelectorAll(".custom-option");
         siblings.forEach((opt) => opt.classList.remove("is-selected"));
         customOption.classList.add("is-selected");
@@ -709,7 +804,7 @@ const populateRegions = () => {
   });
 
   regionSelect.appendChild(fragment);
-  
+
   // 브라우저가 뒤로가기로 값을 복원했는지 확인
   // 복원되지 않았을 때만 기본값 설정
   if (!regionSelect.value || regionSelect.value === "") {
@@ -796,12 +891,14 @@ const createLink = (descriptor, options = {}) => {
   return link;
 };
 
-const renderVenues = (venues) => {
+const renderVenues = (venues, append = false) => {
   if (!resultsContainer) {
     return;
   }
 
-  resultsContainer.innerHTML = "";
+  if (!append) {
+    resultsContainer.innerHTML = "";
+  }
 
   if (!venues.length) {
     const empty = document.createElement("p");
@@ -896,9 +993,9 @@ const renderVenues = (venues) => {
 
     const linkDescriptors = Array.isArray(venue.links)
       ? venue.links.map((descriptor, originalIndex) => ({
-          ...descriptor,
-          __originalIndex: originalIndex
-        }))
+        ...descriptor,
+        __originalIndex: originalIndex
+      }))
       : [];
     if (linkDescriptors.length) {
       const sortedLinks = linkDescriptors.sort((a, b) => {
@@ -941,8 +1038,8 @@ const renderVenues = (venues) => {
           return;
         }
 
-  const contactBlock = document.createElement("div");
-  contactBlock.className = "venue-card__contacts";
+        const contactBlock = document.createElement("div");
+        contactBlock.className = "venue-card__contacts";
 
         const contactTitle = document.createElement("p");
         contactTitle.className = "venue-card__contacts-title";
@@ -959,13 +1056,13 @@ const renderVenues = (venues) => {
           const resolvedDescriptor = descriptor.label
             ? descriptor
             : {
-                ...descriptor,
-                label:
-                  venue.name?.[LOCALE] ||
-                  venue.name?.en ||
-                  venue.name?.ko ||
-                  STRINGS.contactFallback
-              };
+              ...descriptor,
+              label:
+                venue.name?.[LOCALE] ||
+                venue.name?.en ||
+                venue.name?.ko ||
+                STRINGS.contactFallback
+            };
           const contactLink = createLink(resolvedDescriptor, { variant: "default" });
           contactLink.classList.add("venue-card__link--contact");
           contactGrid.appendChild(contactLink);
@@ -1015,11 +1112,16 @@ const applyFilters = () => {
 
   shuffleArray(filtered);
 
+  currentFilteredVenues = filtered;
+  currentOffset = 0;
+
   if (countNode) {
     countNode.textContent = formatCount(filtered.length, STRINGS);
   }
 
-  renderVenues(filtered);
+  if (!resultsContainer) return;
+  resultsContainer.innerHTML = "";
+  renderNextPage();
 };
 
 const registerEvents = () => {
@@ -1041,6 +1143,16 @@ const registerEvents = () => {
       searchInput.blur();
     }
     applyFilters();
+  });
+
+  const navLinks = document.querySelectorAll('.site-nav__link');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      const href = link.getAttribute('href');
+      if (href.includes('index-es.html')) setStoredLanguage('es');
+      else if (href.includes('index-en.html')) setStoredLanguage('en');
+      else setStoredLanguage('ko');
+    });
   });
 };
 
@@ -1127,7 +1239,7 @@ const initScrollTop = () => {
 
   button.addEventListener("click", (e) => {
     e.preventDefault();
-    
+
     window.scrollTo({
       top: 0,
       behavior: prefersReducedMotion.matches ? "auto" : "smooth"
