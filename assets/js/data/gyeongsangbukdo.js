@@ -50,7 +50,7 @@ var GYEONGSANGBUKDO_VENUES = [
   },
   {
     id: "pohang-dancelove",
-    name: { ko: "포항댄스사랑 모임", en: "Pohang Dance Love", es: "Pohang Dance Love" },
+    name: { ko: "포항댄스사랑", en: "Pohang Dance Love", es: "Pohang Dance Love" },
     region: { ko: "경북", en: "Gyeongsangbuk-do", es: "Gyeongsangbuk-do" },
     city: { ko: "경북 포항시", en: "Pohang-si", es: "Pohang-si" },
     address: {
@@ -66,7 +66,7 @@ var GYEONGSANGBUKDO_VENUES = [
     },
     image: "assets/images/pohang_dance_love.png",
     imageAlt: {
-      ko: "포항댄스사랑 모임 로고",
+      ko: "포항댄스사랑 로고",
       en: "Pohang Dance Love logo",
       es: "Logotipo de Pohang Dance Love"
     },
