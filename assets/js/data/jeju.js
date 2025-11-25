@@ -9,11 +9,11 @@ var JEJU_VENUES = [
       en: "1F, Donggwan-ro 5-gil, Jeju-si, Jeju-do",
       es: "1F, Donggwan-ro 5-gil, Jeju-si, Jeju-do"
     },
-    styles: ["bachata", "salsa"],
+    styles: ["bachata", "salsa", "kizomba"],
     summary: {
-      ko: "제주에서 바차타와 살사를 즐길 수 있는 동호회입니다.",
-      en: "A community where you can enjoy Bachata and Salsa in Jeju.",
-      es: "Una comunidad donde puedes disfrutar de Bachata y Salsa en Jeju."
+      ko: "제주라는 지역적 특색을 살려 아름다운 환경에서 라틴댄스를 즐기며, 큰 규모 행사도 개최하는 활발한 커뮤니티입니다..",
+      en: "Paint Jeju's blue nights with Latin passion! Create special memories at Jeju Bachata, a warm community for those who love Bachata, Salsa, and Kizomba.",
+      es: "¡Pinta las noches azules de Jeju con pasión latina! Crea recuerdos especiales en Jeju Bachata, una cálida comunidad para los amantes de la Bachata, Salsa y Kizomba."
     },
     image: "assets/images/jeju_bachata.png",
     imageAlt: {
@@ -83,9 +83,9 @@ var JEJU_VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "제주에서 살사와 바차타를 배울 수 있는 아카데미입니다.",
-      en: "An academy where you can learn Salsa and Bachata in Jeju.",
-      es: "Una academia donde puedes aprender Salsa y Bachata en Jeju."
+      ko: "나이와 실력에 상관없이 누구나 즐겁게 살사를 배우며 활력과 자신감을 얻을 수 있는 열린 라틴댄스 커뮤니티입니다.",
+      en: "An open community where you can learn Salsa and Bachata in Jeju.",
+      es: "Una comunidad abierta donde puedes aprender Salsa y Bachata en Jeju."
     },
     image: "assets/images/jeju_salsa.png",
     imageAlt: {
