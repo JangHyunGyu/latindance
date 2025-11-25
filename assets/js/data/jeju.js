@@ -11,7 +11,7 @@ var JEJU_VENUES = [
     },
     styles: ["bachata", "salsa", "kizomba"],
     summary: {
-      ko: "제주라는 지역적 특색을 살려 아름다운 환경에서 라틴댄스를 즐기며, 큰 규모 행사도 개최하는 활발한 커뮤니티입니다..",
+      ko: "제주라는 지역적 특색을 살려 아름다운 환경에서 라틴댄스를 즐기며, 큰 규모 행사도 개최하는 활발한 커뮤니티입니다.",
       en: "Paint Jeju's blue nights with Latin passion! Create special memories at Jeju Bachata, a warm community for those who love Bachata, Salsa, and Kizomba.",
       es: "¡Pinta las noches azules de Jeju con pasión latina! Crea recuerdos especiales en Jeju Bachata, una cálida comunidad para los amantes de la Bachata, Salsa y Kizomba."
     },
