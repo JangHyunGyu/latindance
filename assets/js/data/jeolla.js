@@ -11,7 +11,7 @@ var JEOLLA_VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "순천 지역에서 살사와 바차타를 즐길 수 있는 라틴댄스 동호회입니다.",
+      ko: "25년의 역사를 가진 라틴댄스의 명가이자 지역사회를 위한 무료 공연 활동도 활발한 라틴댄스 동호회입니다.",
       en: "Latin dance community in Suncheon where you can enjoy salsa and bachata.",
       es: "Comunidad de baile latino en Suncheon donde puedes disfrutar de salsa y bachata."
     },
