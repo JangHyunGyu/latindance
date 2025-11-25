@@ -47,9 +47,9 @@ var JEJU_VENUES = [
     },
     styles: ["kizomba"],
     summary: {
-      ko: "제주 유일의 키좀바 전문 스쿨입니다.",
-      en: "The only specialized Kizomba school in Jeju.",
-      es: "La única escuela especializada en Kizomba en Jeju."
+      ko: "제주 유일의 키좀바 전문 스쿨이자 체계적인 커리큘럼과 섬세한 티칭이 함께하는 커뮤니티입니다.",
+      en: "The only specialized Kizomba school in Jeju! Immerse yourself in the charm of Kizomba with a systematic curriculum and delicate teaching.",
+      es: "¡La única escuela especializada en Kizomba en Jeju! Sumérgete en el encanto de la Kizomba con un plan de estudios sistemático y una enseñanza delicada."
     },
     image: "assets/images/jeju_kizomba.png",
     imageAlt: {
