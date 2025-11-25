@@ -5,9 +5,9 @@ var JEJU_VENUES = [
     region: { ko: "제주", en: "Jeju-do", es: "Jeju-do" },
     city: { ko: "제주시", en: "Jeju City", es: "Jeju City" },
     address: {
-      ko: "제주특별자치도 제주시 노연로 110 살사마르 3층",
-      en: "3F, 110 Noyeon-ro, Jeju-si, Jeju-do",
-      es: "3F, 110 Noyeon-ro, Jeju-si, Jeju-do"
+      ko: "제주특별자치도 제주시 동광로5 지하1층",
+      en: "1F, Donggwan-ro 5-gil, Jeju-si, Jeju-do",
+      es: "1F, Donggwan-ro 5-gil, Jeju-si, Jeju-do"
     },
     styles: ["bachata", "salsa"],
     summary: {
