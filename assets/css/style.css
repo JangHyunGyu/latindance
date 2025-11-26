@@ -105,6 +105,7 @@ input:focus-visible {
   text-decoration: none;
   background: linear-gradient(135deg, #fff 0%, #ffd1b3 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0 2px 10px rgba(255, 142, 97, 0.2);
 }
@@ -438,19 +439,17 @@ html[lang="ko"] .custom-select-options {
   object-fit: contain;
   background-color: rgba(5, 7, 15, 0.9);
 }
-
 .venue-card__name {
   margin: 0;
   font-size: 1.4rem;
   font-weight: 800;
   letter-spacing: -0.02em;
   background: linear-gradient(to right, #fff, #ffd1b3);
-  background-clip: text;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0 2px 10px rgba(255, 142, 97, 0.1);
 }
-
 .venue-card__image--cover {
   height: 100%;
   object-fit: cover;
