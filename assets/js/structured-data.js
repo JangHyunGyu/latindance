@@ -262,4 +262,40 @@
   regionCollections.forEach(injectStructuredData);
   injectStructuredData(siteNavData);
   injectStructuredData(faqData);
+
+  // 개별 장소에 대한 상세 JSON-LD 추가 (Rich Snippet 강화)
+  var individualScriptsFragment = document.createDocumentFragment();
+  
+  window.VENUES.forEach(function(venue) {
+    if (!venue.summary || !venue.summary[langKey]) return;
+
+    var venueScript = document.createElement('script');
+    venueScript.type = 'application/ld+json';
+    
+    var venueGraph = {
+      '@context': 'https://schema.org',
+      '@type': 'DanceSchool',
+      'name': venue.name && venue.name[langKey] ? venue.name[langKey] : venue.id,
+      'description': venue.summary[langKey],
+      'image': venue.image ? (baseUrl + '/' + venue.image).replace(/([^:]\/)\/+/g, "$1") : undefined,
+      'url': pickPrimaryLink(venue) || (baseUrl + '#' + venue.id),
+      'address': {
+        '@type': 'PostalAddress',
+        'streetAddress': venue.address && venue.address[langKey] ? venue.address[langKey] : '',
+        'addressLocality': venue.city && venue.city[langKey] ? venue.city[langKey] : '',
+        'addressRegion': venue.region && venue.region[langKey] ? venue.region[langKey] : '',
+        'addressCountry': countryName
+      }
+    };
+
+    // Remove undefined properties
+    Object.keys(venueGraph).forEach(function(key) {
+       if (venueGraph[key] === undefined) delete venueGraph[key];
+    });
+
+    venueScript.textContent = JSON.stringify(venueGraph);
+    individualScriptsFragment.appendChild(venueScript);
+  });
+
+  document.head.appendChild(individualScriptsFragment);
 })();
