@@ -46,7 +46,7 @@ var GYEONGGI_VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "수원 인계동에서 활동하는 라틴댄스 동호회입니다.",
+      ko: "라틴 음악을 좋아하는 사람들이 모여 춤을 추고 교류하는 라틴댄스 동호회입니다.",
       en: "Latin dance community in Ingye-dong, Suwon.",
       es: "Comunidad de baile latino en Ingye-dong, Suwon."
     },
