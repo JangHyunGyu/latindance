@@ -145,7 +145,7 @@ var DAEJEON_VENUES = [
     region: { ko: "대전", en: "Daejeon", es: "Daejeon" },
     city: { ko: "대전 유성구", en: "Yuseong-gu, Daejeon", es: "Yuseong-gu, Daejeon" },
     address: {
-      ko: "대전광역시 유성구 문화원로6번길 1 B1 리트모",
+      ko: "대전 유성구 문화원로6번길 1 B1 리트모",
       en: "B1 Ritmo, 1 Munhwawon-ro 6beon-gil, Yuseong-gu, Daejeon",
       es: "B1 Ritmo, 1 Munhwawon-ro 6beon-gil, Yuseong-gu, Daejeon"
     },
@@ -155,7 +155,7 @@ var DAEJEON_VENUES = [
       en: "A Latin dance community where you can make new connections through dance, share a healthy hobby, and find vitality in life.",
       es: "Una comunidad de baile latino donde puedes hacer nuevas conexiones a través del baile, compartir un pasatiempo saludable y encontrar vitalidad en la vida."
     },
-    image: "assets/images/latindance_profile_logo.png",
+    image: "assets/images/sns.png",
     imageAlt: {
       ko: "SNS 로고",
       en: "SNS logo",
