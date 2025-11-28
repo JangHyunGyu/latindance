@@ -399,6 +399,50 @@ var BUSAN_VENUES = [
         }
       }
     ]
+  },
+  {
+    id: "busan-bsk",
+    name: { ko: "BSK", en: "BSK", es: "BSK" },
+    region: { ko: "부산", en: "Busan", es: "Busan" },
+    city: { ko: "부산 부산진구", en: "Busanjin-gu", es: "Busanjin-gu" },
+    address: {
+      ko: "부산광역시 부산진구 양지로5번길 8 지하 1층",
+      en: "B1, 8 Yangji-ro 5beon-gil, Busanjin-gu, Busan",
+      es: "B1, 8 Yangji-ro 5beon-gil, Busanjin-gu, Busan"
+    },
+    styles: ["kizomba"],
+    summary: {
+      ko: "키좀바를 사랑하는 모든 분들이 소통하고 정보를 공유하는 지역 소셜 댄스 동호회입니다.",
+      en: "A local social dance club where everyone who loves Kizomba communicates and shares information.",
+      es: "Un club de baile social local donde todos los que aman la Kizomba se comunican y comparten información."
+    },
+    image: "assets/images/bsk.png",
+    imageAlt: {
+      ko: "BSK 로고",
+      en: "BSK logo",
+      es: "Logotipo de BSK"
+    },
+    links: [
+      { type: "band", url: "https://www.band.us/@bskiz" },
+      {
+        type: "phone",
+        url: "tel:010-9900-3359",
+        label: {
+          ko: "유비아",
+          en: "Ubia",
+          es: "Ubia"
+        }
+      },
+      {
+        type: "phone",
+        url: "tel:010-4552-8607",
+        label: {
+          ko: "소영",
+          en: "Soyoung",
+          es: "Soyoung"
+        }
+      }
+    ]
   }
 ];
 
