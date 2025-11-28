@@ -770,20 +770,20 @@ var SEOUL_VENUES = [
       { type: "facebook", url: "https://www.facebook.com/blackhansalsa" },
       {
         type: "phone",
-        url: "tel:02-555-3339",
+        url: "tel:010-2173-7709",
         label: {
-          ko: "문의",
-          en: "Contact",
-          es: "Contacto"
+          ko: "블랙칸",
+          en: "Blackhan",
+          es: "Blackhan"
         }
       },
       {
         type: "phone",
-        url: "tel:010-3543-3339",
+        url: "tel:010-4308-8818",
         label: {
-          ko: "문의(휴대폰)",
-          en: "Contact (Mobile)",
-          es: "Contacto (Móvil)"
+          ko: "큐민",
+          en: "Kyumin",
+          es: "Kyumin"
         }
       }
     ]
