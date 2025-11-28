@@ -120,7 +120,7 @@ var DAEJEON_VENUES = [
       en: "A gathering of people who love Latin dance music and dance such as salsa and bachata to dance and interact together.",
       es: "Una reunión de personas que aman la música y el baile latino como la salsa y la bachata para bailar e interactuar juntos."
     },
-    image: "assets/images/latindance_profile_logo.png",
+    image: "assets/images/cafe_salsa.png",
     imageAlt: {
       ko: "카페살사 로고",
       en: "Cafe Salsa logo",
