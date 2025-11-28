@@ -105,6 +105,8 @@ var GYEONGGI_VENUES = [
           es: "Daum Cafe"
         }
       },
+      { type: "facebook", url: "https://www.facebook.com/LatinClubSouL/" },
+      { type: "instagram", url: "https://www.instagram.com/latinsocialclub_ansan/" },
       { type: "kakaotalk", url: "https://open.kakao.com/me/latindance" },
       {
         type: "phone",
