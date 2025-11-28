@@ -93,6 +93,7 @@ var INCHEON_VENUES = [
     },
     links: [
       { type: "cafe", url: "https://cafe.daum.net/bamboosalsa" },
+      { type: "blog", url: "http://blog.naver.com/kivehj5601" },
       {
         type: "phone",
         url: "tel:032-421-1517",
