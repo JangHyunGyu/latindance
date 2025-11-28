@@ -154,6 +154,63 @@ var GYEONGGI_VENUES = [
         }
       }
     ]
+  },
+  {
+    id: "gyeonggi-dolcevita",
+    name: { ko: "돌체비타", en: "Dolce Vita", es: "Dolce Vita" },
+    region: { ko: "경기", en: "Gyeonggi-do", es: "Gyeonggi-do" },
+    city: { ko: "경기 수원시 팔달구", en: "Paldal-gu, Suwon-si", es: "Paldal-gu, Suwon-si" },
+    address: {
+      ko: "경기 수원시 팔달구 인계동 1042-7 3F 쿠바빠",
+      en: "3F Cuba Bar, 1042-7 Ingye-dong, Paldal-gu, Suwon-si, Gyeonggi-do",
+      es: "3F Cuba Bar, 1042-7 Ingye-dong, Paldal-gu, Suwon-si, Gyeonggi-do"
+    },
+    styles: ["salsa", "bachata", "linedance"],
+    summary: {
+      ko: "살사, 바차타 등 라틴 댄스를 배우고 즐기는 것을 주된 활동으로 하는 2030, 3040 직장인 중심의 친목 동호회입니다.",
+      en: "A social club for office workers in their 20s to 40s, focused on learning and enjoying Latin dances like salsa and bachata.",
+      es: "Un club social para trabajadores de oficina de entre 20 y 40 años, centrado en aprender y disfrutar de bailes latinos como la salsa y la bachata."
+    },
+    image: "assets/images/latindance_profile_logo.png",
+    imageAlt: {
+      ko: "돌체비타 로고",
+      en: "Dolce Vita logo",
+      es: "Logotipo de Dolce Vita"
+    },
+    links: [
+      { type: "cafe", url: "https://cafe.daum.net/salsadolce" },
+      { type: "band", url: "https://www.band.us/@salsadolce" },
+      { type: "youtube", url: "https://www.youtube.com/@tv-ny7yu" },
+      {
+        type: "website",
+        url: "https://tv.naver.com/salsadolcevita",
+        label: {
+          ko: "네이버 TV",
+          en: "Naver TV",
+          es: "Naver TV"
+        }
+      },
+      { type: "instagram", url: "https://www.instagram.com/vincent.suwon/" },
+      { type: "kakaotalk", url: "https://open.kakao.com/o/gmx7Kclc" },
+      {
+        type: "phone",
+        url: "tel:010-4340-5434",
+        label: {
+          ko: "제니",
+          en: "Jenny",
+          es: "Jenny"
+        }
+      },
+      {
+        type: "phone",
+        url: "tel:010-9872-7559",
+        label: {
+          ko: "빈센트",
+          en: "Vincent",
+          es: "Vincent"
+        }
+      }
+    ]
   }
 ];
 
