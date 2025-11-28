@@ -34,29 +34,25 @@ const storedLang = getStoredLanguage();
 const browserLang = detectBrowserLanguage();
 const preferredLang = storedLang || browserLang;
 
-if (preferredLang) {
-  let targetFile = "index-en.html";
-  if (preferredLang === "ko") targetFile = "index.html";
-  else if (preferredLang === "es") targetFile = "index-es.html";
+// 저장된 언어 설정이 없을 때만(첫 방문 시) 브라우저 언어에 따라 리다이렉션합니다.
+if (!storedLang && browserLang) {
+  let targetFile = null;
+  if (browserLang === "ko" && !docLang.startsWith("ko")) targetFile = "index.html";
+  else if (browserLang === "es" && !docLang.startsWith("es")) targetFile = "index-es.html";
+  else if (browserLang === "en" && !docLang.startsWith("en")) targetFile = "index-en.html";
 
-  const path = window.location.pathname;
-  const isRoot = path.endsWith("/") || path.endsWith("index.html");
-  const isEn = path.endsWith("index-en.html");
-  const isEs = path.endsWith("index-es.html");
-
-  let shouldRedirect = false;
-  if (targetFile === "index.html" && !isRoot) shouldRedirect = true;
-  if (targetFile === "index-en.html" && !isEn) shouldRedirect = true;
-  if (targetFile === "index-es.html" && !isEs) shouldRedirect = true;
-
-  if (shouldRedirect) {
-    setStoredLanguage(preferredLang);
-    if (targetFile === "index.html") {
-      window.location.replace("./");
-    } else {
-      window.location.replace(targetFile);
-    }
+  if (targetFile) {
+    window.location.replace(targetFile);
   }
+}
+
+// 현재 페이지의 언어를 저장소에 업데이트합니다.
+if (docLang.startsWith("ko")) {
+  setStoredLanguage("ko");
+} else if (docLang.startsWith("es")) {
+  setStoredLanguage("es");
+} else {
+  setStoredLanguage("en");
 }
 
 const LOCALE = docLang.startsWith("ko") ? "ko" : (docLang.startsWith("es") ? "es" : "en");
