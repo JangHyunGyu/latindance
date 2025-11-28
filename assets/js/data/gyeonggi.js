@@ -62,6 +62,7 @@ var GYEONGGI_VENUES = [
       { type: "youtube", url: "https://www.youtube.com/@tensiontv82" },
       { type: "instagram", url: "https://www.instagram.com/tensiontv_bachata.salsa" },
       { type: "facebook", url: "https://www.facebook.com/profile.php?id=100000640355772" },
+      { type: "kakaotalk", url: "https://open.kakao.com/o/gMyefU3f" },
       {
         type: "phone",
         url: "tel:010-6484-2634",
