@@ -87,6 +87,42 @@ var GYEONGSANGBUKDO_VENUES = [
         }
       }
     ]
+  },
+  {
+    id: "gimcheon-gatsby",
+    name: { ko: "김천 개츠비", en: "Gimcheon Gatsby", es: "Gimcheon Gatsby" },
+    region: { ko: "경북", en: "Gyeongsangbuk-do", es: "Gyeongsangbuk-do" },
+    city: { ko: "경북 김천시", en: "Gimcheon-si", es: "Gimcheon-si" },
+    address: {
+      ko: "경북 김천시 평화시장5길 11 3층",
+      en: "3F, 11 Pyeonghwasijang 5-gil, Gimcheon-si, Gyeongsangbuk-do",
+      es: "3F, 11 Pyeonghwasijang 5-gil, Gimcheon-si, Gyeongsangbuk-do"
+    },
+    styles: ["kizomba"],
+    summary: {
+      ko: "김천 개츠비는 키좀바를 즐기고 배울 수 있는 김천 지역의 소셜 댄스 바(Bar)이자 문화 공간입니다.",
+      en: "Gimcheon Gatsby is a social dance bar and cultural space in the Gimcheon area where you can enjoy and learn Kizomba.",
+      es: "Gimcheon Gatsby es un bar de baile social y un espacio cultural en el área de Gimcheon donde puedes disfrutar y aprender Kizomba."
+    },
+    image: "assets/images/catsby.png",
+    imageAlt: {
+      ko: "김천 개츠비 로고",
+      en: "Gimcheon Gatsby logo",
+      es: "Logotipo de Gimcheon Gatsby"
+    },
+    links: [
+      { type: "instagram", url: "https://www.instagram.com/gatsby_bar_latin" },
+      { type: "openchat", url: "https://open.kakao.com/o/gNUUoFze" },
+      {
+        type: "phone",
+        url: "tel:010-9409-7166",
+        label: {
+          ko: "트리스탄",
+          en: "Tristan",
+          es: "Tristan"
+        }
+      }
+    ]
   }
 ];
 
