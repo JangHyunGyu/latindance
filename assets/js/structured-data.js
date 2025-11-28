@@ -4,28 +4,38 @@
   }
 
   var htmlLang = document.documentElement.getAttribute('lang') || 'ko';
-  var isEnglish = htmlLang.toLowerCase().indexOf('en') === 0;
-  var langKey = isEnglish ? 'en' : 'ko';
+  var langKey = 'ko';
+  if (htmlLang.toLowerCase().indexOf('en') === 0) {
+    langKey = 'en';
+  } else if (htmlLang.toLowerCase().indexOf('es') === 0) {
+    langKey = 'es';
+  }
 
   var canonicalTag = document.querySelector('link[rel="canonical"]');
   var canonicalHref = canonicalTag ? canonicalTag.getAttribute('href') : window.location.href;
   var baseUrl = canonicalHref.replace(/#.*$/, '');
 
   var styleLabels = {
-    salsa: { ko: '살사', en: 'Salsa' },
-    bachata: { ko: '바차타', en: 'Bachata' },
-    kizomba: { ko: '키좀바', en: 'Kizomba' },
-    zouk: { ko: '주크', en: 'Zouk' },
-    linedance: { ko: '라인댄스', en: 'Line Dance' },
-    brazilianjuke: { ko: '브라질 주크', en: 'Brazilian Zouk' },
-    bachatajuke: { ko: '바차타 주크', en: 'Bachata Zouk' }
+    salsa: { ko: '살사', en: 'Salsa', es: 'Salsa' },
+    bachata: { ko: '바차타', en: 'Bachata', es: 'Bachata' },
+    kizomba: { ko: '키좀바', en: 'Kizomba', es: 'Kizomba' },
+    zouk: { ko: '주크', en: 'Zouk', es: 'Zouk' },
+    linedance: { ko: '라인댄스', en: 'Line Dance', es: 'Line Dance' },
+    brazilianjuke: { ko: '브라질 주크', en: 'Brazilian Zouk', es: 'Zouk Brasileño' },
+    bachatajuke: { ko: '바차타 주크', en: 'Bachata Zouk', es: 'Bachata Zouk' }
   };
 
-  var listName = isEnglish
-    ? 'Korea Latin Dance Venues Directory'
-    : '대한민국 라틴댄스 커뮤니티 디렉터리';
+  var listName = {
+    en: 'Korea Latin Dance Venues Directory',
+    es: 'Directorio de Lugares de Baile Latino en Corea',
+    ko: '대한민국 라틴댄스 커뮤니티 디렉터리'
+  }[langKey];
 
-  var countryName = isEnglish ? 'South Korea' : '대한민국';
+  var countryName = {
+    en: 'South Korea',
+    es: 'Corea del Sur',
+    ko: '대한민국'
+  }[langKey];
   var pageId = baseUrl + '#page';
 
   function slugify(value) {
@@ -123,19 +133,31 @@
     var venuesInRegion = regionMap[regionName];
     var slug = slugify(regionName);
     var regionId = baseUrl + '#region-' + slug;
+    
+    var collectionName;
+    if (langKey === 'en') collectionName = regionName + ' Latin dance clubs';
+    else if (langKey === 'es') collectionName = 'Clubes de baile latino en ' + regionName;
+    else collectionName = regionName + ' 라틴댄스 모임';
+
+    var inLanguage;
+    if (langKey === 'en') inLanguage = 'en-US';
+    else if (langKey === 'es') inLanguage = 'es-ES';
+    else inLanguage = 'ko-KR';
+
+    var description;
+    if (langKey === 'en') description = 'Directory of salsa, bachata, and kizomba communities operating in ' + regionName + '.';
+    else if (langKey === 'es') description = 'Directorio de comunidades de salsa, bachata y kizomba que operan en ' + regionName + '.';
+    else description = regionName + '에서 활동하는 살사·바차타·키좀바 커뮤니티 모음입니다.';
+
     return {
       '@context': 'https://schema.org',
       '@type': 'CollectionPage',
       '@id': regionId,
-      'name': isEnglish
-        ? regionName + ' Latin dance clubs'
-        : regionName + ' 라틴댄스 모임',
+      'name': collectionName,
       'url': regionId,
-      'inLanguage': isEnglish ? 'en-US' : 'ko-KR',
+      'inLanguage': inLanguage,
       'isPartOf': { '@id': pageId },
-      'description': isEnglish
-        ? 'Directory of salsa, bachata, and kizomba communities operating in ' + regionName + '.'
-        : regionName + '에서 활동하는 살사·바차타·키좀바 커뮤니티 모음입니다.',
+      'description': description,
       'about': {
         '@type': 'Place',
         'name': regionName,
@@ -156,35 +178,42 @@
     };
   });
 
+  var navName;
+  if (langKey === 'en') navName = 'Korea Latin Dance Hub navigation';
+  else if (langKey === 'es') navName = 'Navegación de Korea Latin Dance Hub';
+  else navName = '지역별 라틴댄스 모임 내비게이션';
+
+  var koDirName = { en: 'Korean directory', es: 'Directorio coreano', ko: '한국어 디렉터리' }[langKey];
+  var enDirName = { en: 'English directory', es: 'Directorio en inglés', ko: '영문 디렉터리' }[langKey];
+  var linkColName = { en: 'Latin dance link collection', es: 'Colección de enlaces de baile latino', ko: '라틴댄스 링크 모음' }[langKey];
+
   var siteNavData = {
     '@context': 'https://schema.org',
     '@type': 'SiteNavigationElement',
-    'name': isEnglish
-      ? 'Korea Latin Dance Hub navigation'
-      : '지역별 라틴댄스 모임 내비게이션',
+    'name': navName,
     'url': baseUrl,
     'about': countryName,
     'hasPart': [
       {
         '@type': 'WebPage',
-        'name': isEnglish ? 'Korean directory' : '한국어 디렉터리',
+        'name': koDirName,
         'url': 'https://latindance.kr/'
       },
       {
         '@type': 'WebPage',
-        'name': isEnglish ? 'English directory' : '영문 디렉터리',
+        'name': enDirName,
         'url': 'https://latindance.kr/index-en.html'
       },
       {
         '@type': 'WebPage',
-        'name': isEnglish ? 'Latin dance link collection' : '라틴댄스 링크 모음',
+        'name': linkColName,
         'url': baseUrl + '#venue-results'
       }
     ]
   };
 
   var faqData;
-  if (isEnglish) {
+  if (langKey === 'en') {
     faqData = {
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
@@ -211,6 +240,37 @@
           'acceptedAnswer': {
             '@type': 'Answer',
             'text': 'Email hyungyu@archerlab.dev with your club name, city, and social links. Verified listings are added to latindance.kr and included in the structured directory feeds that search engines read.'
+          }
+        }
+      ]
+    };
+  } else if (langKey === 'es') {
+    faqData = {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      'mainEntity': [
+        {
+          '@type': 'Question',
+          'name': '¿Qué información destaca latindance.kr?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'latindance.kr destaca sitios web oficiales, Instagram, YouTube, Naver Cafe y enlaces de mapas para comunidades de salsa, bachata, kizomba y zouk brasileño en Seúl, Busan, Daegu, Daejeon y Jeju.'
+          }
+        },
+        {
+          '@type': 'Question',
+          'name': '¿Es amigable para principiantes en salsa o bachata?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'Sí. Los filtros bilingües muestran eventos sociales después del trabajo, clubes para personas de 20 a 40 años y cursos introductorios para que los nuevos bailarines puedan elegir un estudio sin presión y contactar a los instructores directamente.'
+          }
+        },
+        {
+          '@type': 'Question',
+          'name': '¿Cómo sugiero un nuevo club de baile latino coreano?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'Envíe un correo electrónico a hyungyu@archerlab.dev con el nombre de su club, ciudad y enlaces sociales. Los listados verificados se agregan a latindance.kr y se incluyen en los feeds de directorio estructurados que leen los motores de búsqueda.'
           }
         }
       ]
