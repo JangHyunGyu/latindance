@@ -118,6 +118,42 @@ var GYEONGGI_VENUES = [
         }
       }
     ]
+  },
+  {
+    id: "gyeonggi-bundangsalsa",
+    name: { ko: "분당살사", en: "Bundang Salsa", es: "Bundang Salsa" },
+    region: { ko: "경기", en: "Gyeonggi-do", es: "Gyeonggi-do" },
+    city: { ko: "경기 성남시 분당구", en: "Bundang-gu, Seongnam-si", es: "Bundang-gu, Seongnam-si" },
+    address: {
+      ko: "경기 성남시 분당구 정자일로 192 지파크프라자 5층 실루엣",
+      en: "Silhouette, 5F G-Park Plaza, 192 Jeongjail-ro, Bundang-gu, Seongnam-si, Gyeonggi-do",
+      es: "Silhouette, 5F G-Park Plaza, 192 Jeongjail-ro, Bundang-gu, Seongnam-si, Gyeonggi-do"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "분당 정자동에 위치한 살사 동호회로, 실루엣 바에서 정기 모임과 강습을 진행합니다.",
+      en: "Salsa community located in Jeongja-dong, Bundang, holding regular meetups and classes at Silhouette Bar.",
+      es: "Comunidad de salsa ubicada en Jeongja-dong, Bundang, que realiza reuniones regulares y clases en el Silhouette Bar."
+    },
+    image: "assets/images/bundang_salsa.png",
+    imageAlt: {
+      ko: "분당살사 로고",
+      en: "Bundang Salsa logo",
+      es: "Logotipo de Bundang Salsa"
+    },
+    links: [
+      { type: "band", url: "https://band.us/@bundangsalsa" },
+      { type: "youtube", url: "https://www.youtube.com/@yokim285" },
+      {
+        type: "phone",
+        url: "tel:010-2727-1501",
+        label: {
+          ko: "구슬",
+          en: "Guseul",
+          es: "Guseul"
+        }
+      }
+    ]
   }
 ];
 
