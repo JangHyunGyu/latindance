@@ -14,6 +14,7 @@
     ["./data/jeju", "JEJU_VENUES"],
     ["./data/incheon", "INCHEON_VENUES"],
     ["./data/gangwon", "GANGWON_VENUES"],
+    ["./data/chungbuk", "CHUNGBUK_VENUES"],
     ["./data/chungnam", "CHUNGNAM_VENUES"]
   ];
 
