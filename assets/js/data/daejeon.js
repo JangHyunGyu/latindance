@@ -141,7 +141,7 @@ var DAEJEON_VENUES = [
   },
   {
     id: "daejeon-sns",
-    name: { ko: "SNS", en: "SNS", es: "SNS" },
+    name: { ko: "S.N.S", en: "S.N.S", es: "S.N.S" },
     region: { ko: "대전", en: "Daejeon", es: "Daejeon" },
     city: { ko: "대전 유성구", en: "Yuseong-gu, Daejeon", es: "Yuseong-gu, Daejeon" },
     address: {
@@ -157,9 +157,9 @@ var DAEJEON_VENUES = [
     },
     image: "assets/images/sns.png",
     imageAlt: {
-      ko: "SNS 로고",
-      en: "SNS logo",
-      es: "Logotipo de SNS"
+      ko: "S.N.S 로고",
+      en: "S.N.S logo",
+      es: "Logotipo de S.N.S"
     },
     links: [
       { type: "cafe", url: "https://cafe.naver.com/latinsns" },
