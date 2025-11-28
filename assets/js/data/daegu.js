@@ -467,6 +467,53 @@ var DAEGU_VENUES = [
         }
       }
     ]
+  },
+  {
+    id: "daegu-babamba",
+    name: { ko: "바밤바", en: "Babamba", es: "Babamba" },
+    region: { ko: "대구", en: "Daegu", es: "Daegu" },
+    city: { ko: "대구 중구", en: "Jung-gu", es: "Jung-gu" },
+    address: {
+      ko: "대구광역시 중구 삼덕동1가 28-6 4층",
+      en: "4F, 28-6 Samdeok-dong 1-ga, Jung-gu, Daegu",
+      es: "4F, 28-6 Samdeok-dong 1-ga, Jung-gu, Daegu"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "초보자도 환영하며, 직장인 퇴근 후 힐링 모임으로도 인기가 많은 커뮤니티입니다.",
+      en: "A community that welcomes beginners and is popular as a healing gathering for office workers after work.",
+      es: "Una comunidad que da la bienvenida a los principiantes y es popular como una reunión curativa para los trabajadores de oficina después del trabajo."
+    },
+    image: "assets/images/babamba.png",
+    imageAlt: {
+      ko: "바밤바 로고",
+      en: "Babamba logo",
+      es: "Logotipo de Babamba"
+    },
+    links: [
+      {
+        type: "website",
+        url: "https://www.daangn.com/kr/group/%EB%8C%80%EA%B5%AC%EC%82%B4%EC%82%AC-%EB%B0%94%EC%B0%A8%ED%83%80-%EA%B3%A8%ED%94%84-%EB%9D%BC%ED%8B%B4%EB%B0%94%EB%B0%A4%EB%B0%94-nf1jsnhz8cmk/?in=%EA%B5%AC%EC%95%94%EB%8F%99-760"
+      },
+      {
+        type: "phone",
+        url: "tel:010-4489-5999",
+        label: {
+          ko: "헤라",
+          en: "Hera",
+          es: "Hera"
+        }
+      },
+      {
+        type: "phone",
+        url: "tel:010-6225-9288",
+        label: {
+          ko: "제니",
+          en: "Jenny",
+          es: "Jenny"
+        }
+      }
+    ]
   }
 ];
 
