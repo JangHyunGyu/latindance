@@ -92,6 +92,7 @@ var DAEJEON_VENUES = [
     },
     links: [
       { type: "cafe", url: "https://cafe.naver.com/djnoche" },
+      { type: "band", url: "https://www.band.us/@noche" },
       {
         type: "phone",
         url: "tel:010-3409-2312",
@@ -99,6 +100,76 @@ var DAEJEON_VENUES = [
           ko: "줄리안",
           en: "Julian",
           es: "Julian"
+        }
+      }
+    ]
+  },
+  {
+    id: "daejeon-cafesalsa",
+    name: { ko: "카페살사", en: "Cafe Salsa", es: "Cafe Salsa" },
+    region: { ko: "대전", en: "Daejeon", es: "Daejeon" },
+    city: { ko: "대전 동구", en: "Dong-gu, Daejeon", es: "Dong-gu, Daejeon" },
+    address: {
+      ko: "대전광역시 동구 용전동 63-1",
+      en: "63-1 Yongjeon-dong, Dong-gu, Daejeon",
+      es: "63-1 Yongjeon-dong, Dong-gu, Daejeon"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "살사, 바차타 등의 라틴 댄스 음악과 춤을 사랑하는 사람들이 모여 함께 춤을 추며 교류하는 모임입니다.",
+      en: "A gathering of people who love Latin dance music and dance such as salsa and bachata to dance and interact together.",
+      es: "Una reunión de personas que aman la música y el baile latino como la salsa y la bachata para bailar e interactuar juntos."
+    },
+    image: "assets/images/latindance_profile_logo.png",
+    imageAlt: {
+      ko: "카페살사 로고",
+      en: "Cafe Salsa logo",
+      es: "Logotipo de Cafe Salsa"
+    },
+    links: [
+      { type: "cafe", url: "https://cafe.daum.net/cafesalsa" },
+      {
+        type: "phone",
+        url: "tel:010-7454-4723",
+        label: {
+          ko: "워니",
+          en: "Wony",
+          es: "Wony"
+        }
+      }
+    ]
+  },
+  {
+    id: "daejeon-sns",
+    name: { ko: "SNS", en: "SNS", es: "SNS" },
+    region: { ko: "대전", en: "Daejeon", es: "Daejeon" },
+    city: { ko: "대전 유성구", en: "Yuseong-gu, Daejeon", es: "Yuseong-gu, Daejeon" },
+    address: {
+      ko: "대전광역시 유성구 문화원로6번길 1 B1 리트모",
+      en: "B1 Ritmo, 1 Munhwawon-ro 6beon-gil, Yuseong-gu, Daejeon",
+      es: "B1 Ritmo, 1 Munhwawon-ro 6beon-gil, Yuseong-gu, Daejeon"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "춤을 통해 새로운 인연을 만들고, 건강한 취미 생활을 공유하며 삶의 활력을 찾는 라틴댄스 커뮤니티입니다.",
+      en: "A Latin dance community where you can make new connections through dance, share a healthy hobby, and find vitality in life.",
+      es: "Una comunidad de baile latino donde puedes hacer nuevas conexiones a través del baile, compartir un pasatiempo saludable y encontrar vitalidad en la vida."
+    },
+    image: "assets/images/latindance_profile_logo.png",
+    imageAlt: {
+      ko: "SNS 로고",
+      en: "SNS logo",
+      es: "Logotipo de SNS"
+    },
+    links: [
+      { type: "cafe", url: "https://cafe.naver.com/latinsns" },
+      {
+        type: "phone",
+        url: "tel:010-3009-4105",
+        label: {
+          ko: "태성",
+          en: "Taeseong",
+          es: "Taeseong"
         }
       }
     ]
