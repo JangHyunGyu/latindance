@@ -68,5 +68,49 @@ var INCHEON_VENUES = [
         }
       }
     ]
+  },
+  {
+    id: "incheon-stardance",
+    name: { ko: "인천스타댄스", en: "Incheon Star Dance", es: "Incheon Star Dance" },
+    region: { ko: "인천", en: "Incheon", es: "Incheon" },
+    city: { ko: "인천 부평구", en: "Bupyeong-gu, Incheon", es: "Bupyeong-gu, Incheon" },
+    address: {
+      ko: "인천광역시 부평구 십정동 476-1 2층",
+      en: "2F, 476-1 Sipjeong-dong, Bupyeong-gu, Incheon",
+      es: "2F, 476-1 Sipjeong-dong, Bupyeong-gu, Incheon"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "오랜 전통과 최상의 수석 강사진을 바탕으로 개개인의 성향에 맞는 수준별 체계적인 강습을 제공하는 아카데미입니다.",
+      en: "An academy boasting a long tradition and top instructors, offering systematic lessons tailored to individual levels and preferences.",
+      es: "Una academia con una larga tradición y los mejores instructores, que ofrece lecciones sistemáticas adaptadas a los niveles y preferencias individuales."
+    },
+    image: "assets/images/latindance_profile_logo.png",
+    imageAlt: {
+      ko: "인천스타댄스 로고",
+      en: "Incheon Star Dance logo",
+      es: "Logotipo de Incheon Star Dance"
+    },
+    links: [
+      { type: "cafe", url: "https://cafe.daum.net/bamboosalsa" },
+      {
+        type: "phone",
+        url: "tel:032-421-1517",
+        label: {
+          ko: "인천스타댄스",
+          en: "Incheon Star Dance",
+          es: "Incheon Star Dance"
+        }
+      },
+      {
+        type: "phone",
+        url: "tel:010-5638-6559",
+        label: {
+          ko: "starJ",
+          en: "starJ",
+          es: "starJ"
+        }
+      }
+    ]
   }
 ];
