@@ -97,7 +97,7 @@ var GYEONGGI_VENUES = [
     },
     links: [
       { type: "cafe", url: "https://cafe.daum.net/latinsocialclub" },
-      { type: "kakao", url: "https://open.kakao.com/me/latindance" },
+      { type: "kakaotalk", url: "https://open.kakao.com/me/latindance" },
       {
         type: "phone",
         url: "tel:010-5314-5414",
