@@ -1,7 +1,7 @@
 var INCHEON_VENUES = [
   {
     id: "incheon-latincrew",
-    name: { ko: "인천살사 라틴카우보이", en: "Incheon Salsa Latin Cowboy", es: "Incheon Salsa Latin Cowboy" },
+    name: { ko: "라틴카우보이", en: "Incheon Salsa Latin Cowboy", es: "Incheon Salsa Latin Cowboy" },
     region: { ko: "인천", en: "Incheon", es: "Incheon" },
     city: { ko: "인천 미추홀구", en: "Michuhol-gu, Incheon", es: "Michuhol-gu, Incheon" },
     address: {
@@ -11,15 +11,15 @@ var INCHEON_VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "인천 지역에서 살사와 바차타를 즐길 수 있는 라틴댄스 동호회입니다.",
+      ko: "체계적인 살사 및 다양한 라틴 댄스 강좌를 제공하며 활발한 정모와 교류를 이어가는 동호회입니다.",
       en: "Latin dance community in Incheon where you can enjoy salsa and bachata.",
       es: "Comunidad de baile latino en Incheon donde puedes disfrutar de salsa y bachata."
     },
     image: "assets/images/inchoen_salsa.png",
     imageAlt: {
-      ko: "인천살사 라틴카우보이 로고",
-      en: "Incheon Salsa Latin Cowboy logo",
-      es: "Logotipo de Incheon Salsa Latin Cowboy"
+      ko: "라틴카우보이 로고",
+      en: "Latin Cowboy logo",
+      es: "Logotipo de Latin Cowboy"
     },
     links: [
       { type: "cafe", url: "https://cafe.daum.net/cubacubasalsa" },
