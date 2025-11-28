@@ -171,7 +171,7 @@ var GYEONGGI_VENUES = [
       en: "A social club for office workers in their 20s to 40s, focused on learning and enjoying Latin dances like salsa and bachata.",
       es: "Un club social para trabajadores de oficina de entre 20 y 40 años, centrado en aprender y disfrutar de bailes latinos como la salsa y la bachata."
     },
-    image: "assets/images/latindance_profile_logo.png",
+    image: "assets/images/dolce.png",
     imageAlt: {
       ko: "돌체비타 로고",
       en: "Dolce Vita logo",
