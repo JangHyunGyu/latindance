@@ -495,6 +495,7 @@ var DAEGU_VENUES = [
         type: "website",
         url: "https://www.daangn.com/kr/group/%EB%8C%80%EA%B5%AC%EC%82%B4%EC%82%AC-%EB%B0%94%EC%B0%A8%ED%83%80-%EA%B3%A8%ED%94%84-%EB%9D%BC%ED%8B%B4%EB%B0%94%EB%B0%A4%EB%B0%94-nf1jsnhz8cmk/?in=%EA%B5%AC%EC%95%94%EB%8F%99-760"
       },
+      { type: "band", url: "https://www.band.us/band/94678078" },
       {
         type: "phone",
         url: "tel:010-4489-5999",
