@@ -58,7 +58,7 @@ var GYEONGGI_VENUES = [
     },
     links: [
       { type: "band", url: "https://band.us/@suwonlatindancek" },
-      { type: "map", url: "https://naver.me/FxC9ttZ0" },
+      { type: "cafe", url: "https://cafe.naver.com/latindancekacademy" },
       { type: "youtube", url: "https://www.youtube.com/@tensiontv82" },
       { type: "instagram", url: "https://www.instagram.com/tensiontv_bachata.salsa" },
       { type: "facebook", url: "https://www.facebook.com/profile.php?id=100000640355772" },
@@ -96,7 +96,15 @@ var GYEONGGI_VENUES = [
       es: "Logotipo de Latin Social Club"
     },
     links: [
-      { type: "cafe", url: "https://cafe.daum.net/latinsocialclub" },
+      {
+        type: "cafe",
+        url: "https://cafe.daum.net/latinsocialclub",
+        label: {
+          ko: "다음 카페",
+          en: "Daum Cafe",
+          es: "Daum Cafe"
+        }
+      },
       { type: "kakaotalk", url: "https://open.kakao.com/me/latindance" },
       {
         type: "phone",
