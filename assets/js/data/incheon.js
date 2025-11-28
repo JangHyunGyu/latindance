@@ -85,7 +85,7 @@ var INCHEON_VENUES = [
       en: "An academy boasting a long tradition and top instructors, offering systematic lessons tailored to individual levels and preferences.",
       es: "Una academia con una larga tradición y los mejores instructores, que ofrece lecciones sistemáticas adaptadas a los niveles y preferencias individuales."
     },
-    image: "assets/images/latindance_profile_logo.png",
+    image: "assets/images/incheon_start.png",
     imageAlt: {
       ko: "인천스타댄스 로고",
       en: "Incheon Star Dance logo",
