@@ -740,6 +740,53 @@ var SEOUL_VENUES = [
       { type: "instagram", url: "https://www.instagram.com/felizclub0701/" },
       { type: "cafe", url: "https://cafe.naver.com/felizclub" }
     ]
+  },
+  {
+    id: "seoul-blackhan",
+    name: { ko: "블랙칸", en: "Blackhan", es: "Blackhan" },
+    region: { ko: "서울", en: "Seoul", es: "Seúl" },
+    city: { ko: "서울 강남구", en: "Gangnam-gu", es: "Gangnam-gu" },
+    address: {
+      ko: "서울특별시 강남구 역삼동 640-13 B1",
+      en: "B1, 640-13 Yeoksam-dong, Gangnam-gu, Seoul",
+      es: "B1, 640-13 Yeoksam-dong, Gangnam-gu, Seúl"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "2002년부터 시작된 전통 있는 라틴 댄스 아카데미로, 살사와 바차타를 체계적으로 배울 수 있는 강습과 다양한 소셜 파티를 운영합니다.",
+      en: "Established in 2002, this traditional Latin dance academy offers structured lessons in salsa and bachata along with various social parties.",
+      es: "Establecida en 2002, esta academia de baile latino tradicional ofrece lecciones estructuradas de salsa y bachata junto con varias fiestas sociales."
+    },
+    image: "assets/images/blackhan.png",
+    imageAlt: {
+      ko: "블랙칸 로고",
+      en: "Blackhan logo",
+      es: "Logotipo de Blackhan"
+    },
+    links: [
+      { type: "homepage", url: "http://www.blackhan.co.kr/" },
+      { type: "instagram", url: "https://www.instagram.com/blackhan_salsa/" },
+      { type: "cafe", url: "https://cafe.naver.com/blackhansalsa" },
+      { type: "facebook", url: "https://www.facebook.com/blackhansalsa" },
+      {
+        type: "phone",
+        url: "tel:02-555-3339",
+        label: {
+          ko: "문의",
+          en: "Contact",
+          es: "Contacto"
+        }
+      },
+      {
+        type: "phone",
+        url: "tel:010-3543-3339",
+        label: {
+          ko: "문의(휴대폰)",
+          en: "Contact (Mobile)",
+          es: "Contacto (Móvil)"
+        }
+      }
+    ]
   }
 ];
 
