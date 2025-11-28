@@ -46,7 +46,7 @@ var INCHEON_VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "인천 부평구에서 활동하는 라틴댄스 동호회입니다.",
+      ko: "살사댄스를 즐기며 친목과 새로운 만남과 인연을 추구하는 라틴댄스 동호회입니다.",
       en: "Latin dance community in Bupyeong-gu, Incheon.",
       es: "Comunidad de baile latino en Bupyeong-gu, Incheon."
     },
