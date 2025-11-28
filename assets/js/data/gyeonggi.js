@@ -182,7 +182,7 @@ var GYEONGGI_VENUES = [
       { type: "band", url: "https://www.band.us/@salsadolce" },
       { type: "youtube", url: "https://www.youtube.com/@tv-ny7yu" },
       {
-        type: "website",
+        type: "navertv",
         url: "https://tv.naver.com/salsadolcevita",
         label: {
           ko: "네이버 TV",

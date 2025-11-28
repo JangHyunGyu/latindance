@@ -185,6 +185,7 @@ const LINK_DISPLAY_ORDER = [
   "map",
   "phone",
   "youtube",
+  "navertv",
   "instagram",
   "instagramBachazouk",
   "facebook",
@@ -215,6 +216,7 @@ const LINK_ICON_ALIASES = {
   kakaotalk: "chat",
   threads: "threads",
   youtube: "play",
+  navertv: "navertv",
   blog: "blog",
   map: "map",
   phone: "phone",
@@ -260,6 +262,21 @@ const LINK_ICON_FACTORIES = {
     });
     triangle.setAttribute("fill", "currentColor");
     triangle.setAttribute("stroke", "none");
+  },
+  navertv: (svg) => {
+    appendSvgChild(svg, "rect", {
+      x: "2",
+      y: "7",
+      width: "20",
+      height: "15",
+      rx: "2",
+      ry: "2",
+      fill: "none"
+    });
+    appendSvgChild(svg, "polyline", {
+      points: "17 2 12 7 7 2",
+      fill: "none"
+    });
   },
   facebook: (svg) => {
     svg.setAttribute("stroke", "none");
