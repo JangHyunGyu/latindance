@@ -72,6 +72,42 @@ var GYEONGGI_VENUES = [
         }
       }
     ]
+  },
+  {
+    id: "gyeonggi-latinsocialclub",
+    name: { ko: "라틴소셜클럽", en: "Latin Social Club", es: "Latin Social Club" },
+    region: { ko: "경기", en: "Gyeonggi-do", es: "Gyeonggi-do" },
+    city: { ko: "경기 안산시 단원구", en: "Danwon-gu, Ansan-si", es: "Danwon-gu, Ansan-si" },
+    address: {
+      ko: "경기 안산시 단원구 민속공원로 85 B1",
+      en: "B1, 85 Minsokgongwon-ro, Danwon-gu, Ansan-si, Gyeonggi-do",
+      es: "B1, 85 Minsokgongwon-ro, Danwon-gu, Ansan-si, Gyeonggi-do"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "안산에서 가장 오래된 살사 동호회로, 사랑방 같은 편안한 분위기에서 초보자도 쉽게 어울릴 수 있습니다.",
+      en: "The oldest salsa club in Ansan, offering a comfortable, welcoming atmosphere where beginners can easily join in.",
+      es: "El club de salsa más antiguo de Ansan, que ofrece un ambiente cómodo y acogedor donde los principiantes pueden unirse fácilmente."
+    },
+    image: "assets/images/latin_social_club.png",
+    imageAlt: {
+      ko: "라틴소셜클럽 로고",
+      en: "Latin Social Club logo",
+      es: "Logotipo de Latin Social Club"
+    },
+    links: [
+      { type: "cafe", url: "https://cafe.daum.net/latinsocialclub" },
+      { type: "kakao", url: "https://open.kakao.com/me/latindance" },
+      {
+        type: "phone",
+        url: "tel:010-5314-5414",
+        label: {
+          ko: "쿨가이",
+          en: "Cool Guy",
+          es: "Cool Guy"
+        }
+      }
+    ]
   }
 ];
 
