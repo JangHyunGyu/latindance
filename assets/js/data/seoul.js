@@ -787,6 +787,36 @@ var SEOUL_VENUES = [
         }
       }
     ]
+  },
+  {
+    id: "seoul-tantara",
+    name: { ko: "딴따라클럽", en: "Tantara Club", es: "Tantara Club" },
+    region: { ko: "서울", en: "Seoul", es: "Seúl" },
+    city: { ko: "서울 중구", en: "Jung-gu", es: "Jung-gu" },
+    address: {
+      ko: "서울특별시 중구",
+      en: "Jung-gu, Seoul",
+      es: "Jung-gu, Seúl"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "열정과 젊음이 넘치는 2030 대학생, 직장인 멤버들이 춤으로 스트레스를 풀고 새로운 활력을 찾아가는 라틴댄스 동호회입니다.",
+      en: "A Latin dance club for passionate 20s and 30s students and professionals to relieve stress and find new vitality through dance.",
+      es: "Un club de baile latino para estudiantes y profesionales apasionados de 20 y 30 años para aliviar el estrés y encontrar nueva vitalidad a través del baile."
+    },
+    image: "assets/images/tantarra_club.png",
+    imageAlt: {
+      ko: "딴따라클럽 로고",
+      en: "Tantara Club logo",
+      es: "Logotipo de Tantara Club"
+    },
+    links: [
+      { type: "instagram", url: "https://www.instagram.com/tantara_official/" },
+      { type: "threads", url: "https://www.threads.net/@tantara_official" },
+      { type: "linktree", url: "https://litt.ly/tantaraclubofficial" },
+      { type: "website", url: "https://www.daangn.com/kr/group/20%EB%8C%80-%EB%9D%BC%ED%8B%B4%EB%8C%84%EC%8A%A4-%ED%95%A8%EA%BB%98%ED%95%B4%EC%9A%94-ock23j71p4dq/?in=%EC%95%BD%EC%88%98%EB%8F%99-30" },
+      { type: "kakaotalk", url: "https://open.kakao.com/o/sE33XEmg" }
+    ]
   }
 ];
 
