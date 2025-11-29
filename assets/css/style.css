@@ -528,12 +528,20 @@ html[lang="ko"] .custom-select-options {
   transform: translateY(-2px);
 }
 
+@keyframes copy-pop {
+  0% { transform: scale(0.95); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
 .venue-card__copy-btn--copied {
   border-color: rgba(76, 175, 80, 0.5);
   background: rgba(76, 175, 80, 0.15);
   color: #81c784;
   cursor: default;
   pointer-events: none;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+  animation: copy-pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .venue-card__summary {
