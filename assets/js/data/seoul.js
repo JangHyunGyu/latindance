@@ -792,11 +792,11 @@ var SEOUL_VENUES = [
     id: "seoul-tantara",
     name: { ko: "딴따라클럽", en: "Tantara Club", es: "Tantara Club" },
     region: { ko: "서울", en: "Seoul", es: "Seúl" },
-    city: { ko: "서울 중구", en: "Jung-gu", es: "Jung-gu" },
+    city: { ko: "서울 강남구", en: "Gangnam-gu", es: "Gangnam-gu" },
     address: {
-      ko: "서울특별시 중구",
-      en: "Jung-gu, Seoul",
-      es: "Jung-gu, Seúl"
+      ko: "서울특별시 강남구",
+      en: "Gangnam-gu, Seoul",
+      es: "Gangnam-gu, Seúl"
     },
     styles: ["salsa", "bachata"],
     summary: {
