@@ -576,36 +576,6 @@ const resultsContainer = document.getElementById("venue-results");
 const countNode = document.querySelector("[data-result-count]");
 
 let currentFilteredVenues = [];
-let currentOffset = 0;
-const PAGE_SIZE = 12;
-const loadMoreButton = document.createElement("button");
-loadMoreButton.className = "btn-load-more";
-loadMoreButton.style.display = "none";
-loadMoreButton.type = "button";
-
-const resultsSection = document.querySelector(".results");
-if (resultsSection) {
-  resultsSection.appendChild(loadMoreButton);
-  loadMoreButton.addEventListener("click", () => {
-    renderNextPage();
-  });
-}
-
-const updateLoadMoreButton = () => {
-  if (currentOffset >= currentFilteredVenues.length) {
-    loadMoreButton.style.display = "none";
-  } else {
-    loadMoreButton.style.display = "block";
-    loadMoreButton.textContent = STRINGS.loadMore;
-  }
-};
-
-const renderNextPage = () => {
-  const nextChunk = currentFilteredVenues.slice(currentOffset, currentOffset + PAGE_SIZE);
-  renderVenues(nextChunk, true);
-  currentOffset += PAGE_SIZE;
-  updateLoadMoreButton();
-};
 
 const supportsImagePreload = typeof window !== "undefined" && typeof window.Image === "function";
 const preloadedImageSources = supportsImagePreload ? new Set() : null;
@@ -1126,15 +1096,13 @@ const applyFilters = () => {
   shuffleArray(filtered);
 
   currentFilteredVenues = filtered;
-  currentOffset = 0;
 
   if (countNode) {
     countNode.textContent = formatCount(filtered.length, STRINGS);
   }
 
   if (!resultsContainer) return;
-  resultsContainer.innerHTML = "";
-  renderNextPage();
+  renderVenues(currentFilteredVenues);
 };
 
 const registerEvents = () => {
