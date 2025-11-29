@@ -936,15 +936,26 @@ const renderVenues = (venues, append = false) => {
       copyBtn.className = "venue-card__copy-btn";
       copyBtn.type = "button";
       copyBtn.textContent = STRINGS.copyAddress;
+
+      let resetTimeout;
+
       copyBtn.addEventListener("click", async () => {
         try {
           await navigator.clipboard.writeText(addressLabel);
-          const originalText = copyBtn.textContent;
+          
           copyBtn.textContent = STRINGS.copyAddressCopied;
           copyBtn.classList.add("venue-card__copy-btn--copied");
-          setTimeout(() => {
-            copyBtn.textContent = originalText;
+          copyBtn.disabled = true;
+
+          if (resetTimeout) {
+            clearTimeout(resetTimeout);
+          }
+
+          resetTimeout = setTimeout(() => {
+            copyBtn.textContent = STRINGS.copyAddress;
             copyBtn.classList.remove("venue-card__copy-btn--copied");
+            copyBtn.disabled = false;
+            resetTimeout = null;
           }, 2000);
         } catch (err) {
           console.error("Failed to copy address: ", err);

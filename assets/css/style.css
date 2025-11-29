@@ -532,6 +532,8 @@ html[lang="ko"] .custom-select-options {
   border-color: rgba(76, 175, 80, 0.5);
   background: rgba(76, 175, 80, 0.15);
   color: #81c784;
+  cursor: default;
+  pointer-events: none;
 }
 
 .venue-card__summary {
