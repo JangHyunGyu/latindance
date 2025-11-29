@@ -91,6 +91,8 @@ const STRINGS = {
     },
     contactFallback: "전화문의",
     mapInlineLink: "지도 보기",
+    copyAddress: "주소 복사",
+    copyAddressCopied: "복사됨!",
     scrollTopLabel: "맨 위로",
     scrollTopTitle: "맨 위로 이동",
     disabledLinkBadge: "텍스트 안내",
@@ -130,6 +132,8 @@ const STRINGS = {
     },
     contactFallback: "Call",
     mapInlineLink: "View map",
+    copyAddress: "Copy Address",
+    copyAddressCopied: "Copied!",
     scrollTopLabel: "Back to top",
     scrollTopTitle: "Scroll back to top",
     disabledLinkBadge: "Text only",
@@ -169,6 +173,8 @@ const STRINGS = {
     },
     contactFallback: "Llamar",
     mapInlineLink: "Ver mapa",
+    copyAddress: "Copiar dirección",
+    copyAddressCopied: "¡Copiado!",
     scrollTopLabel: "Volver arriba",
     scrollTopTitle: "Desplazarse hacia arriba",
     disabledLinkBadge: "Solo texto",
@@ -915,14 +921,37 @@ const renderVenues = (venues, append = false) => {
     }
     const hasFullAddress = typeof addressLabel === "string" && /\d/.test(addressLabel);
     if (hasFullAddress) {
+      const actionRow = document.createElement("div");
+      actionRow.className = "venue-card__action-row";
+
       const mapLink = document.createElement("a");
       mapLink.className = "venue-card__map-link";
       mapLink.href = `https://map.kakao.com/?q=${encodeURIComponent(addressLabel)}`;
       mapLink.target = "_blank";
       mapLink.rel = "noopener";
       mapLink.textContent = STRINGS.mapInlineLink;
-      meta.appendChild(document.createElement("br"));
-      meta.appendChild(mapLink);
+      actionRow.appendChild(mapLink);
+
+      const copyBtn = document.createElement("button");
+      copyBtn.className = "venue-card__copy-btn";
+      copyBtn.type = "button";
+      copyBtn.textContent = STRINGS.copyAddress;
+      copyBtn.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(addressLabel);
+          const originalText = copyBtn.textContent;
+          copyBtn.textContent = STRINGS.copyAddressCopied;
+          copyBtn.classList.add("venue-card__copy-btn--copied");
+          setTimeout(() => {
+            copyBtn.textContent = originalText;
+            copyBtn.classList.remove("venue-card__copy-btn--copied");
+          }, 2000);
+        } catch (err) {
+          console.error("Failed to copy address: ", err);
+        }
+      });
+      actionRow.appendChild(copyBtn);
+      meta.appendChild(actionRow);
     }
 
     const summary = document.createElement("p");
@@ -1261,7 +1290,7 @@ const initFooterDates = () => {
 
   if (LOCALE === "es") {
     const monthName = new Intl.DateTimeFormat("es", { month: "long" }).format(now);
-    const noteText = `Todos los listados fueron verificados en ${monthName} de ${year} y pueden cambiar sin previo aviso.`;
+    const noteText = `Todos los listados fueron verificados in ${monthName} de ${year} y pueden cambiar sin previo aviso.`;
     noteNodes.forEach((node) => {
       node.textContent = noteText;
     });
