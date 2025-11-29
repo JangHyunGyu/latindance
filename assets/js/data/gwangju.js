@@ -11,7 +11,7 @@ var GWANGJU_VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "광주 지역의 라틴댄스 모임입니다.",
+      ko: "춤과 사람을 사랑하는 이들이 모여 다양한 라틴 댄스를 즐기며 소통하는 광주 지역 라틴댄스 전문 커뮤니티입니다.",
       en: "Latin dance community in Gwangju.",
       es: "Comunidad de baile latino en Gwangju."
     },
@@ -50,7 +50,7 @@ var GWANGJU_VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "광주에서 활동하는 라틴댄스 동호회입니다.",
+      ko: "라틴댄스를 즐기며 4050 세대를 주축으로 건강과 친목을 도모하는 활기찬 커뮤니티입니다",
       en: "Latin dance community in Gwangju.",
       es: "Comunidad de baile latino en Gwangju."
     },
