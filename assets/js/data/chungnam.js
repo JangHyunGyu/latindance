@@ -64,5 +64,32 @@ var CHUNGNAM_VENUES = [
         label: { ko: "다음 카페", en: "Daum Cafe", es: "Daum Cafe" }
       }
     ]
+  },
+  {
+    id: "chungnam-cheonanturn",
+    name: { ko: "천안턴", en: "Cheonan Turn", es: "Cheonan Turn" },
+    region: { ko: "충남", en: "Chungnam", es: "Chungnam" },
+    city: { ko: "충남 천안시", en: "Cheonan", es: "Cheonan" },
+    address: {
+      ko: "충남 천안시 원두정 9길3 B1",
+      en: "B1, 3 Wondujeong 9-gil, Cheonan-si, Chungnam",
+      es: "B1, 3 Wondujeong 9-gil, Cheonan-si, Chungnam"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "살사, 바차타 등 다양한 라틴 댄스를 즐기고 배우는 사람들의 활기찬 커뮤니티입니다.",
+      en: "A lively community of people enjoying and learning various Latin dances such as salsa and bachata.",
+      es: "Una comunidad animada de personas que disfrutan y aprenden varios bailes latinos como salsa y bachata."
+    },
+    image: "assets/images/cheonan_turn.png",
+    imageAlt: {
+      ko: "천안턴 로고",
+      en: "Cheonan Turn logo",
+      es: "Logotipo de Cheonan Turn"
+    },
+    links: [
+      { type: "cafe", url: "https://cafe.naver.com/cturn" },
+      { type: "phone", url: "tel:010-5875-0505" }
+    ]
   }
 ];
