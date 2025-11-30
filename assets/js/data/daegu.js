@@ -313,7 +313,7 @@ var DAEGU_VENUES = [
   },
   {
     id: "daegu-salsaholic",
-    name: { ko: "살사홀릭 대구", en: "SalsaHolic Daegu", es: "SalsaHolic Daegu" },
+    name: { ko: "살사홀릭", en: "SalsaHolic", es: "SalsaHolic" },
     region: { ko: "대구", en: "Daegu", es: "Daegu" },
     city: { ko: "대구 중구", en: "Jung-gu", es: "Jung-gu" },
     address: {
@@ -329,9 +329,9 @@ var DAEGU_VENUES = [
     },
     image: "assets/images/salsa_holic.png",
     imageAlt: {
-      ko: "살사홀릭 대구 로고",
-      en: "SalsaHolic Daegu logo",
-      es: "Logotipo de SalsaHolic Daegu"
+      ko: "살사홀릭 로고",
+      en: "SalsaHolic logo",
+      es: "Logotipo de SalsaHolic"
     },
     links: [
       { type: "instagram", url: "https://www.instagram.com/salsaholic_d.g/" },
