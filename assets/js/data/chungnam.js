@@ -91,5 +91,35 @@ var CHUNGNAM_VENUES = [
       { type: "cafe", url: "https://cafe.naver.com/cturn" },
       { type: "phone", url: "tel:010-5875-0505" }
     ]
+  },
+  {
+    id: "chungnam-seven",
+    name: { ko: "세븐", en: "Seven", es: "Seven" },
+    region: { ko: "충남", en: "Chungnam", es: "Chungnam" },
+    city: { ko: "충남 천안시", en: "Cheonan", es: "Cheonan" },
+    address: {
+      ko: "충남 천안시 원두정 9길3 B1",
+      en: "B1, 3 Wondujeong 9-gil, Cheonan-si, Chungnam",
+      es: "B1, 3 Wondujeong 9-gil, Cheonan-si, Chungnam"
+    },
+    styles: ["bachata"],
+    summary: {
+      ko: "매주 수요일 바차타를 함께 배우고 즐길 수 있는 누구나 참여 가능한 따뜻한 신생 라틴 커뮤니티입니다.",
+      en: "A warm, new Latin community open to everyone where you can learn and enjoy bachata together every Wednesday.",
+      es: "Una cálida y nueva comunidad latina abierta a todos donde pueden aprender y disfrutar de la bachata juntos todos los miércoles."
+    },
+    image: "assets/images/cheonan_seven.png",
+    imageAlt: {
+      ko: "세븐 로고",
+      en: "Seven logo",
+      es: "Logotipo de Seven"
+    },
+    links: [
+      { type: "cafe", url: "https://cafe.naver.com/cheonanseven" },
+      { type: "youtube", url: "https://www.youtube.com/@%EC%8A%AC%EB%A1%9C%EB%B9%84%EB%9D%BC%ED%8B%B4%ED%8B%B0%EB%B9%84" },
+      { type: "instagram", url: "https://www.instagram.com/slobbies83" },
+      { type: "phone", url: "tel:010-4022-5445", label: { ko: "카라", en: "Kara", es: "Kara" } },
+      { type: "phone", url: "tel:010-4046-2841", label: { ko: "DJ하선", en: "DJ Haseon", es: "DJ Haseon" } }
+    ]
   }
 ];
