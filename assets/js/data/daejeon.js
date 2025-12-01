@@ -43,7 +43,7 @@ var DAEJEON_VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "대전 유성구에서 활동하는 라틴댄스 동호회입니다.",
+      ko: "살사를 처음 배우는 초보자부터 숙련자까지 모두 참여할 수 있으며, 전문 강사의 체계적인 지도를 통해 즐겁고 건전한 취미 생활을 즐길 수 있는 동호회입니다.",
       en: "Latin dance community in Yuseong-gu, Daejeon.",
       es: "Comunidad de baile latino en Yuseong-gu, Daejeon."
     },
