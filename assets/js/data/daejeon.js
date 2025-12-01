@@ -80,7 +80,7 @@ var DAEJEON_VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "대전 서구 둔산동에서 활동하는 라틴댄스 동호회입니다.",
+      ko: "주로 살사 및 바차타 댄스를 즐기는 성인들을 위한 활발한 라틴댄스클럽입니다.",
       en: "Latin dance community in Dunsan-dong, Seo-gu, Daejeon.",
       es: "Comunidad de baile latino en Dunsan-dong, Seo-gu, Daejeon."
     },
