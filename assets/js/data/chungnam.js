@@ -11,7 +11,7 @@ var CHUNGNAM_VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "천안에서 활동하는 라틴댄스 동호회입니다.",
+      ko: "춤 자체에 집중하고, 뒤풀이 등을 통해 친목을 다지며, 다양한 이야기를 나누는 동호회입니다.",
       en: "Latin dance community in Cheonan.",
       es: "Comunidad de baile latino en Cheonan."
     },
@@ -46,7 +46,7 @@ var CHUNGNAM_VENUES = [
     },
     styles: ["salsa", "bachata"],
     summary: {
-      ko: "천안에서 활동하는 라틴댄스 동호회입니다.",
+      ko: "2003년에 시작하여 20년 넘게 활동해온 천안 지역의 가장 오래된 라틴 댄스 동호회입니다.",
       en: "Latin dance community in Cheonan.",
       es: "Comunidad de baile latino en Cheonan."
     },
