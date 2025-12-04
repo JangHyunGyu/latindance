@@ -208,7 +208,8 @@
         function handleFileSelect() {
             const file = videoInput.files[0];
             if (file) {
-                fileNameDiv.textContent = `선택된 파일: ${file.name}`;
+                const sizeInMB = (file.size / (1024 * 1024)).toFixed(2);
+                fileNameDiv.textContent = `선택된 파일: ${file.name} (${sizeInMB} MB)`;
                 analyzeBtn.disabled = false;
             } else {
                 fileNameDiv.textContent = '';
