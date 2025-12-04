@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>AI 댄스 영상 분석 - 전국 지역별 라틴댄스 모임</title>
+	<meta name="description" content="AI가 당신의 춤 영상을 분석하여 피드백을 제공합니다." />
+	<link rel="canonical" href="https://latindance.kr/analysis.html" />
+	<meta name="robots" content="index,follow" />
+	<meta property="og:type" content="website" />
+	<meta property="og:locale" content="ko_KR" />
+	<meta property="og:site_name" content="전국 지역별 라틴댄스 모임" />
+	<meta property="og:title" content="AI 댄스 영상 분석" />
+	<meta property="og:description" content="AI가 당신의 춤 영상을 분석하여 피드백을 제공합니다." />
+	<meta property="og:url" content="https://latindance.kr/analysis.html" />
+	<meta property="og:image" content="https://latindance.kr/assets/images/kakao_profile.png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="AI 댄스 영상 분석" />
+	<meta name="twitter:description" content="AI가 당신의 춤 영상을 분석하여 피드백을 제공합니다." />
+	<meta name="twitter:image" content="https://latindance.kr/assets/images/kakao_profile.png" />
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="icon" type="image/png" href="favicon.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Pretendard:wght@400;500;600;700&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/style.css?v=103">
+    
+    <style>
+        .analysis-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+        }
+        .upload-area {
+            border: 2px dashed #ccc;
+            padding: 3rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.05);
+            transition: border-color 0.3s;
+        }
+        .upload-area:hover {
+            border-color: #fff;
+        }
+        .upload-area p {
+            margin-top: 1rem;
+            color: #aaa;
+        }
+        #videoInput {
+            display: none;
+        }
+        .upload-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #444;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .upload-btn:hover {
+            background-color: #555;
+        }
+        #analyzeBtn {
+            margin-top: 1rem;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            background-color: #e91e63;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #analyzeBtn:hover {
+            background-color: #c2185b;
+        }
+        #analyzeBtn:disabled {
+            background-color: #555;
+            cursor: not-allowed;
+        }
+        #result {
+            margin-top: 3rem;
+            text-align: left;
+            white-space: pre-wrap;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            color: #eee;
+            line-height: 1.6;
+            display: none;
+        }
+        .loading {
+            display: none;
+            margin-top: 2rem;
+            color: #aaa;
+            font-size: 1.1rem;
+        }
+        .file-name {
+            margin-top: 1rem;
+            font-weight: bold;
+            color: #fff;
+        }
+        .site-header {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .site-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container" style="text-align: center;">
+            <a href="/" class="site-logo">전국 지역별 라틴댄스 모임</a>
+        </div>
+    </header>
+
+	<main class="site-main">
+		<section class="hero">
+			<h1 class="hero__title">AI 댄스 영상 분석</h1>
+			<p class="hero__description">춤 영상을 업로드하면 AI가 동작, 리듬, 자세를 분석하여 피드백을 제공합니다.<br>(Gemini 1.5 Pro 모델 사용)</p>
+		</section>
+
+        <div class="analysis-container">
+            <div class="upload-area" id="dropZone">
+                <label for="videoInput" class="upload-btn">영상 선택하기</label>
+                <input type="file" id="videoInput" accept="video/*">
+                <p>또는 영상을 여기로 드래그하세요</p>
+                <div id="fileName" class="file-name"></div>
+            </div>
+
+            <button id="analyzeBtn" disabled>분석 시작</button>
+            
+            <div id="loading" class="loading">
+                <p>영상을 분석 중입니다... 잠시만 기다려주세요.</p>
+                <p>(영상 길이에 따라 1~2분 정도 소요될 수 있습니다)</p>
+            </div>
+            
+            <div id="result"></div>
+        </div>
+	</main>
+
+	<footer class="site-footer" role="contentinfo">
+		<p class="site-footer__text">© <span data-current-year>2025</span> 전국 지역별 라틴댄스 모임 · ArcherLab</p>
+	</footer>
+
+    <script>
+        const videoInput = document.getElementById('videoInput');
+        const analyzeBtn = document.getElementById('analyzeBtn');
+        const resultDiv = document.getElementById('result');
+        const loadingDiv = document.getElementById('loading');
+        const fileNameDiv = document.getElementById('fileName');
+        const dropZone = document.getElementById('dropZone');
+
+        // File selection handler
+        videoInput.addEventListener('change', handleFileSelect);
+
+        // Drag and drop handlers
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.style.borderColor = '#fff';
+        });
+
+        dropZone.addEventListener('dragleave', (e) => {
+            e.preventDefault();
+            dropZone.style.borderColor = '#ccc';
+        });
+
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.style.borderColor = '#ccc';
+            if (e.dataTransfer.files.length > 0) {
+                videoInput.files = e.dataTransfer.files;
+                handleFileSelect();
+            }
+        });
+
+        function handleFileSelect() {
+            const file = videoInput.files[0];
+            if (file) {
+                fileNameDiv.textContent = `선택된 파일: ${file.name}`;
+                analyzeBtn.disabled = false;
+            } else {
+                fileNameDiv.textContent = '';
+                analyzeBtn.disabled = true;
+            }
+        }
+
+        analyzeBtn.addEventListener('click', async () => {
+            const file = videoInput.files[0];
+            if (!file) return;
+
+            // UI 상태 변경
+            analyzeBtn.disabled = true;
+            loadingDiv.style.display = 'block';
+            resultDiv.style.display = 'none';
+            resultDiv.textContent = '';
+
+            try {
+                const formData = new FormData();
+                formData.append('file', file);
+                formData.append('message', "이 춤 영상을 분석해줘. 동작의 정확성, 리듬감, 자세 교정할 점을 알려줘.");
+
+                // TODO: 새로 배포한 Worker의 URL로 변경해야 합니다.
+                const API_URL = "https://latindance-api.yama5993.workers.dev"; 
+
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    const errData = await response.json().catch(() => ({}));
+                    throw new Error(errData.error || `Server Error: ${response.status}`);
+                }
+
+                const data = await response.json();
+                const content = data.choices?.[0]?.message?.content || "분석 결과를 가져오지 못했습니다.";
+
+                resultDiv.textContent = content;
+                resultDiv.style.display = 'block';
+
+            } catch (error) {
+                console.error(error);
+                alert(`오류가 발생했습니다: ${error.message}`);
+            } finally {
+                analyzeBtn.disabled = false;
+                loadingDiv.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

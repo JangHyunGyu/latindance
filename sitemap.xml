@@ -11,6 +11,12 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://latindance.kr/index-en.html" />
   </url>
   <url>
+    <loc>https://latindance.kr/analysis.html</loc>
+    <lastmod>2025-12-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://latindance.kr/index-en.html</loc>
     <lastmod>2025-12-02</lastmod>
     <changefreq>weekly</changefreq>
