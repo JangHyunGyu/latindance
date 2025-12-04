@@ -909,16 +909,16 @@
                         description: '내 춤 영상을 AI가 분석해줬어요! 결과를 확인해보세요.',
                         imageUrl: 'https://latindance.kr/assets/images/kakao_profile.png',
                         link: {
-                            mobileWebUrl: window.location.href,
-                            webUrl: window.location.href,
+                            mobileWebUrl: 'https://latindance.kr/analysis.html',
+                            webUrl: 'https://latindance.kr/analysis.html',
                         },
                     },
                     buttons: [
                         {
                             title: '결과 보러가기',
                             link: {
-                                mobileWebUrl: window.location.href,
-                                webUrl: window.location.href,
+                                mobileWebUrl: 'https://latindance.kr/analysis.html',
+                                webUrl: 'https://latindance.kr/analysis.html',
                             },
                         },
                     ],
@@ -930,7 +930,7 @@
         }
 
         function copyLink() {
-            const url = window.location.href;
+            const url = 'https://latindance.kr/analysis.html';
             navigator.clipboard.writeText(url).then(() => {
                 alert('링크가 복사되었습니다!');
             }).catch(err => {
