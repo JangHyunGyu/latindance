@@ -348,6 +348,20 @@
             font-size: 0.9rem;
             color: var(--text-muted);
         }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(233, 30, 99, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--primary-color);
+            animation: spin 1s ease-in-out infinite;
+            margin: 0 auto 1rem auto;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
     </style>
 </head>
 
@@ -541,7 +555,11 @@
 
                 // 3. 파일 처리 상태 대기 (Polling)
                 console.log("Step 3: Polling Status");
-                loadingDiv.innerHTML = "<p>영상 처리 중... (Google 서버에서 변환 중)</p>";
+                loadingDiv.innerHTML = `
+                    <div class="spinner"></div>
+                    <p>영상 처리 중... (Google 서버에서 변환 중)</p>
+                    <p style="font-size: 0.9rem; color: #888;">잠시만 기다려주세요.</p>
+                `;
                 
                 let isReady = false;
                 for (let i = 0; i < 60; i++) { // 최대 2분 대기
@@ -570,7 +588,11 @@
 
                 // 4. 분석 요청
                 console.log("Step 4: Analyze");
-                loadingDiv.innerHTML = "<p>AI가 영상을 분석하고 있습니다... (최대 1~2분 소요)</p>";
+                loadingDiv.innerHTML = `
+                    <div class="spinner"></div>
+                    <p>AI가 영상을 분석하고 있습니다...</p>
+                    <p style="font-size: 0.9rem; color: #888;">(최대 1~2분 소요될 수 있습니다)</p>
+                `;
 
                 const genre = document.getElementById('danceGenre').value;
                 const type = document.getElementById('danceType').value;
