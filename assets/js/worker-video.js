@@ -136,6 +136,12 @@ export default {
         const body = await req.json();
         const { fileUri, mimeType, genre, type } = body;
 
+        let referenceDancers = "세계적인 챔피언 레벨의 댄서";
+        if (genre === "Salsa") referenceDancers = "Terry & Cecile, Fernando Sosa, Adolfo Indacochea, Eddie Torres";
+        else if (genre === "Bachata") referenceDancers = "Daniel & Desiree, Ataca & La Alemana, Marco & Sara";
+        else if (genre === "Kizomba") referenceDancers = "Albir Rojas, Isabelle & Felicien";
+        else if (genre === "Zouk") referenceDancers = "Kadu & Larissa, William & Paloma";
+
         const prompt = `
         당신은 라틴댄스(살사, 바차타, 키좀바, 주크 등) 전문 분석가입니다.
 
@@ -146,6 +152,9 @@ export default {
 
         춤 영상이 맞다면, 이 영상은 ${genre || "라틴 댄스"} 장르의 ${type || "영상"}입니다.
         전문가의 시각으로 이 영상을 정밀하게 일관된 기준으로 분석해주세요.
+
+        [10점 만점의 기준]
+        10점은 해당 장르의 세계적인 챔피언(${referenceDancers}) 수준을 의미합니다.
         
         다음 형식에 맞춰서 답변을 작성해주세요:
         
@@ -153,11 +162,11 @@ export default {
         2. **남자 (Leader) 분석**:
            - **장점**: (구체적인 동작이나 기술 언급)
            - **단점 및 개선점**: (자세, 리듬, 리딩 등 교정할 부분)
-           - **평점**: (10점 만점 기준. *기준: 9-10점(프로/마스터), 7-8점(상급/준프로), 5-6점(중급), 3-4점(초급)*. 냉정하고 객관적으로 평가해주세요.)
+           - **평점**: (10점 만점 기준. *기준: 9-10점(세계 챔피언 레벨), 7-8점(강사/준프로), 5-6점(일반 동호인 상급), 3-4점(초급)*. 냉정하고 객관적으로 평가해주세요.)
         3. **여자 (Follower) 분석**:
            - **장점**: (구체적인 동작이나 기술 언급)
            - **단점 및 개선점**: (자세, 리듬, 팔로잉 등 교정할 부분)
-           - **평점**: (10점 만점 기준. *기준: 9-10점(프로/마스터), 7-8점(상급/준프로), 5-6점(중급), 3-4점(초급)*. 냉정하고 객관적으로 평가해주세요.)
+           - **평점**: (10점 만점 기준. *기준: 9-10점(세계 챔피언 레벨), 7-8점(강사/준프로), 5-6점(일반 동호인 상급), 3-4점(초급)*. 냉정하고 객관적으로 평가해주세요.)
         
         동작의 정확성, 리듬감, 파트너와의 커넥션, 자세(Posture) 등을 중점적으로 봐주세요.
         `.trim();
