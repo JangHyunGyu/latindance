@@ -134,14 +134,32 @@ export default {
       // 4. 분석 (Gemini 호출)
       if (action === "analyze") {
         const body = await req.json();
-        const { fileUri, message, mimeType } = body;
+        const { fileUri, mimeType, genre, type } = body;
+
+        const prompt = `
+이 영상은 ${genre || "라틴 댄스"} 장르의 ${type || "영상"}입니다.
+전문가의 시각으로 이 영상을 정밀하게 분석해주세요.
+
+다음 형식에 맞춰서 답변을 작성해주세요:
+
+1. **총평**: 전체적인 춤의 느낌, 음악 해석, 분위기
+2. **남자 (Leader) 분석**:
+   - **장점**: (구체적인 동작이나 기술 언급)
+   - **단점 및 개선점**: (자세, 리듬, 리딩 등 교정할 부분)
+3. **여자 (Follower) 분석**:
+   - **장점**: (구체적인 동작이나 기술 언급)
+   - **단점 및 개선점**: (자세, 리듬, 팔로잉 등 교정할 부분)
+4. **종합 평점**: (10점 만점 기준 점수와 그 이유)
+
+동작의 정확성, 리듬감, 파트너와의 커넥션, 자세(Posture) 등을 중점적으로 봐주세요.
+        `.trim();
 
         // 여기서는 대기하지 않고 바로 요청 (클라이언트가 이미 ACTIVE 확인했음)
         const contents = [
           {
             role: "user",
             parts: [
-              { text: message || "이 춤 영상을 분석해줘." },
+              { text: prompt },
               { fileData: { fileUri: fileUri, mimeType: mimeType || "video/mp4" } }
             ]
           }
