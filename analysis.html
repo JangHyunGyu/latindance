@@ -689,12 +689,16 @@
                 // 2. 파일 업로드
                 console.log("Step 2: Upload");
                 modalBody.innerHTML = `
-                    <p>영상 업로드 중... 0%</p>
+                    <p id="uploadStatusText">영상 업로드 중... 0%</p>
                     <div style="width: 100%; background: #333; height: 10px; border-radius: 5px; margin-top: 10px; overflow: hidden;">
                         <div id="uploadProgressBar" style="width: 0%; height: 100%; background: #e91e63; transition: width 0.2s;"></div>
                     </div>
                     <p style="font-size: 0.9rem; color: #888; margin-top: 5px;">(고화질 영상은 시간이 더 걸릴 수 있습니다)</p>
                 `;
+
+                // 요소를 미리 찾아둠 (콜백 내에서 찾지 않음)
+                const progressBar = document.getElementById('uploadProgressBar');
+                const statusText = document.getElementById('uploadStatusText');
 
                 const uploadRes = await new Promise((resolve, reject) => {
                     const xhr = new XMLHttpRequest();
@@ -705,9 +709,7 @@
                     xhr.upload.onprogress = (e) => {
                         if (e.lengthComputable) {
                             const percent = Math.round((e.loaded / e.total) * 100);
-                            const progressBar = document.getElementById('uploadProgressBar');
-                            const statusText = modalBody.querySelector('p');
-                            
+                            // console.log(`Upload progress: ${percent}%`);
                             if (progressBar) progressBar.style.width = `${percent}%`;
                             if (statusText) statusText.textContent = `영상 업로드 중... ${percent}%`;
                         }
