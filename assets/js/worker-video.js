@@ -45,27 +45,6 @@ async function initiateUpload(apiKey, mimeType, numBytes, displayName) {
   return response.headers.get("x-goog-upload-url");
 }
 
-async function waitForFileActive(apiKey, fileUri) {
-  const url = `https://generativelanguage.googleapis.com/v1beta/${fileUri}?key=${apiKey}`;
-
-  let attempts = 0;
-  while (attempts < 60) { 
-    const response = await fetch(url);
-    const data = await response.json();
-
-    if (data.state === "ACTIVE") {
-      return; 
-    }
-    if (data.state === "FAILED") {
-      throw new Error("File processing failed");
-    }
-
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    attempts++;
-  }
-  throw new Error("File processing timed out");
-}
-
 // ===== Main Worker Logic =====
 export default {
   async fetch(req, env) {
@@ -125,18 +104,39 @@ export default {
         }
 
         const result = await googleResponse.json();
-        return new Response(JSON.stringify({ fileUri: result.file.uri }), {
+        // fileUri와 fileName(resource name)을 모두 반환
+        return new Response(JSON.stringify({ 
+          fileUri: result.file.uri,
+          fileName: result.file.name 
+        }), {
           headers: { ...corsHeaders(origin), "Content-Type": "application/json" }
         });
       }
 
-      // 3. 분석 (Gemini 호출)
+      // 3. 상태 확인 (Polling용)
+      if (action === "check_status") {
+        const body = await req.json();
+        const { fileName } = body; // e.g. "files/abc..."
+
+        const checkUrl = `https://generativelanguage.googleapis.com/v1beta/${fileName}?key=${env.GEMINI_API_KEY}`;
+        const checkRes = await fetch(checkUrl);
+        
+        if (!checkRes.ok) {
+           throw new Error(`Status Check Failed: ${checkRes.status}`);
+        }
+        
+        const data = await checkRes.json();
+        return new Response(JSON.stringify({ state: data.state }), {
+          headers: { ...corsHeaders(origin), "Content-Type": "application/json" }
+        });
+      }
+
+      // 4. 분석 (Gemini 호출)
       if (action === "analyze") {
         const body = await req.json();
         const { fileUri, message } = body;
 
-        await waitForFileActive(env.GEMINI_API_KEY, fileUri);
-
+        // 여기서는 대기하지 않고 바로 요청 (클라이언트가 이미 ACTIVE 확인했음)
         const contents = [
           {
             role: "user",
@@ -181,7 +181,6 @@ export default {
       throw new Error(`Invalid action: ${action}`);
 
     } catch (err) {
-      // 에러 내용을 JSON으로 명확히 반환
       return new Response(JSON.stringify({ error: err.message }), {
         status: 500,
         headers: { ...corsHeaders(origin), "Content-Type": "application/json" },

@@ -245,10 +245,39 @@
                     const text = await uploadRes.text();
                     throw new Error(`Upload failed (${uploadRes.status}): ${text}`);
                 }
-                const { fileUri } = await uploadRes.json();
+                const { fileUri, fileName } = await uploadRes.json();
 
-                // 3. 분석 요청
-                console.log("Step 3: Analyze");
+                // 3. 파일 처리 상태 대기 (Polling)
+                console.log("Step 3: Polling Status");
+                loadingDiv.innerHTML = "<p>영상 처리 중... (Google 서버에서 변환 중)</p>";
+                
+                let isReady = false;
+                for (let i = 0; i < 60; i++) { // 최대 2분 대기
+                    const checkRes = await fetch(`${API_URL}?action=check_status`, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ fileName })
+                    });
+                    
+                    if (!checkRes.ok) throw new Error("Status check failed");
+                    const statusData = await checkRes.json();
+                    
+                    if (statusData.state === "ACTIVE") {
+                        isReady = true;
+                        break;
+                    }
+                    if (statusData.state === "FAILED") {
+                        throw new Error("Video processing failed at Google side");
+                    }
+                    
+                    // 2초 대기
+                    await new Promise(r => setTimeout(r, 2000));
+                }
+                
+                if (!isReady) throw new Error("Video processing timed out");
+
+                // 4. 분석 요청
+                console.log("Step 4: Analyze");
                 loadingDiv.innerHTML = "<p>AI가 영상을 분석하고 있습니다... (최대 1~2분 소요)</p>";
                 const analyzeRes = await fetch(`${API_URL}?action=analyze`, {
                     method: "POST",
