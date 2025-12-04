@@ -551,10 +551,7 @@
 
             <button id="analyzeBtn" disabled>분석 시작하기</button>
             
-            <div id="loading" class="loading">
-                <p>영상을 분석 중입니다... 잠시만 기다려주세요.</p>
-                <p>(영상 길이에 따라 1~2분 정도 소요될 수 있습니다)</p>
-            </div>
+            <!-- Loading div removed, moved to modal -->
             
             <div id="result"></div>
         </div>
@@ -568,14 +565,14 @@
     <div id="resultModal" class="modal-overlay">
         <div class="modal-container">
             <div class="modal-header">
-                <h3 class="modal-title">AI 분석 결과</h3>
+                <h3 id="modalTitle" class="modal-title">AI 분석 결과</h3>
                 <button class="modal-close" onclick="closeModal()">&times;</button>
             </div>
             <div id="modalBody" class="modal-body">
                 <!-- Analysis content will be injected here -->
             </div>
             <button id="scrollTopBtn" title="맨 위로">↑</button>
-            <div class="modal-footer">
+            <div id="modalFooter" class="modal-footer">
                 <button class="share-btn share-kakao" onclick="shareKakao()">
                     <span style="font-size: 1.2em;">💬</span> 카카오톡 공유
                 </button>
@@ -596,14 +593,14 @@
 
         const videoInput = document.getElementById('videoInput');
         const analyzeBtn = document.getElementById('analyzeBtn');
-        const resultDiv = document.getElementById('result'); // Fallback
-        const loadingDiv = document.getElementById('loading');
         const fileNameDiv = document.getElementById('fileName');
         const dropZone = document.getElementById('dropZone');
         
         // Modal Elements
         const resultModal = document.getElementById('resultModal');
         const modalBody = document.getElementById('modalBody');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalFooter = document.getElementById('modalFooter');
         const scrollTopBtn = document.getElementById('scrollTopBtn');
 
         // File selection handler
@@ -661,16 +658,18 @@
             document.querySelector('label[for="videoInput"]').style.pointerEvents = "none"; // 버튼 클릭 막기
             document.querySelector('label[for="videoInput"]').style.opacity = "0.5"; // 시각적 비활성화
             
-            loadingDiv.style.display = 'block';
-            resultDiv.style.display = 'none';
-            resultDiv.textContent = '';
+            // Show Modal immediately for progress
+            resultModal.style.display = 'flex';
+            modalTitle.textContent = "영상 분석 중...";
+            modalFooter.style.display = 'none'; // Hide footer during loading
+            document.body.style.overflow = 'hidden';
 
             try {
                 const API_URL = "https://latindance-api.yama5993.workers.dev"; 
 
                 // 1. 초기화 요청
                 console.log("Step 1: Init");
-                loadingDiv.innerHTML = "<p>업로드 준비 중...</p>";
+                modalBody.innerHTML = "<p>업로드 준비 중...</p>";
                 const initRes = await fetch(`${API_URL}?action=init`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
@@ -689,7 +688,7 @@
 
                 // 2. 파일 업로드
                 console.log("Step 2: Upload");
-                loadingDiv.innerHTML = `
+                modalBody.innerHTML = `
                     <p>영상 업로드 중... 0%</p>
                     <div style="width: 100%; background: #333; height: 10px; border-radius: 5px; margin-top: 10px; overflow: hidden;">
                         <div id="uploadProgressBar" style="width: 0%; height: 100%; background: #e91e63; transition: width 0.2s;"></div>
@@ -707,7 +706,7 @@
                         if (e.lengthComputable) {
                             const percent = Math.round((e.loaded / e.total) * 100);
                             const progressBar = document.getElementById('uploadProgressBar');
-                            const statusText = loadingDiv.querySelector('p');
+                            const statusText = modalBody.querySelector('p');
                             
                             if (progressBar) progressBar.style.width = `${percent}%`;
                             if (statusText) statusText.textContent = `영상 업로드 중... ${percent}%`;
@@ -734,10 +733,10 @@
 
                 // 3. 파일 처리 상태 대기 (Polling)
                 console.log("Step 3: Polling Status");
-                loadingDiv.innerHTML = `
+                modalBody.innerHTML = `
                     <div class="spinner"></div>
-                    <p>영상 처리 중... (Google 서버에서 변환 중)</p>
-                    <p style="font-size: 0.9rem; color: #888;">잠시만 기다려주세요.</p>
+                    <p style="text-align:center">영상 처리 중... (Google 서버에서 변환 중)</p>
+                    <p style="font-size: 0.9rem; color: #888; text-align:center">잠시만 기다려주세요.</p>
                 `;
                 
                 let isReady = false;
@@ -767,10 +766,10 @@
 
                 // 4. 분석 요청
                 console.log("Step 4: Analyze");
-                loadingDiv.innerHTML = `
+                modalBody.innerHTML = `
                     <div class="spinner"></div>
-                    <p>AI가 영상을 분석하고 있습니다...</p>
-                    <p style="font-size: 0.9rem; color: #888;">(최대 1~2분 소요될 수 있습니다)</p>
+                    <p style="text-align:center">AI가 영상을 분석하고 있습니다...</p>
+                    <p style="font-size: 0.9rem; color: #888; text-align:center">(최대 1~2분 소요될 수 있습니다)</p>
                 `;
 
                 const genre = document.getElementById('danceGenre').value;
@@ -813,15 +812,16 @@
                     .replace(/# (.*?)\n/g, '<h1>$1</h1>') // H1
                     .replace(/\n/g, '<br>'); // Line breaks
 
+                modalTitle.textContent = "AI 분석 결과";
                 modalBody.innerHTML = formattedContent;
-                resultModal.style.display = 'flex';
-                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                modalFooter.style.display = 'flex'; // Show footer when done
 
             } catch (error) {
                 console.error(error);
                 alert(`오류 발생: ${error.message}`);
+                modalTitle.textContent = "오류 발생";
                 modalBody.innerHTML = `<p style="color:red">상세 에러: ${error.message}</p>`;
-                resultModal.style.display = 'flex';
+                modalFooter.style.display = 'none';
             } finally {
                 // UI 상태 복구 (활성화)
                 analyzeBtn.disabled = false;
@@ -829,8 +829,6 @@
                 document.getElementById('danceType').disabled = false;
                 document.querySelector('label[for="videoInput"]').style.pointerEvents = "auto";
                 document.querySelector('label[for="videoInput"]').style.opacity = "1";
-                
-                loadingDiv.style.display = 'none';
             }
         });
 
