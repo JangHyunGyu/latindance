@@ -147,8 +147,8 @@ export default {
           }
         ];
 
-        // Gemini 1.5 Pro (Stable) 사용
-        const model = "gemini-1.5-pro";
+        // Gemini 3.0 Pro Preview 사용
+        const model = "gemini-3.0-pro-preview";
         const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${env.GEMINI_API_KEY}`;
 
         const upstream = await fetch(geminiUrl, {
