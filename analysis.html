@@ -372,24 +372,29 @@
             top: 0;
             width: 100%;
             height: 100%;
-            overflow: auto;
+            overflow: hidden; /* Prevent body scroll */
             background-color: rgba(0, 0, 0, 0.85);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
         }
 
         .modal-content {
             background-color: #1e1e1e;
-            margin: 5% auto;
-            padding: 2.5rem;
+            margin: 0; /* Centered by flex */
+            padding: 0; /* Padding moved to body */
             border: 1px solid rgba(255, 255, 255, 0.1);
             width: 90%;
-            max-width: 800px;
+            max-width: 600px; /* Reduced width */
+            max-height: 80vh; /* Limit height */
             border-radius: 24px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
             position: relative;
             color: #fff;
             animation: modalSlideIn 0.3s ease-out;
+            display: flex;
+            flex-direction: column;
         }
 
         @keyframes modalSlideIn {
@@ -400,17 +405,24 @@
         .close-btn {
             color: #aaa;
             position: absolute;
-            right: 25px;
-            top: 20px;
+            right: 20px;
+            top: 15px;
             font-size: 28px;
             font-weight: bold;
             cursor: pointer;
             transition: color 0.2s;
             z-index: 10;
+            background: rgba(30,30,30,0.8);
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
         }
 
         .close-btn:hover {
             color: #fff;
+            background: rgba(50,50,50,0.8);
         }
 
         #modalBody {
@@ -418,6 +430,9 @@
             line-height: 1.8;
             font-size: 1rem;
             color: #eee;
+            overflow-y: auto; /* Internal scroll */
+            padding: 2.5rem;
+            flex: 1;
         }
 
         #modalBody strong {
@@ -426,18 +441,42 @@
         }
         
         /* Modal scrollbar */
-        .modal::-webkit-scrollbar {
+        #modalBody::-webkit-scrollbar {
             width: 8px;
         }
-        .modal::-webkit-scrollbar-track {
+        #modalBody::-webkit-scrollbar-track {
             background: #121212; 
         }
-        .modal::-webkit-scrollbar-thumb {
+        #modalBody::-webkit-scrollbar-thumb {
             background: #444; 
             border-radius: 4px;
         }
-        .modal::-webkit-scrollbar-thumb:hover {
+        #modalBody::-webkit-scrollbar-thumb:hover {
             background: #555; 
+        }
+
+        .scroll-top-btn {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(233, 30, 99, 0.9);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            display: none; /* Hidden by default */
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            z-index: 20;
+        }
+        .scroll-top-btn:hover {
+            background: #c2185b;
+            transform: translateY(-2px);
         }
     </style>
 </head>
@@ -503,6 +542,7 @@
             <div id="modalBody">
                 <!-- Content injected via JS -->
             </div>
+            <button id="scrollTopBtn" class="scroll-top-btn" title="맨 위로">▲</button>
         </div>
     </div>
 
@@ -518,6 +558,7 @@
         const modal = document.getElementById('analysisModal');
         const modalBody = document.getElementById('modalBody');
         const closeBtn = document.querySelector('.close-btn');
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
 
         // Close modal events
         closeBtn.onclick = function() {
@@ -531,6 +572,19 @@
                 modal.style.display = "none";
             }
         }
+
+        // Scroll to top logic
+        modalBody.addEventListener('scroll', () => {
+            if (modalBody.scrollTop > 100) {
+                scrollTopBtn.style.display = "flex";
+            } else {
+                scrollTopBtn.style.display = "none";
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            modalBody.scrollTo({ top: 0, behavior: 'smooth' });
+        });
 
         // File selection handler
         videoInput.addEventListener('change', handleFileSelect);
@@ -588,8 +642,9 @@
             document.querySelector('label[for="videoInput"]').style.opacity = "0.5"; 
             
             // 모달 열기 및 초기화
-            modal.style.display = "block";
+            modal.style.display = "flex"; // Changed to flex for centering
             modalBody.innerHTML = ''; // 초기화
+            scrollTopBtn.style.display = "none"; // Reset scroll btn
             
             // 닫기 버튼 숨기기 (분석 중 실수로 닫는 것 방지)
             closeBtn.style.display = 'none';
@@ -600,7 +655,7 @@
                 // 1. 초기화 요청
                 console.log("Step 1: Init");
                 modalBody.innerHTML = `
-                    <div style="text-align: center; padding: 2rem;">
+                    <div style="text-align: center; padding: 2rem; height: 100%; display: flex; flex-direction: column; justify-content: center;">
                         <div class="spinner"></div>
                         <p style="font-size: 1.1rem; font-weight: 600;">업로드 준비 중...</p>
                     </div>
@@ -625,7 +680,7 @@
                 // 2. 파일 업로드
                 console.log("Step 2: Upload");
                 modalBody.innerHTML = `
-                    <div style="text-align: center; padding: 2rem;">
+                    <div style="text-align: center; padding: 2rem; height: 100%; display: flex; flex-direction: column; justify-content: center;">
                         <p style="font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem;">영상 업로드 중...</p>
                         <div style="width: 100%; background: #333; height: 10px; border-radius: 5px; overflow: hidden; margin-bottom: 10px;">
                             <div id="uploadProgressBar" style="width: 0%; height: 100%; background: #e91e63; transition: width 0.2s;"></div>
@@ -673,7 +728,7 @@
                 // 3. 파일 처리 상태 대기 (Polling)
                 console.log("Step 3: Polling Status");
                 modalBody.innerHTML = `
-                    <div style="text-align: center; padding: 2rem;">
+                    <div style="text-align: center; padding: 2rem; height: 100%; display: flex; flex-direction: column; justify-content: center;">
                         <div class="spinner"></div>
                         <p style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">영상 처리 중...</p>
                         <p style="color: #aaa;">Google 서버에서 영상을 변환하고 있습니다.</p>
@@ -709,7 +764,7 @@
                 // 4. 분석 요청
                 console.log("Step 4: Analyze");
                 modalBody.innerHTML = `
-                    <div style="text-align: center; padding: 2rem;">
+                    <div style="text-align: center; padding: 2rem; height: 100%; display: flex; flex-direction: column; justify-content: center;">
                         <div class="spinner"></div>
                         <p style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">AI 분석 중...</p>
                         <p style="color: #aaa;">모션 캡쳐 모델이 동작, 리듬, 자세를 분석하고 있습니다.</p>
