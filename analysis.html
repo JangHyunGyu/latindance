@@ -791,6 +791,43 @@
                 const genre = document.getElementById('danceGenre').value;
                 const type = document.getElementById('danceType').value;
 
+                let referenceDancers = "세계적인 챔피언 레벨의 댄서";
+                if (genre === "Salsa") referenceDancers = "Terry & Cecile, Fernando Sosa, Adolfo Indacochea, Eddie Torres";
+                else if (genre === "Bachata") referenceDancers = "Daniel & Desiree, Ataca & La Alemana, Marco & Sara, Luis & Andrea";
+                else if (genre === "Kizomba") referenceDancers = "Albir Rojas, Isabelle & Felicien";
+                else if (genre === "Zouk") referenceDancers = "Kadu & Larissa, William & Paloma";
+
+                const prompt = `
+                    당신은 라틴댄스(살사, 바차타, 키좀바, 주크 등) 전문 분석가입니다.
+
+                    [중요] 먼저, 이 영상이 춤(댄스)과 관련된 영상인지 확인해주세요.
+                    만약 춤과 전혀 관련이 없는 영상(예: 풍경, 음식, 문서, 정적인 화면, 뉴스 등)이라면, 
+                    다른 분석을 하지 말고 오직 다음 문장만 출력하고 종료하세요:
+                    "죄송합니다. 이 영상은 춤 영상으로 보이지 않습니다. 댄스 영상을 업로드해주시면 정밀하게 분석해드리겠습니다."
+
+                    춤 영상이 맞다면, 이 영상은 ${genre || "라틴 댄스"} 장르의 ${type || "영상"}입니다.
+                    전문가의 시각으로 이 영상의 고유한 특징을 포착하여 정밀하게 분석해주세요.
+
+                    [10점 만점의 기준 및 비교 방법]
+                    10점은 해당 장르의 세계적인 챔피언(${referenceDancers}) 수준을 의미합니다.
+                    AI가 학습한 이 챔피언들의 **자세(Posture), 텐션(Connection), 뮤지컬리티(Musicality), 동작의 정확성** 데이터를 기준으로, 
+                    업로드된 영상의 댄서들이 이 '월드 클래스' 기준에 얼마나 근접했는지를 상대적으로 평가해주세요.
+                    
+                    다음 형식에 맞춰서 답변을 작성해주세요:
+                    
+                    1. **총평**: 전체적인 춤의 느낌, 음악 해석, 분위기
+                    2. **남자 (Leader) 분석**:
+                    - **장점**: (구체적인 동작이나 기술 언급)
+                    - **단점 및 개선점**: (자세, 리듬, 리딩 등 교정할 부분)
+                    - **평점**: (10점 만점 기준. *기준: 9-10점(세계 챔피언 레벨), 7-8점(강사/준프로), 5-6점(일반 동호인 상급), 3-4점(초급)*. 냉정하고 객관적으로 평가해주세요.)
+                    3. **여자 (Follower) 분석**:
+                    - **장점**: (구체적인 동작이나 기술 언급)
+                    - **단점 및 개선점**: (자세, 리듬, 팔로잉 등 교정할 부분)
+                    - **평점**: (10점 만점 기준. *기준: 9-10점(세계 챔피언 레벨), 7-8점(강사/준프로), 5-6점(일반 동호인 상급), 3-4점(초급)*. 냉정하고 객관적으로 평가해주세요.)
+                    
+                    동작의 정확성, 리듬감, 파트너와의 커넥션, 자세(Posture) 등을 중점적으로 봐주세요.
+                    `.trim();
+
                 const analyzeRes = await fetch(`${API_URL}?action=analyze`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
@@ -798,7 +835,8 @@
                         fileUri: fileUri,
                         mimeType: file.type,
                         genre: genre,
-                        type: type
+                        type: type,
+                        userPrompt: prompt
                     })
                 });
 
