@@ -208,24 +208,50 @@
             resultDiv.textContent = '';
 
             try {
-                const formData = new FormData();
-                formData.append('file', file);
-                formData.append('message', "이 춤 영상을 분석해줘. 동작의 정확성, 리듬감, 자세 교정할 점을 알려줘.");
-
-                // TODO: 새로 배포한 Worker의 URL로 변경해야 합니다.
                 const API_URL = "https://latindance-api.yama5993.workers.dev"; 
 
-                const response = await fetch(API_URL, {
-                    method: 'POST',
-                    body: formData
+                // 1. 초기화 요청 (Upload URL 받기)
+                loadingDiv.innerHTML = "<p>업로드 준비 중...</p>";
+                const initRes = await fetch(`${API_URL}?action=init`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        mimeType: file.type,
+                        numBytes: file.size,
+                        displayName: file.name
+                    })
+                });
+                
+                if (!initRes.ok) throw new Error("Upload init failed");
+                const { uploadUrl } = await initRes.json();
+
+                // 2. 파일 업로드 (스트리밍 프록시)
+                loadingDiv.innerHTML = "<p>영상 업로드 중... (시간이 조금 걸릴 수 있습니다)</p>";
+                const uploadRes = await fetch(`${API_URL}?action=upload`, {
+                    method: "POST",
+                    headers: {
+                        "X-Upload-Url": uploadUrl,
+                        "Content-Type": file.type // 중요: multipart가 아닌 raw binary로 보냄
+                    },
+                    body: file // File 객체 자체를 Body로 전송
                 });
 
-                if (!response.ok) {
-                    const errData = await response.json().catch(() => ({}));
-                    throw new Error(errData.error || `Server Error: ${response.status}`);
-                }
+                if (!uploadRes.ok) throw new Error("File upload failed");
+                const { fileUri } = await uploadRes.json();
 
-                const data = await response.json();
+                // 3. 분석 요청
+                loadingDiv.innerHTML = "<p>AI가 영상을 분석하고 있습니다... (최대 1~2분 소요)</p>";
+                const analyzeRes = await fetch(`${API_URL}?action=analyze`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        fileUri: fileUri,
+                        message: "이 춤 영상을 분석해줘. 동작의 정확성, 리듬감, 자세 교정할 점을 알려줘."
+                    })
+                });
+
+                if (!analyzeRes.ok) throw new Error("Analysis failed");
+                const data = await analyzeRes.json();
                 const content = data.choices?.[0]?.message?.content || "분석 결과를 가져오지 못했습니다.";
 
                 resultDiv.textContent = content;
