@@ -30,91 +30,298 @@
 	<link rel="stylesheet" href="assets/css/style.css?v=103">
     
     <style>
+        :root {
+            --primary-color: #e91e63;
+            --primary-hover: #c2185b;
+            --bg-dark: #121212;
+            --surface-dark: #1e1e1e;
+            --text-main: #ffffff;
+            --text-muted: #b0b0b0;
+            --border-color: #333;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+        }
+
         .analysis-container {
             max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
+            margin: 2rem auto;
+            padding: 2.5rem;
+            background: var(--surface-dark);
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
             text-align: center;
+            border: 1px solid rgba(255,255,255,0.05);
         }
+
+        .section-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 4px;
+            height: 16px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        @media (max-width: 600px) {
+            .analysis-container {
+                padding: 1.2rem;
+                margin: 0.5rem auto;
+            }
+            
+            .options-grid {
+                grid-template-columns: 1fr 1fr; /* 모바일에서도 2열 유지 */
+                gap: 0.8rem;
+                margin-bottom: 1rem;
+            }
+
+            .upload-area {
+                padding: 1.5rem 1rem !important; /* 패딩 대폭 축소 */
+                margin: 1rem 0 !important;
+            }
+
+            .upload-icon {
+                font-size: 2rem !important;
+                margin-bottom: 0.8rem !important;
+            }
+            
+            .section-title {
+                font-size: 0.9rem;
+                margin-bottom: 0.4rem;
+            }
+            
+            select {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+
+            #analyzeBtn {
+                padding: 12px;
+                font-size: 1.1rem;
+            }
+            
+            .site-header {
+                padding: 0.8rem 0 !important;
+            }
+            
+            .site-logo {
+                font-size: 1.2rem !important;
+            }
+        }
+
+        select {
+            width: 100%;
+            padding: 12px 14px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            background: #2a2a2a;
+            color: #fff;
+            font-size: 0.95rem;
+            outline: none;
+            transition: all 0.3s ease;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1em;
+            cursor: pointer;
+        }
+
+        select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.2);
+            background-color: #333;
+        }
+
         .upload-area {
-            border: 2px dashed #ccc;
-            padding: 3rem;
+            border: 2px dashed #444;
+            padding: 4rem 2rem;
             margin: 2rem 0;
-            border-radius: 10px;
-            background-color: rgba(255, 255, 255, 0.05);
-            transition: border-color 0.3s;
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.02);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
         }
+
         .upload-area:hover {
-            border-color: #fff;
+            border-color: var(--primary-color);
+            background-color: rgba(233, 30, 99, 0.05);
+            transform: translateY(-2px);
         }
-        .upload-area p {
-            margin-top: 1rem;
-            color: #aaa;
+
+        .upload-icon {
+            font-size: 3rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            transition: color 0.3s;
+            display: block;
         }
+
+        .upload-area:hover .upload-icon {
+            color: var(--primary-color);
+        }
+
+        .upload-btn-label {
+            display: inline-block;
+            padding: 12px 28px;
+            background: #333;
+            color: #fff;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 0.8rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .upload-btn-label:hover {
+            background: #444;
+            border-color: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        .upload-hint {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
         #videoInput {
             display: none;
         }
-        .upload-btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #444;
-            color: #fff;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .upload-btn:hover {
-            background-color: #555;
-        }
+
         #analyzeBtn {
-            margin-top: 1rem;
-            padding: 15px 30px;
+            width: 100%;
+            padding: 18px;
             font-size: 1.2rem;
-            background-color: #e91e63;
+            font-weight: 700;
+            background: linear-gradient(135deg, #e91e63, #ff6090);
             color: white;
             border: none;
-            border-radius: 30px;
+            border-radius: 16px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4);
+            margin-top: 1rem;
         }
+
         #analyzeBtn:hover {
-            background-color: #c2185b;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(233, 30, 99, 0.5);
         }
+
         #analyzeBtn:disabled {
-            background-color: #555;
+            background: #333;
+            color: #777;
+            box-shadow: none;
             cursor: not-allowed;
+            transform: none;
         }
+
         #result {
             margin-top: 3rem;
             text-align: left;
             white-space: pre-wrap;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 10px;
+            background: #252525;
+            padding: 2.5rem;
+            border-radius: 20px;
             color: #eee;
-            line-height: 1.6;
+            line-height: 1.8;
             display: none;
+            border: 1px solid #333;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
         }
+
+        /* Markdown-like styling for result */
+        #result strong {
+            color: #ff80ab;
+            font-weight: 700;
+        }
+
         .loading {
             display: none;
-            margin-top: 2rem;
-            color: #aaa;
-            font-size: 1.1rem;
+            margin-top: 2.5rem;
+            color: var(--text-muted);
+            font-size: 1rem;
         }
+        
+        .progress-bar-container {
+            width: 100%;
+            background: #333;
+            height: 8px;
+            border-radius: 4px;
+            margin-top: 15px;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, #e91e63, #ff6090);
+            transition: width 0.3s ease;
+            border-radius: 4px;
+        }
+
         .file-name {
-            margin-top: 1rem;
-            font-weight: bold;
+            margin-top: 1.5rem;
+            font-weight: 600;
             color: #fff;
+            background: rgba(255,255,255,0.1);
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 8px;
         }
+        
         .site-header {
             padding: 1rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            background: rgba(18, 18, 18, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         .site-logo {
-            font-size: 1.5rem;
-            font-weight: bold;
+            font-size: 1.4rem;
+            font-weight: 800;
             color: #fff;
             text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .site-footer {
+            padding: 1.5rem 0 !important;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            background: transparent !important;
+        }
+        
+        .site-footer__text {
+            font-size: 0.9rem;
+            color: var(--text-muted);
         }
     </style>
 </head>
@@ -133,10 +340,10 @@
 		</section>
 
         <div class="analysis-container">
-            <div class="options-area" style="margin-bottom: 2rem; text-align: left; background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 10px;">
-                <div style="margin-bottom: 1rem;">
-                    <label style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: #fff;">1. 춤 종류를 선택해주세요:</label>
-                    <select id="danceGenre" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #555; background: #222; color: #fff;">
+            <div class="options-grid">
+                <div>
+                    <label class="section-title">1. 춤 종류 선택</label>
+                    <select id="danceGenre">
                         <option value="Salsa">살사 (Salsa)</option>
                         <option value="Bachata">바차타 (Bachata)</option>
                         <option value="Kizomba">키좀바 (Kizomba)</option>
@@ -144,8 +351,8 @@
                     </select>
                 </div>
                 <div>
-                    <label style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: #fff;">2. 영상의 유형을 선택해주세요:</label>
-                    <select id="danceType" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #555; background: #222; color: #fff;">
+                    <label class="section-title">2. 영상 유형 선택</label>
+                    <select id="danceType">
                         <option value="Social">소셜 (Social Dance)</option>
                         <option value="Performance">공연 (Performance)</option>
                     </select>
@@ -153,13 +360,14 @@
             </div>
 
             <div class="upload-area" id="dropZone">
-                <label for="videoInput" class="upload-btn">영상 선택하기</label>
+                <span class="upload-icon">📁</span>
+                <label for="videoInput" class="upload-btn-label">영상 선택하기</label>
                 <input type="file" id="videoInput" accept="video/*">
-                <p>또는 영상을 여기로 드래그하세요</p>
+                <p class="upload-hint">또는 영상을 여기로 드래그하세요</p>
                 <div id="fileName" class="file-name"></div>
             </div>
 
-            <button id="analyzeBtn" disabled>분석 시작</button>
+            <button id="analyzeBtn" disabled>분석 시작하기</button>
             
             <div id="loading" class="loading">
                 <p>영상을 분석 중입니다... 잠시만 기다려주세요.</p>
