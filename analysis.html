@@ -584,19 +584,28 @@
             analyzeBtn.disabled = true;
             document.getElementById('danceGenre').disabled = true;
             document.getElementById('danceType').disabled = true;
-            document.querySelector('label[for="videoInput"]').style.pointerEvents = "none"; // 버튼 클릭 막기
-            document.querySelector('label[for="videoInput"]').style.opacity = "0.5"; // 시각적 비활성화
+            document.querySelector('label[for="videoInput"]').style.pointerEvents = "none"; 
+            document.querySelector('label[for="videoInput"]').style.opacity = "0.5"; 
             
-            loadingDiv.style.display = 'block';
-            resultDiv.style.display = 'none';
-            resultDiv.textContent = '';
+            // 모달 열기 및 초기화
+            modal.style.display = "block";
+            modalBody.innerHTML = ''; // 초기화
+            
+            // 닫기 버튼 숨기기 (분석 중 실수로 닫는 것 방지)
+            closeBtn.style.display = 'none';
 
             try {
                 const API_URL = "https://latindance-api.yama5993.workers.dev"; 
 
                 // 1. 초기화 요청
                 console.log("Step 1: Init");
-                loadingDiv.innerHTML = "<p>업로드 준비 중...</p>";
+                modalBody.innerHTML = `
+                    <div style="text-align: center; padding: 2rem;">
+                        <div class="spinner"></div>
+                        <p style="font-size: 1.1rem; font-weight: 600;">업로드 준비 중...</p>
+                    </div>
+                `;
+                
                 const initRes = await fetch(`${API_URL}?action=init`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
@@ -615,12 +624,15 @@
 
                 // 2. 파일 업로드
                 console.log("Step 2: Upload");
-                loadingDiv.innerHTML = `
-                    <p>영상 업로드 중... 0%</p>
-                    <div style="width: 100%; background: #333; height: 10px; border-radius: 5px; margin-top: 10px; overflow: hidden;">
-                        <div id="uploadProgressBar" style="width: 0%; height: 100%; background: #e91e63; transition: width 0.2s;"></div>
+                modalBody.innerHTML = `
+                    <div style="text-align: center; padding: 2rem;">
+                        <p style="font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem;">영상 업로드 중...</p>
+                        <div style="width: 100%; background: #333; height: 10px; border-radius: 5px; overflow: hidden; margin-bottom: 10px;">
+                            <div id="uploadProgressBar" style="width: 0%; height: 100%; background: #e91e63; transition: width 0.2s;"></div>
+                        </div>
+                        <p id="uploadStatusText" style="font-size: 0.9rem; color: #aaa;">0%</p>
+                        <p style="font-size: 0.85rem; color: #666; margin-top: 1rem;">(고화질 영상은 시간이 더 걸릴 수 있습니다)</p>
                     </div>
-                    <p style="font-size: 0.9rem; color: #888; margin-top: 5px;">(고화질 영상은 시간이 더 걸릴 수 있습니다)</p>
                 `;
 
                 const uploadRes = await new Promise((resolve, reject) => {
@@ -633,10 +645,10 @@
                         if (e.lengthComputable) {
                             const percent = Math.round((e.loaded / e.total) * 100);
                             const progressBar = document.getElementById('uploadProgressBar');
-                            const statusText = loadingDiv.querySelector('p');
+                            const statusText = document.getElementById('uploadStatusText');
                             
                             if (progressBar) progressBar.style.width = `${percent}%`;
-                            if (statusText) statusText.textContent = `영상 업로드 중... ${percent}%`;
+                            if (statusText) statusText.textContent = `${percent}% 완료`;
                         }
                     };
 
@@ -660,10 +672,13 @@
 
                 // 3. 파일 처리 상태 대기 (Polling)
                 console.log("Step 3: Polling Status");
-                loadingDiv.innerHTML = `
-                    <div class="spinner"></div>
-                    <p>영상 처리 중... (서버에서 변환 중)</p>
-                    <p style="font-size: 0.9rem; color: #888;">잠시만 기다려주세요.</p>
+                modalBody.innerHTML = `
+                    <div style="text-align: center; padding: 2rem;">
+                        <div class="spinner"></div>
+                        <p style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">영상 처리 중...</p>
+                        <p style="color: #aaa;">Google 서버에서 영상을 변환하고 있습니다.</p>
+                        <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">잠시만 기다려주세요.</p>
+                    </div>
                 `;
                 
                 let isReady = false;
@@ -693,10 +708,13 @@
 
                 // 4. 분석 요청
                 console.log("Step 4: Analyze");
-                loadingDiv.innerHTML = `
-                    <div class="spinner"></div>
-                    <p>모션 캡쳐 모델이 영상을 분석하고 있습니다...</p>
-                    <p style="font-size: 0.9rem; color: #888;">(최대 1~2분 소요될 수 있습니다)</p>
+                modalBody.innerHTML = `
+                    <div style="text-align: center; padding: 2rem;">
+                        <div class="spinner"></div>
+                        <p style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">AI 분석 중...</p>
+                        <p style="color: #aaa;">모션 캡쳐 모델이 동작, 리듬, 자세를 분석하고 있습니다.</p>
+                        <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">(최대 1~2분 소요될 수 있습니다)</p>
+                    </div>
                 `;
 
                 const genre = document.getElementById('danceGenre').value;
@@ -718,7 +736,6 @@
                     throw new Error(`Analysis failed (${analyzeRes.status}): ${text}`);
                 }
                 
-                // 여기서 JSON 파싱 에러가 나는지 확인
                 const text = await analyzeRes.text();
                 if (!text) throw new Error("Empty response from server");
                 
@@ -731,14 +748,26 @@
                 
                 const content = data.choices?.[0]?.message?.content || "분석 결과를 가져오지 못했습니다.";
 
-                resultDiv.textContent = content;
-                resultDiv.style.display = 'block';
+                // 결과 표시 (모달 내용 교체)
+                modalBody.innerHTML = content;
+                
+                // 닫기 버튼 다시 표시
+                closeBtn.style.display = 'block';
 
             } catch (error) {
                 console.error(error);
-                alert(`오류 발생: ${error.message}`);
-                resultDiv.textContent = `상세 에러: ${error.message}`;
-                resultDiv.style.display = 'block';
+                // 에러 표시
+                modalBody.innerHTML = `
+                    <div style="text-align: center; padding: 2rem; color: #ff5252;">
+                        <p style="font-size: 3rem; margin-bottom: 1rem;">⚠️</p>
+                        <p style="font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem;">오류가 발생했습니다</p>
+                        <p style="color: #ddd; background: rgba(255,0,0,0.1); padding: 1rem; border-radius: 8px; display: inline-block; text-align: left;">${error.message}</p>
+                        <div style="margin-top: 2rem;">
+                            <button onclick="document.getElementById('analysisModal').style.display='none'" style="padding: 10px 20px; background: #444; color: white; border: none; border-radius: 8px; cursor: pointer;">닫기</button>
+                        </div>
+                    </div>
+                `;
+                closeBtn.style.display = 'block';
             } finally {
                 // UI 상태 복구 (활성화)
                 analyzeBtn.disabled = false;
@@ -746,8 +775,6 @@
                 document.getElementById('danceType').disabled = false;
                 document.querySelector('label[for="videoInput"]').style.pointerEvents = "auto";
                 document.querySelector('label[for="videoInput"]').style.opacity = "1";
-                
-                loadingDiv.style.display = 'none';
             }
         });
     </script>
