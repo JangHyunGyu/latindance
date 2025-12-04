@@ -905,34 +905,23 @@
                     Kakao.init('2a0f97309508f0405a563d70e1c01262');
                 }
 
-                // 결과 텍스트 요약 (최대 200자, 마크다운 제거)
-                let descriptionText = '내 춤 영상을 AI가 분석해줬어요! 결과를 확인해보세요.';
+                // 결과 텍스트 처리
+                let textContent = '내 춤 영상을 AI가 분석해줬어요! 결과를 확인해보세요.';
                 if (latestAnalysisResult) {
-                    // 마크다운 기호 제거 및 길이 제한
-                    const cleanText = latestAnalysisResult.replace(/[*#_`]/g, '').replace(/\n/g, ' ');
-                    descriptionText = cleanText.substring(0, 200) + (cleanText.length > 200 ? '...' : '');
+                    // 마크다운 기호만 제거 (줄바꿈 유지)
+                    const cleanText = latestAnalysisResult.replace(/[*#_`]/g, '');
+                    // 카카오 Text 템플릿은 최대 200자 제한
+                    textContent = cleanText.substring(0, 200) + (cleanText.length > 200 ? '...' : '');
                 }
 
                 Kakao.Share.sendDefault({
-                    objectType: 'feed',
-                    content: {
-                        title: 'AI 댄스 영상 분석 결과',
-                        description: descriptionText,
-                        imageUrl: 'https://latindance.kr/assets/images/kakao_profile.png',
-                        link: {
-                            mobileWebUrl: 'https://latindance.kr/analysis.html',
-                            webUrl: 'https://latindance.kr/analysis.html',
-                        },
+                    objectType: 'text',
+                    text: textContent,
+                    link: {
+                        mobileWebUrl: 'https://latindance.kr/analysis.html',
+                        webUrl: 'https://latindance.kr/analysis.html',
                     },
-                    buttons: [
-                        {
-                            title: '결과 보러가기',
-                            link: {
-                                mobileWebUrl: 'https://latindance.kr/analysis.html',
-                                webUrl: 'https://latindance.kr/analysis.html',
-                            },
-                        },
-                    ],
+                    buttonTitle: '전체 결과 보기',
                 });
             } catch (err) {
                 console.error('Kakao Share Error:', err);
