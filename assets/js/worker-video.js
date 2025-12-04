@@ -137,22 +137,26 @@ export default {
         const { fileUri, mimeType, genre, type } = body;
 
         const prompt = `
-이 영상은 ${genre || "라틴 댄스"} 장르의 ${type || "영상"}입니다.
-전문가의 시각으로 이 영상을 정밀하게 분석해주세요.
-
-다음 형식에 맞춰서 답변을 작성해주세요:
-
-1. **총평**: 전체적인 춤의 느낌, 음악 해석, 분위기
-2. **남자 (Leader) 분석**:
-   - **장점**: (구체적인 동작이나 기술 언급)
-   - **단점 및 개선점**: (자세, 리듬, 리딩 등 교정할 부분)
-3. **여자 (Follower) 분석**:
-   - **장점**: (구체적인 동작이나 기술 언급)
-   - **단점 및 개선점**: (자세, 리듬, 팔로잉 등 교정할 부분)
-4. **종합 평점**: (10점 만점 기준 점수와 그 이유)
-
-동작의 정확성, 리듬감, 파트너와의 커넥션, 자세(Posture) 등을 중점적으로 봐주세요.
+        이 영상은 ${genre || "라틴 댄스"} 장르의 ${type || "영상"}입니다.
+        당신은 라틴댄스 관련 최고의 전문가입니다.
+        전문가의 시각으로 이 영상을 정밀하게 일관된 기준으로 분석해주세요.
+        
+        다음 형식에 맞춰서 답변을 작성해주세요:
+        
+        1. **총평**: 전체적인 춤의 느낌, 음악 해석, 분위기
+        2. **남자 (Leader) 분석**:
+           - **장점**: (구체적인 동작이나 기술 언급)
+           - **단점 및 개선점**: (자세, 리듬, 리딩 등 교정할 부분)
+           - **평점**: (10점 만점 기준. *기준: 9-10점(프로/마스터), 7-8점(상급/준프로), 5-6점(중급), 3-4점(초급)*. 냉정하고 객관적으로 평가해주세요.)
+        3. **여자 (Follower) 분석**:
+           - **장점**: (구체적인 동작이나 기술 언급)
+           - **단점 및 개선점**: (자세, 리듬, 팔로잉 등 교정할 부분)
+           - **평점**: (10점 만점 기준. *기준: 9-10점(프로/마스터), 7-8점(상급/준프로), 5-6점(중급), 3-4점(초급)*. 냉정하고 객관적으로 평가해주세요.)
+        
+        동작의 정확성, 리듬감, 파트너와의 커넥션, 자세(Posture) 등을 중점적으로 봐주세요.
         `.trim();
+
+          
 
         // 여기서는 대기하지 않고 바로 요청 (클라이언트가 이미 ACTIVE 확인했음)
         const contents = [
@@ -160,14 +164,15 @@ export default {
             role: "user",
             parts: [
               { text: prompt },
-              { fileData: { fileUri: fileUri, mimeType: mimeType || "video/mp4" } }
+              { fileData: { fileUri: fileUri, mimeType: mimeType || "video/mp4" } },
             ]
           }
         ];
 
-        // Gemini 3.0 Pro Preview 사용
-        const model = "gemini-3.0-pro-preview";
+        const model = "gemini-2.5-flash";
+        //const model = "gemini-3.0-pro-preview";
         const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${env.GEMINI_API_KEY}`;
+    
 
         const upstream = await fetch(geminiUrl, {
           method: "POST",
@@ -175,7 +180,7 @@ export default {
           body: JSON.stringify({
             contents,
             generationConfig: {
-              temperature: 1.0,
+              temperature: 0.2,
             },
           }),
         });
