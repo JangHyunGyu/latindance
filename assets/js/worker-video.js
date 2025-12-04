@@ -138,7 +138,7 @@ export default {
 
         let referenceDancers = "세계적인 챔피언 레벨의 댄서";
         if (genre === "Salsa") referenceDancers = "Terry & Cecile, Fernando Sosa, Adolfo Indacochea, Eddie Torres";
-        else if (genre === "Bachata") referenceDancers = "Daniel & Desiree, Ataca & La Alemana, Marco & Sara";
+        else if (genre === "Bachata") referenceDancers = "Daniel & Desiree, Ataca & La Alemana, Marco & Sara, Luis & Andrea";
         else if (genre === "Kizomba") referenceDancers = "Albir Rojas, Isabelle & Felicien";
         else if (genre === "Zouk") referenceDancers = "Kadu & Larissa, William & Paloma";
 
@@ -153,8 +153,10 @@ export default {
         춤 영상이 맞다면, 이 영상은 ${genre || "라틴 댄스"} 장르의 ${type || "영상"}입니다.
         전문가의 시각으로 이 영상을 정밀하게 일관된 기준으로 분석해주세요.
 
-        [10점 만점의 기준]
+        [10점 만점의 기준 및 비교 방법]
         10점은 해당 장르의 세계적인 챔피언(${referenceDancers}) 수준을 의미합니다.
+        AI가 학습한 이 챔피언들의 **자세(Posture), 텐션(Connection), 뮤지컬리티(Musicality), 동작의 정확성** 데이터를 기준으로, 
+        업로드된 영상의 댄서들이 이 '월드 클래스' 기준에 얼마나 근접했는지를 상대적으로 평가해주세요.
         
         다음 형식에 맞춰서 답변을 작성해주세요:
         
