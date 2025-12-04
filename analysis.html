@@ -46,6 +46,31 @@
             font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
         }
 
+        .hero__title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+        
+        .hero__description {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 600px) {
+            .hero__title {
+                font-size: 1.3rem;
+                margin-bottom: 0.3rem;
+            }
+            .hero__description {
+                font-size: 0.85rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+
         .analysis-container {
             max-width: 800px;
             margin: 2rem auto;
@@ -334,12 +359,10 @@
     </header>
 
 	<main class="site-main">
-		<section class="hero">
-			<h1 class="hero__title">AI 댄스 영상 분석</h1>
-			<p class="hero__description">춤 영상을 업로드하면 AI가 동작, 리듬, 자세를 분석하여 피드백을 제공합니다.<br>(test ver 1)</p>
-		</section>
-
         <div class="analysis-container">
+            <h1 class="hero__title">AI 댄스 영상 분석</h1>
+            <p class="hero__description">춤 영상을 업로드하면 AI가 동작, 리듬, 자세를 분석하여 피드백을 제공합니다.</p>
+
             <div class="options-grid">
                 <div>
                     <label class="section-title">1. 춤 종류 선택</label>
