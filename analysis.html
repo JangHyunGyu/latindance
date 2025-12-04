@@ -521,6 +521,12 @@
         <div class="analysis-container">
             <h1 class="hero__title">AI 댄스 영상 분석</h1>
             <p class="hero__description">춤 영상을 업로드하면 AI가 동작, 리듬, 자세를 분석하여 피드백을 제공합니다.</p>
+            
+            <div style="display: flex; justify-content: center; margin-bottom: 2rem;">
+                <button class="share-btn share-kakao" onclick="shareKakao()">
+                    <span style="font-size: 1.2em;">💬</span> 카카오톡 공유
+                </button>
+            </div>
 
             <div class="options-grid">
                 <div>
@@ -573,9 +579,6 @@
             </div>
             <button id="scrollTopBtn" title="맨 위로">↑</button>
             <div id="modalFooter" class="modal-footer">
-                <button class="share-btn share-kakao" onclick="shareKakao()">
-                    <span style="font-size: 1.2em;">💬</span> 카카오톡 공유
-                </button>
                 <button class="share-btn share-copy" onclick="copyResult()">
                     📋 결과 복사
                 </button>
@@ -905,23 +908,26 @@
                     Kakao.init('2a0f97309508f0405a563d70e1c01262');
                 }
 
-                // 결과 텍스트 처리
-                let textContent = '내 춤 영상을 AI가 분석해줬어요! 결과를 확인해보세요.';
-                if (latestAnalysisResult) {
-                    // 마크다운 기호만 제거 (줄바꿈 유지)
-                    const cleanText = latestAnalysisResult.replace(/[*#_`]/g, '');
-                    // 카카오 Text 템플릿은 최대 200자 제한
-                    textContent = cleanText.substring(0, 200) + (cleanText.length > 200 ? '...' : '');
-                }
-
                 Kakao.Share.sendDefault({
-                    objectType: 'text',
-                    text: textContent,
-                    link: {
-                        mobileWebUrl: 'https://latindance.kr/analysis.html',
-                        webUrl: 'https://latindance.kr/analysis.html',
+                    objectType: 'feed',
+                    content: {
+                        title: 'AI 댄스 영상 분석',
+                        description: '내 춤 영상을 AI가 분석해주는 서비스입니다. 지금 바로 체험해보세요!',
+                        imageUrl: 'https://latindance.kr/assets/images/kakao_profile.png',
+                        link: {
+                            mobileWebUrl: 'https://latindance.kr/analysis.html',
+                            webUrl: 'https://latindance.kr/analysis.html',
+                        },
                     },
-                    buttonTitle: '전체 결과 보기',
+                    buttons: [
+                        {
+                            title: '분석하러 가기',
+                            link: {
+                                mobileWebUrl: 'https://latindance.kr/analysis.html',
+                                webUrl: 'https://latindance.kr/analysis.html',
+                            },
+                        },
+                    ],
                 });
             } catch (err) {
                 console.error('Kakao Share Error:', err);
