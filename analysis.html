@@ -250,21 +250,48 @@
 
                 // 2. 파일 업로드
                 console.log("Step 2: Upload");
-                loadingDiv.innerHTML = "<p>영상 업로드 중... (시간이 조금 걸릴 수 있습니다)</p>";
-                const uploadRes = await fetch(`${API_URL}?action=upload`, {
-                    method: "POST",
-                    headers: {
-                        "X-Upload-Url": uploadUrl,
-                        "Content-Type": file.type
-                    },
-                    body: file
+                loadingDiv.innerHTML = `
+                    <p>영상 업로드 중... 0%</p>
+                    <div style="width: 100%; background: #333; height: 10px; border-radius: 5px; margin-top: 10px; overflow: hidden;">
+                        <div id="uploadProgressBar" style="width: 0%; height: 100%; background: #e91e63; transition: width 0.2s;"></div>
+                    </div>
+                    <p style="font-size: 0.9rem; color: #888; margin-top: 5px;">(고화질 영상은 시간이 더 걸릴 수 있습니다)</p>
+                `;
+
+                const uploadRes = await new Promise((resolve, reject) => {
+                    const xhr = new XMLHttpRequest();
+                    xhr.open("POST", `${API_URL}?action=upload`);
+                    xhr.setRequestHeader("X-Upload-Url", uploadUrl);
+                    xhr.setRequestHeader("Content-Type", file.type);
+
+                    xhr.upload.onprogress = (e) => {
+                        if (e.lengthComputable) {
+                            const percent = Math.round((e.loaded / e.total) * 100);
+                            const progressBar = document.getElementById('uploadProgressBar');
+                            const statusText = loadingDiv.querySelector('p');
+                            
+                            if (progressBar) progressBar.style.width = `${percent}%`;
+                            if (statusText) statusText.textContent = `영상 업로드 중... ${percent}%`;
+                        }
+                    };
+
+                    xhr.onload = () => {
+                        if (xhr.status >= 200 && xhr.status < 300) {
+                            try {
+                                resolve(JSON.parse(xhr.responseText));
+                            } catch (e) {
+                                reject(new Error("Invalid JSON response from upload"));
+                            }
+                        } else {
+                            reject(new Error(`Upload failed (${xhr.status}): ${xhr.responseText}`));
+                        }
+                    };
+
+                    xhr.onerror = () => reject(new Error("Network error during upload"));
+                    xhr.send(file);
                 });
 
-                if (!uploadRes.ok) {
-                    const text = await uploadRes.text();
-                    throw new Error(`Upload failed (${uploadRes.status}): ${text}`);
-                }
-                const { fileUri, fileName } = await uploadRes.json();
+                const { fileUri, fileName } = uploadRes;
 
                 // 3. 파일 처리 상태 대기 (Polling)
                 console.log("Step 3: Polling Status");
