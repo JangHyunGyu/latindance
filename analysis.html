@@ -833,6 +833,72 @@
                 loadingDiv.style.display = 'none';
             }
         });
+
+        // Modal Functions
+        function closeModal() {
+            resultModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        resultModal.addEventListener('click', (e) => {
+            if (e.target === resultModal) {
+                closeModal();
+            }
+        });
+
+        // Scroll to Top Logic
+        modalBody.addEventListener('scroll', () => {
+            if (modalBody.scrollTop > 300) {
+                scrollTopBtn.style.display = 'flex';
+            } else {
+                scrollTopBtn.style.display = 'none';
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            modalBody.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Sharing Functions
+        function shareKakao() {
+            if (!Kakao.isInitialized()) {
+                alert('카카오톡 공유 기능을 사용할 수 없습니다. (API 키 설정 필요)');
+                return;
+            }
+
+            Kakao.Share.sendDefault({
+                objectType: 'feed',
+                content: {
+                    title: 'AI 댄스 영상 분석 결과',
+                    description: '내 춤 영상을 AI가 분석해줬어요! 결과를 확인해보세요.',
+                    imageUrl: 'https://latindance.kr/assets/images/kakao_profile.png', // 대표 이미지 URL 확인 필요
+                    link: {
+                        mobileWebUrl: window.location.href,
+                        webUrl: window.location.href,
+                    },
+                },
+                buttons: [
+                    {
+                        title: '결과 보러가기',
+                        link: {
+                            mobileWebUrl: window.location.href,
+                            webUrl: window.location.href,
+                        },
+                    },
+                ],
+            });
+        }
+
+        function copyLink() {
+            const url = window.location.href;
+            navigator.clipboard.writeText(url).then(() => {
+                alert('링크가 복사되었습니다!');
+            }).catch(err => {
+                console.error('링크 복사 실패:', err);
+                alert('링크 복사에 실패했습니다.');
+            });
+        }
     </script>
 </body>
 </html>
