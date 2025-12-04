@@ -703,8 +703,8 @@
                 `;
 
                 // 요소를 미리 찾아둠 (콜백 내에서 찾지 않음)
-                const progressBar = document.getElementById('uploadProgressBar');
-                const statusText = document.getElementById('uploadStatusText');
+                const progressBar = modalBody.querySelector('#uploadProgressBar');
+                const statusText = modalBody.querySelector('#uploadStatusText');
 
                 const uploadRes = await new Promise((resolve, reject) => {
                     const xhr = new XMLHttpRequest();
@@ -715,9 +715,12 @@
                     xhr.upload.onprogress = (e) => {
                         if (e.lengthComputable) {
                             const percent = Math.round((e.loaded / e.total) * 100);
-                            // console.log(`Upload progress: ${percent}%`);
-                            if (progressBar) progressBar.style.width = `${percent}%`;
-                            if (statusText) statusText.textContent = `영상 업로드 중... ${percent}%`;
+                            if (progressBar) {
+                                progressBar.style.width = `${percent}%`;
+                            }
+                            if (statusText) {
+                                statusText.textContent = `영상 업로드 중... ${percent}%`;
+                            }
                         }
                     };
 
