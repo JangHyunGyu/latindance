@@ -38,7 +38,8 @@ async function initiateUpload(apiKey, mimeType, numBytes, displayName) {
   });
 
   if (!response.ok) {
-    throw new Error(`Upload initiation failed: ${response.statusText}`);
+    const errText = await response.text();
+    throw new Error(`Google Upload Init Failed (${response.status}): ${errText}`);
   }
 
   return response.headers.get("x-goog-upload-url");
@@ -48,7 +49,7 @@ async function waitForFileActive(apiKey, fileUri) {
   const url = `https://generativelanguage.googleapis.com/v1beta/${fileUri}?key=${apiKey}`;
 
   let attempts = 0;
-  while (attempts < 60) { // 최대 120초 대기
+  while (attempts < 60) { 
     const response = await fetch(url);
     const data = await response.json();
 
@@ -70,7 +71,7 @@ export default {
   async fetch(req, env) {
     const origin = req.headers.get("Origin") ?? "null";
     const url = new URL(req.url);
-    const action = url.searchParams.get("action"); // ?action=init | upload | analyze
+    const action = url.searchParams.get("action");
 
     // Preflight
     if (req.method === "OPTIONS") {
@@ -85,7 +86,7 @@ export default {
     }
 
     if (!env?.GEMINI_API_KEY) {
-      return new Response(JSON.stringify({ error: "Missing GEMINI_API_KEY" }), { status: 500, headers: corsHeaders(origin) });
+      return new Response(JSON.stringify({ error: "Server Config Error: Missing GEMINI_API_KEY" }), { status: 500, headers: corsHeaders(origin) });
     }
 
     try {
@@ -102,7 +103,6 @@ export default {
       }
 
       // 2. 업로드 (스트리밍 프록시)
-      // 클라이언트가 Raw Body로 파일을 보내면, 그대로 Google로 파이핑합니다.
       if (action === "upload") {
         const uploadUrl = req.headers.get("X-Upload-Url");
         if (!uploadUrl) throw new Error("Missing X-Upload-Url header");
@@ -116,12 +116,12 @@ export default {
             "X-Goog-Upload-Offset": "0",
             "X-Goog-Upload-Command": "upload, finalize",
           },
-          body: req.body // Stream piping
+          body: req.body
         });
 
         if (!googleResponse.ok) {
           const errText = await googleResponse.text();
-          throw new Error(`Google Upload Failed: ${googleResponse.status} ${errText}`);
+          throw new Error(`Google Upload Failed (${googleResponse.status}): ${errText}`);
         }
 
         const result = await googleResponse.json();
@@ -135,7 +135,6 @@ export default {
         const body = await req.json();
         const { fileUri, message } = body;
 
-        // 파일 활성화 대기
         await waitForFileActive(env.GEMINI_API_KEY, fileUri);
 
         const contents = [
@@ -148,28 +147,24 @@ export default {
           }
         ];
 
-        const geminiPayload = {
-          contents,
-          generationConfig: {
-            temperature: 1.0,
-            thinkingConfig: {
-              thinkingLevel: "HIGH",
-            },
-          },
-        };
-
-        const model = "gemini-3-pro-preview";
+        // Gemini 1.5 Pro (Stable) 사용
+        const model = "gemini-1.5-pro";
         const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${env.GEMINI_API_KEY}`;
 
         const upstream = await fetch(geminiUrl, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(geminiPayload),
+          body: JSON.stringify({
+            contents,
+            generationConfig: {
+              temperature: 1.0,
+            },
+          }),
         });
 
         if (!upstream.ok) {
           const errText = await upstream.text();
-          throw new Error(`Gemini API Error: ${upstream.status} ${errText}`);
+          throw new Error(`Gemini API Error (${upstream.status}): ${errText}`);
         }
 
         const data = await upstream.json();
@@ -183,9 +178,10 @@ export default {
         });
       }
 
-      throw new Error("Invalid action");
+      throw new Error(`Invalid action: ${action}`);
 
     } catch (err) {
+      // 에러 내용을 JSON으로 명확히 반환
       return new Response(JSON.stringify({ error: err.message }), {
         status: 500,
         headers: { ...corsHeaders(origin), "Content-Type": "application/json" },
