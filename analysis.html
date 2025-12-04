@@ -457,7 +457,7 @@
         /* Scroll to Top Button */
         #scrollTopBtn {
             position: absolute;
-            bottom: 2rem;
+            bottom: 6rem; /* Footer 높이만큼 위로 올림 */
             right: 2rem;
             background: var(--primary-color);
             color: white;
@@ -566,7 +566,7 @@
         <div class="modal-container">
             <div class="modal-header">
                 <h3 id="modalTitle" class="modal-title">AI 분석 결과</h3>
-                <button class="modal-close" onclick="closeModal()">&times;</button>
+                <button id="modalCloseBtn" class="modal-close" onclick="closeModal()">&times;</button>
             </div>
             <div id="modalBody" class="modal-body">
                 <!-- Analysis content will be injected here -->
@@ -602,6 +602,9 @@
         const modalTitle = document.getElementById('modalTitle');
         const modalFooter = document.getElementById('modalFooter');
         const scrollTopBtn = document.getElementById('scrollTopBtn');
+        const modalCloseBtn = document.getElementById('modalCloseBtn');
+
+        let isAnalyzing = false;
 
         // File selection handler
         videoInput.addEventListener('change', handleFileSelect);
@@ -651,6 +654,8 @@
             const file = videoInput.files[0];
             if (!file) return;
 
+            isAnalyzing = true; // 분석 시작 상태 설정
+
             // UI 상태 변경 (비활성화)
             analyzeBtn.disabled = true;
             document.getElementById('danceGenre').disabled = true;
@@ -662,6 +667,7 @@
             resultModal.style.display = 'flex';
             modalTitle.textContent = "영상 분석 중...";
             modalFooter.style.display = 'none'; // Hide footer during loading
+            modalCloseBtn.style.display = 'none'; // Hide close button during analysis
             document.body.style.overflow = 'hidden';
 
             try {
@@ -825,6 +831,9 @@
                 modalBody.innerHTML = `<p style="color:red">상세 에러: ${error.message}</p>`;
                 modalFooter.style.display = 'none';
             } finally {
+                isAnalyzing = false; // 분석 종료 상태 설정
+                modalCloseBtn.style.display = 'block'; // Show close button again
+
                 // UI 상태 복구 (활성화)
                 analyzeBtn.disabled = false;
                 document.getElementById('danceGenre').disabled = false;
@@ -836,12 +845,14 @@
 
         // Modal Functions
         function closeModal() {
+            if (isAnalyzing) return; // 분석 중이면 닫기 방지
             resultModal.style.display = 'none';
             document.body.style.overflow = 'auto';
         }
 
         // Close modal when clicking outside
         resultModal.addEventListener('click', (e) => {
+            if (isAnalyzing) return; // 분석 중이면 닫기 방지
             if (e.target === resultModal) {
                 closeModal();
             }
