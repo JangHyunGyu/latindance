@@ -209,6 +209,15 @@
             const file = videoInput.files[0];
             if (file) {
                 const sizeInMB = (file.size / (1024 * 1024)).toFixed(2);
+                
+                if (file.size > 100 * 1024 * 1024) { // 100MB 제한
+                    alert(`파일 크기가 너무 큽니다 (${sizeInMB} MB).\n100MB 이하의 영상만 업로드 가능합니다.\n(카카오톡 등으로 압축 후 올려주세요)`);
+                    videoInput.value = ""; // 파일 선택 초기화
+                    fileNameDiv.textContent = "";
+                    analyzeBtn.disabled = true;
+                    return;
+                }
+
                 fileNameDiv.textContent = `선택된 파일: ${file.name} (${sizeInMB} MB)`;
                 analyzeBtn.disabled = false;
             } else {
@@ -221,8 +230,13 @@
             const file = videoInput.files[0];
             if (!file) return;
 
-            // UI 상태 변경
+            // UI 상태 변경 (비활성화)
             analyzeBtn.disabled = true;
+            document.getElementById('danceGenre').disabled = true;
+            document.getElementById('danceType').disabled = true;
+            document.querySelector('label[for="videoInput"]').style.pointerEvents = "none"; // 버튼 클릭 막기
+            document.querySelector('label[for="videoInput"]').style.opacity = "0.5"; // 시각적 비활성화
+            
             loadingDiv.style.display = 'block';
             resultDiv.style.display = 'none';
             resultDiv.textContent = '';
@@ -368,7 +382,13 @@
                 resultDiv.textContent = `상세 에러: ${error.message}`;
                 resultDiv.style.display = 'block';
             } finally {
+                // UI 상태 복구 (활성화)
                 analyzeBtn.disabled = false;
+                document.getElementById('danceGenre').disabled = false;
+                document.getElementById('danceType').disabled = false;
+                document.querySelector('label[for="videoInput"]').style.pointerEvents = "auto";
+                document.querySelector('label[for="videoInput"]').style.opacity = "1";
+                
                 loadingDiv.style.display = 'none';
             }
         });
