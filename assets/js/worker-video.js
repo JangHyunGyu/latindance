@@ -134,7 +134,7 @@ export default {
       // 4. 분석 (Gemini 호출)
       if (action === "analyze") {
         const body = await req.json();
-        const { fileUri, message } = body;
+        const { fileUri, message, mimeType } = body;
 
         // 여기서는 대기하지 않고 바로 요청 (클라이언트가 이미 ACTIVE 확인했음)
         const contents = [
@@ -142,7 +142,7 @@ export default {
             role: "user",
             parts: [
               { text: message || "이 춤 영상을 분석해줘." },
-              { fileData: { fileUri: fileUri, mimeType: "video/mp4" } }
+              { fileData: { fileUri: fileUri, mimeType: mimeType || "video/mp4" } }
             ]
           }
         ];

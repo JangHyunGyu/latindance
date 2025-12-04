@@ -284,7 +284,8 @@
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
                         fileUri: fileUri,
-                        message: "이 춤 영상을 분석해줘. 동작의 정확성, 리듬감, 자세 교정할 점을 알려줘."
+                        message: "이 춤 영상을 분석해줘. 동작의 정확성, 리듬감, 자세 교정할 점을 알려줘.",
+                        mimeType: file.type
                     })
                 });
 
