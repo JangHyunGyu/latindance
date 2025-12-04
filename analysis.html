@@ -576,8 +576,8 @@
                 <button class="share-btn share-kakao" onclick="shareKakao()">
                     <span style="font-size: 1.2em;">💬</span> 카카오톡 공유
                 </button>
-                <button class="share-btn share-copy" onclick="copyLink()">
-                    🔗 링크 복사
+                <button class="share-btn share-copy" onclick="copyResult()">
+                    📋 결과 복사
                 </button>
             </div>
         </div>
@@ -940,13 +940,17 @@
             }
         }
 
-        function copyLink() {
-            const url = 'https://latindance.kr/analysis.html';
-            navigator.clipboard.writeText(url).then(() => {
-                alert('링크가 복사되었습니다!');
+        function copyResult() {
+            if (!latestAnalysisResult) {
+                alert('복사할 분석 결과가 없습니다.');
+                return;
+            }
+            
+            navigator.clipboard.writeText(latestAnalysisResult).then(() => {
+                alert('분석 결과가 클립보드에 복사되었습니다!');
             }).catch(err => {
-                console.error('링크 복사 실패:', err);
-                alert('링크 복사에 실패했습니다.');
+                console.error('복사 실패:', err);
+                alert('결과 복사에 실패했습니다.');
             });
         }
     </script>
