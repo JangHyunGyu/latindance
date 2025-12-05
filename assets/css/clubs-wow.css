@@ -103,6 +103,11 @@ body::before {
     overflow: visible !important; 
 }
 
+/* Fix: Clip image corners since overflow is visible */
+.venue-card__image {
+    border-radius: inherit;
+}
+
 /* Create a backlight glow behind the image */
 .venue-card__media::before {
     content: "";
