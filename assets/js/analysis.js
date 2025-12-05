@@ -427,6 +427,7 @@ window.addEventListener('DOMContentLoaded', async () => {
         const API_URL = "https://latindance-api.yama5993.workers.dev";
         
         resultModal.style.display = 'flex';
+        setModalStep('step-processing'); // Initial loading state
         modalTitle.textContent = ANALYSIS_CONFIG.messages.loadingShared;
         modalBody.innerHTML = '<div class="spinner"></div><p style="text-align:center">...</p>';
         modalFooter.style.display = 'none';
@@ -442,12 +443,14 @@ window.addEventListener('DOMContentLoaded', async () => {
 
             const formattedContent = marked.parse(content);
 
+            setModalStep('step-complete'); // Success state (Green)
             modalTitle.textContent = ANALYSIS_CONFIG.messages.resultTitleShared;
             modalBody.innerHTML = formattedContent;
             modalFooter.style.display = 'flex';
             
         } catch (err) {
             console.error(err);
+            setModalStep('step-error'); // Error state (Red)
             modalTitle.textContent = ANALYSIS_CONFIG.messages.errorTitle;
             modalBody.innerHTML = `<p>${ANALYSIS_CONFIG.messages.loadSharedFail}<br>(${err.message})</p>`;
         }

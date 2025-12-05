@@ -815,25 +815,27 @@ select:focus {
     position: absolute;
     bottom: 6rem;
     right: 2rem;
-    background: var(--primary-color);
+    background: rgba(189, 52, 254, 0.5); /* Semi-transparent Primary */
     color: white;
-    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 50%;
     width: 44px;
     height: 44px;
     font-size: 1.2rem;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     display: none;
     align-items: center;
     justify-content: center;
-    transition: transform 0.2s, background 0.2s;
+    transition: all 0.2s;
     z-index: 10;
+    backdrop-filter: blur(4px);
 }
 
 #scrollTopBtn:hover {
     transform: translateY(-3px);
-    background: var(--primary-light);
+    background: rgba(189, 52, 254, 0.8);
+    box-shadow: 0 6px 20px rgba(189, 52, 254, 0.4);
 }
 
 /* Share Buttons with 3D effect */
@@ -870,21 +872,21 @@ select:focus {
 }
 
 .share-copy {
-    background: #3a3a42;
+    background: #00c853; /* Green/Teal */
     color: white;
     border: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 4px 0 #222;
+    box-shadow: 0 4px 0 #009624;
 }
 
 .share-copy:hover {
-    background: #45454d;
+    background: #00e676;
     transform: translateY(-2px);
-    box-shadow: 0 6px 0 #222;
+    box-shadow: 0 6px 0 #009624;
 }
 
 .share-copy:active {
     transform: translateY(2px);
-    box-shadow: 0 0 0 #222;
+    box-shadow: 0 0 0 #009624;
 }
 
 /* Markdown Result Styling - Report Format */
