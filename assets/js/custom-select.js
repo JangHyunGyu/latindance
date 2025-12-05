@@ -9,109 +9,184 @@ function injectCustomStyles() {
     if (document.getElementById(styleId)) return;
 
     const css = `
-        .custom-select {
+        .custom-select-modern {
             position: relative;
-            display: block;
-            width: 100%;
-            margin-top: 5px;
+            display: block !important;
+            width: 100% !important;
+            margin-top: 8px;
             z-index: 100;
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            opacity: 1 !important;
+            visibility: visible !important;
         }
-        .custom-select__trigger {
+
+        .custom-select-modern__trigger {
             position: relative;
-            display: flex;
+            display: flex !important;
             align-items: center;
             justify-content: space-between;
-            padding: 14px 16px;
+            padding: 0 20px;
             font-size: 1rem;
             font-weight: 500;
             color: #fff;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            min-height: 52px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 56px;
             box-sizing: border-box;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .custom-select__trigger:hover {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: rgba(255, 255, 255, 0.4);
+
+        .custom-select-modern__trigger:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+            transform: translateY(-1px);
         }
-        .custom-select.open .custom-select__trigger {
+
+        .custom-select-modern.open .custom-select-modern__trigger {
             border-color: #41d1ff;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(65, 209, 255, 0.05);
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
+            box-shadow: 0 0 20px rgba(65, 209, 255, 0.2);
         }
-        .custom-select__arrow {
+
+        .custom-select-modern__arrow {
             position: relative;
             height: 10px;
-            width: 10px;
+            width: 14px;
             margin-left: 10px;
+            transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
-        .custom-select__arrow::before, .custom-select__arrow::after {
+
+        .custom-select-modern__arrow::before, .custom-select-modern__arrow::after {
             content: "";
             position: absolute;
-            bottom: 0px;
+            bottom: 0;
             width: 2px;
             height: 100%;
+            background-color: rgba(255, 255, 255, 0.6);
             transition: all 0.3s ease;
-            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 2px;
         }
-        .custom-select__arrow::before { left: -2px; transform: rotate(-45deg); }
-        .custom-select__arrow::after { left: 4px; transform: rotate(45deg); }
-        .custom-select.open .custom-select__arrow::before { transform: rotate(45deg); background-color: #41d1ff; }
-        .custom-select.open .custom-select__arrow::after { transform: rotate(-45deg); background-color: #41d1ff; }
-        .custom-options {
+
+        .custom-select-modern__arrow::before { 
+            left: 2px; 
+            height: 8px; 
+            transform: rotate(-45deg); 
+        }
+        
+        .custom-select-modern__arrow::after { 
+            right: 2px; 
+            height: 8px; 
+            transform: rotate(45deg); 
+        }
+
+        .custom-select-modern.open .custom-select-modern__arrow {
+            transform: rotate(180deg);
+        }
+
+        .custom-select-modern.open .custom-select-modern__arrow::before,
+        .custom-select-modern.open .custom-select-modern__arrow::after {
+            background-color: #41d1ff;
+        }
+
+        .custom-options-modern {
             position: absolute;
             display: block;
             top: 100%;
             left: 0;
             right: 0;
-            border: 1px solid #41d1ff;
+            border: 1px solid rgba(65, 209, 255, 0.3);
             border-top: 0;
-            border-bottom-left-radius: 12px;
-            border-bottom-right-radius: 12px;
-            background: #1e1e24;
-            background: rgba(30, 30, 36, 0.98);
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+            background: rgba(20, 20, 25, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             opacity: 0;
             visibility: hidden;
             pointer-events: none;
             z-index: 1000;
-            transform: translateY(-10px);
+            transform: translateY(-10px) scale(0.98);
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
-        .custom-select.open .custom-options {
+
+        .custom-select-modern.open .custom-options-modern {
             opacity: 1;
             visibility: visible;
             pointer-events: all;
-            transform: translateY(0);
+            transform: translateY(0) scale(1);
         }
-        .custom-option {
+
+        .custom-option-modern {
             position: relative;
-            display: block;
-            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            padding: 14px 20px;
             font-size: 0.95rem;
             font-weight: 400;
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.7);
             cursor: pointer;
-            transition: all 0.2s;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.2s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
         }
-        .custom-option:last-child { border-bottom: none; }
-        .custom-option:hover, .custom-option.selected {
+
+        .custom-option-modern:last-child { 
+            border-bottom: none; 
+        }
+
+        .custom-option-modern:hover {
             color: #fff;
-            background: rgba(65, 209, 255, 0.1);
-            padding-left: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            padding-left: 24px;
         }
-        .custom-option.selected::after {
-            content: '✓';
-            position: absolute;
-            right: 16px;
+
+        .custom-option-modern.selected {
             color: #41d1ff;
-            font-weight: bold;
+            background: rgba(65, 209, 255, 0.08);
+            font-weight: 600;
+        }
+
+        .custom-option-modern.selected::after {
+            content: '';
+            position: absolute;
+            right: 20px;
+            width: 6px;
+            height: 10px;
+            border: solid #41d1ff;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        
+        /* Scrollbar for options if too many */
+        .custom-options-modern {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .custom-options-modern::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .custom-options-modern::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.02);
+        }
+        
+        .custom-options-modern::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+        }
+        
+        .custom-options-modern::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.2);
         }
     `;
 
@@ -137,96 +212,31 @@ function setupCustomSelects() {
     }
 
     selects.forEach(select => {
-        console.log('Found select:', select.id, select);
-        
         // Check if already initialized
-        if (select.nextElementSibling && select.nextElementSibling.classList.contains('custom-select')) {
+        if (select.nextElementSibling && select.nextElementSibling.classList.contains('custom-select-modern')) {
             return;
         }
 
         try {
             // Create custom select structure
             const customSelect = document.createElement('div');
-            customSelect.className = 'custom-select';
-            
-            // FORCE STYLES: Apply critical styles inline to ensure visibility
-            customSelect.style.cssText = `
-                display: block !important;
-                width: 100% !important;
-                position: relative !important;
-                z-index: 100 !important;
-                margin-top: 5px !important;
-            `;
+            customSelect.className = 'custom-select-modern';
             
             const trigger = document.createElement('div');
-            trigger.className = 'custom-select__trigger';
-            
-            // FORCE STYLES: Apply visual styles inline
-            trigger.style.cssText = `
-                display: flex !important;
-                align-items: center !important;
-                justify-content: space-between !important;
-                min-height: 52px !important;
-                padding: 14px 16px !important;
-                box-sizing: border-box !important;
-                cursor: pointer !important;
-                background: rgba(255, 255, 255, 0.1) !important;
-                border: 1px solid rgba(255, 255, 255, 0.2) !important;
-                border-radius: 12px !important;
-                color: #fff !important;
-                font-size: 1rem !important;
-                font-weight: 500 !important;
-            `;
+            trigger.className = 'custom-select-modern__trigger';
             
             // Initial value
             const selectedOption = select.options[select.selectedIndex];
-            trigger.innerHTML = `<span>${selectedOption ? selectedOption.text : ''}</span><div class="custom-select__arrow"></div>`;
+            trigger.innerHTML = `<span>${selectedOption ? selectedOption.text : ''}</span><div class="custom-select-modern__arrow"></div>`;
             
             const options = document.createElement('div');
-            options.className = 'custom-options';
-            
-            // FORCE STYLES: Apply dropdown styles inline
-            options.style.cssText = `
-                position: absolute !important;
-                top: 100% !important;
-                left: 0 !important;
-                right: 0 !important;
-                background: rgba(30, 30, 36, 0.98) !important;
-                border: 1px solid #41d1ff !important;
-                border-top: 0 !important;
-                border-radius: 0 0 12px 12px !important;
-                z-index: 1000 !important;
-                display: none !important;
-                overflow: hidden !important;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
-            `;
+            options.className = 'custom-options-modern';
             
             Array.from(select.options).forEach(option => {
                 const customOption = document.createElement('div');
-                customOption.className = 'custom-option' + (option.selected ? ' selected' : '');
+                customOption.className = 'custom-option-modern' + (option.selected ? ' selected' : '');
                 customOption.dataset.value = option.value;
                 customOption.textContent = option.text;
-                
-                // FORCE STYLES: Apply option styles inline
-                customOption.style.cssText = `
-                    padding: 12px 16px !important;
-                    cursor: pointer !important;
-                    color: rgba(255, 255, 255, 0.8) !important;
-                    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
-                    display: block !important;
-                `;
-                
-                // Add hover effects via JS since inline styles don't support :hover
-                customOption.addEventListener('mouseenter', () => {
-                    customOption.style.background = 'rgba(65, 209, 255, 0.1)';
-                    customOption.style.color = '#fff';
-                });
-                customOption.addEventListener('mouseleave', () => {
-                    if (!customOption.classList.contains('selected')) {
-                        customOption.style.background = 'transparent';
-                        customOption.style.color = 'rgba(255, 255, 255, 0.8)';
-                    }
-                });
                 
                 customOption.addEventListener('click', function(e) {
                     e.stopPropagation();
@@ -242,16 +252,13 @@ function setupCustomSelects() {
                     select.dispatchEvent(event);
                     
                     // Update selected class
-                    options.querySelectorAll('.custom-option').forEach(opt => {
+                    options.querySelectorAll('.custom-option-modern').forEach(opt => {
                         opt.classList.remove('selected');
-                        opt.style.background = 'transparent'; // Reset style
                     });
                     this.classList.add('selected');
-                    this.style.background = 'rgba(65, 209, 255, 0.1)'; // Keep selected style
                     
                     // Close dropdown
                     customSelect.classList.remove('open');
-                    options.style.display = 'none';
                 });
                 
                 options.appendChild(customOption);
@@ -260,11 +267,10 @@ function setupCustomSelects() {
             customSelect.appendChild(trigger);
             customSelect.appendChild(options);
             
-            // Insert custom select after the original select using insertAdjacentElement
+            // Insert custom select after the original select
             select.insertAdjacentElement('afterend', customSelect);
-            console.log('Appended custom select after:', select.id);
             
-            // Hide original select only after successful creation
+            // Hide original select
             select.style.display = 'none';
             
             // Toggle dropdown
@@ -272,22 +278,13 @@ function setupCustomSelects() {
                 e.stopPropagation();
                 
                 // Close other open selects
-                document.querySelectorAll('.custom-select').forEach(el => {
+                document.querySelectorAll('.custom-select-modern').forEach(el => {
                     if (el !== customSelect) {
                         el.classList.remove('open');
-                        const otherOptions = el.querySelector('.custom-options');
-                        if (otherOptions) otherOptions.style.display = 'none';
                     }
                 });
                 
-                const isOpen = customSelect.classList.contains('open');
-                if (isOpen) {
-                    customSelect.classList.remove('open');
-                    options.style.display = 'none';
-                } else {
-                    customSelect.classList.add('open');
-                    options.style.display = 'block';
-                }
+                customSelect.classList.toggle('open');
             });
         } catch (e) {
             console.error('Error creating custom select:', e);
@@ -297,11 +294,9 @@ function setupCustomSelects() {
 
     // Close dropdown when clicking outside
     document.addEventListener('click', function(e) {
-        if (!e.target.closest('.custom-select')) {
-            document.querySelectorAll('.custom-select').forEach(el => {
+        if (!e.target.closest('.custom-select-modern')) {
+            document.querySelectorAll('.custom-select-modern').forEach(el => {
                 el.classList.remove('open');
-                const opts = el.querySelector('.custom-options');
-                if (opts) opts.style.display = 'none';
             });
         }
     });
