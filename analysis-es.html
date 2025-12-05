@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="es">
 
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<title>댄스 영상 정밀 분석 - 전국 지역별 라틴댄스 모임</title>
-	<meta name="description" content="라틴댄스 모션 분석 엔진이 당신의 댄스 영상을 분석하여 피드백을 제공합니다." />
-	<link rel="canonical" href="https://latindance.kr/analysis.html" />
+	<title>Análisis de Precisión de Video de Baile - Comunidad de Baile Latino</title>
+	<meta name="description" content="El motor de análisis de movimiento de baile latino analiza tu video de baile y proporciona comentarios." />
+	<link rel="canonical" href="https://latindance.kr/analysis-es.html" />
 	<meta name="robots" content="index,follow" />
 	<meta property="og:type" content="website" />
-	<meta property="og:locale" content="ko_KR" />
-	<meta property="og:site_name" content="전국 지역별 라틴댄스 모임" />
-	<meta property="og:title" content="댄스 영상 정밀 분석" />
-	<meta property="og:description" content="라틴댄스 모션 분석 엔진이 당신의 댄스 영상을 분석하여 피드백을 제공합니다." />
-	<meta property="og:url" content="https://latindance.kr/analysis.html" />
+	<meta property="og:locale" content="es_ES" />
+	<meta property="og:site_name" content="Comunidad de Baile Latino" />
+	<meta property="og:title" content="Análisis de Precisión de Video de Baile" />
+	<meta property="og:description" content="El motor de análisis de movimiento de baile latino analiza tu video de baile y proporciona comentarios." />
+	<meta property="og:url" content="https://latindance.kr/analysis-es.html" />
 	<meta property="og:image" content="https://latindance.kr/assets/images/analysis_kakao_profile.png?v=2" />
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="댄스 영상 정밀 분석" />
-	<meta name="twitter:description" content="라틴댄스 모션 분석 엔진이 당신의 댄스 영상을 분석하여 피드백을 제공합니다." />
+	<meta name="twitter:title" content="Análisis de Precisión de Video de Baile" />
+	<meta name="twitter:description" content="El motor de análisis de movimiento de baile latino analiza tu video de baile y proporciona comentarios." />
 	<meta name="twitter:image" content="https://latindance.kr/assets/images/analysis_kakao_profile.png?v=2" />
 	
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -699,42 +699,42 @@
 
 	<main class="site-main">
         <div class="lang-switcher">
-            <a href="analysis.html" class="lang-link active">KR</a>
+            <a href="analysis.html" class="lang-link">KR</a>
             <a href="analysis-en.html" class="lang-link">EN</a>
-            <a href="analysis-es.html" class="lang-link">ES</a>
+            <a href="analysis-es.html" class="lang-link active">ES</a>
         </div>
         <div class="analysis-container">
-            <h1 class="hero__title">댄스 영상 정밀 분석</h1>
-            <p class="hero__description">댄스 영상을 업로드하면 라틴댄스 모션 분석 엔진이<br>동작, 리듬, 자세를 분석하여 피드백을 제공합니다.</p>
+            <h1 class="hero__title">Análisis de Precisión de Video de Baile</h1>
+            <p class="hero__description">Sube tu video de baile y nuestro motor de análisis de movimiento de baile latino<br>analizará tus movimientos, ritmo y postura para proporcionarte comentarios.</p>
             
             <div class="options-grid">
                 <div>
-                    <label class="section-title">댄스 종류 선택</label>
+                    <label class="section-title">Seleccionar Género de Baile</label>
                     <select id="danceGenre">
-                        <option value="Salsa">살사 (Salsa)</option>
-                        <option value="Bachata">바차타 (Bachata)</option>
-                        <option value="Kizomba">키좀바 (Kizomba)</option>
-                        <option value="Zouk">주크 (Zouk)</option>
+                        <option value="Salsa">Salsa</option>
+                        <option value="Bachata">Bachata</option>
+                        <option value="Kizomba">Kizomba</option>
+                        <option value="Zouk">Zouk</option>
                     </select>
                 </div>
                 <div>
-                    <label class="section-title">영상 유형 선택</label>
+                    <label class="section-title">Seleccionar Tipo de Video</label>
                     <select id="danceType">
-                        <option value="Social">소셜 (Social Dance)</option>
-                        <option value="Performance">공연 (Performance)</option>
+                        <option value="Social">Baile Social</option>
+                        <option value="Performance">Actuación (Performance)</option>
                     </select>
                 </div>
             </div>
 
             <div class="upload-area" id="dropZone">
                 <span class="upload-icon">📁</span>
-                <label for="videoInput" class="upload-btn-label">영상 선택하기</label>
+                <label for="videoInput" class="upload-btn-label">Seleccionar Video</label>
                 <input type="file" id="videoInput" accept="video/*">
-                <p class="upload-hint">또는 영상을 여기로 드래그하세요</p>
+                <p class="upload-hint">o arrastra y suelta el video aquí</p>
                 <div id="fileName" class="file-name"></div>
             </div>
 
-            <button id="analyzeBtn" disabled>분석 시작하기</button>
+            <button id="analyzeBtn" disabled>Iniciar Análisis</button>
             
             <!-- Loading div removed, moved to modal -->
             
@@ -746,26 +746,26 @@
     <div id="resultModal" class="modal-overlay">
         <div class="modal-container">
             <div class="modal-header">
-                <h3 id="modalTitle" class="modal-title">정밀 분석 결과</h3>
+                <h3 id="modalTitle" class="modal-title">Resultado del Análisis</h3>
                 <button id="modalCloseBtn" class="modal-close" onclick="closeModal()">&times;</button>
             </div>
             <div id="modalBody" class="modal-body">
                 <!-- Analysis content will be injected here -->
             </div>
-            <button id="scrollTopBtn" title="맨 위로">↑</button>
+            <button id="scrollTopBtn" title="Arriba">↑</button>
             <div id="modalFooter" class="modal-footer">
                 <button class="share-btn share-kakao" onclick="shareKakao()" style="margin-right: 10px;">
-                    💬 카카오톡 공유
+                    💬 Compartir en KakaoTalk
                 </button>
                 <button class="share-btn share-copy" onclick="copyResult()">
-                    📋 결과 복사
+                    📋 Copiar Resultado
                 </button>
             </div>
         </div>
     </div>
 
     <script>
-        // Kakao SDK 초기화 (실제 키로 변경 필요)
+        // Kakao SDK Init
         try {
             Kakao.init('2a0f97309508f0405a563d70e1c01262'); 
         } catch (e) {
@@ -787,7 +787,7 @@
 
         let isAnalyzing = false;
         let latestAnalysisResult = "";
-        let currentAnalysisId = null; // 현재 분석 결과 ID
+        let currentAnalysisId = null;
 
         // File selection handler
         videoInput.addEventListener('change', handleFileSelect);
@@ -817,15 +817,15 @@
             if (file) {
                 const sizeInMB = (file.size / (1024 * 1024)).toFixed(2);
                 
-                if (file.size > 100 * 1024 * 1024) { // 100MB 제한
-                    alert(`파일 크기가 너무 큽니다 (${sizeInMB} MB).\n100MB 이하의 영상만 업로드 가능합니다.\n(카카오톡 등으로 압축 후 올려주세요)`);
-                    videoInput.value = ""; // 파일 선택 초기화
+                if (file.size > 100 * 1024 * 1024) { // 100MB limit
+                    alert(`El archivo es demasiado grande (${sizeInMB} MB).\nSolo se permiten videos de menos de 100MB.\n(Por favor, comprímelo antes de subirlo)`);
+                    videoInput.value = "";
                     fileNameDiv.textContent = "";
                     analyzeBtn.disabled = true;
                     return;
                 }
 
-                fileNameDiv.textContent = `선택된 파일: ${file.name} (${sizeInMB} MB)`;
+                fileNameDiv.textContent = `Seleccionado: ${file.name} (${sizeInMB} MB)`;
                 analyzeBtn.disabled = false;
             } else {
                 fileNameDiv.textContent = '';
@@ -837,29 +837,29 @@
             const file = videoInput.files[0];
             if (!file) return;
 
-            isAnalyzing = true; // 분석 시작 상태 설정
-            latestAnalysisResult = ""; // 결과 초기화
+            isAnalyzing = true;
+            latestAnalysisResult = "";
 
-            // UI 상태 변경 (비활성화)
+            // UI State Change
             analyzeBtn.disabled = true;
             document.getElementById('danceGenre').disabled = true;
             document.getElementById('danceType').disabled = true;
-            document.querySelector('label[for="videoInput"]').style.pointerEvents = "none"; // 버튼 클릭 막기
-            document.querySelector('label[for="videoInput"]').style.opacity = "0.5"; // 시각적 비활성화
+            document.querySelector('label[for="videoInput"]').style.pointerEvents = "none";
+            document.querySelector('label[for="videoInput"]').style.opacity = "0.5";
             
-            // Show Modal immediately for progress
+            // Show Modal
             resultModal.style.display = 'flex';
-            modalTitle.textContent = "정밀 분석 프로세스 가동";
-            modalFooter.style.display = 'none'; // Hide footer during loading
-            modalCloseBtn.style.display = 'none'; // Hide close button during analysis
+            modalTitle.textContent = "Análisis en Progreso";
+            modalFooter.style.display = 'none';
+            modalCloseBtn.style.display = 'none';
             document.body.style.overflow = 'hidden';
 
             try {
                 const API_URL = "https://latindance-api.yama5993.workers.dev"; 
 
-                // 1. 초기화 요청
+                // 1. Init
                 console.log("Step 1: Init");
-                modalBody.innerHTML = "<p>보안 연결 수립 및 데이터 전송 세션을<br>초기화하고 있습니다...</p>";
+                modalBody.innerHTML = "<p>Estableciendo conexión segura e inicializando sesión de transferencia de datos...</p>";
                 const initRes = await fetch(`${API_URL}?action=init`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
@@ -876,16 +876,16 @@
                 }
                 const { uploadUrl } = await initRes.json();
 
-                // 2. 파일 업로드
+                // 2. Upload
                 console.log("Step 2: Upload");
                 modalBody.innerHTML = `
-                    <div class="progress-status">분석 서버로 영상 데이터 전송 중...</div>
+                    <div class="progress-status">Transmitiendo datos de video al servidor de análisis...</div>
                     <div class="progress-text" id="progressPercent">0%</div>
                     <div class="progress-container">
                         <div class="progress-bar" id="progressBar"></div>
                     </div>
                     <p style="font-size: 0.85rem; color: rgba(255,255,255,0.5); text-align:center; margin-top: 20px;">
-                        (고화질 영상은 전송에 시간이 소요될 수 있습니다)
+                        (Los videos de alta calidad pueden tardar más en transmitirse)
                     </p>
                 `;
 
@@ -926,16 +926,16 @@
 
                 const { fileUri, fileName } = uploadRes;
 
-                // 3. 파일 처리 상태 대기 (Polling)
+                // 3. Polling
                 console.log("Step 3: Polling Status");
                 modalBody.innerHTML = `
                     <div class="spinner"></div>
-                    <p style="text-align:center">클라우드 서버에서 영상 전처리 및<br>데이터 최적화 작업을 수행 중입니다...</p>
-                    <p style="font-size: 0.9rem; color: #888; text-align:center">잠시만 기다려주세요.</p>
+                    <p style="text-align:center">Preprocesando video y optimizando datos en el servidor en la nube...</p>
+                    <p style="font-size: 0.9rem; color: #888; text-align:center">Por favor espera un momento.</p>
                 `;
                 
                 let isReady = false;
-                for (let i = 0; i < 60; i++) { // 최대 2분 대기
+                for (let i = 0; i < 60; i++) { // Max 2 mins
                     const checkRes = await fetch(`${API_URL}?action=check_status`, {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
@@ -953,297 +953,297 @@
                         throw new Error("Video processing failed at server side");
                     }
                     
-                    // 2초 대기
+                    // Wait 2s
                     await new Promise(r => setTimeout(r, 2000));
                 }
                 
                 if (!isReady) throw new Error("Video processing timed out");
 
-                // 4. 분석 요청
+                // 4. Analyze
                 console.log("Step 4: Analyze");
                 modalBody.innerHTML = `
                     <div class="spinner"></div>
-                    <p style="text-align:center">라틴댄스 모션 분석 엔진이 댄서의 관절 포인트와<br>리듬을 프레임 단위로 정밀 분석하고 있습니다...</p>
-                    <p style="font-size: 0.9rem; color: #888; text-align:center">(최대 1~2분 소요될 수 있습니다)</p>
+                    <p style="text-align:center">El motor de análisis de movimiento de baile latino está analizando con precisión<br>los puntos articulares y el ritmo cuadro por cuadro...</p>
+                    <p style="font-size: 0.9rem; color: #888; text-align:center">(Puede tardar 1-2 minutos)</p>
                 `;
 
                 const genre = document.getElementById('danceGenre').value;
                 const type = document.getElementById('danceType').value;
 
-                let referenceDancers = "세계적인 챔피언 레벨의 댄서";
-                let genreFocus = "동작의 정확성, 리듬감, 파트너와의 커넥션, 자세(Posture) 등을 중점적으로 봐주세요.";
+                let referenceDancers = "Bailarines de Nivel Campeón Mundial";
+                let genreFocus = "Por favor, concéntrate en la precisión del movimiento, el ritmo, la conexión con la pareja y la postura.";
                 
-                // 기본 포맷 (장르 선택 안되었을 때 등)
+                // Default Format
                 let analysisFormat = `
-                    1. **총평**: 전체적인 댄스의 느낌, 음악 해석, 분위기
-                    2. **남자 (Leader) 분석**:
-                    - **장점**: (아래 세부 평점 항목들을 중심으로 구체적으로 서술)
-                    - **단점 및 개선점**: (아래 세부 평점 항목들을 중심으로 구체적으로 서술)
-                    - **세부 평점**:
-                        - **박자 및 리듬**: (0~10, 소수점 첫째자리까지)
-                        - **자세 및 프레임**: (0~10, 소수점 첫째자리까지)
-                        - **커넥션**: (0~10, 소수점 첫째자리까지)
-                        - **동작 정확성**: (0~10, 소수점 첫째자리까지)
-                        - **예술성**: (0~10, 소수점 첫째자리까지)
-                        - **파트너쉽**: (0~10, 소수점 첫째자리까지, 호흡 및 배려)
-                    - **종합 평점**: (위 6개 항목의 평균 점수와 등급. 예: "6.5점 - 상급 동호인". *등급 기준: 10(세계 챔피언), 9(최상급 프로), 8(프로 강사), 7(준프로/공연팀), 6(상급 동호인), 5(중상급 동호인), 4(중급 동호인), 3(초중급 동호인), 2(초급 동호인), 1(입문자)*)
-                    3. **여자 (Follower) 분석**:
-                    - **장점**: (아래 세부 평점 항목들을 중심으로 구체적으로 서술)
-                    - **단점 및 개선점**: (아래 세부 평점 항목들을 중심으로 구체적으로 서술)
-                    - **세부 평점**:
-                        - **박자 및 리듬**: (0~10, 소수점 첫째자리까지)
-                        - **자세 및 프레임**: (0~10, 소수점 첫째자리까지)
-                        - **커넥션**: (0~10, 소수점 첫째자리까지)
-                        - **동작 정확성**: (0~10, 소수점 첫째자리까지)
-                        - **예술성**: (0~10, 소수점 첫째자리까지)
-                        - **파트너쉽**: (0~10, 소수점 첫째자리까지, 호흡 및 배려)
-                    - **종합 평점**: (위 6개 항목의 평균 점수와 등급. 예: "6.5점 - 상급 동호인". *등급 기준: 10(세계 챔피언), 9(최상급 프로), 8(프로 강사), 7(준프로/공연팀), 6(상급 동호인), 5(중상급 동호인), 4(중급 동호인), 3(초중급 동호인), 2(초급 동호인), 1(입문자)*)`;
+                    1. **Revisión General**: Sensación general del baile, interpretación musical, atmósfera
+                    2. **Análisis del Líder (Leader)**:
+                    - **Pros**: (Describir específicamente basado en puntajes detallados a continuación)
+                    - **Contras y Mejoras**: (Describir específicamente basado en puntajes detallados a continuación)
+                    - **Puntajes Detallados**:
+                        - **Ritmo y Tiempo**: (0~10, con un decimal)
+                        - **Postura y Marco**: (0~10, con un decimal)
+                        - **Conexión**: (0~10, con un decimal)
+                        - **Precisión del Movimiento**: (0~10, con un decimal)
+                        - **Artisticidad**: (0~10, con un decimal)
+                        - **Compañerismo**: (0~10, con un decimal, respiración y cuidado)
+                    - **Puntaje General**: (Promedio de los 6 elementos anteriores y Grado. ej., "6.5 - Bailarín Social Avanzado". *Criterios de Grado: 10(Campeón Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)
+                    3. **Análisis del Seguidor (Follower)**:
+                    - **Pros**: (Describir específicamente basado en puntajes detallados a continuación)
+                    - **Contras y Mejoras**: (Describir específicamente basado en puntajes detallados a continuación)
+                    - **Puntajes Detallados**:
+                        - **Ritmo y Tiempo**: (0~10, con un decimal)
+                        - **Postura y Marco**: (0~10, con un decimal)
+                        - **Conexión**: (0~10, con un decimal)
+                        - **Precisión del Movimiento**: (0~10, con un decimal)
+                        - **Artisticidad**: (0~10, con un decimal)
+                        - **Compañerismo**: (0~10, con un decimal, respiración y cuidado)
+                    - **Puntaje General**: (Promedio de los 6 elementos anteriores y Grado. ej., "6.5 - Bailarín Social Avanzado". *Criterios de Grado: 10(Campeón Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)`;
 
                 if (genre === "Salsa") {
                     referenceDancers = "Terry & Cecile, Fernando Sosa, Adolfo Indacochea, Eddie Torres";
                     if (type === "Performance") {
-                        genreFocus = "살사 공연(Performance)입니다. **'클라베 리듬'에 기반한 난이도 높은 턴 패턴, 화려한 풋웍(Shines), 그리고 리프트**가 중요합니다. 무대 위에서의 쇼맨십, 개인 스타일링, 칼 같은 싱크로나이제이션을 중점적으로 분석해주세요.";
+                        genreFocus = "Esta es una actuación de Salsa. **Patrones de giro de alta dificultad basados en el 'Ritmo Clave', juego de pies llamativo (Shines) y elevaciones (Lifts)** son importantes. Por favor, concéntrate en el espectáculo escénico, el estilo individual y la sincronización nítida.";
                         analysisFormat = `
-                    1. **총평**: 작품의 컨셉, 안무 구성, 무대 장악력
-                    2. **남자 (Leader) 퍼포먼스 분석**:
-                    - **장점**: (테크닉, 풋웍, 쇼맨십 중심)
-                    - **단점 및 개선점**: (구체적인 동작 교정 제안)
-                    - **세부 평점**:
-                        - **안무 숙련도 및 정확성**: (0~10, 소수점 첫째자리까지)
-                        - **테크닉 (턴/스핀)**: (0~10, 소수점 첫째자리까지)
-                        - **풋웍 및 샤인 (Footwork & Shines)**: (0~10, 소수점 첫째자리까지)
-                        - **파트너 서포트 및 리프트**: (0~10, 소수점 첫째자리까지, 안정성)
-                        - **라인 및 포스쳐**: (0~10, 소수점 첫째자리까지, 신체 확장)
-                        - **쇼맨십 및 스타일링**: (0~10, 소수점 첫째자리까지)
-                    - **종합 평점**: (위 6개 항목의 평균 점수와 등급. *등급 기준: 10(세계 챔피언), 9(최상급 프로), 8(프로 강사), 7(준프로/공연팀), 6(상급 동호인), 5(중상급 동호인), 4(중급 동호인), 3(초중급 동호인), 2(초급 동호인), 1(입문자)*)
-                    3. **여자 (Follower) 퍼포먼스 분석**:
-                    - **장점**: (테크닉, 스타일링, 쇼맨십 중심)
-                    - **단점 및 개선점**: (구체적인 동작 교정 제안)
-                    - **세부 평점**:
-                        - **안무 숙련도 및 정확성**: (0~10, 소수점 첫째자리까지)
-                        - **테크닉 (턴/스핀/유연성)**: (0~10, 소수점 첫째자리까지)
-                        - **풋웍 및 샤인 (Footwork & Shines)**: (0~10, 소수점 첫째자리까지)
-                        - **라인 및 포스쳐**: (0~10, 소수점 첫째자리까지, 손끝/발끝)
-                        - **쇼맨십 및 스타일링**: (0~10, 소수점 첫째자리까지)
-                        - **뮤지컬리티 (안무 소화)**: (0~10, 소수점 첫째자리까지)
-                    - **종합 평점**: (위 6개 항목의 평균 점수와 등급. *등급 기준: 10(세계 챔피언), 9(최상급 프로), 8(프로 강사), 7(준프로/공연팀), 6(상급 동호인), 5(중상급 동호인), 4(중급 동호인), 3(초중급 동호인), 2(초급 동호인), 1(입문자)*)`;
+                    1. **Revisión General**: Concepto, Coreografía, Presencia Escénica
+                    2. **Análisis de Actuación del Líder**:
+                    - **Pros**: (Técnica, Juego de pies, Enfoque en el espectáculo)
+                    - **Contras y Mejoras**: (Sugerencias específicas de corrección de movimiento)
+                    - **Puntajes Detallados**:
+                        - **Dominio y Precisión de la Coreografía**: (0~10)
+                        - **Técnica (Giro/Spin)**: (0~10)
+                        - **Juego de Pies y Shines**: (0~10)
+                        - **Soporte de Pareja y Elevaciones**: (0~10, Estabilidad)
+                        - **Línea y Postura**: (0~10, Extensión Corporal)
+                        - **Espectáculo y Estilo**: (0~10)
+                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Campeón Mundial) ~ 1(Novato)*)
+                    3. **Análisis de Actuación del Seguidor**:
+                    - **Pros**: (Técnica, Estilo, Enfoque en el espectáculo)
+                    - **Contras y Mejoras**: (Sugerencias específicas de corrección de movimiento)
+                    - **Puntajes Detallados**:
+                        - **Dominio y Precisión de la Coreografía**: (0~10)
+                        - **Técnica (Giro/Spin/Flexibilidad)**: (0~10)
+                        - **Juego de Pies y Shines**: (0~10)
+                        - **Línea y Postura**: (0~10, Puntas de dedos/Pies)
+                        - **Espectáculo y Estilo**: (0~10)
+                        - **Musicalidad**: (0~10)
+                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Campeón Mundial) ~ 1(Novato)*)`;
                     } else {
-                        genreFocus = "살사는 **'클라베 리듬(Clave Rhythm)'에 맞는 정확한 스텝과 타이밍**이 생명입니다. 소셜 댄스 관점에서 파트너를 편안하게 리드하고 팔로우하는지, 서로의 안전을 지키며 즐겁게 댄스를 즐기는지를 중점적으로 분석해주세요.";
+                        genreFocus = "La salsa se trata de **pasos precisos y tiempo basados en el 'Ritmo Clave'**. Desde una perspectiva de Baile Social, por favor concéntrate en liderar/seguir cómodamente, la seguridad y el disfrute.";
                         analysisFormat = `
-                    1. **총평**: 살사 특유의 에너지, 클라베 리듬감, 파트너와의 호흡
-                    2. **남자 (Leader) 분석**:
-                    - **장점**: (아래 세부 평점 항목들을 중심으로 구체적으로 서술)
-                    - **단점 및 개선점**: (아래 세부 평점 항목들을 중심으로 구체적으로 서술)
-                    - **세부 평점**:
-                        - **타이밍 (Timing)**: (0~10, 소수점 첫째자리까지, 클라베 리듬 준수)
-                        - **리딩 및 신호 (Leading & Signals)**: (0~10, 소수점 첫째자리까지, 명확성 및 텐션)
-                        - **베이직 및 스텝 (Basic & Steps)**: (0~10, 소수점 첫째자리까지, 안정성)
-                        - **패턴 구성 (Pattern Flow)**: (0~10, 소수점 첫째자리까지, 흐름의 자연스러움)
-                        - **뮤지컬리티 (Musicality)**: (0~10, 소수점 첫째자리까지, 음악 해석)
-                        - **파트너쉽 및 매너 (Partnership & Manner)**: (0~10, 소수점 첫째자리까지, 시선 처리 및 배려)
-                    - **종합 평점**: (위 6개 항목의 평균 점수와 등급. 예: "6.5점 - 상급 동호인". *등급 기준: 10(세계 챔피언), 9(최상급 프로), 8(프로 강사), 7(준프로/공연팀), 6(상급 동호인), 5(중상급 동호인), 4(중급 동호인), 3(초중급 동호인), 2(초급 동호인), 1(입문자)*)
-                    3. **여자 (Follower) 분석**:
-                    - **장점**: (아래 세부 평점 항목들을 중심으로 구체적으로 서술)
-                    - **단점 및 개선점**: (아래 세부 평점 항목들을 중심으로 구체적으로 서술)
-                    - **세부 평점**:
-                        - **타이밍 (Timing)**: (0~10, 소수점 첫째자리까지, 박자 유지)
-                        - **팔로잉 및 텐션 (Following & Tension)**: (0~10, 소수점 첫째자리까지, 반응 속도 및 커넥션)
-                        - **베이직 및 스텝 (Basic & Steps)**: (0~10, 소수점 첫째자리까지, 안정성)
-                        - **자세 및 밸런스 (Posture & Balance)**: (0~10, 소수점 첫째자리까지, 턴 안정성)
-                        - **파트너쉽 및 호응 (Partnership & Interaction)**: (0~10, 소수점 첫째자리까지, 즐거움 및 시선)
-                    - **종합 평점**: (위 6개 항목의 평균 점수와 등급. 예: "6.5점 - 상급 동호인". *등급 기준: 10(세계 챔피언), 9(최상급 프로), 8(프로 강사), 7(준프로/공연팀), 6(상급 동호인), 5(중상급 동호인), 4(중급 동호인), 3(초중급 동호인), 2(초급 동호인), 1(입문자)*)`;
+                    1. **Revisión General**: Energía de la salsa, Ritmo Clave, Compañerismo
+                    2. **Análisis del Líder**:
+                    - **Pros**: (Detalles específicos)
+                    - **Contras y Mejoras**: (Detalles específicos)
+                    - **Puntajes Detallados**:
+                        - **Tiempo**: (0~10, Adherencia a la Clave)
+                        - **Liderazgo y Señales**: (0~10, Claridad y Tensión)
+                        - **Básico y Pasos**: (0~10, Estabilidad)
+                        - **Flujo de Patrones**: (0~10, Flujo natural)
+                        - **Musicalidad**: (0~10, Interpretación)
+                        - **Compañerismo y Modales**: (0~10, Contacto visual y Cuidado)
+                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Campeón Mundial) ~ 1(Novato)*)
+                    3. **Análisis del Seguidor**:
+                    - **Pros**: (Detalles específicos)
+                    - **Contras y Mejoras**: (Detalles específicos)
+                    - **Puntajes Detallados**:
+                        - **Tiempo**: (0~10, Mantener el ritmo)
+                        - **Seguimiento y Tensión**: (0~10, Velocidad de reacción y Conexión)
+                        - **Básico y Pasos**: (0~10, Estabilidad)
+                        - **Postura y Equilibrio**: (0~10, Estabilidad en giros)
+                        - **Compañerismo e Interacción**: (0~10, Disfrute y Contacto visual)
+                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Campeón Mundial) ~ 1(Novato)*)`;
                     }
                 }
                 else if (genre === "Bachata") {
                     referenceDancers = "Daniel & Desiree, Ataca & La Alemana, Marco & Sara, Luis & Andrea";
                     if (type === "Performance") {
-                        genreFocus = "바차타 공연(Performance)입니다. **'센슈얼한 바디 무브먼트', '개인 스타일링', 그리고 '극적인 뮤지컬리티'**가 중요합니다. 무대 위에서의 감정 표현, 유연성, 그리고 난이도 높은 딥(Dip)과 트릭(Trick)의 완성도를 중점적으로 분석해주세요.";
+                        genreFocus = "Esta es una actuación de Bachata. **'Movimiento Corporal Sensual', 'Estilo Individual' y 'Musicalidad Dramática'** son importantes. Concéntrate en la expresión emocional, la flexibilidad y la perfección de Dips y Trucos difíciles.";
                         analysisFormat = `
-                    1. **총평**: 작품의 컨셉, 안무 구성, 무대 장악력
-                    2. **남자 (Leader) 퍼포먼스 분석**:
-                    - **장점**: (테크닉, 스타일링, 쇼맨십 중심)
-                    - **단점 및 개선점**: (구체적인 동작 교정 제안)
-                    - **세부 평점**:
-                        - **안무 숙련도 및 정확성**: (0~10, 소수점 첫째자리까지)
-                        - **테크닉 (바디 무브먼트/아이솔레이션)**: (0~10, 소수점 첫째자리까지)
-                        - **파트너 서포트 및 트릭**: (0~10, 소수점 첫째자리까지, 안정성)
-                        - **라인 및 포스쳐**: (0~10, 소수점 첫째자리까지, 신체 확장)
-                        - **쇼맨십 및 스타일링**: (0~10, 소수점 첫째자리까지)
-                        - **뮤지컬리티 (안무 소화)**: (0~10, 소수점 첫째자리까지)
-                    - **종합 평점**: (위 6개 항목의 평균 점수와 등급. *등급 기준: 10(세계 챔피언), 9(최상급 프로), 8(프로 강사), 7(준프로/공연팀), 6(상급 동호인), 5(중상급 동호인), 4(중급 동호인), 3(초중급 동호인), 2(초급 동호인), 1(입문자)*)
-                    3. **여자 (Follower) 퍼포먼스 분석**:
-                    - **장점**: (테크닉, 스타일링, 쇼맨십 중심)
-                    - **단점 및 개선점**: (구체적인 동작 교정 제안)
-                    - **세부 평점**:
-                        - **안무 숙련도 및 정확성**: (0~10, 소수점 첫째자리까지)
-                        - **테크닉 (바디 무브먼트/유연성)**: (0~10, 소수점 첫째자리까지)
-                        - **라인 및 포스쳐**: (0~10, 소수점 첫째자리까지, 손끝/발끝)
-                        - **밸런스 및 코어**: (0~10, 소수점 첫째자리까지)
-                        - **쇼맨십 및 스타일링**: (0~10, 소수점 첫째자리까지)
-                        - **뮤지컬리티 (안무 소화)**: (0~10, 소수점 첫째자리까지)
-                    - **종합 평점**: (위 6개 항목의 평균 점수와 등급. *등급 기준: 10(세계 챔피언), 9(최상급 프로), 8(프로 강사), 7(준프로/공연팀), 6(상급 동호인), 5(중상급 동호인), 4(중급 동호인), 3(초중급 동호인), 2(초급 동호인), 1(입문자)*)`;
+                    1. **Revisión General**: Concepto, Coreografía, Presencia Escénica
+                    2. **Análisis de Actuación del Líder**:
+                    - **Pros**: (Técnica, Estilo, Enfoque en el espectáculo)
+                    - **Contras y Mejoras**: (Sugerencias específicas)
+                    - **Puntajes Detallados**:
+                        - **Dominio de la Coreografía**: (0~10)
+                        - **Técnica (Movimiento Corporal/Aislamiento)**: (0~10)
+                        - **Soporte de Pareja y Trucos**: (0~10, Estabilidad)
+                        - **Línea y Postura**: (0~10)
+                        - **Espectáculo y Estilo**: (0~10)
+                        - **Musicalidad**: (0~10)
+                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Campeón Mundial) ~ 1(Novato)*)
+                    3. **Análisis de Actuación del Seguidor**:
+                    - **Pros**: (Técnica, Estilo, Enfoque en el espectáculo)
+                    - **Contras y Mejoras**: (Sugerencias específicas)
+                    - **Puntajes Detallados**:
+                        - **Dominio de la Coreografía**: (0~10)
+                        - **Técnica (Movimiento Corporal/Flexibilidad)**: (0~10)
+                        - **Línea y Postura**: (0~10)
+                        - **Equilibrio y Núcleo**: (0~10)
+                        - **Espectáculo y Estilo**: (0~10)
+                        - **Musicalidad**: (0~10)
+                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Campeón Mundial) ~ 1(Novato)*)`;
                     } else {
-                        genreFocus = "바차타는 **'센슈얼한 바디 무브먼트'와 '골반 움직임(Cuban Motion)'**이 중요합니다. 소셜 댄스에서는 파트너 간의 적절한 거리 유지, 안전한 리딩, 그리고 서로의 감정을 공유하는 커넥션이 핵심입니다.";
+                        genreFocus = "La Bachata enfatiza el **'Movimiento Corporal Sensual' y el 'Movimiento Cubano'**. En el Baile Social, la distancia adecuada, el liderazgo seguro y la conexión emocional son clave.";
                         analysisFormat = `
-                    1. **총평**: 바차타의 센슈얼한 느낌, 뮤지컬리티, 커넥션의 질감
-                    2. **남자 (Leader) 분석**:
-                    - **장점**: (아래 세부 평점 항목들을 중심으로 구체적으로 서술)
-                    - **단점 및 개선점**: (아래 세부 평점 항목들을 중심으로 구체적으로 서술)
-                    - **세부 평점**:
-                        - **베이직 및 리듬 (Basic & Rhythm)**: (0~10, 소수점 첫째자리까지, 정박/엇박)
-                        - **프레임 및 자세 (Frame & Posture)**: (0~10, 소수점 첫째자리까지, 안정적인 홀딩)
-                        - **리딩 및 커넥션 (Leading & Connection)**: (0~10, 소수점 첫째자리까지, 부드러움 및 신호)
-                        - **바디 무브먼트 (Body Movement)**: (0~10, 소수점 첫째자리까지, 웨이브/아이솔레이션)
-                        - **뮤지컬리티 (Musicality)**: (0~10, 소수점 첫째자리까지, 감정 표현 및 브레이크)
-                        - **파트너쉽 및 안전 (Partnership & Safety)**: (0~10, 소수점 첫째자리까지, 거리 조절 및 부상 방지)
-                    - **종합 평점**: (위 6개 항목의 평균 점수와 등급. 예: "6.5점 - 상급 동호인". *등급 기준: 10(세계 챔피언), 9(최상급 프로), 8(프로 강사), 7(준프로/공연팀), 6(상급 동호인), 5(중상급 동호인), 4(중급 동호인), 3(초중급 동호인), 2(초급 동호인), 1(입문자)*)
-                    3. **여자 (Follower) 분석**:
-                    - **장점**: (아래 세부 평점 항목들을 중심으로 구체적으로 서술)
-                    - **단점 및 개선점**: (아래 세부 평점 항목들을 중심으로 구체적으로 서술)
-                    - **세부 평점**:
-                        - **베이직 및 리듬 (Basic & Rhythm)**: (0~10, 소수점 첫째자리까지, 스텝 정확성)
-                        - **프레임 및 커넥션 (Frame & Connection)**: (0~10, 소수점 첫째자리까지, 텐션 유지)
-                        - **팔로잉 (Following)**: (0~10, 소수점 첫째자리까지, 리드 수용성 및 반응)
-                        - **바디 무브먼트 (Body Movement)**: (0~10, 소수점 첫째자리까지, 유연성 및 골반)
-                        - **파트너쉽 및 교감 (Partnership & Chemistry)**: (0~10, 소수점 첫째자리까지, 감정 공유)
-                    - **종합 평점**: (위 6개 항목의 평균 점수와 등급. 예: "6.5점 - 상급 동호인". *등급 기준: 10(세계 챔피언), 9(최상급 프로), 8(프로 강사), 7(준프로/공연팀), 6(상급 동호인), 5(중상급 동호인), 4(중급 동호인), 3(초중급 동호인), 2(초급 동호인), 1(입문자)*)`;
+                    1. **Revisión General**: Sensación sensual, Musicalidad, Calidad de conexión
+                    2. **Análisis del Líder**:
+                    - **Pros**: (Detalles específicos)
+                    - **Contras y Mejoras**: (Detalles específicos)
+                    - **Puntajes Detallados**:
+                        - **Básico y Ritmo**: (0~10)
+                        - **Marco y Postura**: (0~10)
+                        - **Liderazgo y Conexión**: (0~10, Suavidad)
+                        - **Movimiento Corporal**: (0~10, Onda/Aislamiento)
+                        - **Musicalidad**: (0~10, Emoción y Cortes)
+                        - **Compañerismo y Seguridad**: (0~10, Distancia y Seguridad)
+                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Campeón Mundial) ~ 1(Novato)*)
+                    3. **Análisis del Seguidor**:
+                    - **Pros**: (Detalles específicos)
+                    - **Contras y Mejoras**: (Detalles específicos)
+                    - **Puntajes Detallados**:
+                        - **Básico y Ritmo**: (0~10)
+                        - **Marco y Conexión**: (0~10)
+                        - **Seguimiento**: (0~10)
+                        - **Movimiento Corporal**: (0~10, Flexibilidad y Cadera)
+                        - **Compañerismo y Química**: (0~10)
+                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Campeón Mundial) ~ 1(Novato)*)`;
                     }
                 }
                 else if (genre === "Kizomba") {
                     referenceDancers = "Albir Rojas, Isabelle & Felicien";
                     if (type === "Performance") {
-                        genreFocus = "키좀바 공연(Performance)입니다. **'디소시에이션(Dissociation)'과 '현란한 풋웍(Footwork)'**이 중요합니다. 무대 위에서의 절제된 움직임 속의 강렬함, 파트너와의 완벽한 일체감, 그리고 음악의 미세한 비트까지 표현하는 뮤지컬리티를 중점적으로 분석해주세요.";
+                        genreFocus = "Esta es una actuación de Kizomba. **'Disociación' y 'Juego de Pies Elegante'** son importantes. Concéntrate en la intensidad dentro del movimiento restringido, la unidad perfecta con la pareja y la musicalidad expresando micro-ritmos.";
                         analysisFormat = `
-                    1. **총평**: 작품의 컨셉, 안무 구성, 무대 장악력
-                    2. **남자 (Leader) 퍼포먼스 분석**:
-                    - **장점**: (테크닉, 풋웍, 쇼맨십 중심)
-                    - **단점 및 개선점**: (구체적인 동작 교정 제안)
-                    - **세부 평점**:
-                        - **안무 숙련도 및 정확성**: (0~10, 소수점 첫째자리까지)
-                        - **테크닉 (디소시에이션)**: (0~10, 소수점 첫째자리까지)
-                        - **풋웍 (Footwork)**: (0~10, 소수점 첫째자리까지, 사이다 및 싱코페이션)
-                        - **파트너 서포트 및 리딩**: (0~10, 소수점 첫째자리까지, 안정성)
-                        - **라인 및 포스쳐**: (0~10, 소수점 첫째자리까지, 신체 확장)
-                        - **쇼맨십 및 분위기**: (0~10, 소수점 첫째자리까지)
-                        - **뮤지컬리티 (비트 쪼개기)**: (0~10, 소수점 첫째자리까지)
-                    - **종합 평점**: (위 6개 항목의 평균 점수와 등급. *등급 기준: 10(세계 챔피언), 9(최상급 프로), 8(프로 강사), 7(준프로/공연팀), 6(상급 동호인), 5(중상급 동호인), 4(중급 동호인), 3(초중급 동호인), 2(초급 동호인), 1(입문자)*)
-                    3. **여자 (Follower) 퍼포먼스 분석**:
-                    - **장점**: (테크닉, 풋웍, 쇼맨십 중심)
-                    - **단점 및 개선점**: (구체적인 동작 교정 제안)
-                    - **세부 평점**:
-                        - **안무 숙련도 및 정확성**: (0~10, 소수점 첫째자리까지)
-                        - **테크닉 (징가/디소시에이션)**: (0~10, 소수점 첫째자리까지)
-                        - **풋웍 (Footwork)**: (0~10, 소수점 첫째자리까지, 사이다 및 싱코페이션)
-                        - **라인 및 포스쳐**: (0~10, 소수점 첫째자리까지, 손끝/발끝)
-                        - **밸런스 및 코어**: (0~10, 소수점 첫째자리까지)
-                        - **쇼맨십 및 분위기**: (0~10, 소수점 첫째자리까지)
-                        - **뮤지컬리티 (비트 쪼개기)**: (0~10, 소수점 첫째자리까지)
-                    - **종합 평점**: (위 6개 항목의 평균 점수와 등급. *등급 기준: 10(세계 챔피언), 9(최상급 프로), 8(프로 강사), 7(준프로/공연팀), 6(상급 동호인), 5(중상급 동호인), 4(중급 동호인), 3(초중급 동호인), 2(초급 동호인), 1(입문자)*)`;
+                    1. **Revisión General**: Concepto, Coreografía, Presencia Escénica
+                    2. **Análisis de Actuación del Líder**:
+                    - **Pros**: (Técnica, Juego de pies, Enfoque en el espectáculo)
+                    - **Contras y Mejoras**: (Sugerencias específicas)
+                    - **Puntajes Detallados**:
+                        - **Dominio de la Coreografía**: (0~10)
+                        - **Técnica (Disociación)**: (0~10)
+                        - **Juego de Pies**: (0~10, Saidas y Síncopa)
+                        - **Soporte de Pareja y Liderazgo**: (0~10)
+                        - **Línea y Postura**: (0~10)
+                        - **Espectáculo y Atmósfera**: (0~10)
+                        - **Musicalidad**: (0~10)
+                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Campeón Mundial) ~ 1(Novato)*)
+                    3. **Análisis de Actuación del Seguidor**:
+                    - **Pros**: (Técnica, Juego de pies, Enfoque en el espectáculo)
+                    - **Contras y Mejoras**: (Sugerencias específicas)
+                    - **Puntajes Detallados**:
+                        - **Dominio de la Coreografía**: (0~10)
+                        - **Técnica (Ginga/Disociación)**: (0~10)
+                        - **Juego de Pies**: (0~10)
+                        - **Línea y Postura**: (0~10)
+                        - **Equilibrio y Núcleo**: (0~10)
+                        - **Espectáculo y Atmósfera**: (0~10)
+                        - **Musicalidad**: (0~10)
+                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Campeón Mundial) ~ 1(Novato)*)`;
                     } else {
-                        genreFocus = "키좀바는 **'그라운딩(Grounding)'과 '부드러운 체중 이동'**이 핵심입니다. 소셜 댄스에서는 상체의 편안한 밀착(Embrace), 파트너를 배려하는 보폭 조절, 그리고 음악 속에서의 일체감이 중요합니다.";
+                        genreFocus = "Kizomba se trata de **'Enraizamiento' y 'Transferencia de Peso Suave'**. En el Baile Social, el Abrazo cómodo, ajustar los pasos a la pareja y la unidad en la música son importantes.";
                         analysisFormat = `
-                    1. **총평**: 키좀바 특유의 그라운딩, 커넥션의 밀도, 음악과의 일체감
-                    2. **남자 (Leader) 분석**:
-                    - **장점**: (아래 세부 평점 항목들을 중심으로 구체적으로 서술)
-                    - **단점 및 개선점**: (아래 세부 평점 항목들을 중심으로 구체적으로 서술)
-                    - **세부 평점**:
-                        - **그라운딩 및 스텝 (Grounding & Steps)**: (0~10, 소수점 첫째자리까지, 바닥 지지)
-                        - **커넥션 및 홀딩 (Connection & Holding)**: (0~10, 소수점 첫째자리까지, 상체 밀착 및 편안함)
-                        - **리딩 (Leading)**: (0~10, 소수점 첫째자리까지, 명확한 체중 이동)
-                        - **뮤지컬리티 (Musicality)**: (0~10, 소수점 첫째자리까지, 비트 쪼개기 및 정지)
-                        - **디소시에이션 (Dissociation)**: (0~10, 소수점 첫째자리까지, 상하체 분리)
-                        - **파트너쉽 및 배려 (Partnership & Care)**: (0~10, 소수점 첫째자리까지, 파트너 보폭 맞춤)
-                    - **종합 평점**: (위 6개 항목의 평균 점수와 등급. 예: "6.5점 - 상급 동호인". *등급 기준: 10(세계 챔피언), 9(최상급 프로), 8(프로 강사), 7(준프로/공연팀), 6(상급 동호인), 5(중상급 동호인), 4(중급 동호인), 3(초중급 동호인), 2(초급 동호인), 1(입문자)*)
-                    3. **여자 (Follower) 분석**:
-                    - **장점**: (아래 세부 평점 항목들을 중심으로 구체적으로 서술)
-                    - **단점 및 개선점**: (아래 세부 평점 항목들을 중심으로 구체적으로 서술)
-                    - **세부 평점**:
-                        - **그라운딩 및 스텝 (Grounding & Steps)**: (0~10, 소수점 첫째자리까지, 안정감)
-                        - **커넥션 및 홀딩 (Connection & Holding)**: (0~10, 소수점 첫째자리까지, 무게감 조절)
-                        - **팔로잉 (Following)**: (0~10, 소수점 첫째자리까지, 미세한 체중 이동 감지)
-                        - **징가 및 무브먼트 (Ginga & Movement)**: (0~10, 소수점 첫째자리까지, 골반 움직임)
-                        - **뮤지컬리티 (Musicality)**: (0~10, 소수점 첫째자리까지, 음악 타기)
-                        - **파트너쉽 및 신뢰 (Partnership & Trust)**: (0~10, 소수점 첫째자리까지, 리더에게 맡김)
-                    - **종합 평점**: (위 6개 항목의 평균 점수와 등급. 예: "6.5점 - 상급 동호인". *등급 기준: 10(세계 챔피언), 9(최상급 프로), 8(프로 강사), 7(준프로/공연팀), 6(상급 동호인), 5(중상급 동호인), 4(중급 동호인), 3(초중급 동호인), 2(초급 동호인), 1(입문자)*)`;
+                    1. **Revisión General**: Enraizamiento, Densidad de conexión, Unidad con la música
+                    2. **Análisis del Líder**:
+                    - **Pros**: (Detalles específicos)
+                    - **Contras y Mejoras**: (Detalles específicos)
+                    - **Puntajes Detallados**:
+                        - **Enraizamiento y Pasos**: (0~10)
+                        - **Conexión y Sostén**: (0~10, Abrazo)
+                        - **Liderazgo**: (0~10, Transferencia de peso)
+                        - **Musicalidad**: (0~10)
+                        - **Disociación**: (0~10)
+                        - **Compañerismo y Cuidado**: (0~10)
+                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Campeón Mundial) ~ 1(Novato)*)
+                    3. **Análisis del Seguidor**:
+                    - **Pros**: (Detalles específicos)
+                    - **Contras y Mejoras**: (Detalles específicos)
+                    - **Puntajes Detallados**:
+                        - **Enraizamiento y Pasos**: (0~10)
+                        - **Conexión y Sostén**: (0~10)
+                        - **Seguimiento**: (0~10)
+                        - **Ginga y Movimiento**: (0~10)
+                        - **Musicalidad**: (0~10)
+                        - **Compañerismo y Confianza**: (0~10)
+                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Campeón Mundial) ~ 1(Novato)*)`;
                     }
                 }
                 else if (genre === "Zouk") {
                     referenceDancers = "Kadu & Larissa, William & Paloma";
                     if (type === "Performance") {
-                        genreFocus = "주크 공연(Performance)입니다. **'헤드 무브먼트', '개인 스타일링', 그리고 '다이내믹한 플로우'**가 중요합니다. 무대 위에서의 극적인 라인, 카운터 밸런스, 리프트, 그리고 음악의 기승전결을 표현하는 스토리텔링을 중점적으로 분석해주세요.";
+                        genreFocus = "Esta es una actuación de Zouk. **'Movimiento de Cabeza', 'Estilo Individual' y 'Flujo Dinámico'** son importantes. Concéntrate en líneas dramáticas, contra-equilibrio, elevaciones y narración.";
                         analysisFormat = `
-                    1. **총평**: 작품의 컨셉, 안무 구성, 무대 장악력
-                    2. **남자 (Leader) 퍼포먼스 분석**:
-                    - **장점**: (테크닉, 스타일링, 쇼맨십 중심)
-                    - **단점 및 개선점**: (구체적인 동작 교정 제안)
-                    - **세부 평점**:
-                        - **안무 숙련도 및 정확성**: (0~10, 소수점 첫째자리까지)
-                        - **테크닉 (헤드 리딩/카운터 밸런스)**: (0~10, 소수점 첫째자리까지)
-                        - **파트너 서포트 및 리프트**: (0~10, 소수점 첫째자리까지, 안정성)
-                        - **라인 및 포스쳐**: (0~10, 소수점 첫째자리까지, 신체 확장)
-                        - **쇼맨십 및 스타일링**: (0~10, 소수점 첫째자리까지)
-                        - **뮤지컬리티 (다이내믹)**: (0~10, 소수점 첫째자리까지)
-                    - **종합 평점**: (위 6개 항목의 평균 점수와 등급. *등급 기준: 10(세계 챔피언), 9(최상급 프로), 8(프로 강사), 7(준프로/공연팀), 6(상급 동호인), 5(중상급 동호인), 4(중급 동호인), 3(초중급 동호인), 2(초급 동호인), 1(입문자)*)
-                    3. **여자 (Follower) 퍼포먼스 분석**:
-                    - **장점**: (테크닉, 스타일링, 쇼맨십 중심)
-                    - **단점 및 개선점**: (구체적인 동작 교정 제안)
-                    - **세부 평점**:
-                        - **안무 숙련도 및 정확성**: (0~10, 소수점 첫째자리까지)
-                        - **테크닉 (헤드 무브먼트/캠브레)**: (0~10, 소수점 첫째자리까지)
-                        - **라인 및 포스쳐**: (0~10, 소수점 첫째자리까지, 손끝/발끝)
-                        - **밸런스 및 코어**: (0~10, 소수점 첫째자리까지)
-                        - **쇼맨십 및 스타일링**: (0~10, 소수점 첫째자리까지)
-                        - **뮤지컬리티 (다이내믹)**: (0~10, 소수점 첫째자리까지)
-                    - **종합 평점**: (위 6개 항목의 평균 점수와 등급. *등급 기준: 10(세계 챔피언), 9(최상급 프로), 8(프로 강사), 7(준프로/공연팀), 6(상급 동호인), 5(중상급 동호인), 4(중급 동호인), 3(초중급 동호인), 2(초급 동호인), 1(입문자)*)`;
+                    1. **Revisión General**: Concepto, Coreografía, Presencia Escénica
+                    2. **Análisis de Actuación del Líder**:
+                    - **Pros**: (Técnica, Estilo, Enfoque en el espectáculo)
+                    - **Contras y Mejoras**: (Sugerencias específicas)
+                    - **Puntajes Detallados**:
+                        - **Dominio de la Coreografía**: (0~10)
+                        - **Técnica (Liderazgo de Cabeza/Contra-equilibrio)**: (0~10)
+                        - **Soporte de Pareja y Elevaciones**: (0~10)
+                        - **Línea y Postura**: (0~10)
+                        - **Espectáculo y Estilo**: (0~10)
+                        - **Musicalidad**: (0~10)
+                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Campeón Mundial) ~ 1(Novato)*)
+                    3. **Análisis de Actuación del Seguidor**:
+                    - **Pros**: (Técnica, Estilo, Enfoque en el espectáculo)
+                    - **Contras y Mejoras**: (Sugerencias específicas)
+                    - **Puntajes Detallados**:
+                        - **Dominio de la Coreografía**: (0~10)
+                        - **Técnica (Movimiento de Cabeza/Cambré)**: (0~10)
+                        - **Línea y Postura**: (0~10)
+                        - **Equilibrio y Núcleo**: (0~10)
+                        - **Espectáculo y Estilo**: (0~10)
+                        - **Musicalidad**: (0~10)
+                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Campeón Mundial) ~ 1(Novato)*)`;
                     } else {
-                        genreFocus = "주크는 **'헤드 무브먼트'와 '플로우(Flow)'**가 특징입니다. 소셜 댄스에서는 특히 헤드 무브먼트 시 파트너의 목과 허리를 보호하는 안전한 리딩과, 끊어지지 않는 물 흐르는 듯한 연결성이 최우선입니다.";
+                        genreFocus = "Zouk presenta **'Movimiento de Cabeza' y 'Flujo'**. En el Baile Social, el liderazgo seguro protegiendo el cuello/espalda de la pareja y el flujo continuo son prioridad.";
                         analysisFormat = `
-                    1. **총평**: 주크의 플로우, 헤드 무브먼트의 자연스러움, 다이내믹
-                    2. **남자 (Leader) 분석**:
-                    - **장점**: (아래 세부 평점 항목들을 중심으로 구체적으로 서술)
-                    - **단점 및 개선점**: (아래 세부 평점 항목들을 중심으로 구체적으로 서술)
-                    - **세부 평점**:
-                        - **베이직 및 리듬 (Basic & Rhythm)**: (0~10, 소수점 첫째자리까지, 스텝)
-                        - **커넥션 및 프레임 (Connection & Frame)**: (0~10, 소수점 첫째자리까지, 탄력성)
-                        - **리딩 및 플로우 (Leading & Flow)**: (0~10, 소수점 첫째자리까지, 연결성 및 부드러움)
-                        - **헤드 무브먼트 리딩 (Head Movement Leading)**: (0~10, 소수점 첫째자리까지, 안전한 가이드)
-                        - **다이내믹 (Dynamics)**: (0~10, 소수점 첫째자리까지, 강약 조절)
-                        - **파트너쉽 및 안전 (Partnership & Safety)**: (0~10, 소수점 첫째자리까지, 파트너 보호 및 공간 활용)
-                    - **종합 평점**: (위 6개 항목의 평균 점수와 등급. 예: "6.5점 - 상급 동호인". *등급 기준: 10(세계 챔피언), 9(최상급 프로), 8(프로 강사), 7(준프로/공연팀), 6(상급 동호인), 5(중상급 동호인), 4(중급 동호인), 3(초중급 동호인), 2(초급 동호인), 1(입문자)*)
-                    3. **여자 (Follower) 분석**:
-                    - **장점**: (아래 세부 평점 항목들을 중심으로 구체적으로 서술)
-                    - **단점 및 개선점**: (아래 세부 평점 항목들을 중심으로 구체적으로 서술)
-                    - **세부 평점**:
-                        - **베이직 및 리듬 (Basic & Rhythm)**: (0~10, 소수점 첫째자리까지, 스텝)
-                        - **커넥션 및 축 (Connection & Axis)**: (0~10, 소수점 첫째자리까지, 밸런스 유지)
-                        - **팔로잉 (Following)**: (0~10, 소수점 첫째자리까지, 리드 대기 및 반응)
-                        - **헤드 무브먼트 테크닉 (Head Movement Tech)**: (0~10, 소수점 첫째자리까지, 목/허리 사용)
-                        - **유연성 및 아이솔레이션 (Flexibility & Isolation)**: (0~10, 소수점 첫째자리까지, 가동 범위)
-                        - **파트너쉽 및 호흡 (Partnership & Breath)**: (0~10, 소수점 첫째자리까지, 에너지 교환)
-                    - **종합 평점**: (위 6개 항목의 평균 점수와 등급. 예: "6.5점 - 상급 동호인". *등급 기준: 10(세계 챔피언), 9(최상급 프로), 8(프로 강사), 7(준프로/공연팀), 6(상급 동호인), 5(중상급 동호인), 4(중급 동호인), 3(초중급 동호인), 2(초급 동호인), 1(입문자)*)`;
+                    1. **Revisión General**: Flujo, Movimiento de Cabeza Natural, Dinámica
+                    2. **Análisis del Líder**:
+                    - **Pros**: (Detalles específicos)
+                    - **Contras y Mejoras**: (Detalles específicos)
+                    - **Puntajes Detallados**:
+                        - **Básico y Ritmo**: (0~10)
+                        - **Conexión y Marco**: (0~10)
+                        - **Liderazgo y Flujo**: (0~10)
+                        - **Liderazgo de Movimiento de Cabeza**: (0~10, Seguridad)
+                        - **Dinámica**: (0~10)
+                        - **Compañerismo y Seguridad**: (0~10)
+                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Campeón Mundial) ~ 1(Novato)*)
+                    3. **Análisis del Seguidor**:
+                    - **Pros**: (Detalles específicos)
+                    - **Contras y Mejoras**: (Detalles específicos)
+                    - **Puntajes Detallados**:
+                        - **Básico y Ritmo**: (0~10)
+                        - **Conexión y Eje**: (0~10)
+                        - **Seguimiento**: (0~10)
+                        - **Técnica de Movimiento de Cabeza**: (0~10)
+                        - **Flexibilidad y Aislamiento**: (0~10)
+                        - **Compañerismo y Respiración**: (0~10)
+                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Campeón Mundial) ~ 1(Novato)*)`;
                     }
                 }
 
                 const prompt = `
-                    당신은 라틴댄스(살사, 바차타, 키좀바, 주크 등) 전문 분석가입니다.
+                    You are a professional Latin Dance (Salsa, Bachata, Kizomba, Zouk, etc.) analyst.
 
-                    [중요] 먼저, 이 영상이 댄스 영상인지 확인해주세요.
-                    만약 댄스와 전혀 관련이 없는 영상(예: 풍경, 음식, 문서, 정적인 화면, 뉴스 등)이라면, 
-                    다른 분석을 하지 말고 오직 다음 문장만 출력하고 종료하세요:
-                    "죄송합니다. 이 영상은 댄스 영상으로 보이지 않습니다. 댄스 영상을 업로드해주시면 정밀하게 분석해드리겠습니다."
+                    [IMPORTANT] First, verify if this is a dance video.
+                    If the video is completely unrelated to dance (e.g., landscape, food, document, static screen, news, etc.), 
+                    DO NOT analyze and ONLY output the following sentence and exit:
+                    "Lo siento, esto no parece ser un video de baile. Por favor, sube un video de baile para un análisis preciso."
 
-                    댄스 영상이 맞다면, 이 영상은 ${genre || "라틴 댄스"} 장르의 ${type || "영상"}입니다.
-                    전문가의 시각으로 이 영상의 고유한 특징을 포착하여 정밀하게 분석해주세요.
+                    If it is a dance video, this is a ${genre || "Latin Dance"} ${type || "video"}.
+                    Please analyze the unique characteristics of this video with an expert's eye.
 
-                    [10점 만점의 기준 및 비교 방법]
-                    10점은 해당 장르의 세계적인 챔피언(${referenceDancers}) 수준을 의미합니다.
-                    AI가 학습한 이 챔피언들의 **자세(Posture), 텐션(Connection), 뮤지컬리티(Musicality), 동작의 정확성** 데이터를 기준으로, 
-                    업로드된 영상의 댄서들이 이 '월드 클래스' 기준에 얼마나 근접했는지를 상대적으로 평가해주세요.
+                    [Criteria for 10-point Scale]
+                    10 points represents the level of World Champions in this genre (${referenceDancers}).
+                    Based on AI-learned data of these champions' **Posture, Connection, Musicality, and Movement Accuracy**, 
+                    please evaluate relatively how close the dancers in the uploaded video are to this 'World Class' standard.
                     
-                    다음 형식에 맞춰서 답변을 작성해주세요:
+                    Please provide the response in the following format (in Spanish):
                     ${analysisFormat}
                     
-                    [장르별 중점 평가 항목: ${genre}]
+                    [Focus Points for ${genre}]:
                     ${genreFocus}
                     `.trim();
 
@@ -1264,7 +1264,6 @@
                     throw new Error(`Analysis failed (${analyzeRes.status}): ${text}`);
                 }
                 
-                // 여기서 JSON 파싱 에러가 나는지 확인
                 const text = await analyzeRes.text();
                 if (!text) throw new Error("Empty response from server");
                 
@@ -1275,10 +1274,10 @@
                     throw new Error(`Invalid JSON response: ${text.substring(0, 100)}...`);
                 }
                 
-                const content = data.choices?.[0]?.message?.content || "분석 결과를 가져오지 못했습니다.";
+                const content = data.choices?.[0]?.message?.content || "No se pudo obtener el resultado del análisis.";
                 latestAnalysisResult = content;
 
-                // 결과 저장 (공유를 위해)
+                // Save Result
                 try {
                     const saveRes = await fetch(`${API_URL}?action=save_result`, {
                         method: "POST",
@@ -1298,7 +1297,7 @@
                     console.warn("Failed to save result for sharing:", saveErr);
                 }
 
-                // Markdown Formatting for Modal
+                // Markdown Formatting
                 const formattedContent = content
                     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Bold
                     .replace(/### (.*?)\n/g, '<h3>$1</h3>') // H3
@@ -1306,21 +1305,21 @@
                     .replace(/# (.*?)\n/g, '<h1>$1</h1>') // H1
                     .replace(/\n/g, '<br>'); // Line breaks
 
-                modalTitle.textContent = "정밀 분석 결과";
+                modalTitle.textContent = "Resultado del Análisis";
                 modalBody.innerHTML = formattedContent;
-                modalFooter.style.display = 'flex'; // Show footer when done
+                modalFooter.style.display = 'flex';
 
             } catch (error) {
                 console.error(error);
-                alert(`오류 발생: ${error.message}`);
-                modalTitle.textContent = "오류 발생";
-                modalBody.innerHTML = `<p style="color:red">상세 에러: ${error.message}</p>`;
+                alert(`Error: ${error.message}`);
+                modalTitle.textContent = "Ocurrió un Error";
+                modalBody.innerHTML = `<p style="color:red">Detalle: ${error.message}</p>`;
                 modalFooter.style.display = 'none';
             } finally {
-                isAnalyzing = false; // 분석 종료 상태 설정
-                modalCloseBtn.style.display = 'block'; // Show close button again
+                isAnalyzing = false;
+                modalCloseBtn.style.display = 'block';
 
-                // UI 상태 복구 (활성화)
+                // UI Restore
                 analyzeBtn.disabled = false;
                 document.getElementById('danceGenre').disabled = false;
                 document.getElementById('danceType').disabled = false;
@@ -1331,20 +1330,18 @@
 
         // Modal Functions
         function closeModal() {
-            if (isAnalyzing) return; // 분석 중이면 닫기 방지
+            if (isAnalyzing) return;
             resultModal.style.display = 'none';
             document.body.style.overflow = 'auto';
         }
 
-        // Close modal when clicking outside
         resultModal.addEventListener('click', (e) => {
-            if (isAnalyzing) return; // 분석 중이면 닫기 방지
+            if (isAnalyzing) return;
             if (e.target === resultModal) {
                 closeModal();
             }
         });
 
-        // Scroll to Top Logic
         modalBody.addEventListener('scroll', () => {
             if (modalBody.scrollTop > 300) {
                 scrollTopBtn.style.display = 'flex';
@@ -1359,7 +1356,6 @@
 
         // Sharing Functions
         function shareKakao() {
-            // SDK 로드 체크 및 동적 로드 시도
             if (typeof Kakao === 'undefined') {
                 const script = document.createElement('script');
                 script.src = 'https://t1.kakaocdn.net/kakao_js_sdk/2.7.1/kakao.min.js';
@@ -1368,13 +1364,13 @@
                         if (!Kakao.isInitialized()) {
                             Kakao.init('2a0f97309508f0405a563d70e1c01262');
                         }
-                        shareKakao(); // 재귀 호출
+                        shareKakao();
                     } catch (e) {
-                        alert('카카오톡 SDK 초기화 실패: ' + e.message);
+                        alert('Kakao SDK Init Failed: ' + e.message);
                     }
                 };
                 script.onerror = () => {
-                    alert('카카오톡 SDK 로드에 실패했습니다. 네트워크 연결을 확인해주세요.');
+                    alert('Failed to load Kakao SDK.');
                 };
                 document.head.appendChild(script);
                 return;
@@ -1385,16 +1381,15 @@
                     Kakao.init('2a0f97309508f0405a563d70e1c01262');
                 }
 
-                // 공유 링크 생성 (ID가 있으면 포함)
                 const shareUrl = currentAnalysisId 
-                    ? `https://latindance.kr/analysis.html?id=${currentAnalysisId}`
-                    : 'https://latindance.kr/analysis.html';
+                    ? `https://latindance.kr/analysis-es.html?id=${currentAnalysisId}`
+                    : 'https://latindance.kr/analysis-es.html';
 
                 Kakao.Share.sendDefault({
                     objectType: 'feed',
                     content: {
-                        title: '댄스 영상 정밀 분석',
-                        description: '내 댄스 영상을 라틴댄스 모션 분석 엔진이 분석해주는 서비스입니다. 지금 바로 체험해보세요!',
+                        title: 'Análisis de Precisión de Video de Baile',
+                        description: 'La IA analiza tu video de baile y proporciona comentarios. ¡Pruébalo ahora!',
                         imageUrl: 'https://latindance.kr/assets/images/analysis_kakao_profile.png?v=2',
                         link: {
                             mobileWebUrl: shareUrl,
@@ -1403,7 +1398,7 @@
                     },
                     buttons: [
                         {
-                            title: '분석 결과 보기',
+                            title: 'Ver Resultado',
                             link: {
                                 mobileWebUrl: shareUrl,
                                 webUrl: shareUrl,
@@ -1413,25 +1408,25 @@
                 });
             } catch (err) {
                 console.error('Kakao Share Error:', err);
-                alert('카카오톡 공유 중 오류가 발생했습니다: ' + err.message);
+                alert('Error al compartir en KakaoTalk: ' + err.message);
             }
         }
 
         function copyResult() {
             if (!latestAnalysisResult) {
-                alert('복사할 분석 결과가 없습니다.');
+                alert('No hay resultado para copiar.');
                 return;
             }
             
             navigator.clipboard.writeText(latestAnalysisResult).then(() => {
-                alert('분석 결과가 클립보드에 복사되었습니다!');
+                alert('¡Resultado copiado al portapapeles!');
             }).catch(err => {
-                console.error('복사 실패:', err);
-                alert('결과 복사에 실패했습니다.');
+                console.error('Copy failed:', err);
+                alert('Error al copiar el resultado.');
             });
         }
 
-        // 페이지 로드 시 공유된 결과 확인
+        // Load Shared Result
         window.addEventListener('DOMContentLoaded', async () => {
             const urlParams = new URLSearchParams(window.location.search);
             const sharedId = urlParams.get('id');
@@ -1439,10 +1434,9 @@
             if (sharedId) {
                 const API_URL = "https://latindance-api.yama5993.workers.dev";
                 
-                // 모달 띄우고 로딩 표시
                 resultModal.style.display = 'flex';
-                modalTitle.textContent = "공유된 분석 결과 불러오는 중...";
-                modalBody.innerHTML = '<div class="spinner"></div><p style="text-align:center">결과를 가져오고 있습니다...</p>';
+                modalTitle.textContent = "Cargando Resultado Compartido...";
+                modalBody.innerHTML = '<div class="spinner"></div><p style="text-align:center">Obteniendo resultado...</p>';
                 modalFooter.style.display = 'none';
                 modalCloseBtn.style.display = 'block';
 
@@ -1452,9 +1446,8 @@
                     
                     const data = await res.json();
                     const content = data.result;
-                    latestAnalysisResult = content; // 복사 기능을 위해 저장
+                    latestAnalysisResult = content;
 
-                    // Markdown Formatting
                     const formattedContent = content
                         .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
                         .replace(/### (.*?)\n/g, '<h3>$1</h3>')
@@ -1462,16 +1455,14 @@
                         .replace(/# (.*?)\n/g, '<h1>$1</h1>')
                         .replace(/\n/g, '<br>');
 
-                    modalTitle.textContent = "정밀 분석 결과 (공유됨)";
+                    modalTitle.textContent = "Resultado del Análisis (Compartido)";
                     modalBody.innerHTML = formattedContent;
                     modalFooter.style.display = 'flex';
                     
-                    // 공유된 결과임을 알리는 메시지 추가 가능
-                    
                 } catch (err) {
                     console.error(err);
-                    modalTitle.textContent = "오류 발생";
-                    modalBody.innerHTML = `<p style="text-align:center">공유된 결과를 찾을 수 없거나 만료되었습니다.<br>(${err.message})</p>`;
+                    modalTitle.textContent = "Error";
+                    modalBody.innerHTML = `<p>No se pudo cargar el resultado compartido.<br>${err.message}</p>`;
                 }
             }
         });
