@@ -188,6 +188,26 @@ function injectCustomStyles() {
         .custom-options-modern::-webkit-scrollbar-thumb:hover {
             background: rgba(255, 255, 255, 0.2);
         }
+
+        @media (max-width: 600px) {
+            .custom-select-modern {
+                margin-top: 6px;
+            }
+            .custom-select-modern__trigger {
+                height: 46px;
+                padding: 0 16px;
+                font-size: 0.95rem;
+                border-radius: 12px;
+            }
+            .custom-options-modern {
+                border-bottom-left-radius: 12px;
+                border-bottom-right-radius: 12px;
+            }
+            .custom-option-modern {
+                padding: 12px 16px;
+                font-size: 0.9rem;
+            }
+        }
     `;
 
     const style = document.createElement('style');
