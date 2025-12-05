@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<title>Korea Latin Dance Hub - Clubs & Motion Analysis</title>
 	<meta name="description" content="Korea Latin Dance Hub providing a directory of Latin dance clubs and motion analysis services." />
 	<link rel="canonical" href="https://latindance.kr/index-en.html" />
@@ -47,21 +47,47 @@
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-197LKDJGPJ"></script>
 	<script defer src="assets/js/ga.js"></script>
     <style>
+        html, body {
+            height: 100%;
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        .site-header {
+            flex: 0 0 auto;
+        }
+        #main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            padding: 0;
+        }
         .hub-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 60vh;
-            gap: 2rem;
-            padding: 2rem;
-            text-align: center;
+            width: 100%;
+            height: 100%;
+            gap: 2vh;
+            padding: 2vh 2rem;
+            box-sizing: border-box;
         }
         .hub-card {
             background: #1a2035;
             border: 1px solid #2a3045;
             border-radius: 16px;
-            padding: 3rem 2rem;
+            padding: 2vh 2rem;
             width: 100%;
             max-width: 400px;
             transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
@@ -70,6 +96,9 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
+            flex: 1;
+            max-height: 35vh;
         }
         .hub-card:hover {
             transform: translateY(-5px);
@@ -77,23 +106,55 @@
             border-color: #e91e63;
         }
         .hub-icon {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
+            font-size: 6vh;
+            margin-bottom: 1vh;
         }
         .hub-title {
-            font-size: 1.5rem;
+            font-size: 2.5vh;
             font-weight: bold;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.5vh;
             color: #fff;
         }
         .hub-desc {
             color: #a0aec0;
-            font-size: 1rem;
-            line-height: 1.5;
+            font-size: 1.8vh;
+            line-height: 1.4;
         }
+        .site-footer {
+            flex: 0 0 auto;
+            margin-top: 0 !important;
+            padding: 1rem 0 !important;
+            background: transparent !important;
+            border-top: none !important;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            pointer-events: none;
+            z-index: 10;
+        }
+        .site-footer__inner {
+            pointer-events: auto;
+            padding-bottom: 1rem;
+        }
+        
         @media (min-width: 768px) {
             .hub-container {
                 flex-direction: row;
+                gap: 2rem;
+            }
+            .hub-card {
+                height: auto;
+                max-height: none;
+                padding: 3rem 2rem;
+                flex: 0 1 400px;
+            }
+            .hub-icon { font-size: 4rem; margin-bottom: 1.5rem; }
+            .hub-title { font-size: 1.5rem; margin-bottom: 0.5rem; }
+            .hub-desc { font-size: 1rem; }
+            .site-footer {
+                position: relative;
+                bottom: auto;
+                padding: 2rem 0 !important;
             }
         }
     </style>
