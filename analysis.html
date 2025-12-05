@@ -5,19 +5,19 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>댄스 영상 정밀 분석 - 전국 지역별 라틴댄스 모임</title>
-	<meta name="description" content="라틴 모션 분석 엔진이 당신의 춤 영상을 분석하여 피드백을 제공합니다." />
+	<meta name="description" content="라틴 모션 분석 엔진이 당신의 댄스 영상을 분석하여 피드백을 제공합니다." />
 	<link rel="canonical" href="https://latindance.kr/analysis.html" />
 	<meta name="robots" content="index,follow" />
 	<meta property="og:type" content="website" />
 	<meta property="og:locale" content="ko_KR" />
 	<meta property="og:site_name" content="전국 지역별 라틴댄스 모임" />
 	<meta property="og:title" content="댄스 영상 정밀 분석" />
-	<meta property="og:description" content="라틴 모션 분석 엔진이 당신의 춤 영상을 분석하여 피드백을 제공합니다." />
+	<meta property="og:description" content="라틴 모션 분석 엔진이 당신의 댄스 영상을 분석하여 피드백을 제공합니다." />
 	<meta property="og:url" content="https://latindance.kr/analysis.html" />
 	<meta property="og:image" content="https://latindance.kr/assets/images/kakao_profile.png" />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="댄스 영상 정밀 분석" />
-	<meta name="twitter:description" content="라틴 모션 분석 엔진이 당신의 춤 영상을 분석하여 피드백을 제공합니다." />
+	<meta name="twitter:description" content="라틴 모션 분석 엔진이 당신의 댄스 영상을 분석하여 피드백을 제공합니다." />
 	<meta name="twitter:image" content="https://latindance.kr/assets/images/kakao_profile.png" />
 	
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -513,11 +513,11 @@
 	<main class="site-main">
         <div class="analysis-container">
             <h1 class="hero__title">댄스 영상 정밀 분석</h1>
-            <p class="hero__description">춤 영상을 업로드하면 라틴 모션 분석 엔진이 동작, 리듬, 자세를 분석하여 피드백을 제공합니다.</p>
+            <p class="hero__description">댄스 영상을 업로드하면 라틴 모션 분석 엔진이 동작, 리듬, 자세를 분석하여 피드백을 제공합니다.</p>
             
             <div class="options-grid">
                 <div>
-                    <label class="section-title">1. 춤 종류 선택</label>
+                    <label class="section-title">1. 댄스 종류 선택</label>
                     <select id="danceGenre">
                         <option value="Salsa">살사 (Salsa)</option>
                         <option value="Bachata">바차타 (Bachata)</option>
@@ -780,7 +780,7 @@
                 
                 // 기본 포맷 (장르 선택 안되었을 때 등)
                 let analysisFormat = `
-                    1. **총평**: 전체적인 춤의 느낌, 음악 해석, 분위기
+                    1. **총평**: 전체적인 댄스의 느낌, 음악 해석, 분위기
                     2. **남자 (Leader) 분석**:
                     - **장점**: (아래 세부 평점 항목들을 중심으로 구체적으로 서술)
                     - **단점 및 개선점**: (아래 세부 평점 항목들을 중심으로 구체적으로 서술)
@@ -806,7 +806,7 @@
 
                 if (genre === "Salsa") {
                     referenceDancers = "Terry & Cecile, Fernando Sosa, Adolfo Indacochea, Eddie Torres";
-                    genreFocus = "살사는 **'클라베 리듬(Clave Rhythm)'에 맞는 정확한 스텝과 타이밍**이 생명입니다. 소셜 댄스 관점에서 파트너를 편안하게 리드하고 팔로우하는지, 서로의 안전을 지키며 즐겁게 춤추는지를 중점적으로 분석해주세요.";
+                    genreFocus = "살사는 **'클라베 리듬(Clave Rhythm)'에 맞는 정확한 스텝과 타이밍**이 생명입니다. 소셜 댄스 관점에서 파트너를 편안하게 리드하고 팔로우하는지, 서로의 안전을 지키며 즐겁게 댄스를 즐기는지를 중점적으로 분석해주세요.";
                     analysisFormat = `
                     1. **총평**: 살사 특유의 에너지, 클라베 리듬감, 파트너와의 호흡
                     2. **남자 (Leader) 분석**:
@@ -920,12 +920,12 @@
                 const prompt = `
                     당신은 라틴댄스(살사, 바차타, 키좀바, 주크 등) 전문 분석가입니다.
 
-                    [중요] 먼저, 이 영상이 춤(댄스)과 관련된 영상인지 확인해주세요.
-                    만약 춤과 전혀 관련이 없는 영상(예: 풍경, 음식, 문서, 정적인 화면, 뉴스 등)이라면, 
+                    [중요] 먼저, 이 영상이 댄스 영상인지 확인해주세요.
+                    만약 댄스와 전혀 관련이 없는 영상(예: 풍경, 음식, 문서, 정적인 화면, 뉴스 등)이라면, 
                     다른 분석을 하지 말고 오직 다음 문장만 출력하고 종료하세요:
-                    "죄송합니다. 이 영상은 춤 영상으로 보이지 않습니다. 댄스 영상을 업로드해주시면 정밀하게 분석해드리겠습니다."
+                    "죄송합니다. 이 영상은 댄스 영상으로 보이지 않습니다. 댄스 영상을 업로드해주시면 정밀하게 분석해드리겠습니다."
 
-                    춤 영상이 맞다면, 이 영상은 ${genre || "라틴 댄스"} 장르의 ${type || "영상"}입니다.
+                    댄스 영상이 맞다면, 이 영상은 ${genre || "라틴 댄스"} 장르의 ${type || "영상"}입니다.
                     전문가의 시각으로 이 영상의 고유한 특징을 포착하여 정밀하게 분석해주세요.
 
                     [10점 만점의 기준 및 비교 방법]
@@ -1087,7 +1087,7 @@
                     objectType: 'feed',
                     content: {
                         title: '댄스 영상 정밀 분석',
-                        description: '내 춤 영상을 라틴 모션 분석 엔진이 분석해주는 서비스입니다. 지금 바로 체험해보세요!',
+                        description: '내 댄스 영상을 라틴 모션 분석 엔진이 분석해주는 서비스입니다. 지금 바로 체험해보세요!',
                         imageUrl: 'https://latindance.kr/assets/images/kakao_profile.png',
                         link: {
                             mobileWebUrl: shareUrl,
