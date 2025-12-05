@@ -314,6 +314,56 @@
                 padding: 2rem 0 !important;
             }
         }
+
+        /* Mobile Wow Effects (Touch Devices) */
+        @media (hover: none) {
+            /* 1. Floating Animation (둥둥 떠다니는 효과) */
+            .hub-card {
+                animation: float-card 6s ease-in-out infinite;
+            }
+            .hub-card:nth-child(2) {
+                animation-delay: -3s;
+            }
+
+            @keyframes float-card {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-10px); }
+            }
+
+            /* 2. Auto Shine Effect (자동 빛 반사) */
+            .mobile-shine {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                border-radius: 24px;
+                background: linear-gradient(
+                    120deg,
+                    transparent 30%,
+                    rgba(255, 255, 255, 0.1) 45%,
+                    rgba(255, 255, 255, 0.2) 50%,
+                    rgba(255, 255, 255, 0.1) 55%,
+                    transparent 70%
+                );
+                background-size: 200% 100%;
+                animation: shine-sweep 5s infinite linear;
+                pointer-events: none;
+                z-index: 3;
+            }
+
+            @keyframes shine-sweep {
+                0% { background-position: 150% 0; }
+                100% { background-position: -50% 0; }
+            }
+        }
+
+        /* Hide mobile shine on desktop */
+        @media (hover: hover) {
+            .mobile-shine {
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -334,12 +384,14 @@
 	<main id="main" class="page" role="main">
         <div class="hub-container">
             <a href="analysis.html" class="hub-card">
+                <div class="mobile-shine"></div>
                 <div class="spotlight-border"></div>
                 <div class="hub-icon">🎥</div>
                 <div class="hub-title">라틴댄스 모션 분석</div>
                 <div class="hub-desc">모션 분석 엔진을 이용한<br>나의 댄스영상 분석하기</div>
             </a>
             <a href="clubs.html" class="hub-card">
+                <div class="mobile-shine"></div>
                 <div class="spotlight-border"></div>
                 <div class="hub-icon">🏘️</div>
                 <div class="hub-title">우리동네 라틴댄스 동호회 찾기</div>
