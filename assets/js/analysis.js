@@ -190,8 +190,8 @@ async function runAnalysis() {
         // 3. Polling
         console.log("Step 3: Polling Status");
         modalBody.innerHTML = `
-            <div class="spinner"></div>
-            <p style="text-align:center">${ANALYSIS_CONFIG.messages.stepProcessing}</p>
+            <div class="loader-orbit"></div>
+            <p style="text-align:center; font-weight:bold; color:#41d1ff;">${ANALYSIS_CONFIG.messages.stepProcessing}</p>
             <p style="font-size: 0.9rem; color: #888; text-align:center">${ANALYSIS_CONFIG.messages.waitMessage}</p>
         `;
         
@@ -223,8 +223,10 @@ async function runAnalysis() {
         // 4. Analyze
         console.log("Step 4: Analyze");
         modalBody.innerHTML = `
-            <div class="spinner"></div>
-            <p style="text-align:center">${ANALYSIS_CONFIG.messages.stepAnalyzing}</p>
+            <div class="loader-wave">
+                <div></div><div></div><div></div><div></div><div></div>
+            </div>
+            <p style="text-align:center; font-weight:bold; color:#bd34fe;">${ANALYSIS_CONFIG.messages.stepAnalyzing}</p>
             <p style="font-size: 0.9rem; color: #888; text-align:center">${ANALYSIS_CONFIG.messages.analyzeTimeWarning}</p>
         `;
 
