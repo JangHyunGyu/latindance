@@ -58,19 +58,19 @@
             
             <div class="options-grid">
                 <div>
-                    <label class="section-title">댄스 종류 선택</label>
+                    <label class="section-title">장르</label>
                     <select id="danceGenre">
-                        <option value="Salsa">살사 (Salsa)</option>
-                        <option value="Bachata">바차타 (Bachata)</option>
-                        <option value="Kizomba">키좀바 (Kizomba)</option>
-                        <option value="Zouk">주크 (Zouk)</option>
+                        <option value="Salsa">살사</option>
+                        <option value="Bachata">바차타</option>
+                        <option value="Kizomba">키좀바</option>
+                        <option value="Zouk">주크</option>
                     </select>
                 </div>
                 <div>
-                    <label class="section-title">영상 유형 선택</label>
+                    <label class="section-title">유형</label>
                     <select id="danceType">
-                        <option value="Social">소셜 (Social Dance)</option>
-                        <option value="Performance">공연 (Performance)</option>
+                        <option value="Social">소셜</option>
+                        <option value="Performance">공연</option>
                     </select>
                 </div>
             </div>
@@ -118,7 +118,7 @@
             messages: {
                 fileTooLarge: "파일 크기가 너무 큽니다 ({size} MB).\n100MB 이하의 영상만 업로드 가능합니다.\n(카카오톡 등으로 압축 후 올려주세요)",
                 fileSelected: "선택된 파일",
-                processTitle: "정밀 분석 프로세스 가동",
+                processTitle: "정밀 분석 프로세스 진행 중...",
                 stepInit: "보안 연결 수립 및 데이터 전송 세션을<br>초기화하고 있습니다...",
                 stepUpload: "분석 서버로 영상 데이터 전송 중...",
                 uploadWarning: "(고화질 영상은 전송에 시간이 소요될 수 있습니다)",
@@ -406,7 +406,7 @@
                     [10점 만점의 기준 및 비교 방법]
                     10점은 해당 장르의 세계적인 챔피언(${referenceDancers}) 수준을 의미합니다.
                     AI가 학습한 이 챔피언들의 **자세(Posture), 텐션(Connection), 뮤지컬리티(Musicality), 동작의 정확성** 데이터를 기준으로, 
-                    업로드된 영상의 댄서들이 이 '월드 클래스' 기준에 얼마나 근접했는지를 상대적으로 평가해주세요.
+                    업로드된 영상의 댄서들을 상대적으로 평가해주세요.
                     
                     다음 형식에 맞춰서 답변을 작성해주세요:
                     ${analysisFormat}
