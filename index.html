@@ -317,20 +317,7 @@
 
         /* Mobile Wow Effects (Touch Devices) */
         @media (hover: none) {
-            /* 1. Floating Animation (둥둥 떠다니는 효과) */
-            .hub-card {
-                animation: float-card 6s ease-in-out infinite;
-            }
-            .hub-card:nth-child(2) {
-                animation-delay: -3s;
-            }
-
-            @keyframes float-card {
-                0%, 100% { transform: translateY(0); }
-                50% { transform: translateY(-10px); }
-            }
-
-            /* 2. Auto Shine Effect (자동 빛 반사) */
+            /* Auto Shine Effect (자동 빛 반사) */
             .mobile-shine {
                 position: absolute;
                 top: 0;
