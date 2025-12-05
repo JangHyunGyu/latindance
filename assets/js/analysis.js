@@ -28,6 +28,11 @@ let isAnalyzing = false;
 let latestAnalysisResult = "";
 let currentAnalysisId = null;
 
+// Cache for re-analysis
+let lastUploadedFileMetadata = null;
+let lastUploadedFileUri = null;
+let lastUploadedServerFileName = null;
+
 // Event Listeners
 videoInput.addEventListener('change', handleFileSelect);
 
@@ -118,74 +123,89 @@ async function runAnalysis() {
     try {
         const API_URL = "https://latindance-api.yama5993.workers.dev"; 
 
-        // 1. Init
-        console.log("Step 1: Init");
-        modalBody.innerHTML = `<p>${ANALYSIS_CONFIG.messages.stepInit}</p>`;
-        const initRes = await fetch(`${API_URL}?action=init`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                mimeType: file.type,
-                numBytes: file.size,
-                displayName: file.name
-            })
-        });
-        
-        if (!initRes.ok) {
-            const text = await initRes.text();
-            throw new Error(`Init failed (${initRes.status}): ${text}`);
+        let fileUri, fileName;
+        const currentFileMetadata = `${file.name}_${file.size}_${file.lastModified}`;
+
+        if (currentFileMetadata === lastUploadedFileMetadata && lastUploadedFileUri && lastUploadedServerFileName) {
+            console.log("Skipping upload, reusing existing file.");
+            fileUri = lastUploadedFileUri;
+            fileName = lastUploadedServerFileName;
+        } else {
+            // 1. Init
+            console.log("Step 1: Init");
+            modalBody.innerHTML = `<p>${ANALYSIS_CONFIG.messages.stepInit}</p>`;
+            const initRes = await fetch(`${API_URL}?action=init`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    mimeType: file.type,
+                    numBytes: file.size,
+                    displayName: file.name
+                })
+            });
+            
+            if (!initRes.ok) {
+                const text = await initRes.text();
+                throw new Error(`Init failed (${initRes.status}): ${text}`);
+            }
+            const { uploadUrl } = await initRes.json();
+
+            // 2. Upload
+            console.log("Step 2: Upload");
+            modalBody.innerHTML = `
+                <div class="progress-status">${ANALYSIS_CONFIG.messages.stepUpload}</div>
+                <div class="progress-text" id="progressPercent">0%</div>
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <p style="font-size: 0.85rem; color: rgba(255,255,255,0.5); text-align:center; margin-top: 20px;">
+                    ${ANALYSIS_CONFIG.messages.uploadWarning}
+                </p>
+            `;
+
+            const progressBar = modalBody.querySelector('#progressBar');
+            const progressPercent = modalBody.querySelector('#progressPercent');
+
+            const uploadRes = await new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest();
+                xhr.open("POST", `${API_URL}?action=upload`);
+                xhr.setRequestHeader("X-Upload-Url", uploadUrl);
+                xhr.setRequestHeader("Content-Type", file.type);
+
+                xhr.upload.onprogress = (e) => {
+                    if (e.lengthComputable) {
+                        const percent = Math.round((e.loaded / e.total) * 100);
+                        if (progressBar && progressPercent) {
+                            progressBar.style.width = `${percent}%`;
+                            progressPercent.textContent = `${percent}%`;
+                        }
+                    }
+                };
+
+                xhr.onload = () => {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        try {
+                            resolve(JSON.parse(xhr.responseText));
+                        } catch (e) {
+                            reject(new Error("Invalid JSON response from upload"));
+                        }
+                    } else {
+                        reject(new Error(`Upload failed (${xhr.status}): ${xhr.responseText}`));
+                    }
+                };
+
+                xhr.onerror = () => reject(new Error("Network error during upload"));
+                xhr.send(file);
+            });
+
+            fileUri = uploadRes.fileUri;
+            fileName = uploadRes.fileName;
+
+            // Update Cache
+            lastUploadedFileMetadata = currentFileMetadata;
+            lastUploadedFileUri = fileUri;
+            lastUploadedServerFileName = fileName;
         }
-        const { uploadUrl } = await initRes.json();
-
-        // 2. Upload
-        console.log("Step 2: Upload");
-        modalBody.innerHTML = `
-            <div class="progress-status">${ANALYSIS_CONFIG.messages.stepUpload}</div>
-            <div class="progress-text" id="progressPercent">0%</div>
-            <div class="progress-container">
-                <div class="progress-bar" id="progressBar"></div>
-            </div>
-            <p style="font-size: 0.85rem; color: rgba(255,255,255,0.5); text-align:center; margin-top: 20px;">
-                ${ANALYSIS_CONFIG.messages.uploadWarning}
-            </p>
-        `;
-
-        const progressBar = modalBody.querySelector('#progressBar');
-        const progressPercent = modalBody.querySelector('#progressPercent');
-
-        const uploadRes = await new Promise((resolve, reject) => {
-            const xhr = new XMLHttpRequest();
-            xhr.open("POST", `${API_URL}?action=upload`);
-            xhr.setRequestHeader("X-Upload-Url", uploadUrl);
-            xhr.setRequestHeader("Content-Type", file.type);
-
-            xhr.upload.onprogress = (e) => {
-                if (e.lengthComputable) {
-                    const percent = Math.round((e.loaded / e.total) * 100);
-                    if (progressBar && progressPercent) {
-                        progressBar.style.width = `${percent}%`;
-                        progressPercent.textContent = `${percent}%`;
-                    }
-                }
-            };
-
-            xhr.onload = () => {
-                if (xhr.status >= 200 && xhr.status < 300) {
-                    try {
-                        resolve(JSON.parse(xhr.responseText));
-                    } catch (e) {
-                        reject(new Error("Invalid JSON response from upload"));
-                    }
-                } else {
-                    reject(new Error(`Upload failed (${xhr.status}): ${xhr.responseText}`));
-                }
-            };
-
-            xhr.onerror = () => reject(new Error("Network error during upload"));
-            xhr.send(file);
-        });
-
-        const { fileUri, fileName } = uploadRes;
 
         // 3. Polling
         console.log("Step 3: Polling Status");
