@@ -53,15 +53,33 @@
             --gradient-latin: linear-gradient(135deg, #ff4081, #ff9100);
         }
 
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
         body {
             background: radial-gradient(circle at top right, #2a0a18, #000000);
             color: var(--text-main);
             font-family: 'Pretendard', sans-serif;
-            min-height: 100vh;
+        }
+
+        .site-main {
+            height: 100%;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+            box-sizing: border-box;
         }
 
         h1, h2, h3, .hero__title, .modal-title, .site-logo {
             font-family: 'Playfair Display', serif;
+            word-break: keep-all;
         }
 
         .hero__title {
@@ -80,6 +98,7 @@
             margin-bottom: 3rem;
             line-height: 1.6;
             font-weight: 300;
+            word-break: keep-all;
         }
 
         @media (max-width: 600px) {
@@ -94,8 +113,9 @@
         }
 
         .analysis-container {
+            width: 100%;
             max-width: 800px;
-            margin: 4rem auto;
+            margin: auto;
             padding: 3rem;
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(20px);
@@ -103,6 +123,7 @@
             box-shadow: 0 20px 60px rgba(0,0,0,0.5);
             text-align: center;
             border: 1px solid rgba(255,255,255,0.08);
+            word-break: keep-all;
         }
 
         .section-title {
@@ -137,7 +158,7 @@
         @media (max-width: 600px) {
             .analysis-container {
                 padding: 1.5rem;
-                margin: 1rem auto;
+                margin: auto;
                 border-radius: 20px;
             }
             
@@ -511,11 +532,6 @@
 </head>
 
 <body>
-    <header class="site-header">
-        <div class="container" style="text-align: center;">
-            <a href="/" class="site-logo">전국 지역별 라틴댄스 모임</a>
-        </div>
-    </header>
 
 	<main class="site-main">
         <div class="analysis-container">
@@ -556,10 +572,6 @@
             <div id="result"></div>
         </div>
 	</main>
-
-	<footer class="site-footer" role="contentinfo">
-		<p class="site-footer__text">© <span data-current-year>2025</span> 전국 지역별 라틴댄스 모임 · ArcherLab</p>
-	</footer>
 
     <!-- Result Modal -->
     <div id="resultModal" class="modal-overlay">
