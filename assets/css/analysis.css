@@ -165,7 +165,7 @@ h1, h2, h3, .hero__title, .modal-title, .site-logo {
     }
     
     .options-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         gap: 0.8rem;
         margin-bottom: 1rem;
     }
