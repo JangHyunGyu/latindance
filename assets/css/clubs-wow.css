@@ -25,11 +25,74 @@ body::before {
     100% { transform: translate(-5%, -5%) scale(1.1); }
 }
 
-/* Venue Card 3D Effect */
+/* Venue Card 3D Effect & Border Glow */
 .venue-card {
-    transition: transform 0.1s ease-out, box-shadow 0.3s ease;
+    transition: transform 0.1s ease-out, box-shadow 0.3s ease, border-color 0.3s ease;
     transform-style: preserve-3d;
     will-change: transform;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Default subtle border */
+    overflow: hidden; /* Ensure glow doesn't spill weirdly */
+}
+
+/* Gradient Border Effect for Cards */
+.venue-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px; /* Border width */
+    background: linear-gradient(135deg, rgba(189, 52, 254, 0.5), rgba(65, 209, 255, 0.5));
+    -webkit-mask: 
+       linear-gradient(#fff 0 0) content-box, 
+       linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.venue-card:hover::before {
+    opacity: 1;
+}
+
+.venue-card:hover {
+    box-shadow: 0 10px 30px -10px rgba(189, 52, 254, 0.3), 
+                0 0 20px -5px rgba(65, 209, 255, 0.2);
+    border-color: transparent; /* Let the gradient border show */
+}
+
+/* Logo Border Glow */
+.site-header .brand {
+    position: relative;
+    padding: 8px 16px;
+    border-radius: 24px;
+    /* Do NOT set background here to preserve text gradient */
+}
+
+/* Create the border and background using pseudo-element */
+.site-header .brand::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    padding: 2px; /* Border width */
+    background: linear-gradient(45deg, #bd34fe, #41d1ff);
+    -webkit-mask: 
+       linear-gradient(#fff 0 0) content-box, 
+       linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.8;
+    z-index: -1;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+/* Glow effect behind the border */
+.site-header .brand:hover::before {
+    filter: drop-shadow(0 0 8px rgba(189, 52, 254, 0.6));
+    opacity: 1;
 }
 
 /* Mobile "Wow" Effects */
