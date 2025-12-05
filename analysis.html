@@ -4,20 +4,20 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>AI 댄스 영상 분석 - 전국 지역별 라틴댄스 모임</title>
-	<meta name="description" content="AI가 당신의 춤 영상을 분석하여 피드백을 제공합니다." />
+	<title>댄스 영상 정밀 분석 - 전국 지역별 라틴댄스 모임</title>
+	<meta name="description" content="딥러닝 엔진이 당신의 춤 영상을 분석하여 피드백을 제공합니다." />
 	<link rel="canonical" href="https://latindance.kr/analysis.html" />
 	<meta name="robots" content="index,follow" />
 	<meta property="og:type" content="website" />
 	<meta property="og:locale" content="ko_KR" />
 	<meta property="og:site_name" content="전국 지역별 라틴댄스 모임" />
-	<meta property="og:title" content="AI 댄스 영상 분석" />
-	<meta property="og:description" content="AI가 당신의 춤 영상을 분석하여 피드백을 제공합니다." />
+	<meta property="og:title" content="댄스 영상 정밀 분석" />
+	<meta property="og:description" content="딥러닝 엔진이 당신의 춤 영상을 분석하여 피드백을 제공합니다." />
 	<meta property="og:url" content="https://latindance.kr/analysis.html" />
 	<meta property="og:image" content="https://latindance.kr/assets/images/kakao_profile.png" />
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="AI 댄스 영상 분석" />
-	<meta name="twitter:description" content="AI가 당신의 춤 영상을 분석하여 피드백을 제공합니다." />
+	<meta name="twitter:title" content="댄스 영상 정밀 분석" />
+	<meta name="twitter:description" content="딥러닝 엔진이 당신의 춤 영상을 분석하여 피드백을 제공합니다." />
 	<meta name="twitter:image" content="https://latindance.kr/assets/images/kakao_profile.png" />
 	
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -512,8 +512,8 @@
 
 	<main class="site-main">
         <div class="analysis-container">
-            <h1 class="hero__title">AI 댄스 영상 분석</h1>
-            <p class="hero__description">춤 영상을 업로드하면 AI가 동작, 리듬, 자세를 분석하여 피드백을 제공합니다.</p>
+            <h1 class="hero__title">댄스 영상 정밀 분석</h1>
+            <p class="hero__description">춤 영상을 업로드하면 딥러닝 엔진이 동작, 리듬, 자세를 분석하여 피드백을 제공합니다.</p>
             
             <div class="options-grid">
                 <div>
@@ -558,7 +558,7 @@
     <div id="resultModal" class="modal-overlay">
         <div class="modal-container">
             <div class="modal-header">
-                <h3 id="modalTitle" class="modal-title">AI 분석 결과</h3>
+                <h3 id="modalTitle" class="modal-title">정밀 분석 결과</h3>
                 <button id="modalCloseBtn" class="modal-close" onclick="closeModal()">&times;</button>
             </div>
             <div id="modalBody" class="modal-body">
@@ -661,7 +661,7 @@
             
             // Show Modal immediately for progress
             resultModal.style.display = 'flex';
-            modalTitle.textContent = "영상 분석 중...";
+            modalTitle.textContent = "정밀 분석 프로세스 가동";
             modalFooter.style.display = 'none'; // Hide footer during loading
             modalCloseBtn.style.display = 'none'; // Hide close button during analysis
             document.body.style.overflow = 'hidden';
@@ -671,7 +671,7 @@
 
                 // 1. 초기화 요청
                 console.log("Step 1: Init");
-                modalBody.innerHTML = "<p>업로드 준비 중...</p>";
+                modalBody.innerHTML = "<p>보안 연결 수립 및 데이터 전송 세션을<br>초기화하고 있습니다...</p>";
                 const initRes = await fetch(`${API_URL}?action=init`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
@@ -999,7 +999,7 @@
                     .replace(/# (.*?)\n/g, '<h1>$1</h1>') // H1
                     .replace(/\n/g, '<br>'); // Line breaks
 
-                modalTitle.textContent = "AI 분석 결과";
+                modalTitle.textContent = "정밀 분석 결과";
                 modalBody.innerHTML = formattedContent;
                 modalFooter.style.display = 'flex'; // Show footer when done
 
@@ -1086,8 +1086,8 @@
                 Kakao.Share.sendDefault({
                     objectType: 'feed',
                     content: {
-                        title: 'AI 댄스 영상 분석',
-                        description: '내 춤 영상을 AI가 분석해주는 서비스입니다. 지금 바로 체험해보세요!',
+                        title: '댄스 영상 정밀 분석',
+                        description: '내 춤 영상을 딥러닝 엔진이 분석해주는 서비스입니다. 지금 바로 체험해보세요!',
                         imageUrl: 'https://latindance.kr/assets/images/kakao_profile.png',
                         link: {
                             mobileWebUrl: shareUrl,
@@ -1155,7 +1155,7 @@
                         .replace(/# (.*?)\n/g, '<h1>$1</h1>')
                         .replace(/\n/g, '<br>');
 
-                    modalTitle.textContent = "AI 분석 결과 (공유됨)";
+                    modalTitle.textContent = "정밀 분석 결과 (공유됨)";
                     modalBody.innerHTML = formattedContent;
                     modalFooter.style.display = 'flex';
                     
