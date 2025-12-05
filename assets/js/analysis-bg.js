@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Circuit Configuration
     const circuits = [];
-    const circuitCount = 6; // Reduced count slightly
+    const circuitCount = 15; // Increased count for more circuit feel
 
     class Circuit {
         constructor() {
@@ -33,21 +33,27 @@ document.addEventListener('DOMContentLoaded', () => {
             this.path = [];
             this.currentPos = { x: Math.random() * width, y: Math.random() * height };
             this.targetPos = { x: this.currentPos.x, y: this.currentPos.y };
-            this.speed = Math.random() * 0.5 + 0.2; // Much slower speed
-            this.color = Math.random() > 0.5 ? 'rgba(65, 209, 255, 0.5)' : 'rgba(189, 52, 254, 0.5)'; // More transparent
-            this.maxLength = Math.random() * 100 + 50;
+            this.speed = Math.random() * 1 + 0.5; // Slightly faster
+            this.color = Math.random() > 0.5 ? 'rgba(65, 209, 255, 0.6)' : 'rgba(189, 52, 254, 0.6)'; // More visible
+            this.maxLength = Math.random() * 150 + 50; // Longer paths
             this.history = [];
             this.timer = 0;
-            this.moveState = 0; // 0: horizontal, 1: vertical
+            this.moveState = Math.random() > 0.5 ? 0 : 1; // Random start direction
         }
 
         update() {
             this.timer++;
             
             // Change direction randomly
-            if (this.timer > Math.random() * 100 + 50) { // Change direction less frequently
+            if (this.timer > Math.random() * 60 + 30) { 
                 this.moveState = this.moveState === 0 ? 1 : 0;
                 this.timer = 0;
+                
+                // Snap to grid-like movement occasionally
+                if (Math.random() > 0.7) {
+                     this.currentPos.x = Math.round(this.currentPos.x / 10) * 10;
+                     this.currentPos.y = Math.round(this.currentPos.y / 10) * 10;
+                }
             }
 
             if (this.moveState === 0) {
@@ -73,8 +79,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             ctx.beginPath();
             ctx.strokeStyle = this.color;
-            ctx.lineWidth = 1; // Thinner lines
-            ctx.shadowBlur = 0; // Removed shadow for subtlety
+            ctx.lineWidth = 1.5; // Slightly thicker
+            ctx.shadowBlur = 2; // Slight glow
+            ctx.shadowColor = this.color;
             
             // Draw path
             ctx.moveTo(this.history[0].x, this.history[0].y);
@@ -84,9 +91,17 @@ document.addEventListener('DOMContentLoaded', () => {
             ctx.stroke();
 
             // Draw head
-            ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+            ctx.fillStyle = '#fff';
+            ctx.shadowBlur = 4;
+            ctx.shadowColor = '#fff';
             ctx.beginPath();
-            ctx.arc(this.currentPos.x, this.currentPos.y, 1.5, 0, Math.PI * 2);
+            ctx.arc(this.currentPos.x, this.currentPos.y, 2, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // Draw start point (node)
+            ctx.fillStyle = this.color;
+            ctx.beginPath();
+            ctx.arc(this.history[0].x, this.history[0].y, 1.5, 0, Math.PI * 2);
             ctx.fill();
         }
     }
@@ -146,11 +161,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             ctx.fillText(text, x, y);
 
-            if (y < 0 && Math.random() > 0.975) {
-                drops[i] = Math.ceil(height / fontSize);
+            if (y > height && Math.random() > 0.975) {
+                drops[i] = 0;
             }
 
-            drops[i] -= 0.05; // Very slow upward movement
+            drops[i] += 0.05; // Very slow downward movement
         }
 
         requestAnimationFrame(draw);
