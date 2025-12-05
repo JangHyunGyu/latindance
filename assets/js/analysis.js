@@ -287,12 +287,7 @@ async function runAnalysis() {
         }
 
         // Markdown Formatting
-        const formattedContent = content
-            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Bold
-            .replace(/### (.*?)\n/g, '<h3>$1</h3>') // H3
-            .replace(/## (.*?)\n/g, '<h2>$1</h2>') // H2
-            .replace(/# (.*?)\n/g, '<h1>$1</h1>') // H1
-            .replace(/\n/g, '<br>'); // Line breaks
+        const formattedContent = marked.parse(content);
 
         modalTitle.textContent = ANALYSIS_CONFIG.messages.resultTitle;
         modalBody.innerHTML = formattedContent;
@@ -416,12 +411,7 @@ window.addEventListener('DOMContentLoaded', async () => {
             const content = data.result;
             latestAnalysisResult = content;
 
-            const formattedContent = content
-                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                .replace(/### (.*?)\n/g, '<h3>$1</h3>')
-                .replace(/## (.*?)\n/g, '<h2>$1</h2>')
-                .replace(/# (.*?)\n/g, '<h1>$1</h1>')
-                .replace(/\n/g, '<br>');
+            const formattedContent = marked.parse(content);
 
             modalTitle.textContent = ANALYSIS_CONFIG.messages.resultTitleShared;
             modalBody.innerHTML = formattedContent;
