@@ -522,12 +522,6 @@
             <h1 class="hero__title">AI 댄스 영상 분석</h1>
             <p class="hero__description">춤 영상을 업로드하면 AI가 동작, 리듬, 자세를 분석하여 피드백을 제공합니다.</p>
             
-            <div style="display: flex; justify-content: center; margin-bottom: 2rem;">
-                <button class="share-btn share-kakao" onclick="shareKakao()">
-                    <span style="font-size: 1.2em;">💬</span> 카카오톡 공유
-                </button>
-            </div>
-
             <div class="options-grid">
                 <div>
                     <label class="section-title">1. 춤 종류 선택</label>
@@ -579,6 +573,9 @@
             </div>
             <button id="scrollTopBtn" title="맨 위로">↑</button>
             <div id="modalFooter" class="modal-footer">
+                <button class="share-btn share-kakao" onclick="shareKakao()" style="margin-right: 10px;">
+                    💬 카카오톡 공유
+                </button>
                 <button class="share-btn share-copy" onclick="copyResult()">
                     📋 결과 복사
                 </button>
