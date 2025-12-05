@@ -185,11 +185,48 @@ function setupCustomSelects() {
             const options = document.createElement('div');
             options.className = 'custom-options';
             
+            // FORCE STYLES: Apply dropdown styles inline
+            options.style.cssText = `
+                position: absolute !important;
+                top: 100% !important;
+                left: 0 !important;
+                right: 0 !important;
+                background: rgba(30, 30, 36, 0.98) !important;
+                border: 1px solid #41d1ff !important;
+                border-top: 0 !important;
+                border-radius: 0 0 12px 12px !important;
+                z-index: 1000 !important;
+                display: none !important;
+                overflow: hidden !important;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+            `;
+            
             Array.from(select.options).forEach(option => {
                 const customOption = document.createElement('div');
                 customOption.className = 'custom-option' + (option.selected ? ' selected' : '');
                 customOption.dataset.value = option.value;
                 customOption.textContent = option.text;
+                
+                // FORCE STYLES: Apply option styles inline
+                customOption.style.cssText = `
+                    padding: 12px 16px !important;
+                    cursor: pointer !important;
+                    color: rgba(255, 255, 255, 0.8) !important;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+                    display: block !important;
+                `;
+                
+                // Add hover effects via JS since inline styles don't support :hover
+                customOption.addEventListener('mouseenter', () => {
+                    customOption.style.background = 'rgba(65, 209, 255, 0.1)';
+                    customOption.style.color = '#fff';
+                });
+                customOption.addEventListener('mouseleave', () => {
+                    if (!customOption.classList.contains('selected')) {
+                        customOption.style.background = 'transparent';
+                        customOption.style.color = 'rgba(255, 255, 255, 0.8)';
+                    }
+                });
                 
                 customOption.addEventListener('click', function(e) {
                     e.stopPropagation();
@@ -205,11 +242,16 @@ function setupCustomSelects() {
                     select.dispatchEvent(event);
                     
                     // Update selected class
-                    options.querySelectorAll('.custom-option').forEach(opt => opt.classList.remove('selected'));
+                    options.querySelectorAll('.custom-option').forEach(opt => {
+                        opt.classList.remove('selected');
+                        opt.style.background = 'transparent'; // Reset style
+                    });
                     this.classList.add('selected');
+                    this.style.background = 'rgba(65, 209, 255, 0.1)'; // Keep selected style
                     
                     // Close dropdown
                     customSelect.classList.remove('open');
+                    options.style.display = 'none';
                 });
                 
                 options.appendChild(customOption);
@@ -231,10 +273,21 @@ function setupCustomSelects() {
                 
                 // Close other open selects
                 document.querySelectorAll('.custom-select').forEach(el => {
-                    if (el !== customSelect) el.classList.remove('open');
+                    if (el !== customSelect) {
+                        el.classList.remove('open');
+                        const otherOptions = el.querySelector('.custom-options');
+                        if (otherOptions) otherOptions.style.display = 'none';
+                    }
                 });
                 
-                customSelect.classList.toggle('open');
+                const isOpen = customSelect.classList.contains('open');
+                if (isOpen) {
+                    customSelect.classList.remove('open');
+                    options.style.display = 'none';
+                } else {
+                    customSelect.classList.add('open');
+                    options.style.display = 'block';
+                }
             });
         } catch (e) {
             console.error('Error creating custom select:', e);
@@ -245,7 +298,11 @@ function setupCustomSelects() {
     // Close dropdown when clicking outside
     document.addEventListener('click', function(e) {
         if (!e.target.closest('.custom-select')) {
-            document.querySelectorAll('.custom-select').forEach(el => el.classList.remove('open'));
+            document.querySelectorAll('.custom-select').forEach(el => {
+                el.classList.remove('open');
+                const opts = el.querySelector('.custom-options');
+                if (opts) opts.style.display = 'none';
+            });
         }
     });
 }
