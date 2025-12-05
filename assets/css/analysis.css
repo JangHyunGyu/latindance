@@ -688,20 +688,20 @@ select:focus {
 
 /* Markdown Result Styling */
 .modal-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Pretendard', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: #e0e0e0;
 }
 
 .modal-body h3 {
-    color: #2c3e50;
-    border-bottom: 2px solid #eee;
+    color: var(--secondary-color);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding-bottom: 10px;
     margin-top: 20px;
 }
 
 .modal-body strong {
-    color: #e74c3c;
+    color: var(--primary-light);
 }
 
 /* Main List (Criteria) */
@@ -712,13 +712,14 @@ select:focus {
 }
 
 .modal-body > ol > li {
-    background: #fff;
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     margin-bottom: 20px;
     padding: 20px;
     position: relative;
-    border-left: 5px solid #3498db;
+    border-left: 5px solid var(--secondary-color);
+    color: #fff;
 }
 
 .modal-body > ol > li::before {
@@ -727,14 +728,15 @@ select:focus {
     position: absolute;
     left: -15px;
     top: 15px;
-    background: #3498db;
-    color: white;
+    background: var(--secondary-color);
+    color: #000;
     width: 30px;
     height: 30px;
     border-radius: 50%;
     text-align: center;
     line-height: 30px;
     font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 /* Nested List (Details) */
@@ -748,10 +750,11 @@ select:focus {
 }
 
 .modal-body > ol > li > ul > li {
-    background: #f8f9fa;
+    background: rgba(0, 0, 0, 0.2);
     padding: 10px;
     border-radius: 5px;
     font-size: 0.9em;
+    color: #ccc;
 }
 
 /* Score Highlighting */
@@ -759,5 +762,5 @@ select:focus {
     display: block;
     font-size: 1.1em;
     margin-bottom: 5px;
-    color: #2980b9;
+    color: var(--primary-light);
 }
