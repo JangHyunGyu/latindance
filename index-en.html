@@ -248,13 +248,21 @@
             .hub-card {
                 height: auto;
                 max-height: none;
-                padding: 4rem 3rem;
+                padding: 3rem 2.5rem;
                 flex: 0 1 450px;
-                aspect-ratio: 4/3;
+                min-height: 320px;
             }
             .hub-icon { font-size: 5rem; margin-bottom: 2rem; }
-            .hub-title { font-size: 2rem; margin-bottom: 1rem; }
-            .hub-desc { font-size: 1.1rem; }
+            .hub-title { 
+                font-size: 2rem; 
+                margin-bottom: 1rem;
+                word-break: keep-all;
+                text-align: center;
+            }
+            .hub-desc { 
+                font-size: 1.1rem;
+                word-break: keep-all;
+            }
             .site-footer {
                 position: relative;
                 bottom: auto;
