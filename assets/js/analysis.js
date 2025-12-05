@@ -287,10 +287,7 @@ async function runAnalysis() {
         }
 
         // Markdown Formatting
-        let formattedContent = marked.parse(content);
-
-        // Add line breaks after periods for better readability
-        formattedContent = formattedContent.replace(/\. /g, '.<br> ').replace(/\.(?=<)/g, '.<br>');
+        const formattedContent = marked.parse(content);
 
         modalTitle.textContent = ANALYSIS_CONFIG.messages.resultTitle;
         modalBody.innerHTML = formattedContent;

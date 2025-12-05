@@ -576,10 +576,9 @@ select:focus {
 .modal-body {
     padding: 2rem;
     overflow-y: auto;
-    line-height: 2.0;
+    line-height: 1.8;
     color: #e0e0e0;
-    font-size: 1.15rem;
-    white-space: pre-wrap;
+    font-size: 1.1rem;
     scrollbar-width: thin;
     scrollbar-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.05);
 }
@@ -710,7 +709,7 @@ select:focus {
 /* Markdown Result Styling */
 .modal-body {
     font-family: 'Pretendard', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 2.0;
+    line-height: 1.8;
     color: #e0e0e0;
 }
 
