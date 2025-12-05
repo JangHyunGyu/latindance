@@ -1,14 +1,9 @@
 /* Custom Select Styles */
-.custom-select-wrapper {
-    position: relative;
-    user-select: none;
-    width: 100%;
-}
-
 .custom-select {
     position: relative;
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .custom-select__trigger {
@@ -26,6 +21,7 @@
     cursor: pointer;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
+    min-height: 50px; /* Ensure height */
 }
 
 .custom-select__trigger:hover {
@@ -34,7 +30,7 @@
 }
 
 .custom-select.open .custom-select__trigger {
-    border-color: var(--secondary-color);
+    border-color: #41d1ff; /* Secondary Color */
     background: rgba(255, 255, 255, 0.1);
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
@@ -69,12 +65,12 @@
 
 .custom-select.open .custom-select__arrow::before {
     transform: rotate(45deg);
-    background-color: var(--secondary-color);
+    background-color: #41d1ff;
 }
 
 .custom-select.open .custom-select__arrow::after {
     transform: rotate(-45deg);
-    background-color: var(--secondary-color);
+    background-color: #41d1ff;
 }
 
 .custom-options {
@@ -83,7 +79,7 @@
     top: 100%;
     left: 0;
     right: 0;
-    border: 1px solid var(--secondary-color);
+    border: 1px solid #41d1ff;
     border-top: 0;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
@@ -132,6 +128,6 @@
     content: '✓';
     position: absolute;
     right: 16px;
-    color: var(--secondary-color);
+    color: #41d1ff;
     font-weight: bold;
 }
