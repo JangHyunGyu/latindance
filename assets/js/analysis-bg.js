@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             this.currentPos = { x: Math.random() * width, y: Math.random() * height };
             this.targetPos = { x: this.currentPos.x, y: this.currentPos.y };
             this.speed = Math.random() * 1 + 0.5; 
-            this.color = Math.random() > 0.5 ? 'rgba(65, 209, 255, 0.3)' : 'rgba(189, 52, 254, 0.3)'; // Much more transparent
+            this.color = Math.random() > 0.5 ? 'rgba(65, 209, 255, 0.1)' : 'rgba(189, 52, 254, 0.1)'; // Very transparent
             this.maxLength = Math.random() * 150 + 50; 
             this.history = [];
             this.timer = 0;
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             ctx.beginPath();
             ctx.strokeStyle = this.color;
-            ctx.lineWidth = 1; // Thinner
+            ctx.lineWidth = 1.5; // Restored thickness
             ctx.shadowBlur = 0; // No glow
             
             // Draw path
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ctx.shadowBlur = 2;
                 ctx.shadowColor = 'rgba(255, 255, 255, 0.2)';
             } else {
-                ctx.fillStyle = i % 2 === 0 ? 'rgba(65, 209, 255, 0.05)' : 'rgba(189, 52, 254, 0.05)'; // Extremely transparent
+                ctx.fillStyle = i % 2 === 0 ? 'rgba(65, 209, 255, 0.1)' : 'rgba(189, 52, 254, 0.1)'; // Restored transparency
                 ctx.shadowBlur = 0;
             }
 
