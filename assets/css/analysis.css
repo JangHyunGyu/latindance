@@ -815,7 +815,7 @@ select:focus {
     position: absolute;
     bottom: 6rem;
     right: 2rem;
-    background: rgba(189, 52, 254, 0.5); /* Semi-transparent Primary */
+    background: rgba(189, 52, 254, 0.3); /* More transparent Primary */
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 50%;
@@ -834,7 +834,7 @@ select:focus {
 
 #scrollTopBtn:hover {
     transform: translateY(-3px);
-    background: rgba(189, 52, 254, 0.8);
+    background: rgba(189, 52, 254, 0.6);
     box-shadow: 0 6px 20px rgba(189, 52, 254, 0.4);
 }
 
@@ -873,7 +873,7 @@ select:focus {
 
 .share-copy {
     background: #00c853; /* Green/Teal */
-    color: white;
+    color: #000;
     border: 1px solid rgba(255,255,255,0.1);
     box-shadow: 0 4px 0 #009624;
 }
