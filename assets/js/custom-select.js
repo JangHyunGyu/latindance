@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function setupCustomSelects() {
-    const selects = document.querySelectorAll('.select-wrapper select');
+    const selects = document.querySelectorAll('.options-grid select');
     
     selects.forEach(select => {
         // Check if already initialized
