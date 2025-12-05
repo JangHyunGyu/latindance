@@ -126,17 +126,24 @@ h1, h2, h3, .hero__title, .modal-title, .site-logo {
 
 .section-title {
     font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--text-muted);
+    font-weight: 700;
+    color: #fff;
     margin-bottom: 0.8rem;
     text-align: left;
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
 
 .section-title::before {
-    display: none;
+    content: '';
+    display: block;
+    width: 4px;
+    height: 14px;
+    background: linear-gradient(to bottom, #41d1ff, #bd34fe);
+    border-radius: 2px;
 }
 
 .options-grid {
@@ -357,13 +364,24 @@ select:focus {
 }
 
 #analyzeBtn:disabled {
-    background: #2f2f35;
-    color: #666;
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: none;
     cursor: not-allowed;
     transform: none;
     filter: none;
     animation: none;
+}
+
+@keyframes pulse-glow {
+    0% { box-shadow: 0 4px 15px rgba(189, 52, 254, 0.4); }
+    50% { box-shadow: 0 4px 25px rgba(189, 52, 254, 0.6); }
+    100% { box-shadow: 0 4px 15px rgba(189, 52, 254, 0.4); }
+}
+
+#analyzeBtn:not(:disabled) {
+    animation: gradient-shift 5s ease infinite, pulse-glow 2s infinite;
 }
 
 #result {
