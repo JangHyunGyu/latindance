@@ -994,6 +994,10 @@ button.scroll-top::-moz-focus-inner {
     --page-padding: 18px;
   }
 
+  .page {
+    padding-top: 20px;
+  }
+
   .site-header__inner {
     flex-direction: column;
     align-items: flex-start;
