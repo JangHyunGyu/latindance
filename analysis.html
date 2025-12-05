@@ -609,6 +609,7 @@
 
         let isAnalyzing = false;
         let latestAnalysisResult = "";
+        let currentAnalysisId = null; // 현재 분석 결과 ID
 
         // File selection handler
         videoInput.addEventListener('change', handleFileSelect);
@@ -859,6 +860,26 @@
                 const content = data.choices?.[0]?.message?.content || "분석 결과를 가져오지 못했습니다.";
                 latestAnalysisResult = content;
 
+                // 결과 저장 (공유를 위해)
+                try {
+                    const saveRes = await fetch(`${API_URL}?action=save_result`, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            result: content,
+                            genre: genre,
+                            type: type
+                        })
+                    });
+                    if (saveRes.ok) {
+                        const saveData = await saveRes.json();
+                        currentAnalysisId = saveData.id;
+                        console.log("Result saved with ID:", currentAnalysisId);
+                    }
+                } catch (saveErr) {
+                    console.warn("Failed to save result for sharing:", saveErr);
+                }
+
                 // Markdown Formatting for Modal
                 const formattedContent = content
                     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Bold
@@ -946,6 +967,11 @@
                     Kakao.init('2a0f97309508f0405a563d70e1c01262');
                 }
 
+                // 공유 링크 생성 (ID가 있으면 포함)
+                const shareUrl = currentAnalysisId 
+                    ? `https://latindance.kr/analysis.html?id=${currentAnalysisId}`
+                    : 'https://latindance.kr/analysis.html';
+
                 Kakao.Share.sendDefault({
                     objectType: 'feed',
                     content: {
@@ -953,16 +979,16 @@
                         description: '내 춤 영상을 AI가 분석해주는 서비스입니다. 지금 바로 체험해보세요!',
                         imageUrl: 'https://latindance.kr/assets/images/kakao_profile.png',
                         link: {
-                            mobileWebUrl: 'https://latindance.kr/analysis.html',
-                            webUrl: 'https://latindance.kr/analysis.html',
+                            mobileWebUrl: shareUrl,
+                            webUrl: shareUrl,
                         },
                     },
                     buttons: [
                         {
-                            title: '분석하러 가기',
+                            title: '분석 결과 보기',
                             link: {
-                                mobileWebUrl: 'https://latindance.kr/analysis.html',
-                                webUrl: 'https://latindance.kr/analysis.html',
+                                mobileWebUrl: shareUrl,
+                                webUrl: shareUrl,
                             },
                         },
                     ],
@@ -986,6 +1012,51 @@
                 alert('결과 복사에 실패했습니다.');
             });
         }
+
+        // 페이지 로드 시 공유된 결과 확인
+        window.addEventListener('DOMContentLoaded', async () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const sharedId = urlParams.get('id');
+
+            if (sharedId) {
+                const API_URL = "https://latindance-api.yama5993.workers.dev";
+                
+                // 모달 띄우고 로딩 표시
+                resultModal.style.display = 'flex';
+                modalTitle.textContent = "공유된 분석 결과 불러오는 중...";
+                modalBody.innerHTML = '<div class="spinner"></div><p style="text-align:center">결과를 가져오고 있습니다...</p>';
+                modalFooter.style.display = 'none';
+                modalCloseBtn.style.display = 'block';
+
+                try {
+                    const res = await fetch(`${API_URL}?action=get_result&id=${sharedId}`);
+                    if (!res.ok) throw new Error("Result not found");
+                    
+                    const data = await res.json();
+                    const content = data.result;
+                    latestAnalysisResult = content; // 복사 기능을 위해 저장
+
+                    // Markdown Formatting
+                    const formattedContent = content
+                        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                        .replace(/### (.*?)\n/g, '<h3>$1</h3>')
+                        .replace(/## (.*?)\n/g, '<h2>$1</h2>')
+                        .replace(/# (.*?)\n/g, '<h1>$1</h1>')
+                        .replace(/\n/g, '<br>');
+
+                    modalTitle.textContent = "AI 분석 결과 (공유됨)";
+                    modalBody.innerHTML = formattedContent;
+                    modalFooter.style.display = 'flex';
+                    
+                    // 공유된 결과임을 알리는 메시지 추가 가능
+                    
+                } catch (err) {
+                    console.error(err);
+                    modalTitle.textContent = "오류 발생";
+                    modalBody.innerHTML = `<p style="text-align:center">공유된 결과를 찾을 수 없거나 만료되었습니다.<br>(${err.message})</p>`;
+                }
+            }
+        });
     </script>
 </body>
 </html>

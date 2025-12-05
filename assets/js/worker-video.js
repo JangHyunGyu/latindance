@@ -222,6 +222,53 @@ export default {
         });
       }
 
+      // 5. 결과 저장 (KV)
+      if (action === "save_result") {
+        if (!env.LATINDANCE_KV) {
+            return new Response(JSON.stringify({ error: "Server Config Error: KV not bound (LATINDANCE_KV)" }), { status: 500, headers: corsHeaders(origin) });
+        }
+        const body = await req.json();
+        const { result, genre, type } = body;
+        
+        // ID 생성
+        const id = crypto.randomUUID();
+        
+        // KV에 저장 (30일 보관)
+        await env.LATINDANCE_KV.put(id, JSON.stringify({ 
+            result, 
+            genre, 
+            type, 
+            createdAt: new Date().toISOString() 
+        }), { expirationTtl: 60 * 60 * 24 * 30 });
+        
+        return new Response(JSON.stringify({ id }), {
+            headers: { ...corsHeaders(origin), "Content-Type": "application/json" }
+        });
+      }
+
+      // 6. 결과 조회 (KV)
+      if (action === "get_result") {
+        if (!env.LATINDANCE_KV) {
+            return new Response(JSON.stringify({ error: "Server Config Error: KV not bound (LATINDANCE_KV)" }), { status: 500, headers: corsHeaders(origin) });
+        }
+        const url = new URL(req.url);
+        const id = url.searchParams.get("id");
+        
+        if (!id) {
+            return new Response(JSON.stringify({ error: "Missing id" }), { status: 400, headers: corsHeaders(origin) });
+        }
+
+        const data = await env.LATINDANCE_KV.get(id);
+        
+        if (!data) {
+            return new Response(JSON.stringify({ error: "Result not found" }), { status: 404, headers: corsHeaders(origin) });
+        }
+        
+        return new Response(data, {
+            headers: { ...corsHeaders(origin), "Content-Type": "application/json" }
+        });
+      }
+
       throw new Error(`Invalid action: ${action}`);
 
     } catch (err) {
