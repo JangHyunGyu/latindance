@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     canvas.style.height = '100%';
     canvas.style.zIndex = '0';
     canvas.style.pointerEvents = 'none';
-    canvas.style.opacity = '0.4'; // Reduced opacity for subtlety
+    canvas.style.opacity = '0.3'; // Even more subtle
     document.body.prepend(canvas);
 
     const ctx = canvas.getContext('2d');
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Circuit Configuration
     const circuits = [];
-    const circuitCount = 15; // Increased count for more circuit feel
+    const circuitCount = 15; 
 
     class Circuit {
         constructor() {
@@ -33,12 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
             this.path = [];
             this.currentPos = { x: Math.random() * width, y: Math.random() * height };
             this.targetPos = { x: this.currentPos.x, y: this.currentPos.y };
-            this.speed = Math.random() * 1 + 0.5; // Slightly faster
-            this.color = Math.random() > 0.5 ? 'rgba(65, 209, 255, 0.6)' : 'rgba(189, 52, 254, 0.6)'; // More visible
-            this.maxLength = Math.random() * 150 + 50; // Longer paths
+            this.speed = Math.random() * 1 + 0.5; 
+            this.color = Math.random() > 0.5 ? 'rgba(65, 209, 255, 0.3)' : 'rgba(189, 52, 254, 0.3)'; // Much more transparent
+            this.maxLength = Math.random() * 150 + 50; 
             this.history = [];
             this.timer = 0;
-            this.moveState = Math.random() > 0.5 ? 0 : 1; // Random start direction
+            this.moveState = Math.random() > 0.5 ? 0 : 1; 
         }
 
         update() {
@@ -79,9 +79,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             ctx.beginPath();
             ctx.strokeStyle = this.color;
-            ctx.lineWidth = 1.5; // Slightly thicker
-            ctx.shadowBlur = 2; // Slight glow
-            ctx.shadowColor = this.color;
+            ctx.lineWidth = 1; // Thinner
+            ctx.shadowBlur = 0; // No glow
             
             // Draw path
             ctx.moveTo(this.history[0].x, this.history[0].y);
@@ -91,17 +90,15 @@ document.addEventListener('DOMContentLoaded', () => {
             ctx.stroke();
 
             // Draw head
-            ctx.fillStyle = '#fff';
-            ctx.shadowBlur = 4;
-            ctx.shadowColor = '#fff';
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.2)'; // Fainter head
             ctx.beginPath();
-            ctx.arc(this.currentPos.x, this.currentPos.y, 2, 0, Math.PI * 2);
+            ctx.arc(this.currentPos.x, this.currentPos.y, 1.5, 0, Math.PI * 2);
             ctx.fill();
             
             // Draw start point (node)
             ctx.fillStyle = this.color;
             ctx.beginPath();
-            ctx.arc(this.history[0].x, this.history[0].y, 1.5, 0, Math.PI * 2);
+            ctx.arc(this.history[0].x, this.history[0].y, 1, 0, Math.PI * 2); // Smaller node
             ctx.fill();
         }
     }
@@ -145,14 +142,14 @@ document.addEventListener('DOMContentLoaded', () => {
         for (let i = 0; i < drops.length; i++) {
             const text = chars.charAt(Math.floor(Math.random() * chars.length));
             
-            const isBright = Math.random() > 0.995; // Very rare sparkle
+            const isBright = Math.random() > 0.998; // Extremely rare sparkle
             
             if (isBright) {
-                ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
-                ctx.shadowBlur = 4;
-                ctx.shadowColor = 'rgba(255, 255, 255, 0.3)';
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.3)'; // Fainter sparkle
+                ctx.shadowBlur = 2;
+                ctx.shadowColor = 'rgba(255, 255, 255, 0.2)';
             } else {
-                ctx.fillStyle = i % 2 === 0 ? 'rgba(65, 209, 255, 0.1)' : 'rgba(189, 52, 254, 0.1)'; // Very transparent
+                ctx.fillStyle = i % 2 === 0 ? 'rgba(65, 209, 255, 0.05)' : 'rgba(189, 52, 254, 0.05)'; // Extremely transparent
                 ctx.shadowBlur = 0;
             }
 
