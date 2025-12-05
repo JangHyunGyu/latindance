@@ -576,10 +576,31 @@ select:focus {
 .modal-body {
     padding: 2rem;
     overflow-y: auto;
-    line-height: 1.7;
+    line-height: 2.0;
     color: #e0e0e0;
-    font-size: 1rem;
+    font-size: 1.15rem;
     white-space: pre-wrap;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.05);
+}
+
+.modal-body::-webkit-scrollbar {
+    width: 8px;
+    display: block;
+}
+
+.modal-body::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
 }
 
 .modal-body h1, .modal-body h2, .modal-body h3 {
@@ -689,7 +710,7 @@ select:focus {
 /* Markdown Result Styling */
 .modal-body {
     font-family: 'Pretendard', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
+    line-height: 2.0;
     color: #e0e0e0;
 }
 
@@ -753,7 +774,7 @@ select:focus {
     background: rgba(0, 0, 0, 0.2);
     padding: 10px;
     border-radius: 5px;
-    font-size: 0.9em;
+    font-size: 1em;
     color: #ccc;
 }
 
