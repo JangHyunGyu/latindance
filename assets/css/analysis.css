@@ -94,13 +94,13 @@ h1, h2, h3, .hero__title, .modal-title, .site-logo {
 
 @media (max-width: 600px) {
     .hero__title {
-        font-size: 2rem;
-        margin-bottom: 0.5rem;
+        font-size: 1.8rem;
+        margin-bottom: 0.4rem;
     }
     .hero__description {
-        font-size: 0.9rem;
-        margin-bottom: 1.5rem;
-        line-height: 1.4;
+        font-size: 0.85rem;
+        margin-bottom: 1.2rem;
+        line-height: 1.3;
     }
 }
 
@@ -171,8 +171,8 @@ h1, h2, h3, .hero__title, .modal-title, .site-logo {
     }
 
     .upload-area {
-        padding: 1.5rem 1rem !important;
-        margin: 1rem 0 !important;
+        padding: 1.2rem 1rem !important;
+        margin: 0.8rem 0 !important;
         border-radius: 12px;
     }
 
