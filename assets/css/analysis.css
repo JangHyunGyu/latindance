@@ -986,10 +986,10 @@ select:focus {
 /* Custom Select Styles - Integrated */
 .custom-select {
     position: relative;
-    display: flex;
-    flex-direction: column;
+    display: block; /* Changed from flex to block to ensure visibility */
     width: 100%;
-    margin-top: 5px; /* Add some spacing */
+    margin-top: 5px;
+    z-index: 10; /* Ensure it's above other elements */
 }
 
 .custom-select__trigger {
@@ -1001,13 +1001,13 @@ select:focus {
     font-size: 1rem;
     font-weight: 500;
     color: #fff;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1); /* Increased opacity */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Increased visibility */
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
-    min-height: 52px; /* Ensure height */
+    min-height: 52px;
     box-sizing: border-box;
 }
 
