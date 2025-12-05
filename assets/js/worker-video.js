@@ -158,7 +158,7 @@ export default {
           body: JSON.stringify({
             contents,
             generationConfig: {
-              temperature: 0.3,
+              temperature: 0.0,
             },
           }),
         });
