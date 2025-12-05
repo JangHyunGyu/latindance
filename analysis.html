@@ -874,12 +874,18 @@
                 // 2. 파일 업로드
                 console.log("Step 2: Upload");
                 modalBody.innerHTML = `
-                    <p id="uploadStatusText">분석 서버로 영상 데이터 전송 중... 0%</p>
-                    <p style="font-size: 0.9rem; color: #888; margin-top: 5px;">(고화질 영상은 데이터 전송 시 시간이 더 길게 소요될 수 있습니다)</p>
+                    <div class="progress-status">분석 서버로 영상 데이터 전송 중...</div>
+                    <div class="progress-text" id="progressPercent">0%</div>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progressBar"></div>
+                    </div>
+                    <p style="font-size: 0.85rem; color: rgba(255,255,255,0.5); text-align:center; margin-top: 20px;">
+                        (고화질 영상은 전송에 시간이 소요될 수 있습니다)
+                    </p>
                 `;
 
-                // 요소를 미리 찾아둠 (콜백 내에서 찾지 않음)
-                const statusText = modalBody.querySelector('#uploadStatusText');
+                const progressBar = modalBody.querySelector('#progressBar');
+                const progressPercent = modalBody.querySelector('#progressPercent');
 
                 const uploadRes = await new Promise((resolve, reject) => {
                     const xhr = new XMLHttpRequest();
@@ -890,8 +896,9 @@
                     xhr.upload.onprogress = (e) => {
                         if (e.lengthComputable) {
                             const percent = Math.round((e.loaded / e.total) * 100);
-                            if (statusText) {
-                                statusText.textContent = `분석 서버로 영상 데이터 전송 중... ${percent}%`;
+                            if (progressBar && progressPercent) {
+                                progressBar.style.width = `${percent}%`;
+                                progressPercent.textContent = `${percent}%`;
                             }
                         }
                     };
