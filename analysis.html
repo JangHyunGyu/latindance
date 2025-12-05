@@ -691,8 +691,8 @@
                 // 2. 파일 업로드
                 console.log("Step 2: Upload");
                 modalBody.innerHTML = `
-                    <p id="uploadStatusText">영상 업로드 중... 0%</p>
-                    <p style="font-size: 0.9rem; color: #888; margin-top: 5px;">(고화질 영상은 시간이 더 걸릴 수 있습니다)</p>
+                    <p id="uploadStatusText">분석 서버로 영상 데이터 전송 중... 0%</p>
+                    <p style="font-size: 0.9rem; color: #888; margin-top: 5px;">(고화질 영상은 데이터 전송 시 시간이 더 길게 소요될 수 있습니다)</p>
                 `;
 
                 // 요소를 미리 찾아둠 (콜백 내에서 찾지 않음)
@@ -708,7 +708,7 @@
                         if (e.lengthComputable) {
                             const percent = Math.round((e.loaded / e.total) * 100);
                             if (statusText) {
-                                statusText.textContent = `영상 업로드 중... ${percent}%`;
+                                statusText.textContent = `분석 서버로 영상 데이터 전송 중... ${percent}%`;
                             }
                         }
                     };
