@@ -690,6 +690,34 @@ select:focus {
     flex-direction: column;
     position: relative;
     border: 1px solid rgba(255,255,255,0.1);
+    transition: box-shadow 0.5s ease, border-color 0.5s ease;
+}
+
+/* Modal Backlight Steps */
+.modal-container.step-init,
+.modal-container.step-upload {
+    border-color: rgba(65, 209, 255, 0.6);
+    box-shadow: 0 0 40px rgba(65, 209, 255, 0.3);
+}
+
+.modal-container.step-processing {
+    border-color: rgba(189, 52, 254, 0.6);
+    box-shadow: 0 0 40px rgba(189, 52, 254, 0.3);
+}
+
+.modal-container.step-analyzing {
+    border-color: rgba(255, 45, 136, 0.6);
+    box-shadow: 0 0 40px rgba(255, 45, 136, 0.3);
+}
+
+.modal-container.step-complete {
+    border-color: rgba(0, 255, 157, 0.6);
+    box-shadow: 0 0 40px rgba(0, 255, 157, 0.3);
+}
+
+.modal-container.step-error {
+    border-color: rgba(255, 82, 82, 0.6);
+    box-shadow: 0 0 40px rgba(255, 82, 82, 0.3);
 }
 
 .modal-header {

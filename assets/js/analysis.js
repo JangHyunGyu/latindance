@@ -18,6 +18,7 @@ const dropZone = document.getElementById('dropZone');
 
 // Modal Elements
 const resultModal = document.getElementById('resultModal');
+const modalContainer = document.querySelector('.modal-container');
 const modalBody = document.getElementById('modalBody');
 const modalTitle = document.getElementById('modalTitle');
 const modalFooter = document.getElementById('modalFooter');
@@ -115,6 +116,7 @@ async function runAnalysis() {
     
     // Show Modal
     resultModal.style.display = 'flex';
+    setModalStep('step-init');
     modalTitle.textContent = ANALYSIS_CONFIG.messages.processTitle;
     modalFooter.style.display = 'none';
     modalCloseBtn.style.display = 'none';
@@ -133,6 +135,7 @@ async function runAnalysis() {
         } else {
             // 1. Init
             console.log("Step 1: Init");
+            setModalStep('step-init');
             modalBody.innerHTML = `<p>${ANALYSIS_CONFIG.messages.stepInit}</p>`;
             const initRes = await fetch(`${API_URL}?action=init`, {
                 method: "POST",
@@ -152,6 +155,7 @@ async function runAnalysis() {
 
             // 2. Upload
             console.log("Step 2: Upload");
+            setModalStep('step-upload');
             modalBody.innerHTML = `
                 <div class="progress-status">${ANALYSIS_CONFIG.messages.stepUpload}</div>
                 <div class="progress-text" id="progressPercent">0%</div>
@@ -209,6 +213,7 @@ async function runAnalysis() {
 
         // 3. Polling
         console.log("Step 3: Polling Status");
+        setModalStep('step-processing');
         modalBody.innerHTML = `
             <div class="loader-orbit"></div>
             <p style="text-align:center; font-weight:bold; color:#41d1ff;">${ANALYSIS_CONFIG.messages.stepProcessing}</p>
@@ -242,6 +247,7 @@ async function runAnalysis() {
 
         // 4. Analyze
         console.log("Step 4: Analyze");
+        setModalStep('step-analyzing');
         modalBody.innerHTML = `
             <div class="loader-wave">
                 <div></div><div></div><div></div><div></div><div></div>
@@ -309,12 +315,14 @@ async function runAnalysis() {
         // Markdown Formatting
         const formattedContent = marked.parse(content);
 
+        setModalStep('step-complete');
         modalTitle.textContent = ANALYSIS_CONFIG.messages.resultTitle;
         modalBody.innerHTML = formattedContent;
         modalFooter.style.display = 'flex';
 
     } catch (error) {
         console.error(error);
+        setModalStep('step-error');
         alert(`${ANALYSIS_CONFIG.messages.errorTitle}: ${error.message}`);
         modalTitle.textContent = ANALYSIS_CONFIG.messages.errorTitle;
         modalBody.innerHTML = `<p style="color:red">${error.message}</p>`;
@@ -336,6 +344,7 @@ function closeModal() {
     if (isAnalyzing) return;
     resultModal.style.display = 'none';
     document.body.style.overflow = 'auto';
+    setModalStep(null);
 }
 
 function shareKakao() {
@@ -444,3 +453,11 @@ window.addEventListener('DOMContentLoaded', async () => {
         }
     }
 });
+
+function setModalStep(step) {
+    if (!modalContainer) return;
+    modalContainer.classList.remove('step-init', 'step-upload', 'step-processing', 'step-analyzing', 'step-complete', 'step-error');
+    if (step) {
+        modalContainer.classList.add(step);
+    }
+}
