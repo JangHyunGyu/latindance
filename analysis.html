@@ -74,6 +74,7 @@
         .site-main {
             height: 100%;
             overflow-y: auto;
+            overflow-x: hidden; /* Prevent horizontal scroll */
             -webkit-overflow-scrolling: touch;
             display: flex;
             flex-direction: column;
@@ -81,6 +82,12 @@
             padding: 2rem 1rem;
             box-sizing: border-box;
             position: relative;
+            scrollbar-width: none; /* Hide scrollbar for Firefox */
+            -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+        }
+
+        .site-main::-webkit-scrollbar {
+            display: none; /* Hide scrollbar for Chrome/Safari */
         }
 
         /* Background Orbs */
@@ -91,6 +98,7 @@
             left: 50%;
             transform: translateX(-50%);
             width: 600px;
+            max-width: 100%; /* Prevent orb from causing overflow on small screens */
             height: 400px;
             background: radial-gradient(ellipse at center, rgba(189, 52, 254, 0.15), transparent 70%);
             z-index: -1;
@@ -270,21 +278,31 @@
 
         .upload-btn-label {
             display: inline-block;
-            padding: 12px 24px;
-            background: #2f2f35;
+            padding: 14px 32px;
+            background: rgba(255, 255, 255, 0.05);
             color: #fff;
-            border-radius: 8px;
+            border-radius: 50px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             margin-bottom: 1rem;
             border: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.95rem;
+            font-size: 1rem;
+            backdrop-filter: blur(5px);
+            position: relative;
+            overflow: hidden;
         }
 
         .upload-btn-label:hover {
-            background: #3a3a42;
-            border-color: rgba(255,255,255,0.3);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary-color);
+            box-shadow: 0 0 20px rgba(189, 52, 254, 0.3);
+            transform: translateY(-2px);
+            color: var(--primary-light);
+        }
+        
+        .upload-btn-label:active {
+            transform: scale(0.95);
         }
 
         .upload-hint {
@@ -296,33 +314,60 @@
             display: none;
         }
 
+        /* Animated Gradient Button for Analyze */
         #analyzeBtn {
             width: 100%;
-            padding: 18px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            background: var(--gradient-vite);
+            padding: 20px;
+            font-size: 1.2rem;
+            font-weight: 800;
             color: white;
             border: none;
-            border-radius: 12px;
+            border-radius: 16px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(189, 52, 254, 0.3);
-            margin-top: 1rem;
+            margin-top: 1.5rem;
             font-family: inherit;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
             position: relative;
             overflow: hidden;
+            z-index: 1;
+            background: linear-gradient(45deg, #41d1ff, #bd34fe, #ff2d88, #41d1ff);
+            background-size: 300% 300%;
+            animation: gradient-shift 5s ease infinite;
+            box-shadow: 0 10px 30px -10px rgba(189, 52, 254, 0.6);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+        }
+
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        #analyzeBtn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s;
+            z-index: -1;
         }
 
         #analyzeBtn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(189, 52, 254, 0.5);
-            filter: brightness(1.1);
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 20px 40px -10px rgba(189, 52, 254, 0.8);
+        }
+
+        #analyzeBtn:hover::before {
+            left: 100%;
+            transition: left 0.7s ease-in-out;
         }
 
         #analyzeBtn:active {
-            transform: translateY(0);
+            transform: translateY(-1px) scale(0.98);
+            box-shadow: 0 5px 15px -5px rgba(189, 52, 254, 0.8);
         }
 
         #analyzeBtn:disabled {
@@ -332,6 +377,7 @@
             cursor: not-allowed;
             transform: none;
             filter: none;
+            animation: none;
         }
 
         #result {
@@ -540,39 +586,55 @@
             background: var(--primary-light);
         }
 
-        /* Share Buttons */
+        /* Share Buttons with 3D effect */
         .share-btn {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.8rem 1.5rem;
-            border-radius: 8px;
+            gap: 0.6rem;
+            padding: 1rem 2rem;
+            border-radius: 12px;
             border: none;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             font-family: inherit;
-            font-size: 0.95rem;
-        }
-
-        .share-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            font-size: 1rem;
+            position: relative;
+            top: 0;
         }
 
         .share-kakao {
             background: #FEE500;
             color: #000000;
+            box-shadow: 0 4px 0 #c6b000;
+        }
+
+        .share-kakao:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0 #c6b000;
+        }
+
+        .share-kakao:active {
+            transform: translateY(2px);
+            box-shadow: 0 0 0 #c6b000;
         }
 
         .share-copy {
             background: #3a3a42;
             color: white;
             border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 4px 0 #222;
         }
         
         .share-copy:hover {
             background: #45454d;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0 #222;
+        }
+
+        .share-copy:active {
+            transform: translateY(2px);
+            box-shadow: 0 0 0 #222;
         }
     </style>
 </head>
