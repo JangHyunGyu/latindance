@@ -403,16 +403,25 @@
                 50% { box-shadow: 0 0 35px rgba(255, 142, 97, 0.2); border-color: rgba(255, 142, 97, 0.3); }
             }
 
+            /* 3. Mobile 3D Sway (Gyroscope Simulation) */
+            @keyframes mobile-3d-sway {
+                0% { transform: perspective(1000px) rotateX(0) rotateY(0); }
+                25% { transform: perspective(1000px) rotateX(3deg) rotateY(3deg); }
+                50% { transform: perspective(1000px) rotateX(0) rotateY(0); }
+                75% { transform: perspective(1000px) rotateX(-3deg) rotateY(-3deg); }
+                100% { transform: perspective(1000px) rotateX(0) rotateY(0); }
+            }
+
             .hub-card:first-child {
-                animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards, neon-pulse-1 4s infinite ease-in-out;
+                animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards, neon-pulse-1 4s infinite ease-in-out, mobile-3d-sway 8s infinite ease-in-out;
             }
             
             .hub-card:last-child {
-                animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards, neon-pulse-2 4s infinite ease-in-out;
-                animation-delay: 0.15s, 2s;
+                animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards, neon-pulse-2 4s infinite ease-in-out, mobile-3d-sway 8s infinite ease-in-out reverse;
+                animation-delay: 0.15s, 2s, 1s;
             }
 
-            /* 3. Auto Shine Effect (자동 빛 반사) */
+            /* 4. Auto Shine Effect (자동 빛 반사) */
             .mobile-shine {
                 position: absolute;
                 top: 0;
