@@ -37,7 +37,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem 1rem;
+    padding: 5rem 1rem 2rem; /* Increased top padding for header buttons */
     box-sizing: border-box;
     position: relative;
     scrollbar-width: none; /* Hide scrollbar for Firefox */
@@ -46,6 +46,69 @@ body {
 
 .site-main::-webkit-scrollbar {
     display: none; /* Hide scrollbar for Chrome/Safari */
+}
+
+/* Home Navigation */
+.home-nav {
+    position: absolute;
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    width: auto;
+    margin: 0;
+}
+
+.home-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 6px 16px;
+    border-radius: 100px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.home-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+    border-color: var(--primary-light);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.home-btn:active {
+    transform: translateY(0);
+}
+
+.home-icon {
+    font-size: 1rem;
+}
+
+.home-text {
+    letter-spacing: 1px;
+    font-family: 'Pretendard', sans-serif;
+}
+
+/* Mobile Adjustments for Header */
+@media (max-width: 600px) {
+    .home-nav {
+        top: 1rem;
+    }
+    .home-btn {
+        padding: 5px 12px;
+        font-size: 0.8rem;
+        gap: 5px;
+    }
+    .home-icon {
+        font-size: 0.9rem;
+    }
 }
 
 /* Background Orbs */
