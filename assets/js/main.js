@@ -1223,8 +1223,10 @@ const initScrollTop = () => {
     const scrollY = window.scrollY || window.pageYOffset || 0;
     if (scrollY > threshold) {
       button.classList.add("is-visible");
+      button.style.display = "flex"; // Ensure it's visible
     } else {
       button.classList.remove("is-visible");
+      button.style.display = "none"; // Force hide
       resetInlineStyles();
     }
     ticking = false;
