@@ -156,21 +156,32 @@
         }
 
         @media (max-width: 600px) {
+            html {
+                font-size: 14px;
+            }
+
             .analysis-container {
-                padding: 1.5rem;
-                margin: auto;
+                width: 95%;
+                padding: 1.5rem 1rem;
+                margin: 1rem auto;
                 border-radius: 20px;
             }
             
             .options-grid {
                 grid-template-columns: 1fr 1fr;
-                gap: 1rem;
+                gap: 0.8rem;
                 margin-bottom: 1.5rem;
             }
 
             .upload-area {
-                padding: 2rem 1rem !important;
+                padding: 2.5rem 1rem !important;
                 margin: 1.5rem 0 !important;
+            }
+        }
+
+        @media (max-width: 360px) {
+            html {
+                font-size: 12px;
             }
         }
 
