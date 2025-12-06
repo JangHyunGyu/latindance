@@ -1162,16 +1162,6 @@ const registerEvents = () => {
     }
     applyFilters();
   });
-
-  const navLinks = document.querySelectorAll('.site-nav__link');
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      const href = link.getAttribute('href');
-      if (href.includes('index-es.html')) setStoredLanguage('es');
-      else if (href.includes('index-en.html')) setStoredLanguage('en');
-      else setStoredLanguage('ko');
-    });
-  });
 };
 
 populateRegions();
