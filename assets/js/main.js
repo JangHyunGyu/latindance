@@ -1,20 +1,6 @@
 const LANGUAGE_STORAGE_KEY = "latindance:language";
 
-const getStoredLanguage = () => {
-  try {
-    return localStorage.getItem(LANGUAGE_STORAGE_KEY);
-  } catch (error) {
-    return null;
-  }
-};
-
-const setStoredLanguage = (code) => {
-  try {
-    localStorage.setItem(LANGUAGE_STORAGE_KEY, code);
-  } catch (error) {
-    // Ignore
-  }
-};
+// 저장소 관련 함수 제거 (사용하지 않음)
 
 const detectBrowserLanguage = () => {
   const candidate = Array.isArray(navigator.languages) && navigator.languages.length
@@ -30,24 +16,45 @@ const detectBrowserLanguage = () => {
 };
 
 const docLang = (document.documentElement.lang || "en").toLowerCase();
-const storedLang = getStoredLanguage();
 const browserLang = detectBrowserLanguage();
-const preferredLang = storedLang || browserLang;
+const preferredLang = browserLang; // 저장된 언어 무시
 
-// 저장된 언어 설정이 없을 때만(첫 방문 시) 브라우저 언어에 따라 리다이렉션합니다.
-if (!storedLang && browserLang) {
+// 검색 봇 감지 (SEO 문제 방지)
+const isBot = /bot|googlebot|crawler|spider|robot|crawling/i.test(navigator.userAgent);
+
+// 내부 이동 감지 (사이트 내에서 링크 클릭으로 이동한 경우 리다이렉트 방지)
+const referrer = document.referrer;
+const isInternal = referrer && referrer.indexOf(window.location.hostname) !== -1;
+
+// 봇이 아니고, 내부 이동이 아닐 때만(외부 유입/첫 진입) 브라우저 언어에 따라 리다이렉션합니다.
+if (browserLang && !isBot && !isInternal) {
+  const currentPath = window.location.pathname;
+  const currentFile = currentPath.substring(currentPath.lastIndexOf('/') + 1) || "index.html";
+  
+  // 현재 파일명에서 기본 이름 추출 (예: clubs-en.html -> clubs)
+  let baseName = currentFile.replace(/-en\.html$|-es\.html$|\.html$/, "");
+  if (!baseName) baseName = "index";
+
   let targetFile = null;
-  if (browserLang === "ko" && !docLang.startsWith("ko")) targetFile = "index.html";
-  else if (browserLang === "es" && !docLang.startsWith("es")) targetFile = "index-es.html";
-  else if (browserLang === "en" && !docLang.startsWith("en")) targetFile = "index-en.html";
+  
+  // 브라우저 언어와 현재 페이지 언어가 다를 경우 타겟 파일 설정
+  if (browserLang === "ko" && !docLang.startsWith("ko")) {
+    targetFile = baseName + ".html";
+  } else if (browserLang === "es" && !docLang.startsWith("es")) {
+    targetFile = baseName + "-es.html";
+  } else if (browserLang === "en" && !docLang.startsWith("en")) {
+    targetFile = baseName + "-en.html";
+  }
 
-  if (targetFile) {
+  // 타겟 파일이 존재하고 현재 파일과 다를 경우 이동
+  if (targetFile && targetFile !== currentFile) {
     window.location.replace(targetFile);
   }
 }
 
-// 현재 페이지의 언어를 저장소에 업데이트합니다.
+// 언어 저장 로직 제거
 if (docLang.startsWith("ko")) {
+
   setStoredLanguage("ko");
 } else if (docLang.startsWith("es")) {
   setStoredLanguage("es");
