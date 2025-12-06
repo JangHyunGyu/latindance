@@ -52,16 +52,6 @@ if (browserLang && !isBot && !isInternal) {
   }
 }
 
-// 언어 저장 로직 제거
-if (docLang.startsWith("ko")) {
-
-  setStoredLanguage("ko");
-} else if (docLang.startsWith("es")) {
-  setStoredLanguage("es");
-} else {
-  setStoredLanguage("en");
-}
-
 const LOCALE = docLang.startsWith("ko") ? "ko" : (docLang.startsWith("es") ? "es" : "en");
 
 const STRINGS = {
