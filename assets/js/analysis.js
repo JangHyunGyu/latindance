@@ -79,6 +79,11 @@ const modalFooter = document.getElementById('modalFooter');
 const scrollTopBtn = document.getElementById('scrollTopBtn');
 const modalCloseBtn = document.getElementById('modalCloseBtn');
 
+// Guide Modal Elements
+const guideBtn = document.getElementById('guideBtn');
+const guideModal = document.getElementById('guideModal');
+const guideCloseBtn = document.getElementById('guideCloseBtn');
+
 let isAnalyzing = false;
 let latestAnalysisResult = "";
 let currentAnalysisId = null;
@@ -116,6 +121,24 @@ resultModal.addEventListener('click', (e) => {
     if (isAnalyzing) return;
     if (e.target === resultModal) {
         closeModal();
+    }
+});
+
+// Guide Modal Events
+guideBtn.addEventListener('click', () => {
+    guideModal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+});
+
+guideCloseBtn.addEventListener('click', () => {
+    guideModal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+});
+
+guideModal.addEventListener('click', (e) => {
+    if (e.target === guideModal) {
+        guideModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
     }
 });
 

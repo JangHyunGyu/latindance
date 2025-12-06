@@ -82,8 +82,11 @@
         </div>
         <div class="analysis-container">
             <h1 class="hero__title">Dance Analysis</h1>
-            <p class="hero__description">Select your video. The analysis engine will analyze your movements, rhythm, and posture.</p>
             
+            <button id="guideBtn" class="guide-btn">
+                <span class="guide-icon">ℹ️</span> User Guide
+            </button>
+
             <div class="options-grid">
                 <div>
                     <label class="section-title">Genre</label>
@@ -135,6 +138,65 @@
                 <button class="share-btn share-copy" onclick="copyResult()">
                     📋 Copy Result
                 </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Guide Modal -->
+    <div id="guideModal" class="modal-overlay">
+        <div class="modal-container guide-container">
+            <div class="modal-header">
+                <h3 class="modal-title">User Guide</h3>
+                <button id="guideCloseBtn" class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body guide-body">
+                <div class="guide-section">
+                    <h4>🤖 What is Dance Analysis?</h4>
+                    <p>Our advanced motion engine scans your video frame-by-frame to analyze joint movements with precision.</p>
+                    <p>It compares your dance with World Class dancers to objectively evaluate <strong>Accuracy, Rhythm, Posture, and Connection</strong>.</p>
+                </div>
+                
+                
+
+                <div class="guide-section">
+                    <h4>🏆 What are Reference Dancers?</h4>
+                    <p>We use data from World Champions as the standard. <strong>A perfect score of 10 represents the level of these champions</strong>, and your performance is evaluated relative to this high standard.</p>
+                    <h5 class="reference-title">Reference Dancers by Genre</h5>
+                    <ul class="reference-list">
+                        <li><strong>Salsa</strong>: Terry & Cecile, Fernando Sosa, Adolfo Indacochea, Eddie Torres</li>
+                        <li><strong>Bachata</strong>: Daniel & Desiree, Ataca & La Alemana, Marco & Sara, Luis & Andrea</li>
+                        <li><strong>Kizomba</strong>: Albir Rojas, Isabelle & Felicien</li>
+                        <li><strong>Zouk</strong>: Kadu & Larissa, William & Paloma</li>
+                    </ul>
+
+                    <div class="guide-sub-text">
+                        <span class="guide-icon">💡</span>
+                        <div class="guide-content">
+                            Since you are compared to World Champions, your score might be lower than expected. Don't be disappointed!
+                            <strong>A score of 6-7 is considered advanced level for social dancers.</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guide-section">
+                    <h4>💡 How to Use</h4>
+                    <ol>
+                        <li><strong>Select Genre</strong>: Choose from Salsa, Bachata, Kizomba, Zouk</li>
+                        <li><strong>Select Type</strong>: Choose Social (for fun) or Performance (stage)</li>
+                        <li><strong>Select Video</strong>: Select or drag & drop the video to analyze</li>
+                        <li><strong>Start Analysis</strong>: Click the button to start analysis (takes 1-2 mins)</li>
+                    </ol>
+                </div>
+
+                <div class="guide-section">
+                    <h4>⚠️ Recommendations</h4>
+                    <ul>
+                        <li>We recommend using a video where the dancer's (or couple's) full body is clearly visible.</li>
+                        <li>Accuracy may decrease if there are many other dancers in the background.</li>
+                        <li>Videos that are too dark or shaky may be difficult to analyze.</li>
+                        <li>File size must be under 100MB. (Please compress before uploading)</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

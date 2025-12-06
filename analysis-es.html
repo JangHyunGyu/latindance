@@ -82,8 +82,11 @@
         </div>
         <div class="analysis-container">
             <h1 class="hero__title">Análisis de Baile</h1>
-            <p class="hero__description">Elige tu video. El motor de análisis analizará tus movimientos, ritmo y postura.</p>
             
+            <button id="guideBtn" class="guide-btn">
+                <span class="guide-icon">ℹ️</span> Guía de Usuario
+            </button>
+
             <div class="options-grid">
                 <div>
                     <label class="section-title">Género</label>
@@ -135,6 +138,65 @@
                 <button class="share-btn share-copy" onclick="copyResult()">
                     📋 Copiar Resultado
                 </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Guide Modal -->
+    <div id="guideModal" class="modal-overlay">
+        <div class="modal-container guide-container">
+            <div class="modal-header">
+                <h3 class="modal-title">Guía de Usuario</h3>
+                <button id="guideCloseBtn" class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body guide-body">
+                <div class="guide-section">
+                    <h4>🤖 ¿Qué es el Análisis de Baile?</h4>
+                    <p>Nuestro motor avanzado escanea tu video cuadro por cuadro para analizar los movimientos articulares con precisión.</p>
+                    <p>Compara tu baile con el de Campeones Mundiales para evaluar objetivamente <strong>Precisión, Ritmo, Postura y Conexión</strong>.</p>
+                </div>
+                
+                
+
+                <div class="guide-section">
+                    <h4>🏆 ¿Qué son los Bailarines de Referencia?</h4>
+                    <p>Utilizamos datos de Campeones Mundiales como estándar. <strong>Una puntuación perfecta de 10 representa el nivel de estos campeones</strong>, y tu rendimiento se evalúa en relación con este alto estándar.</p>
+                    <h5 class="reference-title">Lista de Bailarines de Referencia por Género</h5>
+                    <ul class="reference-list">
+                        <li><strong>Salsa</strong>: Terry & Cecile, Fernando Sosa, Adolfo Indacochea, Eddie Torres</li>
+                        <li><strong>Bachata</strong>: Daniel & Desiree, Ataca & La Alemana, Marco & Sara, Luis & Andrea</li>
+                        <li><strong>Kizomba</strong>: Albir Rojas, Isabelle & Felicien</li>
+                        <li><strong>Zouk</strong>: Kadu & Larissa, William & Paloma</li>
+                    </ul>
+
+                    <div class="guide-sub-text">
+                        <span class="guide-icon">💡</span>
+                        <div class="guide-content">
+                            Dado que se te compara con Campeones Mundiales, tu puntuación puede ser más baja de lo esperado. ¡No te decepciones!
+                            <strong>Una puntuación de 6-7 se considera nivel avanzado para bailarines sociales.</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guide-section">
+                    <h4>💡 Cómo Usar</h4>
+                    <ol>
+                        <li><strong>Seleccionar Género</strong>: Elige entre Salsa, Bachata, Kizomba, Zouk</li>
+                        <li><strong>Seleccionar Tipo</strong>: Elige Social (diversión) o Actuación (escenario)</li>
+                        <li><strong>Seleccionar Video</strong>: Selecciona o arrastra el video para analizar</li>
+                        <li><strong>Iniciar Análisis</strong>: Haz clic en el botón para comenzar (tarda 1-2 min)</li>
+                    </ol>
+                </div>
+
+                <div class="guide-section">
+                    <h4>⚠️ Recomendaciones</h4>
+                    <ul>
+                        <li>Se recomienda un video donde se vea claramente el cuerpo completo del bailarín (o pareja).</li>
+                        <li>La precisión puede disminuir si hay muchos otros bailarines alrededor.</li>
+                        <li>Los videos demasiado oscuros o movidos pueden ser difíciles de analizar.</li>
+                        <li>El tamaño del archivo debe ser menor a 100MB. (Por favor comprime antes de subir)</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
