@@ -234,29 +234,27 @@
                 let referenceDancers = "World Champion level dancers";
                 let genreFocus = "Accuracy of movement, rhythm, connection with partner, posture, etc.";
                 let analysisFormat = `
-                    1. **Overall Review**: Overall feel, musical interpretation, atmosphere
+                    1. **Overall Review**: Dance style, energy, overall impression
                     2. **Leader Analysis**:
-                    - **Pros**: (Specific details based on criteria below)
-                    - **Cons & Improvements**: (Specific details based on criteria below)
+                    - **Pros**: (Specific details based on detailed rating items below)
+                    - **Cons & Improvements**: (Specific details based on detailed rating items below)
                     - **Detailed Scores**:
-                        - **Rhythm & Timing**: (0~10, one decimal place)
-                        - **Posture & Frame**: (0~10, one decimal place)
-                        - **Connection**: (0~10, one decimal place)
-                        - **Movement Accuracy**: (0~10, one decimal place)
-                        - **Artistry**: (0~10, one decimal place)
-                        - **Partnership**: (0~10, one decimal place, breathing & care)
-                    - **Overall Score**: (Average of above 6 items and Grade. e.g., "6.5 - Advanced Social Dancer". *Grade Criteria: 10(World Champion), 9(Top Pro), 8(Pro Instructor), 7(Semi-Pro/Performance Team), 6(Advanced Social), 5(High-Intermediate Social), 4(Intermediate Social), 3(Low-Intermediate Social), 2(Beginner), 1(Novice)*)
+                        - **Basic & Rhythm**: (0~10, one decimal place, accuracy)
+                        - **Connection & Leading**: (0~10, one decimal place, smoothness)
+                        - **Body Movement**: (0~10, one decimal place, flexibility)
+                        - **Musicality**: (0~10, one decimal place, musical interpretation)
+                        - **Partnership**: (0~10, one decimal place, care)
+                    - **Overall Score**: (Average of above 5 items and Grade. e.g., "6.5 - Advanced Social Dancer". *Grade Criteria: 10(World Class), 9(Top Pro), 8(Pro Instructor), 7(Semi-Pro/Performance Team), 6(Advanced Social), 5(High-Intermediate Social), 4(Intermediate Social), 3(Low-Intermediate Social), 2(Beginner), 1(Novice)*)
                     3. **Follower Analysis**:
-                    - **Pros**: (Specific details based on criteria below)
-                    - **Cons & Improvements**: (Specific details based on criteria below)
+                    - **Pros**: (Specific details based on detailed rating items below)
+                    - **Cons & Improvements**: (Specific details based on detailed rating items below)
                     - **Detailed Scores**:
-                        - **Rhythm & Timing**: (0~10, one decimal place)
-                        - **Posture & Frame**: (0~10, one decimal place)
-                        - **Connection**: (0~10, one decimal place)
-                        - **Movement Accuracy**: (0~10, one decimal place)
-                        - **Artistry**: (0~10, one decimal place)
-                        - **Partnership**: (0~10, one decimal place, breathing & care)
-                    - **Overall Score**: (Average of above 6 items and Grade. e.g., "6.5 - Advanced Social Dancer". *Grade Criteria: 10(World Champion), 9(Top Pro), 8(Pro Instructor), 7(Semi-Pro/Performance Team), 6(Advanced Social), 5(High-Intermediate Social), 4(Intermediate Social), 3(Low-Intermediate Social), 2(Beginner), 1(Novice)*)`;
+                        - **Basic & Rhythm**: (0~10, one decimal place, accuracy)
+                        - **Connection & Following**: (0~10, one decimal place, responsiveness)
+                        - **Body Movement**: (0~10, one decimal place, flexibility)
+                        - **Musicality**: (0~10, one decimal place, musical interpretation)
+                        - **Styling**: (0~10, one decimal place, expressiveness)
+                    - **Overall Score**: (Average of above 5 items and Grade. e.g., "6.5 - Advanced Social Dancer". *Grade Criteria: 10(World Class), 9(Top Pro), 8(Pro Instructor), 7(Semi-Pro/Performance Team), 6(Advanced Social), 5(High-Intermediate Social), 4(Intermediate Social), 3(Low-Intermediate Social), 2(Beginner), 1(Novice)*)`;
 
                 if (genre === "Salsa") {
                     referenceDancers = "Terry & Cecile, Fernando Sosa, Adolfo Indacochea, Eddie Torres";
@@ -268,25 +266,26 @@
                     - **Pros**: (Specific details based on detailed rating items below)
                     - **Cons & Improvements**: (Specific details based on detailed rating items below)
                     - **Detailed Scores**:
-                        - **Choreography Mastery & Accuracy**: (0~10)
-                        - **Technique (Turn/Spin)**: (0~10)
-                        - **Footwork & Shines**: (0~10)
-                        - **Partner Support & Lifts**: (0~10, Stability)
-                        - **Line & Posture**: (0~10, Body Extension)
-                        - **Showmanship & Styling**: (0~10)
-                        - **Synchronization**: (0~10, Partner matching)
-                    - **Overall Score**: (Average & Grade. *Criteria: 10(World Champ) ~ 1(Novice)*)
+                        - **Choreography Mastery & Accuracy**: (0~10, one decimal place, mistake-free execution)
+                        - **Technique (Turn/Spin)**: (0~10, one decimal place, axis maintenance & speed)
+                        - **Footwork & Shines**: (0~10, one decimal place, fast & accurate steps)
+                        - **Partner Support & Lifts**: (0~10, one decimal place, stability)
+                        - **Line & Posture**: (0~10, one decimal place, body extension)
+                        - **Showmanship & Styling**: (0~10, one decimal place, audience engagement)
+                        - **Synchronization**: (0~10, one decimal place, matching with partner)
+                    - **Overall Score**: (Average & Grade. *Criteria: 10(World Class), 9(Top Pro), 8(Pro Instructor), 7(Semi-Pro/Performance Team), 6(Advanced Social), 5(High-Intermediate Social), 4(Intermediate Social), 3(Low-Intermediate Social), 2(Beginner), 1(Novice)*)
                     3. **Follower Performance Analysis**:
                     - **Pros**: (Specific details based on detailed rating items below)
                     - **Cons & Improvements**: (Specific details based on detailed rating items below)
                     - **Detailed Scores**:
-                        - **Choreography Mastery & Accuracy**: (0~10)
-                        - **Technique (Turn/Spin/Flexibility)**: (0~10)
-                        - **Footwork & Shines**: (0~10)
-                        - **Line & Posture**: (0~10, Fingertips/Toes)
-                        - **Showmanship & Styling**: (0~10)
-                        - **Musicality**: (0~10)
-                    - **Overall Score**: (Average & Grade. *Criteria: 10(World Champ) ~ 1(Novice)*)`;
+                        - **Choreography Mastery & Accuracy**: (0~10, one decimal place, mistake-free execution)
+                        - **Technique (Turn/Spin/Flexibility)**: (0~10, one decimal place, axis maintenance & flexibility)
+                        - **Footwork & Shines**: (0~10, one decimal place, fast & accurate steps)
+                        - **Line & Posture**: (0~10, one decimal place, fingertips/toes)
+                        - **Showmanship & Styling**: (0~10, one decimal place, audience engagement)
+                        - **Musicality (Choreography Execution)**: (0~10, one decimal place, expression of musical accents)
+                        - **Synchronization**: (0~10, one decimal place, matching with partner)
+                    - **Overall Score**: (Average & Grade. *Criteria: 10(World Class), 9(Top Pro), 8(Pro Instructor), 7(Semi-Pro/Performance Team), 6(Advanced Social), 5(High-Intermediate Social), 4(Intermediate Social), 3(Low-Intermediate Social), 2(Beginner), 1(Novice)*)`;
                     } else {
                         genreFocus = "Salsa is all about **'Clave Rhythm' based accurate steps and timing**. From a Social Dance perspective, please focus on comfortable leading/following, safety, and enjoyment.";
                         analysisFormat = `
@@ -295,25 +294,25 @@
                     - **Pros**: (Specific details based on detailed rating items below)
                     - **Cons & Improvements**: (Specific details based on detailed rating items below)
                     - **Detailed Scores**:
-                        - **Timing**: (0~10, Clave adherence)
-                        - **Leading & Signals**: (0~10, Clarity & Tension)
-                        - **Basic & Steps**: (0~10, Stability)
-                        - **Pattern Flow**: (0~10, Natural flow)
-                        - **Musicality**: (0~10, Interpretation)
-                        - **Partnership & Manner**: (0~10, Eye contact & Care)
-                        - **Floorcraft**: (0~10, Space usage & Safety)
-                    - **Overall Score**: (Average & Grade. *Criteria: 10(World Champ) ~ 1(Novice)*)
+                        - **Timing**: (0~10, one decimal place, adherence to Clave rhythm)
+                        - **Leading & Signals**: (0~10, one decimal place, clarity & tension)
+                        - **Basic & Steps**: (0~10, one decimal place, stability)
+                        - **Pattern Flow**: (0~10, one decimal place, natural flow)
+                        - **Musicality**: (0~10, one decimal place, interpretation)
+                        - **Partnership & Manner**: (0~10, one decimal place, eye contact & care)
+                        - **Floorcraft**: (0~10, one decimal place, collision prevention & space usage)
+                    - **Overall Score**: (Average & Grade. e.g., "6.5 - Advanced Social Dancer". *Criteria: 10(World Class), 9(Top Pro), 8(Pro Instructor), 7(Semi-Pro/Performance Team), 6(Advanced Social), 5(High-Intermediate Social), 4(Intermediate Social), 3(Low-Intermediate Social), 2(Beginner), 1(Novice)*)
                     3. **Follower Analysis**:
                     - **Pros**: (Specific details based on detailed rating items below)
                     - **Cons & Improvements**: (Specific details based on detailed rating items below)
                     - **Detailed Scores**:
-                        - **Timing**: (0~10, Maintaining beat)
-                        - **Following & Tension**: (0~10, Reaction speed & Connection)
-                        - **Basic & Steps**: (0~10, Stability)
-                        - **Posture & Balance**: (0~10, Turn stability)
-                        - **Partnership & Interaction**: (0~10, Enjoyment & Eye contact)
-                        - **Floorcraft**: (0~10, Space usage & Safety)
-                    - **Overall Score**: (Average & Grade. *Criteria: 10(World Champ) ~ 1(Novice)*)`;
+                        - **Timing**: (0~10, one decimal place, maintaining beat)
+                        - **Following & Tension**: (0~10, one decimal place, reaction speed & connection)
+                        - **Basic & Steps**: (0~10, one decimal place, stability)
+                        - **Posture & Balance**: (0~10, one decimal place, turn stability)
+                        - **Partnership & Interaction**: (0~10, one decimal place, enjoyment & eye contact)
+                        - **Floorcraft**: (0~10, one decimal place, collision prevention & space usage)
+                    - **Overall Score**: (Average & Grade. e.g., "6.5 - Advanced Social Dancer". *Criteria: 10(World Class), 9(Top Pro), 8(Pro Instructor), 7(Semi-Pro/Performance Team), 6(Advanced Social), 5(High-Intermediate Social), 4(Intermediate Social), 3(Low-Intermediate Social), 2(Beginner), 1(Novice)*)`;
                     }
                 }
                 else if (genre === "Bachata") {
@@ -326,26 +325,26 @@
                     - **Pros**: (Specific details based on detailed rating items below)
                     - **Cons & Improvements**: (Specific details based on detailed rating items below)
                     - **Detailed Scores**:
-                        - **Choreography Mastery**: (0~10)
-                        - **Technique (Body Movement/Isolation)**: (0~10)
-                        - **Partner Support & Tricks**: (0~10, Stability)
-                        - **Line & Posture**: (0~10)
-                        - **Showmanship & Styling**: (0~10)
-                        - **Musicality**: (0~10)
-                        - **Transitions**: (0~10, Smooth connection)
-                    - **Overall Score**: (Average & Grade. *Criteria: 10(World Champ) ~ 1(Novice)*)
+                        - **Choreography Mastery**: (0~10, one decimal place, no interruption in flow)
+                        - **Technique (Body Movement/Isolation)**: (0~10, one decimal place, flexibility & range of motion)
+                        - **Partner Support & Tricks**: (0~10, one decimal place, stability)
+                        - **Line & Posture**: (0~10, one decimal place, body extension)
+                        - **Showmanship & Styling**: (0~10, one decimal place, emotional delivery)
+                        - **Musicality (Choreography Execution)**: (0~10, one decimal place, expression of lyrics & beat)
+                        - **Transitions**: (0~10, one decimal place, smoothness of movement connection)
+                    - **Overall Score**: (Average & Grade. *Criteria: 10(World Class), 9(Top Pro), 8(Pro Instructor), 7(Semi-Pro/Performance Team), 6(Advanced Social), 5(High-Intermediate Social), 4(Intermediate Social), 3(Low-Intermediate Social), 2(Beginner), 1(Novice)*)
                     3. **Follower Performance Analysis**:
                     - **Pros**: (Specific details based on detailed rating items below)
                     - **Cons & Improvements**: (Specific details based on detailed rating items below)
                     - **Detailed Scores**:
-                        - **Choreography Mastery**: (0~10)
-                        - **Technique (Body Movement/Flexibility)**: (0~10)
-                        - **Line & Posture**: (0~10)
-                        - **Balance & Core**: (0~10)
-                        - **Showmanship & Styling**: (0~10)
-                        - **Musicality**: (0~10)
-                        - **Transitions**: (0~10, Smooth connection)
-                    - **Overall Score**: (Average & Grade. *Criteria: 10(World Champ) ~ 1(Novice)*)`;
+                        - **Choreography Mastery**: (0~10, one decimal place, no interruption in flow)
+                        - **Technique (Body Movement/Flexibility)**: (0~10, one decimal place, flexibility & range of motion)
+                        - **Line & Posture**: (0~10, one decimal place, fingertips/toes)
+                        - **Balance & Core**: (0~10, one decimal place, weight transfer)
+                        - **Showmanship & Styling**: (0~10, one decimal place, emotional delivery)
+                        - **Musicality (Choreography Execution)**: (0~10, one decimal place, expression of lyrics & beat)
+                        - **Transitions**: (0~10, one decimal place, smoothness of movement connection)
+                    - **Overall Score**: (Average & Grade. *Criteria: 10(World Class), 9(Top Pro), 8(Pro Instructor), 7(Semi-Pro/Performance Team), 6(Advanced Social), 5(High-Intermediate Social), 4(Intermediate Social), 3(Low-Intermediate Social), 2(Beginner), 1(Novice)*)`;
                     } else {
                         genreFocus = "Bachata emphasizes **'Sensual Body Movement' and 'Cuban Motion'**. In Social Dance, proper distance, safe leading, and emotional connection are key.";
                         analysisFormat = `
@@ -354,25 +353,25 @@
                     - **Pros**: (Specific details based on detailed rating items below)
                     - **Cons & Improvements**: (Specific details based on detailed rating items below)
                     - **Detailed Scores**:
-                        - **Basic & Rhythm**: (0~10)
-                        - **Frame & Posture**: (0~10)
-                        - **Leading & Connection**: (0~10, Smoothness)
-                        - **Body Movement**: (0~10, Wave/Isolation)
-                        - **Musicality**: (0~10, Emotion & Breaks)
-                        - **Partnership & Safety**: (0~10, Distance & Safety)
-                        - **Distance Control**: (0~10, Position switching)
-                    - **Overall Score**: (Average & Grade. *Criteria: 10(World Champ) ~ 1(Novice)*)
+                        - **Basic & Rhythm**: (0~10, one decimal place, on-beat/off-beat)
+                        - **Frame & Posture**: (0~10, one decimal place, stable holding)
+                        - **Leading & Connection**: (0~10, one decimal place, smoothness & signals)
+                        - **Body Movement**: (0~10, one decimal place, wave/isolation)
+                        - **Musicality**: (0~10, one decimal place, emotional expression & breaks)
+                        - **Partnership & Safety**: (0~10, one decimal place, distance & safety)
+                        - **Distance Control**: (0~10, one decimal place, appropriateness of position switching)
+                    - **Overall Score**: (Average & Grade. e.g., "6.5 - Advanced Social Dancer". *Criteria: 10(World Class), 9(Top Pro), 8(Pro Instructor), 7(Semi-Pro/Performance Team), 6(Advanced Social), 5(High-Intermediate Social), 4(Intermediate Social), 3(Low-Intermediate Social), 2(Beginner), 1(Novice)*)
                     3. **Follower Analysis**:
                     - **Pros**: (Specific details based on detailed rating items below)
                     - **Cons & Improvements**: (Specific details based on detailed rating items below)
                     - **Detailed Scores**:
-                        - **Basic & Rhythm**: (0~10)
-                        - **Frame & Connection**: (0~10)
-                        - **Following**: (0~10)
-                        - **Body Movement**: (0~10, Flexibility & Hip)
-                        - **Partnership & Chemistry**: (0~10)
-                        - **Distance Control**: (0~10, Position switching)
-                    - **Overall Score**: (Average & Grade. *Criteria: 10(World Champ) ~ 1(Novice)*)`;
+                        - **Basic & Rhythm**: (0~10, one decimal place, step accuracy)
+                        - **Frame & Connection**: (0~10, one decimal place, tension maintenance)
+                        - **Following**: (0~10, one decimal place, lead receptivity & reaction)
+                        - **Body Movement**: (0~10, one decimal place, flexibility & hip)
+                        - **Partnership & Chemistry**: (0~10, one decimal place, sharing emotions)
+                        - **Distance Control**: (0~10, one decimal place, appropriateness of position switching)
+                    - **Overall Score**: (Average & Grade. e.g., "6.5 - Advanced Social Dancer". *Criteria: 10(World Class), 9(Top Pro), 8(Pro Instructor), 7(Semi-Pro/Performance Team), 6(Advanced Social), 5(High-Intermediate Social), 4(Intermediate Social), 3(Low-Intermediate Social), 2(Beginner), 1(Novice)*)`;
                     }
                 }
                 else if (genre === "Kizomba") {
@@ -385,28 +384,28 @@
                     - **Pros**: (Specific details based on detailed rating items below)
                     - **Cons & Improvements**: (Specific details based on detailed rating items below)
                     - **Detailed Scores**:
-                        - **Choreography Mastery**: (0~10)
-                        - **Technique (Dissociation)**: (0~10)
-                        - **Footwork**: (0~10, Saidas & Syncopation)
-                        - **Partner Support & Leading**: (0~10)
-                        - **Line & Posture**: (0~10)
-                        - **Showmanship & Atmosphere**: (0~10)
-                        - **Musicality**: (0~10)
-                        - **Stillness**: (0~10, Core stability)
-                    - **Overall Score**: (Average & Grade. *Criteria: 10(World Champ) ~ 1(Novice)*)
+                        - **Choreography Mastery**: (0~10, one decimal place, perfect unison)
+                        - **Technique (Dissociation)**: (0~10, one decimal place, upper/lower body separation)
+                        - **Footwork**: (0~10, one decimal place, Saidas & Syncopation)
+                        - **Partner Support & Leading**: (0~10, one decimal place, stability)
+                        - **Line & Posture**: (0~10, one decimal place, body extension)
+                        - **Showmanship & Atmosphere**: (0~10, one decimal place, immersion)
+                        - **Musicality (Beat Splitting)**: (0~10, one decimal place, micro-beat expression)
+                        - **Stillness**: (0~10, one decimal place, unshakable core)
+                    - **Overall Score**: (Average & Grade. *Criteria: 10(World Class), 9(Top Pro), 8(Pro Instructor), 7(Semi-Pro/Performance Team), 6(Advanced Social), 5(High-Intermediate Social), 4(Intermediate Social), 3(Low-Intermediate Social), 2(Beginner), 1(Novice)*)
                     3. **Follower Performance Analysis**:
                     - **Pros**: (Specific details based on detailed rating items below)
                     - **Cons & Improvements**: (Specific details based on detailed rating items below)
                     - **Detailed Scores**:
-                        - **Choreography Mastery**: (0~10)
-                        - **Technique (Ginga/Dissociation)**: (0~10)
-                        - **Footwork**: (0~10)
-                        - **Line & Posture**: (0~10)
-                        - **Balance & Core**: (0~10)
-                        - **Showmanship & Atmosphere**: (0~10)
-                        - **Musicality**: (0~10)
-                        - **Stillness**: (0~10, Core stability)
-                    - **Overall Score**: (Average & Grade. *Criteria: 10(World Champ) ~ 1(Novice)*)`;
+                        - **Choreography Mastery**: (0~10, one decimal place, perfect unison)
+                        - **Technique (Ginga/Dissociation)**: (0~10, one decimal place, upper/lower body separation)
+                        - **Footwork**: (0~10, one decimal place, Saidas & Syncopation)
+                        - **Line & Posture**: (0~10, one decimal place, fingertips/toes)
+                        - **Balance & Core**: (0~10, one decimal place, weight transfer)
+                        - **Showmanship & Atmosphere**: (0~10, one decimal place, immersion)
+                        - **Musicality (Beat Splitting)**: (0~10, one decimal place, micro-beat expression)
+                        - **Stillness**: (0~10, one decimal place, unshakable core)
+                    - **Overall Score**: (Average & Grade. *Criteria: 10(World Class), 9(Top Pro), 8(Pro Instructor), 7(Semi-Pro/Performance Team), 6(Advanced Social), 5(High-Intermediate Social), 4(Intermediate Social), 3(Low-Intermediate Social), 2(Beginner), 1(Novice)*)`;
                     } else {
                         genreFocus = "Kizomba is about **'Grounding' and 'Smooth Weight Transfer'**. In Social Dance, comfortable Embrace, adjusting steps to partner, and oneness in music are important.";
                         analysisFormat = `
@@ -415,26 +414,26 @@
                     - **Pros**: (Specific details based on detailed rating items below)
                     - **Cons & Improvements**: (Specific details based on detailed rating items below)
                     - **Detailed Scores**:
-                        - **Grounding & Steps**: (0~10)
-                        - **Connection & Holding**: (0~10, Embrace)
-                        - **Leading**: (0~10, Weight transfer)
-                        - **Musicality**: (0~10)
-                        - **Dissociation**: (0~10)
-                        - **Partnership & Care**: (0~10)
-                        - **Step Size Control**: (0~10, Adjusting to partner)
-                    - **Overall Score**: (Average & Grade. *Criteria: 10(World Champ) ~ 1(Novice)*)
+                        - **Grounding & Steps**: (0~10, one decimal place, floor support)
+                        - **Connection & Holding**: (0~10, one decimal place, upper body closeness & comfort)
+                        - **Leading**: (0~10, one decimal place, clear weight transfer)
+                        - **Musicality**: (0~10, one decimal place, beat splitting & stillness)
+                        - **Dissociation**: (0~10, one decimal place, upper/lower body separation)
+                        - **Partnership & Care**: (0~10, one decimal place, matching partner's step size)
+                        - **Step Size Control**: (0~10, one decimal place, partner-adapted steps)
+                    - **Overall Score**: (Average & Grade. e.g., "6.5 - Advanced Social Dancer". *Criteria: 10(World Class), 9(Top Pro), 8(Pro Instructor), 7(Semi-Pro/Performance Team), 6(Advanced Social), 5(High-Intermediate Social), 4(Intermediate Social), 3(Low-Intermediate Social), 2(Beginner), 1(Novice)*)
                     3. **Follower Analysis**:
                     - **Pros**: (Specific details based on detailed rating items below)
                     - **Cons & Improvements**: (Specific details based on detailed rating items below)
                     - **Detailed Scores**:
-                        - **Grounding & Steps**: (0~10)
-                        - **Connection & Holding**: (0~10)
-                        - **Following**: (0~10)
-                        - **Ginga & Movement**: (0~10)
-                        - **Musicality**: (0~10)
-                        - **Partnership & Trust**: (0~10)
-                        - **Step Size Control**: (0~10, Adjusting to partner)
-                    - **Overall Score**: (Average & Grade. *Criteria: 10(World Champ) ~ 1(Novice)*)`;
+                        - **Grounding & Steps**: (0~10, one decimal place, stability)
+                        - **Connection & Holding**: (0~10, one decimal place, weight control)
+                        - **Following**: (0~10, one decimal place, sensing subtle weight transfers)
+                        - **Ginga & Movement**: (0~10, one decimal place, hip movement)
+                        - **Musicality**: (0~10, one decimal place, riding the music)
+                        - **Partnership & Trust**: (0~10, one decimal place, surrendering to leader)
+                        - **Step Size Control**: (0~10, one decimal place, partner-adapted steps)
+                    - **Overall Score**: (Average & Grade. e.g., "6.5 - Advanced Social Dancer". *Criteria: 10(World Class), 9(Top Pro), 8(Pro Instructor), 7(Semi-Pro/Performance Team), 6(Advanced Social), 5(High-Intermediate Social), 4(Intermediate Social), 3(Low-Intermediate Social), 2(Beginner), 1(Novice)*)`;
                     }
                 }
                 else if (genre === "Zouk") {
@@ -447,54 +446,54 @@
                     - **Pros**: (Specific details based on detailed rating items below)
                     - **Cons & Improvements**: (Specific details based on detailed rating items below)
                     - **Detailed Scores**:
-                        - **Choreography Mastery**: (0~10)
-                        - **Technique (Head Leading/Counter Balance)**: (0~10)
-                        - **Partner Support & Lifts**: (0~10)
-                        - **Line & Posture**: (0~10)
-                        - **Showmanship & Styling**: (0~10)
-                        - **Musicality**: (0~10)
-                        - **Fluidity**: (0~10, Continuous flow)
-                    - **Overall Score**: (Average & Grade. *Criteria: 10(World Champ) ~ 1(Novice)*)
+                        - **Choreography Mastery & Accuracy**: (0~10, one decimal place, storytelling)
+                        - **Technique (Head Leading/Counter Balance)**: (0~10, one decimal place, safe & large movements)
+                        - **Partner Support & Lifts**: (0~10, one decimal place, stability)
+                        - **Line & Posture**: (0~10, one decimal place, body extension)
+                        - **Showmanship & Styling**: (0~10, one decimal place, hair movement & lines)
+                        - **Musicality (Dynamic)**: (0~10, one decimal place, narrative arc)
+                        - **Fluidity**: (0~10, one decimal place, uninterrupted flow)
+                    - **Overall Score**: (Average & Grade. *Criteria: 10(World Class), 9(Top Pro), 8(Pro Instructor), 7(Semi-Pro/Performance Team), 6(Advanced Social), 5(High-Intermediate Social), 4(Intermediate Social), 3(Low-Intermediate Social), 2(Beginner), 1(Novice)*)
                     3. **Follower Performance Analysis**:
                     - **Pros**: (Specific details based on detailed rating items below)
                     - **Cons & Improvements**: (Specific details based on detailed rating items below)
                     - **Detailed Scores**:
-                        - **Choreography Mastery**: (0~10)
-                        - **Technique (Head Movement/Cambré)**: (0~10)
-                        - **Line & Posture**: (0~10)
-                        - **Balance & Core**: (0~10)
-                        - **Showmanship & Styling**: (0~10)
-                        - **Musicality**: (0~10)
-                        - **Fluidity**: (0~10, Continuous flow)
-                    - **Overall Score**: (Average & Grade. *Criteria: 10(World Champ) ~ 1(Novice)*)`;
+                        - **Choreography Mastery & Accuracy**: (0~10, one decimal place, storytelling)
+                        - **Technique (Head Movement/Counter Balance)**: (0~10, one decimal place, safe & large movements)
+                        - **Partner Support & Lifts**: (0~10, one decimal place, stability)
+                        - **Line & Posture**: (0~10, one decimal place, body extension)
+                        - **Showmanship & Styling**: (0~10, one decimal place, hair movement & lines)
+                        - **Musicality (Dynamic)**: (0~10, one decimal place, narrative arc)
+                        - **Fluidity**: (0~10, one decimal place, uninterrupted flow)
+                    - **Overall Score**: (Average & Grade. *Criteria: 10(World Class), 9(Top Pro), 8(Pro Instructor), 7(Semi-Pro/Performance Team), 6(Advanced Social), 5(High-Intermediate Social), 4(Intermediate Social), 3(Low-Intermediate Social), 2(Beginner), 1(Novice)*)`;
                     } else {
-                        genreFocus = "Zouk features **'Head Movement' and 'Flow'**. In Social Dance, safe leading protecting partner's neck/back and continuous flow are priority.";
+                        genreFocus = "Zouk features **'Head Movement' and 'Flow'**. In Social Dance, safe leading protecting the partner's neck/back during head movement and continuous water-like connection are priorities.";
                         analysisFormat = `
-                    1. **Overall Review**: Flow, Natural Head Movement, Dynamics
+                    1. **Overall Review**: Zouk Flow, Natural Head Movement, Dynamics
                     2. **Leader Analysis**:
                     - **Pros**: (Specific details based on detailed rating items below)
                     - **Cons & Improvements**: (Specific details based on detailed rating items below)
                     - **Detailed Scores**:
-                        - **Basic & Rhythm**: (0~10)
-                        - **Connection & Frame**: (0~10)
-                        - **Leading & Flow**: (0~10)
-                        - **Head Movement Leading**: (0~10, Safety)
-                        - **Dynamics**: (0~10)
-                        - **Partnership & Safety**: (0~10)
-                        - **Grounding**: (0~10, Lower body support)
-                    - **Overall Score**: (Average & Grade. *Criteria: 10(World Champ) ~ 1(Novice)*)
+                        - **Basic & Rhythm**: (0~10, one decimal place, steps)
+                        - **Connection & Frame**: (0~10, one decimal place, elasticity)
+                        - **Leading & Flow**: (0~10, one decimal place, connection & smoothness)
+                        - **Head Movement Leading**: (0~10, one decimal place, safe guide)
+                        - **Dynamics**: (0~10, one decimal place, intensity control)
+                        - **Partnership & Safety**: (0~10, one decimal place, partner protection & space usage)
+                        - **Grounding**: (0~10, one decimal place, lower body support)
+                    - **Overall Score**: (Average & Grade. e.g., "6.5 - Advanced Social Dancer". *Criteria: 10(World Class), 9(Top Pro), 8(Pro Instructor), 7(Semi-Pro/Performance Team), 6(Advanced Social), 5(High-Intermediate Social), 4(Intermediate Social), 3(Low-Intermediate Social), 2(Beginner), 1(Novice)*)
                     3. **Follower Analysis**:
                     - **Pros**: (Specific details based on detailed rating items below)
                     - **Cons & Improvements**: (Specific details based on detailed rating items below)
                     - **Detailed Scores**:
-                        - **Basic & Rhythm**: (0~10)
-                        - **Connection & Axis**: (0~10)
-                        - **Following**: (0~10)
-                        - **Head Movement Tech**: (0~10)
-                        - **Flexibility & Isolation**: (0~10)
-                        - **Partnership & Breath**: (0~10)
-                        - **Grounding**: (0~10, Lower body support)
-                    - **Overall Score**: (Average & Grade. *Criteria: 10(World Champ) ~ 1(Novice)*)`;
+                        - **Basic & Rhythm**: (0~10, one decimal place, steps)
+                        - **Connection & Axis**: (0~10, one decimal place, maintaining balance)
+                        - **Following**: (0~10, one decimal place, waiting for lead & reaction)
+                        - **Head Movement Tech**: (0~10, one decimal place, neck/waist usage)
+                        - **Flexibility & Isolation**: (0~10, one decimal place, range of motion)
+                        - **Partnership & Breath**: (0~10, one decimal place, energy exchange)
+                        - **Grounding**: (0~10, one decimal place, lower body support)
+                    - **Overall Score**: (Average & Grade. e.g., "6.5 - Advanced Social Dancer". *Criteria: 10(World Class), 9(Top Pro), 8(Pro Instructor), 7(Semi-Pro/Performance Team), 6(Advanced Social), 5(High-Intermediate Social), 4(Intermediate Social), 3(Low-Intermediate Social), 2(Beginner), 1(Novice)*)`;
                     }
                 }
 

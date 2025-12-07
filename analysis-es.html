@@ -234,29 +234,27 @@
                 let referenceDancers = "Bailarines de Nivel Campeón Mundial";
                 let genreFocus = "Por favor, concéntrate en la precisión del movimiento, el ritmo, la conexión con la pareja y la postura.";
                 let analysisFormat = `
-                    1. **Revisión General**: Sensación general del baile, interpretación musical, atmósfera
+                    1. **Revisión General**: Estilo de baile, energía, impresión general
                     2. **Análisis del Líder (Leader)**:
                     - **Pros**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Contras y Mejoras**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Puntajes Detallados**:
-                        - **Ritmo y Tiempo**: (0~10, con un decimal)
-                        - **Postura y Marco**: (0~10, con un decimal)
-                        - **Conexión**: (0~10, con un decimal)
-                        - **Precisión del Movimiento**: (0~10, con un decimal)
-                        - **Artisticidad**: (0~10, con un decimal)
-                        - **Compañerismo**: (0~10, con un decimal, respiración y cuidado)
-                    - **Puntaje General**: (Promedio de los 6 elementos anteriores y Grado. ej., "6.5 - Bailarín Social Avanzado". *Criterios de Grado: 10(Campeón Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)
+                        - **Básico y Ritmo**: (0~10, con un decimal, precisión)
+                        - **Conexión y Liderazgo**: (0~10, con un decimal, suavidad)
+                        - **Movimiento Corporal**: (0~10, con un decimal, flexibilidad)
+                        - **Musicalidad**: (0~10, con un decimal, interpretación musical)
+                        - **Compañerismo**: (0~10, con un decimal, cuidado)
+                    - **Puntaje General**: (Promedio de los 5 elementos anteriores y Grado. ej., "6.5 - Bailarín Social Avanzado". *Criterios de Grado: 10(Clase Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)
                     3. **Análisis del Seguidor (Follower)**:
                     - **Pros**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Contras y Mejoras**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Puntajes Detallados**:
-                        - **Ritmo y Tiempo**: (0~10, con un decimal)
-                        - **Postura y Marco**: (0~10, con un decimal)
-                        - **Conexión**: (0~10, con un decimal)
-                        - **Precisión del Movimiento**: (0~10, con un decimal)
-                        - **Artisticidad**: (0~10, con un decimal)
-                        - **Compañerismo**: (0~10, con un decimal, respiración y cuidado)
-                    - **Puntaje General**: (Promedio de los 6 elementos anteriores y Grado. ej., "6.5 - Bailarín Social Avanzado". *Criterios de Grado: 10(Campeón Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)`;
+                        - **Básico y Ritmo**: (0~10, con un decimal, precisión)
+                        - **Conexión y Seguimiento**: (0~10, con un decimal, capacidad de respuesta)
+                        - **Movimiento Corporal**: (0~10, con un decimal, flexibilidad)
+                        - **Musicalidad**: (0~10, con un decimal, interpretación musical)
+                        - **Estilo**: (0~10, con un decimal, expresividad)
+                    - **Puntaje General**: (Promedio de los 5 elementos anteriores y Grado. ej., "6.5 - Bailarín Social Avanzado". *Criterios de Grado: 10(Clase Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)`;
 
                 if (genre === "Salsa") {
                     referenceDancers = "Terry & Cecile, Fernando Sosa, Adolfo Indacochea, Eddie Torres";
@@ -268,25 +266,26 @@
                     - **Pros**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Contras y Mejoras**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Puntajes Detallados**:
-                        - **Dominio y Precisión de la Coreografía**: (0~10)
-                        - **Técnica (Giro/Spin)**: (0~10)
-                        - **Juego de Pies y Shines**: (0~10)
-                        - **Soporte de Pareja y Elevaciones**: (0~10, Estabilidad)
-                        - **Línea y Postura**: (0~10, Extensión Corporal)
-                        - **Espectáculo y Estilo**: (0~10)
-                        - **Sincronización**: (0~10, Coincidencia con la pareja)
-                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Campeón Mundial) ~ 1(Novato)*)
+                        - **Dominio y Precisión de la Coreografía**: (0~10, con un decimal, ejecución sin errores)
+                        - **Técnica (Giro/Spin)**: (0~10, con un decimal, mantenimiento del eje y velocidad)
+                        - **Juego de Pies y Shines**: (0~10, con un decimal, pasos rápidos y precisos)
+                        - **Soporte de Pareja y Elevaciones**: (0~10, con un decimal, estabilidad)
+                        - **Línea y Postura**: (0~10, con un decimal, extensión corporal)
+                        - **Espectáculo y Estilo**: (0~10, con un decimal, interacción con la audiencia)
+                        - **Sincronización**: (0~10, con un decimal, coordinación con la pareja)
+                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Clase Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)
                     3. **Análisis de Actuación del Seguidor**:
                     - **Pros**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Contras y Mejoras**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Puntajes Detallados**:
-                        - **Dominio y Precisión de la Coreografía**: (0~10)
-                        - **Técnica (Giro/Spin/Flexibilidad)**: (0~10)
-                        - **Juego de Pies y Shines**: (0~10)
-                        - **Línea y Postura**: (0~10, Puntas de dedos/Pies)
-                        - **Espectáculo y Estilo**: (0~10)
-                        - **Musicalidad**: (0~10)
-                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Campeón Mundial) ~ 1(Novato)*)`;
+                        - **Dominio y Precisión de la Coreografía**: (0~10, con un decimal, ejecución sin errores)
+                        - **Técnica (Giro/Spin/Flexibilidad)**: (0~10, con un decimal, mantenimiento del eje y flexibilidad)
+                        - **Juego de Pies y Shines**: (0~10, con un decimal, pasos rápidos y precisos)
+                        - **Línea y Postura**: (0~10, con un decimal, puntas de dedos/pies)
+                        - **Espectáculo y Estilo**: (0~10, con un decimal, interacción con la audiencia)
+                        - **Musicalidad (Ejecución de Coreografía)**: (0~10, con un decimal, expresión de acentos musicales)
+                        - **Sincronización**: (0~10, con un decimal, coordinación con la pareja)
+                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Clase Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)`;
                     } else {
                         genreFocus = "La salsa se trata de **pasos precisos y tiempo basados en el 'Ritmo Clave'**. Desde una perspectiva de Baile Social, por favor concéntrate en liderar/seguir cómodamente, la seguridad y el disfrute.";
                         analysisFormat = `
@@ -295,25 +294,25 @@
                     - **Pros**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Contras y Mejoras**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Puntajes Detallados**:
-                        - **Tiempo**: (0~10, Adherencia a la Clave)
-                        - **Liderazgo y Señales**: (0~10, Claridad y Tensión)
-                        - **Básico y Pasos**: (0~10, Estabilidad)
-                        - **Flujo de Patrones**: (0~10, Flujo natural)
-                        - **Musicalidad**: (0~10, Interpretación)
-                        - **Compañerismo y Modales**: (0~10, Contacto visual y Cuidado)
-                        - **Manejo del Espacio (Floorcraft)**: (0~10, Uso del espacio y Seguridad)
-                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Campeón Mundial) ~ 1(Novato)*)
+                        - **Tiempo**: (0~10, con un decimal, adherencia al ritmo Clave)
+                        - **Liderazgo y Señales**: (0~10, con un decimal, claridad y tensión)
+                        - **Básico y Pasos**: (0~10, con un decimal, estabilidad)
+                        - **Flujo de Patrones**: (0~10, con un decimal, flujo natural)
+                        - **Musicalidad**: (0~10, con un decimal, interpretación)
+                        - **Compañerismo y Modales**: (0~10, con un decimal, contacto visual y cuidado)
+                        - **Manejo del Espacio (Floorcraft)**: (0~10, con un decimal, prevención de choques y uso del espacio)
+                    - **Puntaje General**: (Promedio y Grado. ej., "6.5 - Bailarín Social Avanzado". *Criterios: 10(Clase Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)
                     3. **Análisis del Seguidor**:
                     - **Pros**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Contras y Mejoras**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Puntajes Detallados**:
-                        - **Tiempo**: (0~10, Mantener el ritmo)
-                        - **Seguimiento y Tensión**: (0~10, Velocidad de reacción y Conexión)
-                        - **Básico y Pasos**: (0~10, Estabilidad)
-                        - **Postura y Equilibrio**: (0~10, Estabilidad en giros)
-                        - **Compañerismo e Interacción**: (0~10, Disfrute y Contacto visual)
-                        - **Manejo del Espacio (Floorcraft)**: (0~10, Uso del espacio y Seguridad)
-                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Campeón Mundial) ~ 1(Novato)*)`;
+                        - **Tiempo**: (0~10, con un decimal, mantener el compás)
+                        - **Seguimiento y Tensión**: (0~10, con un decimal, velocidad de reacción y conexión)
+                        - **Básico y Pasos**: (0~10, con un decimal, estabilidad)
+                        - **Postura y Equilibrio**: (0~10, con un decimal, estabilidad en giros)
+                        - **Compañerismo e Interacción**: (0~10, con un decimal, disfrute y contacto visual)
+                        - **Manejo del Espacio (Floorcraft)**: (0~10, con un decimal, prevención de choques y uso del espacio)
+                    - **Puntaje General**: (Promedio y Grado. ej., "6.5 - Bailarín Social Avanzado". *Criterios: 10(Clase Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)`;
                     }
                 }
                 else if (genre === "Bachata") {
@@ -326,26 +325,26 @@
                     - **Pros**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Contras y Mejoras**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Puntajes Detallados**:
-                        - **Dominio de la Coreografía**: (0~10)
-                        - **Técnica (Movimiento Corporal/Aislamiento)**: (0~10)
-                        - **Soporte de Pareja y Trucos**: (0~10, Estabilidad)
-                        - **Línea y Postura**: (0~10)
-                        - **Espectáculo y Estilo**: (0~10)
-                        - **Musicalidad**: (0~10)
-                        - **Transiciones**: (0~10, Conexión suave)
-                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Campeón Mundial) ~ 1(Novato)*)
+                        - **Dominio de la Coreografía**: (0~10, con un decimal, sin interrupción en el flujo)
+                        - **Técnica (Movimiento Corporal/Aislamiento)**: (0~10, con un decimal, flexibilidad y rango de movimiento)
+                        - **Soporte de Pareja y Trucos**: (0~10, con un decimal, estabilidad)
+                        - **Línea y Postura**: (0~10, con un decimal, extensión corporal)
+                        - **Espectáculo y Estilo**: (0~10, con un decimal, entrega emocional)
+                        - **Musicalidad (Ejecución de Coreografía)**: (0~10, con un decimal, expresión de letras y ritmo)
+                        - **Transiciones**: (0~10, con un decimal, suavidad en la conexión de movimientos)
+                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Clase Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)
                     3. **Análisis de Actuación del Seguidor**:
                     - **Pros**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Contras y Mejoras**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Puntajes Detallados**:
-                        - **Dominio de la Coreografía**: (0~10)
-                        - **Técnica (Movimiento Corporal/Flexibilidad)**: (0~10)
-                        - **Línea y Postura**: (0~10)
-                        - **Equilibrio y Núcleo**: (0~10)
-                        - **Espectáculo y Estilo**: (0~10)
-                        - **Musicalidad**: (0~10)
-                        - **Transiciones**: (0~10, Conexión suave)
-                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Campeón Mundial) ~ 1(Novato)*)`;
+                        - **Dominio de la Coreografía**: (0~10, con un decimal, sin interrupción en el flujo)
+                        - **Técnica (Movimiento Corporal/Flexibilidad)**: (0~10, con un decimal, flexibilidad y rango de movimiento)
+                        - **Línea y Postura**: (0~10, con un decimal, puntas de dedos/pies)
+                        - **Equilibrio y Núcleo**: (0~10, con un decimal, transferencia de peso)
+                        - **Espectáculo y Estilo**: (0~10, con un decimal, entrega emocional)
+                        - **Musicalidad (Ejecución de Coreografía)**: (0~10, con un decimal, expresión de letras y ritmo)
+                        - **Transiciones**: (0~10, con un decimal, suavidad en la conexión de movimientos)
+                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Clase Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)`;
                     } else {
                         genreFocus = "La Bachata enfatiza el **'Movimiento Corporal Sensual' y el 'Movimiento Cubano'**. En el Baile Social, la distancia adecuada, el liderazgo seguro y la conexión emocional son clave.";
                         analysisFormat = `
@@ -354,25 +353,25 @@
                     - **Pros**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Contras y Mejoras**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Puntajes Detallados**:
-                        - **Básico y Ritmo**: (0~10)
-                        - **Marco y Postura**: (0~10)
-                        - **Liderazgo y Conexión**: (0~10, Suavidad)
-                        - **Movimiento Corporal**: (0~10, Onda/Aislamiento)
-                        - **Musicalidad**: (0~10, Emoción y Cortes)
-                        - **Compañerismo y Seguridad**: (0~10, Distancia y Seguridad)
-                        - **Control de Distancia**: (0~10, Cambio de posición)
-                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Campeón Mundial) ~ 1(Novato)*)
+                        - **Básico y Ritmo**: (0~10, con un decimal, a tiempo/fuera de tiempo)
+                        - **Marco y Postura**: (0~10, con un decimal, agarre estable)
+                        - **Liderazgo y Conexión**: (0~10, con un decimal, suavidad y señales)
+                        - **Movimiento Corporal**: (0~10, con un decimal, onda/aislamiento)
+                        - **Musicalidad**: (0~10, con un decimal, expresión emocional y cortes)
+                        - **Compañerismo y Seguridad**: (0~10, con un decimal, distancia y seguridad)
+                        - **Control de Distancia**: (0~10, con un decimal, idoneidad del cambio de posición)
+                    - **Puntaje General**: (Promedio y Grado. ej., "6.5 - Bailarín Social Avanzado". *Criterios: 10(Clase Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)
                     3. **Análisis del Seguidor**:
                     - **Pros**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Contras y Mejoras**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Puntajes Detallados**:
-                        - **Básico y Ritmo**: (0~10)
-                        - **Marco y Conexión**: (0~10)
-                        - **Seguimiento**: (0~10)
-                        - **Movimiento Corporal**: (0~10, Flexibilidad y Cadera)
-                        - **Compañerismo y Química**: (0~10)
-                        - **Control de Distancia**: (0~10, Cambio de posición)
-                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Campeón Mundial) ~ 1(Novato)*)`;
+                        - **Básico y Ritmo**: (0~10, con un decimal, precisión del paso)
+                        - **Marco y Conexión**: (0~10, con un decimal, mantenimiento de la tensión)
+                        - **Seguimiento**: (0~10, con un decimal, receptividad y reacción al liderazgo)
+                        - **Movimiento Corporal**: (0~10, con un decimal, flexibilidad y cadera)
+                        - **Compañerismo y Química**: (0~10, con un decimal, compartir emociones)
+                        - **Control de Distancia**: (0~10, con un decimal, idoneidad del cambio de posición)
+                    - **Puntaje General**: (Promedio y Grado. ej., "6.5 - Bailarín Social Avanzado". *Criterios: 10(Clase Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)`;
                     }
                 }
                 else if (genre === "Kizomba") {
@@ -385,28 +384,28 @@
                     - **Pros**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Contras y Mejoras**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Puntajes Detallados**:
-                        - **Dominio de la Coreografía**: (0~10)
-                        - **Técnica (Disociación)**: (0~10)
-                        - **Juego de Pies**: (0~10, Saidas y Síncopa)
-                        - **Soporte de Pareja y Liderazgo**: (0~10)
-                        - **Línea y Postura**: (0~10)
-                        - **Espectáculo y Atmósfera**: (0~10)
-                        - **Musicalidad**: (0~10)
-                        - **Quietud (Stillness)**: (0~10, Estabilidad del núcleo)
-                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Campeón Mundial) ~ 1(Novato)*)
+                        - **Dominio de la Coreografía**: (0~10, con un decimal, unísono perfecto)
+                        - **Técnica (Disociación)**: (0~10, con un decimal, separación de cuerpo superior/inferior)
+                        - **Juego de Pies**: (0~10, con un decimal, Saidas y Síncopa)
+                        - **Soporte de Pareja y Liderazgo**: (0~10, con un decimal, estabilidad)
+                        - **Línea y Postura**: (0~10, con un decimal, extensión corporal)
+                        - **Espectáculo y Atmósfera**: (0~10, con un decimal, inmersión)
+                        - **Musicalidad (División de Ritmo)**: (0~10, con un decimal, expresión de micro-ritmos)
+                        - **Quietud (Stillness)**: (0~10, con un decimal, núcleo inquebrantable)
+                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Clase Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)
                     3. **Análisis de Actuación del Seguidor**:
                     - **Pros**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Contras y Mejoras**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Puntajes Detallados**:
-                        - **Dominio de la Coreografía**: (0~10)
-                        - **Técnica (Ginga/Disociación)**: (0~10)
-                        - **Juego de Pies**: (0~10)
-                        - **Línea y Postura**: (0~10)
-                        - **Equilibrio y Núcleo**: (0~10)
-                        - **Espectáculo y Atmósfera**: (0~10)
-                        - **Musicalidad**: (0~10)
-                        - **Quietud (Stillness)**: (0~10, Estabilidad del núcleo)
-                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Campeón Mundial) ~ 1(Novato)*)`;
+                        - **Dominio de la Coreografía**: (0~10, con un decimal, unísono perfecto)
+                        - **Técnica (Ginga/Disociación)**: (0~10, con un decimal, separación de cuerpo superior/inferior)
+                        - **Juego de Pies**: (0~10, con un decimal, Saidas y Síncopa)
+                        - **Línea y Postura**: (0~10, con un decimal, puntas de dedos/pies)
+                        - **Equilibrio y Núcleo**: (0~10, con un decimal, transferencia de peso)
+                        - **Espectáculo y Atmósfera**: (0~10, con un decimal, inmersión)
+                        - **Musicalidad (División de Ritmo)**: (0~10, con un decimal, expresión de micro-ritmos)
+                        - **Quietud (Stillness)**: (0~10, con un decimal, núcleo inquebrantable)
+                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Clase Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)`;
                     } else {
                         genreFocus = "Kizomba se trata de **'Enraizamiento' y 'Transferencia de Peso Suave'**. En el Baile Social, el Abrazo cómodo, ajustar los pasos a la pareja y la unidad en la música son importantes.";
                         analysisFormat = `
@@ -415,26 +414,26 @@
                     - **Pros**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Contras y Mejoras**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Puntajes Detallados**:
-                        - **Enraizamiento y Pasos**: (0~10)
-                        - **Conexión y Sostén**: (0~10, Abrazo)
-                        - **Liderazgo**: (0~10, Transferencia de peso)
-                        - **Musicalidad**: (0~10)
-                        - **Disociación**: (0~10)
-                        - **Compañerismo y Cuidado**: (0~10)
-                        - **Control del Paso**: (0~10, Ajuste a la pareja)
-                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Campeón Mundial) ~ 1(Novato)*)
+                        - **Enraizamiento y Pasos**: (0~10, con un decimal, soporte en el suelo)
+                        - **Conexión y Sostén**: (0~10, con un decimal, cercanía y comodidad del cuerpo superior)
+                        - **Liderazgo**: (0~10, con un decimal, transferencia de peso clara)
+                        - **Musicalidad**: (0~10, con un decimal, división de ritmo y quietud)
+                        - **Disociación**: (0~10, con un decimal, separación de cuerpo superior/inferior)
+                        - **Compañerismo y Cuidado**: (0~10, con un decimal, coincidencia con el tamaño del paso de la pareja)
+                        - **Control del Paso**: (0~10, con un decimal, pasos adaptados a la pareja)
+                    - **Puntaje General**: (Promedio y Grado. ej., "6.5 - Bailarín Social Avanzado". *Criterios: 10(Clase Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)
                     3. **Análisis del Seguidor**:
                     - **Pros**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Contras y Mejoras**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Puntajes Detallados**:
-                        - **Enraizamiento y Pasos**: (0~10)
-                        - **Conexión y Sostén**: (0~10)
-                        - **Seguimiento**: (0~10)
-                        - **Ginga y Movimiento**: (0~10)
-                        - **Musicalidad**: (0~10)
-                        - **Compañerismo y Confianza**: (0~10)
-                        - **Control del Paso**: (0~10, Ajuste a la pareja)
-                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Campeón Mundial) ~ 1(Novato)*)`;
+                        - **Enraizamiento y Pasos**: (0~10, con un decimal, estabilidad)
+                        - **Conexión y Sostén**: (0~10, con un decimal, control de peso)
+                        - **Seguimiento**: (0~10, con un decimal, detección de transferencias de peso sutiles)
+                        - **Ginga y Movimiento**: (0~10, con un decimal, movimiento de cadera)
+                        - **Musicalidad**: (0~10, con un decimal, montar la música)
+                        - **Compañerismo y Confianza**: (0~10, con un decimal, entregarse al líder)
+                        - **Control del Paso**: (0~10, con un decimal, pasos adaptados a la pareja)
+                    - **Puntaje General**: (Promedio y Grado. ej., "6.5 - Bailarín Social Avanzado". *Criterios: 10(Clase Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)`;
                     }
                 }
                 else if (genre === "Zouk") {
@@ -447,54 +446,54 @@
                     - **Pros**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Contras y Mejoras**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Puntajes Detallados**:
-                        - **Dominio de la Coreografía**: (0~10)
-                        - **Técnica (Liderazgo de Cabeza/Contra-equilibrio)**: (0~10)
-                        - **Soporte de Pareja y Elevaciones**: (0~10)
-                        - **Línea y Postura**: (0~10)
-                        - **Espectáculo y Estilo**: (0~10)
-                        - **Musicalidad**: (0~10)
-                        - **Fluidez**: (0~10, Flujo continuo)
-                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Campeón Mundial) ~ 1(Novato)*)
+                        - **Dominio y Precisión de la Coreografía**: (0~10, con un decimal, narración)
+                        - **Técnica (Liderazgo de Cabeza/Contra-equilibrio)**: (0~10, con un decimal, movimientos seguros y grandes)
+                        - **Soporte de Pareja y Elevaciones**: (0~10, con un decimal, estabilidad)
+                        - **Línea y Postura**: (0~10, con un decimal, extensión corporal)
+                        - **Espectáculo y Estilo**: (0~10, con un decimal, movimiento de cabello y líneas)
+                        - **Musicalidad (Dinámica)**: (0~10, con un decimal, arco narrativo)
+                        - **Fluidez**: (0~10, con un decimal, flujo continuo)
+                    - **Puntaje General**: (Promedio y Grado. ej., "6.5 - Bailarín Social Avanzado". *Criterios: 10(Clase Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)
                     3. **Análisis de Actuación del Seguidor**:
                     - **Pros**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Contras y Mejoras**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Puntajes Detallados**:
-                        - **Dominio de la Coreografía**: (0~10)
-                        - **Técnica (Movimiento de Cabeza/Cambré)**: (0~10)
-                        - **Línea y Postura**: (0~10)
-                        - **Equilibrio y Núcleo**: (0~10)
-                        - **Espectáculo y Estilo**: (0~10)
-                        - **Musicalidad**: (0~10)
-                        - **Fluidez**: (0~10, Flujo continuo)
-                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Campeón Mundial) ~ 1(Novato)*)`;
+                        - **Dominio y Precisión de la Coreografía**: (0~10, con un decimal, narración)
+                        - **Técnica (Movimiento de Cabeza/Cambré)**: (0~10, con un decimal, movimientos seguros y grandes)
+                        - **Soporte de Pareja y Elevaciones**: (0~10, con un decimal, estabilidad)
+                        - **Línea y Postura**: (0~10, con un decimal, extensión corporal)
+                        - **Espectáculo y Estilo**: (0~10, con un decimal, movimiento de cabello y líneas)
+                        - **Musicalidad (Dinámica)**: (0~10, con un decimal, arco narrativo)
+                        - **Fluidez**: (0~10, con un decimal, flujo continuo)
+                    - **Puntaje General**: (Promedio y Grado. ej., "6.5 - Bailarín Social Avanzado". *Criterios: 10(Clase Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)`;
                     } else {
                         genreFocus = "Zouk presenta **'Movimiento de Cabeza' y 'Flujo'**. En el Baile Social, el liderazgo seguro protegiendo el cuello/espalda de la pareja y el flujo continuo son prioridad.";
                         analysisFormat = `
-                    1. **Revisión General**: Flujo, Movimiento de Cabeza Natural, Dinámica
+                    1. **Revisión General**: Flujo de Zouk, Movimiento de Cabeza Natural, Dinámica
                     2. **Análisis del Líder**:
                     - **Pros**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Contras y Mejoras**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Puntajes Detallados**:
-                        - **Básico y Ritmo**: (0~10)
-                        - **Conexión y Marco**: (0~10)
-                        - **Liderazgo y Flujo**: (0~10)
-                        - **Liderazgo de Movimiento de Cabeza**: (0~10, Seguridad)
-                        - **Dinámica**: (0~10)
-                        - **Compañerismo y Seguridad**: (0~10)
-                        - **Enraizamiento**: (0~10, Soporte del cuerpo inferior)
-                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Campeón Mundial) ~ 1(Novato)*)
+                        - **Básico y Ritmo**: (0~10, con un decimal, pasos)
+                        - **Conexión y Marco**: (0~10, con un decimal, elasticidad)
+                        - **Liderazgo y Flujo**: (0~10, con un decimal, conexión y suavidad)
+                        - **Liderazgo de Movimiento de Cabeza**: (0~10, con un decimal, guía segura)
+                        - **Dinámica**: (0~10, con un decimal, control de intensidad)
+                        - **Compañerismo y Seguridad**: (0~10, con un decimal, protección de pareja y uso del espacio)
+                        - **Enraizamiento**: (0~10, con un decimal, soporte del cuerpo inferior)
+                    - **Puntaje General**: (Promedio y Grado. ej., "6.5 - Bailarín Social Avanzado". *Criterios: 10(Clase Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)
                     3. **Análisis del Seguidor**:
                     - **Pros**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Contras y Mejoras**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Puntajes Detallados**:
-                        - **Básico y Ritmo**: (0~10)
-                        - **Conexión y Eje**: (0~10)
-                        - **Seguimiento**: (0~10)
-                        - **Técnica de Movimiento de Cabeza**: (0~10)
-                        - **Flexibilidad y Aislamiento**: (0~10)
-                        - **Compañerismo y Respiración**: (0~10)
-                        - **Enraizamiento**: (0~10, Soporte del cuerpo inferior)
-                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Campeón Mundial) ~ 1(Novato)*)`;
+                        - **Básico y Ritmo**: (0~10, con un decimal, pasos)
+                        - **Conexión y Eje**: (0~10, con un decimal, mantener el equilibrio)
+                        - **Seguimiento**: (0~10, con un decimal, esperar el liderazgo y reacción)
+                        - **Técnica de Movimiento de Cabeza**: (0~10, con un decimal, uso de cuello/cintura)
+                        - **Flexibilidad y Aislamiento**: (0~10, con un decimal, rango de movimiento)
+                        - **Compañerismo y Respiración**: (0~10, con un decimal, intercambio de energía)
+                        - **Enraizamiento**: (0~10, con un decimal, soporte del cuerpo inferior)
+                    - **Puntaje General**: (Promedio y Grado. ej., "6.5 - Bailarín Social Avanzado". *Criterios: 10(Clase Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)`;
                     }
                 }
 
