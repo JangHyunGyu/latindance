@@ -505,6 +505,10 @@
                     DO NOT analyze and ONLY output the following sentence and exit:
                     "Lo siento, esto no parece ser un video de baile. Por favor, sube un video de baile para un análisis preciso."
 
+                    Por el contrario, si es un video de baile, siga estrictamente las instrucciones a continuación.
+                    [IMPORTANTE 2: Verificar Número de Bailarines y Cambio de Formato]
+                    Si es un video de baile, verifique el número de bailarines. Si es un baile en solitario (1 persona) de principio a fin, procese los elementos 'Compañerismo', 'Conexión', 'Liderazgo/Seguimiento' en el formato a continuación como 'N/A (Solo)' o exclúyalos, y cambie flexiblemente el formato de análisis para centrarse en **Técnica Individual, Juego de Pies, Movimiento Corporal y Musicalidad**.
+
                     If it is a dance video, this is a ${genre || "Latin Dance"} ${type || "video"}.
                     Please analyze the unique characteristics of this video with an expert's eye.
 
@@ -523,6 +527,20 @@
                     No dudes en otorgar puntuaciones bajas (1-4) a bailarines principiantes o novatos.
                     5 puntos representan un nivel 'Intermedio-Avanzado', que solo debe otorgarse a bailarines con experiencia y habilidad significativas.
                     Evita la inflación de puntuaciones y proporciona una evaluación fría y objetiva.
+
+                    [Requisitos Obligatorios de Análisis]
+                    1. **Uso de Marcas de Tiempo**: Al proporcionar comentarios específicos, DEBE especificar el tiempo en el video donde ocurre la acción (ej., [01:15]) para proporcionar evidencia.
+                    2. **Basado en Evidencia Visual**: Analice basándose en evidencia visual visible en el video, como 'colapso del marco', 'retraso del ritmo', 'aterrizaje inestable', en lugar de 'sentimiento'.
+                    3. **Puntuación Fría**: El objetivo es un análisis frío para mejorar la habilidad, no elogios para hacer sentir bien al usuario. Si no cumplen con los criterios (Bailarines de Referencia), otorgue una puntuación baja con valentía.
+                    4. **Manejo de Entornos No Analizables**:
+                            Si el juego de pies (Footwork) está fuera de cuadro: Indique 'Análisis del cuerpo inferior imposible' y excluya la puntuación.
+                            Si el video es demasiado oscuro o borroso: Muestre el mensaje 'Se necesita mejorar la calidad de la imagen'.
+                            Si se filma desde un ángulo específico que no sea el frente: Indique las limitaciones del análisis al principio.
+                    5. **Prioridad de Análisis de Audio y Ritmo**:
+                        Paso 1: Verifique el estado del audio. Compruebe si la música es claramente audible.
+                        Paso 2 (Bueno): Si la música es audible, señale estrictamente con marcas de tiempo si los pasos del bailarín están exactamente en el ritmo (On-beat), retrasados (Lagging) o adelantados (Rushing).
+                        Paso 3 (Malo): Si hay mucho ruido o la música es inaudible, NO fuerce la evaluación de los elementos de Ritmo/Musicalidad, procéselos como 'N/A (Audio ilegible)'. Sin embargo, el Flujo del movimiento debe ser evaluado.
+                    6. **Notificación de Excepción**: Si el análisis de partes específicas del cuerpo es imposible debido a la calidad del video (iluminación, ángulo, resolución, etc.), no adivine, procese el elemento como 'Juicio Reservado' y recomiende mejorar la grabación al usuario.
                     
                     [Output Format Requirements]
                     You MUST follow the format below exactly. Do not add any introductory text or greetings. Start directly with "1. **Revisión General**:".

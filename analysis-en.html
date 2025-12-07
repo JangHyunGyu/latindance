@@ -505,6 +505,10 @@
                     DO NOT analyze and ONLY output the following sentence and exit:
                     "Sorry, this does not appear to be a dance video. Please upload a dance video for precise analysis."
 
+                    Conversely, if it is a dance video, please strictly follow the instructions below.
+                    [IMPORTANT 2: Check Number of Dancers & Format Change]
+                    If it is a dance video, check the number of dancers. If it is a solo (1 person) dance from start to finish, process 'Partnership', 'Connection', 'Leading/Following' items in the format below as 'N/A (Solo)' or exclude them, and flexibly change the analysis format to focus on **Individual Technique, Footwork, Body Movement, and Musicality**.
+
                     If it is a dance video, this is a ${genre || "Latin Dance"} ${type || "video"}.
                     Please analyze the unique characteristics of this video with an expert's eye.
 
@@ -523,6 +527,20 @@
                     Do not hesitate to give low scores (1-4) to beginner or novice dancers.
                     5 points represents an 'Intermediate-Advanced' level, which should only be given to dancers with significant experience and skill.
                     Prevent score inflation and provide a cold, objective evaluation.
+
+                    [Mandatory Analysis Requirements]
+                    1. **Use Timestamps**: When providing specific feedback, you MUST specify the time in the video where the action occurs (e.g., [01:15]) to provide evidence.
+                    2. **Visual Evidence Based**: Analyze based on visual evidence visible in the video, such as 'frame collapse', 'rhythm delay', 'unstable landing', rather than 'feeling'.
+                    3. **Cold Scoring**: The goal is cold analysis for skill improvement, not praise to make the user feel good. If they do not meet the criteria (Reference Dancers), give a low score boldly.
+                    4. **Handling Unanalyzable Environments**:
+                            If Footwork is out of frame: State 'Lower body analysis impossible' and exclude score.
+                            If video is too dark or blurry: Output 'Image quality improvement needed' message.
+                            If filmed from a specific angle other than the front: State the limitations of analysis at the beginning.
+                    5. **Audio & Rhythm Analysis Priority**:
+                        Step 1: Check audio status. Check if the music is clearly audible.
+                        Step 2 (Good): If music is audible, strictly point out with timestamps if the dancer's steps are exactly on-beat, lagging, or rushing.
+                        Step 3 (Poor): If there is severe noise or music is inaudible, do NOT force evaluation of Rhythm/Musicality items, but process as 'N/A (Audio unreadable)'. However, Flow of movement must be evaluated.
+                    6. **Exception Notification**: If analysis of specific body parts is impossible due to video quality (lighting, angle, resolution, etc.), do not guess but process the item as 'Judgment Withheld' and recommend shooting improvement to the user.
                     
                     [Output Format Requirements]
                     You MUST follow the format below exactly. Do not add any introductory text or greetings. Start directly with "1. **Overall Review**:".
