@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test"
+    "test": "playwright test",
+    "optimize-images": "powershell -ExecutionPolicy Bypass -File ./scripts/optimize_images.ps1"
   },
   "repository": {
     "type": "git",
