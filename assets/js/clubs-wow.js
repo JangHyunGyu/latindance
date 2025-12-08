@@ -106,7 +106,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function initParticles() {
         particles = [];
-        const particleCount = isMobile ? 40 : 80; // Adjusted count
+        // Reduced particle count for performance
+        const particleCount = isMobile ? 20 : 40; 
         for (let i = 0; i < particleCount; i++) {
             particles.push(new Particle());
         }

@@ -15,7 +15,7 @@ body::before {
     height: 200%;
     background: radial-gradient(circle at 50% 50%, rgba(189, 52, 254, 0.1), transparent 40%),
                 radial-gradient(circle at 80% 20%, rgba(65, 209, 255, 0.1), transparent 40%);
-    animation: bg-pulse 15s ease-in-out infinite alternate;
+    /* animation: bg-pulse 15s ease-in-out infinite alternate; */
     z-index: -1;
     pointer-events: none;
 }
