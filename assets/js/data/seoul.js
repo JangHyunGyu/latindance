@@ -1,5 +1,32 @@
 var SEOUL_VENUES = [
   {
+    id: "seoul-boston",
+    name: { ko: "보스톤", en: "Boston", es: "Boston" },
+    region: { ko: "서울", en: "Seoul", es: "Seúl" },
+    city: { ko: "서울 마포구", en: "Mapo-gu", es: "Mapo-gu" },
+    address: {
+      ko: "서울특별시 마포구 동교로 207",
+      en: "207 Donggyo-ro, Mapo-gu, Seoul",
+      es: "207 Donggyo-ro, Mapo-gu, Seúl"
+    },
+    styles: ["salsa", "bachata"],
+    summary: {
+      ko: "홍대입구역 근처 살사빠 '홍턴'을 거점으로 초보자를 위한 무료 바차타 입문 수업과 정기 살사/바차타 모임을 진행하며 친목을 다지는 동호회입니다.",
+      en: "Based at the 'Hongturn' salsa bar near Hongik Univ. Station, this club fosters friendship through free introductory bachata classes for beginners and regular salsa/bachata gatherings.",
+      es: "Con sede en el bar de salsa 'Hongturn' cerca de la estación de la Univ. Hongik, este club fomenta la amistad a través de clases introductorias gratuitas de bachata para principiantes y reuniones regulares de salsa/bachata."
+    },
+    image: "assets/images/boston.png",
+    imageAlt: {
+      ko: "보스톤 로고",
+      en: "Boston logo",
+      es: "Logotipo de Boston"
+    },
+    links: [
+      { type: "cafe", url: "https://cafe.daum.net/latinboston" },
+      { type: "instagram", url: "https://www.instagram.com/bostonsalsa/" }
+    ]
+  },
+  {
     id: "seoul-everlatin",
     name: { ko: "에버라틴", en: "Everlatin", es: "Everlatin" },
     region: { ko: "서울", en: "Seoul", es: "Seúl" },
