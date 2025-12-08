@@ -157,7 +157,7 @@ body.is-mobile .venue-card__media::after {
     border-color: rgba(189, 52, 254, 0.3);
 }
 
-/* Mobile "Wow" Effects */
+/* Mobile "Wow" Effects - Disabled for performance
 body.is-mobile .venue-card::after {
     content: '';
     position: absolute;
@@ -169,12 +169,26 @@ body.is-mobile .venue-card::after {
     transform: rotate(45deg) translateY(-100%);
     animation: shine 3s infinite;
     pointer-events: none;
-    display: block !important; /* Force display on mobile */
+    display: block !important; 
 }
+*/
 
 @keyframes shine {
     0% { transform: rotate(45deg) translateY(-100%); }
     100% { transform: rotate(45deg) translateY(100%); }
+}
+
+/* Optimization for Mobile: Reduce memory usage */
+body.is-mobile .venue-card {
+    transform-style: flat;
+    will-change: auto;
+    box-shadow: none; /* Simplify shadow on mobile */
+    border: 1px solid rgba(189, 52, 254, 0.3); /* Simple border instead of complex mask */
+}
+
+/* Disable complex mask border on mobile */
+body.is-mobile .venue-card::before {
+    display: none;
 }
 
 /* Aurora Effect for Mobile */
