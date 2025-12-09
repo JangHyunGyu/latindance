@@ -460,6 +460,8 @@ function shareKakao() {
                 title: ANALYSIS_CONFIG.messages.shareTitle,
                 description: ANALYSIS_CONFIG.messages.shareDesc,
                 imageUrl: 'https://latindance.kr/assets/images/analysis_kakao_profile.png?v=2',
+                imageWidth: 1200,
+                imageHeight: 630,
                 link: {
                     mobileWebUrl: shareUrl,
                     webUrl: shareUrl,
