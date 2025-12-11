@@ -214,130 +214,86 @@ async function runAnalysis() {
             console.log("Step 1: Init");
             setModalStep('step-init');
             modalBody.innerHTML = `<p>${ANALYSIS_CONFIG.messages.stepInit}</p>`;
+            const initRes = await fetch(`${API_URL}?action=init`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    mimeType: file.type,
+                    numBytes: file.size,
+                    displayName: file.name
+                })
+            });
             
-            let initAttempts = 0;
-            const maxInitRetries = 3;
-            let uploadUrl;
-
-            while (initAttempts < maxInitRetries) {
-                try {
-                    initAttempts++;
-                    const initRes = await fetch(`${API_URL}?action=init`, {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({
-                            mimeType: file.type,
-                            numBytes: file.size,
-                            displayName: file.name
-                        })
-                    });
-                    
-                    if (!initRes.ok) {
-                        const text = await initRes.text();
-                        throw new Error(`Init failed (${initRes.status}): ${text}`);
-                    }
-                    const data = await initRes.json();
-                    uploadUrl = data.uploadUrl;
-                    break; // Success
-                } catch (e) {
-                    console.warn(`Init attempt ${initAttempts} failed:`, e);
-                    if (initAttempts >= maxInitRetries) throw e;
-                    await new Promise(r => setTimeout(r, 1000)); // Wait 1s
-                }
+            if (!initRes.ok) {
+                const text = await initRes.text();
+                throw new Error(`Init failed (${initRes.status}): ${text}`);
             }
+            const { uploadUrl } = await initRes.json();
 
             // 2. Upload
             console.log("Step 2: Upload");
             setModalStep('step-upload');
-            
-            let uploadAttempts = 0;
-            const maxRetries = 3;
-            let uploadRes;
+            modalBody.innerHTML = `
+                <div class="progress-status">${ANALYSIS_CONFIG.messages.stepUpload}</div>
+                <div class="progress-text" id="progressPercent" style="font-size: 2.2rem;">0%</div>
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <p style="font-size: 0.85rem; color: rgba(255,255,255,0.5); text-align:center; margin-top: 20px;">
+                    ${ANALYSIS_CONFIG.messages.uploadWarning}
+                    <br><span style="color: #ffcc00; font-size: 0.8rem;">${ANALYSIS_CONFIG.messages.networkWarning}</span>
+                </p>
+            `;
 
-            while (uploadAttempts < maxRetries) {
-                try {
-                    uploadAttempts++;
-                    console.log(`Upload attempt ${uploadAttempts}/${maxRetries}`);
-                    
-                    if (uploadAttempts > 1) {
-                        modalBody.querySelector('.progress-status').textContent = 
-                            `${ANALYSIS_CONFIG.messages.stepUpload} (재시도 ${uploadAttempts-1}/${maxRetries-1}...)`;
-                        await new Promise(r => setTimeout(r, 1000)); // 1초 대기 후 재시도
+            const progressBar = modalBody.querySelector('#progressBar');
+            const progressPercent = modalBody.querySelector('#progressPercent');
+
+            const uploadRes = await new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest();
+                xhr.open("POST", `${API_URL}?action=upload`);
+                xhr.setRequestHeader("X-Upload-Url", uploadUrl);
+                xhr.setRequestHeader("Content-Type", file.type);
+
+                let lastUpdate = 0;
+                let startTime = Date.now();
+
+                xhr.upload.onprogress = (e) => {
+                    if (e.lengthComputable) {
+                        const now = Date.now();
+                        // Throttle updates to every 100ms
+                        if (now - lastUpdate > 100 || e.loaded === e.total) {
+                            const percent = Math.round((e.loaded / e.total) * 100);
+                            
+                            // Calculate speed
+                            const timeDiff = (now - startTime) / 1000; // seconds
+                            const speed = timeDiff > 0 ? (e.loaded / 1024 / 1024) / timeDiff : 0; // MB/s
+                            
+                            if (progressBar && progressPercent) {
+                                requestAnimationFrame(() => {
+                                    progressBar.style.width = `${percent}%`;
+                                    progressPercent.textContent = `${percent}% (${speed.toFixed(1)} MB/s)`;
+                                });
+                            }
+                            lastUpdate = now;
+                        }
+                    }
+                };
+
+                xhr.onload = () => {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        try {
+                            resolve(JSON.parse(xhr.responseText));
+                        } catch (e) {
+                            reject(new Error("Invalid JSON response from upload"));
+                        }
                     } else {
-                        modalBody.innerHTML = `
-                            <div class="progress-status">${ANALYSIS_CONFIG.messages.stepUpload}</div>
-                            <div class="progress-text" id="progressPercent" style="font-size: 2.2rem;">0%</div>
-                            <div class="progress-container">
-                                <div class="progress-bar" id="progressBar"></div>
-                            </div>
-                            <p style="font-size: 0.85rem; color: rgba(255,255,255,0.5); text-align:center; margin-top: 20px;">
-                                ${ANALYSIS_CONFIG.messages.uploadWarning}
-                                <br><span style="color: #ffcc00; font-size: 0.8rem;">${ANALYSIS_CONFIG.messages.networkWarning}</span>
-                            </p>
-                        `;
+                        reject(new Error(`Upload failed (${xhr.status}): ${xhr.responseText}`));
                     }
+                };
 
-                    const progressBar = modalBody.querySelector('#progressBar');
-                    const progressPercent = modalBody.querySelector('#progressPercent');
-
-                    uploadRes = await new Promise((resolve, reject) => {
-                        const xhr = new XMLHttpRequest();
-                        xhr.open("POST", `${API_URL}?action=upload`);
-                        xhr.setRequestHeader("X-Upload-Url", uploadUrl);
-                        xhr.setRequestHeader("Content-Type", file.type);
-
-                        let lastUpdate = 0;
-                        let startTime = Date.now();
-
-                        xhr.upload.onprogress = (e) => {
-                            if (e.lengthComputable) {
-                                const now = Date.now();
-                                // Throttle updates to every 100ms
-                                if (now - lastUpdate > 100 || e.loaded === e.total) {
-                                    const percent = Math.round((e.loaded / e.total) * 100);
-                                    
-                                    // Calculate speed
-                                    const timeDiff = (now - startTime) / 1000; // seconds
-                                    const speed = timeDiff > 0 ? (e.loaded / 1024 / 1024) / timeDiff : 0; // MB/s
-                                    
-                                    if (progressBar && progressPercent) {
-                                        requestAnimationFrame(() => {
-                                            progressBar.style.width = `${percent}%`;
-                                            progressPercent.textContent = `${percent}% (${speed.toFixed(1)} MB/s)`;
-                                        });
-                                    }
-                                    lastUpdate = now;
-                                }
-                            }
-                        };
-
-                        xhr.onload = () => {
-                            if (xhr.status >= 200 && xhr.status < 300) {
-                                try {
-                                    resolve(JSON.parse(xhr.responseText));
-                                } catch (e) {
-                                    reject(new Error("Invalid JSON response from upload"));
-                                }
-                            } else {
-                                reject(new Error(`Upload failed (${xhr.status}): ${xhr.responseText}`));
-                            }
-                        };
-
-                        xhr.onerror = () => reject(new Error("Network error during upload"));
-                        xhr.send(file);
-                    });
-                    
-                    // 성공하면 루프 탈출
-                    break; 
-
-                } catch (err) {
-                    console.warn(`Upload attempt ${uploadAttempts} failed:`, err);
-                    if (uploadAttempts >= maxRetries) {
-                        throw err; // 최대 횟수 초과 시 에러 던짐
-                    }
-                    // 재시도 전 UI 초기화 (선택 사항)
-                }
-            }
+                xhr.onerror = () => reject(new Error("Network error during upload"));
+                xhr.send(file);
+            });
 
             fileUri = uploadRes.fileUri;
             fileName = uploadRes.fileName;
