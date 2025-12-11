@@ -110,8 +110,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const ctx = canvas.getContext('2d');
     let particles = [];
     
-    // Latin Dance Icons
-    const icons = ['💃', '🕺', '🎵', '🎶', '✨', '👠', '🌹', '🎸', '🥁', '🎺'];
+    // Premium Particles (Glowing Orbs)
+    const colors = ['rgba(189, 52, 254, ', 'rgba(65, 209, 255, ', 'rgba(255, 255, 255, '];
 
     function resize() {
         canvas.width = window.innerWidth;
@@ -124,35 +124,34 @@ document.addEventListener('DOMContentLoaded', () => {
         constructor() {
             this.x = Math.random() * canvas.width;
             this.y = Math.random() * canvas.height;
-            this.size = Math.random() * 20 + 10; // 10px ~ 30px
-            this.speedX = Math.random() * 0.5 - 0.25;
-            this.speedY = Math.random() * 0.5 - 0.25;
-            this.opacity = Math.random() * 0.15 + 0.05; // Very subtle opacity
-            this.icon = icons[Math.floor(Math.random() * icons.length)];
-            this.angle = Math.random() * Math.PI * 2;
-            this.spin = (Math.random() - 0.5) * 0.01; // Slow spin
+            this.size = Math.random() * 3 + 1; // Smaller, refined size
+            this.speedX = Math.random() * 0.4 - 0.2;
+            this.speedY = Math.random() * 0.4 - 0.2;
+            this.colorPrefix = colors[Math.floor(Math.random() * colors.length)];
+            this.opacity = Math.random() * 0.3 + 0.1;
+            this.growth = Math.random() * 0.02 + 0.01;
         }
         update() {
             this.x += this.speedX;
             this.y += this.speedY;
-            this.angle += this.spin;
+            
+            // Pulse effect
+            this.opacity += this.growth;
+            if (this.opacity > 0.5 || this.opacity < 0.1) this.growth = -this.growth;
 
-            if (this.x > canvas.width + 50) this.x = -50;
-            if (this.x < -50) this.x = canvas.width + 50;
-            if (this.y > canvas.height + 50) this.y = -50;
-            if (this.y < -50) this.y = canvas.height + 50;
+            if (this.x > canvas.width) this.x = 0;
+            if (this.x < 0) this.x = canvas.width;
+            if (this.y > canvas.height) this.y = 0;
+            if (this.y < 0) this.y = canvas.height;
         }
         draw() {
-            ctx.save();
-            ctx.globalAlpha = this.opacity;
-            ctx.font = `${this.size}px "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif`;
-            ctx.translate(this.x, this.y);
-            ctx.rotate(this.angle);
-            ctx.textAlign = 'center';
-            ctx.textBaseline = 'middle';
-            ctx.fillStyle = '#ffffff';
-            ctx.fillText(this.icon, 0, 0);
-            ctx.restore();
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fillStyle = this.colorPrefix + this.opacity + ')';
+            ctx.shadowBlur = 10;
+            ctx.shadowColor = this.colorPrefix + '0.5)';
+            ctx.fill();
+            ctx.shadowBlur = 0; // Reset
         }
     }
 
