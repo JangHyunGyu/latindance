@@ -14,7 +14,7 @@ html, body {
     margin: 0;
     padding: 0;
     background-color: var(--vite-dark);
-    font-family: 'Pretendard', sans-serif;
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
 /* Animated Background */
@@ -228,11 +228,11 @@ body {
 */
 
 .hub-title {
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Manrope', 'Pretendard', sans-serif;
     font-size: 2.4vh;
     font-weight: 700;
     margin-bottom: 1.2vh;
-    color: #fff;
+    color: #e0e0e0;
     letter-spacing: -0.02em;
     text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
@@ -251,11 +251,13 @@ body {
 }
 
 .hub-desc {
-    color: rgba(255, 255, 255, 0.6);
+    font-family: 'Pretendard', sans-serif;
+    color: #aaaaaa;
     font-size: 1.5vh;
     line-height: 1.6;
     font-weight: 400;
-    letter-spacing: 0.01em;
+    letter-spacing: -0.01em;
+    word-break: keep-all;
     transition: all 0.3s;
 }
 
