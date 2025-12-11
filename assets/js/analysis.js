@@ -235,12 +235,13 @@ async function runAnalysis() {
             setModalStep('step-upload');
             modalBody.innerHTML = `
                 <div class="progress-status">${ANALYSIS_CONFIG.messages.stepUpload}</div>
-                <div class="progress-text" id="progressPercent">0%</div>
+                <div class="progress-text" id="progressPercent" style="font-size: 2.2rem;">0%</div>
                 <div class="progress-container">
                     <div class="progress-bar" id="progressBar"></div>
                 </div>
                 <p style="font-size: 0.85rem; color: rgba(255,255,255,0.5); text-align:center; margin-top: 20px;">
                     ${ANALYSIS_CONFIG.messages.uploadWarning}
+                    <br><span style="color: #ffcc00; font-size: 0.8rem;">${ANALYSIS_CONFIG.messages.networkWarning}</span>
                 </p>
             `;
 
@@ -253,12 +254,27 @@ async function runAnalysis() {
                 xhr.setRequestHeader("X-Upload-Url", uploadUrl);
                 xhr.setRequestHeader("Content-Type", file.type);
 
+                let lastUpdate = 0;
+                let startTime = Date.now();
+
                 xhr.upload.onprogress = (e) => {
                     if (e.lengthComputable) {
-                        const percent = Math.round((e.loaded / e.total) * 100);
-                        if (progressBar && progressPercent) {
-                            progressBar.style.width = `${percent}%`;
-                            progressPercent.textContent = `${percent}%`;
+                        const now = Date.now();
+                        // Throttle updates to every 100ms
+                        if (now - lastUpdate > 100 || e.loaded === e.total) {
+                            const percent = Math.round((e.loaded / e.total) * 100);
+                            
+                            // Calculate speed
+                            const timeDiff = (now - startTime) / 1000; // seconds
+                            const speed = timeDiff > 0 ? (e.loaded / 1024 / 1024) / timeDiff : 0; // MB/s
+                            
+                            if (progressBar && progressPercent) {
+                                requestAnimationFrame(() => {
+                                    progressBar.style.width = `${percent}%`;
+                                    progressPercent.textContent = `${percent}% (${speed.toFixed(1)} MB/s)`;
+                                });
+                            }
+                            lastUpdate = now;
                         }
                     }
                 };
