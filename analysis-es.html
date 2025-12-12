@@ -232,6 +232,9 @@
                 loadSharedFail: "No se pudo cargar el resultado compartido."
             },
             generatePrompt: function(genre, type) {
+                const overallScorePrompt = `- **Puntaje General**: (Promedio de los elementos anteriores. ej., "6.5". *Criterios de Grado solo como referencia: 10(Clase Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)`;
+                const onePointLessonPrompt = `- **Lección de Un Punto (One Point Lesson)**:\n                        - (Corrección más urgente y método de práctica)`;
+
                 let referenceDancers = "Bailarines de Nivel Campeón Mundial";
                 let genreFocus = "Por favor, concéntrate en la precisión del movimiento, el ritmo, la conexión con la pareja y la postura.";
                 let analysisFormat = `
@@ -245,7 +248,8 @@
                         - **Movimiento Corporal**: (0~10, con un decimal, flexibilidad)
                         - **Musicalidad**: (0~10, con un decimal, interpretación musical)
                         - **Compañerismo**: (0~10, con un decimal, cuidado)
-                    - **Puntaje General**: (Promedio de los 5 elementos anteriores y Grado. ej., "6.5 - Bailarín Social Avanzado". *Criterios de Grado: 10(Clase Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)
+                    ${overallScorePrompt}
+                    ${onePointLessonPrompt}
                     3. **Análisis del Seguidor (Follower)**:
                     - **Pros**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Contras y Mejoras**: (Describir específicamente basado en puntajes detallados a continuación)
@@ -255,7 +259,8 @@
                         - **Movimiento Corporal**: (0~10, con un decimal, flexibilidad)
                         - **Musicalidad**: (0~10, con un decimal, interpretación musical)
                         - **Estilo**: (0~10, con un decimal, expresividad)
-                    - **Puntaje General**: (Promedio de los 5 elementos anteriores y Grado. ej., "6.5 - Bailarín Social Avanzado". *Criterios de Grado: 10(Clase Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)`;
+                    ${overallScorePrompt}
+                    ${onePointLessonPrompt}`;
 
                 if (genre === "Salsa") {
                     referenceDancers = "Terry & Cecile, Fernando Sosa, Adolfo Indacochea, Eddie Torres";
@@ -274,7 +279,8 @@
                         - **Línea y Postura**: (0~10, con un decimal, extensión corporal)
                         - **Espectáculo y Estilo**: (0~10, con un decimal, interacción con la audiencia)
                         - **Sincronización**: (0~10, con un decimal, coordinación con la pareja)
-                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Clase Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)
+                    ${overallScorePrompt}
+                    ${onePointLessonPrompt}
                     3. **Análisis de Actuación del Seguidor**:
                     - **Pros**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Contras y Mejoras**: (Describir específicamente basado en puntajes detallados a continuación)
@@ -286,7 +292,8 @@
                         - **Espectáculo y Estilo**: (0~10, con un decimal, interacción con la audiencia)
                         - **Musicalidad (Ejecución de Coreografía)**: (0~10, con un decimal, expresión de acentos musicales)
                         - **Sincronización**: (0~10, con un decimal, coordinación con la pareja)
-                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Clase Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)`;
+                    ${overallScorePrompt}
+                    ${onePointLessonPrompt}`;
                     } else {
                         genreFocus = "La salsa se trata de **pasos precisos y tiempo basados en el 'Ritmo Clave'**. Desde una perspectiva de Baile Social, por favor concéntrate en liderar/seguir cómodamente, la seguridad y el disfrute.";
                         analysisFormat = `
@@ -302,7 +309,8 @@
                         - **Musicalidad**: (0~10, con un decimal, interpretación)
                         - **Compañerismo y Modales**: (0~10, con un decimal, contacto visual y cuidado)
                         - **Manejo del Espacio (Floorcraft)**: (0~10, con un decimal, prevención de choques y uso del espacio)
-                    - **Puntaje General**: (Promedio y Grado. ej., "6.5 - Bailarín Social Avanzado". *Criterios: 10(Clase Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)
+                    ${overallScorePrompt}
+                    ${onePointLessonPrompt}
                     3. **Análisis del Seguidor**:
                     - **Pros**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Contras y Mejoras**: (Describir específicamente basado en puntajes detallados a continuación)
@@ -313,7 +321,8 @@
                         - **Postura y Equilibrio**: (0~10, con un decimal, estabilidad en giros)
                         - **Compañerismo e Interacción**: (0~10, con un decimal, disfrute y contacto visual)
                         - **Manejo del Espacio (Floorcraft)**: (0~10, con un decimal, prevención de choques y uso del espacio)
-                    - **Puntaje General**: (Promedio y Grado. ej., "6.5 - Bailarín Social Avanzado". *Criterios: 10(Clase Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)`;
+                    ${overallScorePrompt}
+                    ${onePointLessonPrompt}`;
                     }
                 }
                 else if (genre === "Bachata") {
@@ -333,7 +342,8 @@
                         - **Espectáculo y Estilo**: (0~10, con un decimal, entrega emocional)
                         - **Musicalidad (Ejecución de Coreografía)**: (0~10, con un decimal, expresión de letras y ritmo)
                         - **Transiciones**: (0~10, con un decimal, suavidad en la conexión de movimientos)
-                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Clase Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)
+                    ${overallScorePrompt}
+                    ${onePointLessonPrompt}
                     3. **Análisis de Actuación del Seguidor**:
                     - **Pros**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Contras y Mejoras**: (Describir específicamente basado en puntajes detallados a continuación)
@@ -345,7 +355,8 @@
                         - **Espectáculo y Estilo**: (0~10, con un decimal, entrega emocional)
                         - **Musicalidad (Ejecución de Coreografía)**: (0~10, con un decimal, expresión de letras y ritmo)
                         - **Transiciones**: (0~10, con un decimal, suavidad en la conexión de movimientos)
-                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Clase Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)`;
+                    ${overallScorePrompt}
+                    ${onePointLessonPrompt}`;
                     } else {
                         genreFocus = "La Bachata enfatiza el **'Movimiento Corporal Sensual' y el 'Movimiento Cubano'**. En el Baile Social, la distancia adecuada, el liderazgo seguro y la conexión emocional son clave.";
                         analysisFormat = `
@@ -361,7 +372,8 @@
                         - **Musicalidad**: (0~10, con un decimal, expresión emocional y cortes)
                         - **Compañerismo y Seguridad**: (0~10, con un decimal, distancia y seguridad)
                         - **Control de Distancia**: (0~10, con un decimal, idoneidad del cambio de posición)
-                    - **Puntaje General**: (Promedio y Grado. ej., "6.5 - Bailarín Social Avanzado". *Criterios: 10(Clase Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)
+                    ${overallScorePrompt}
+                    ${onePointLessonPrompt}
                     3. **Análisis del Seguidor**:
                     - **Pros**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Contras y Mejoras**: (Describir específicamente basado en puntajes detallados a continuación)
@@ -372,7 +384,8 @@
                         - **Movimiento Corporal**: (0~10, con un decimal, flexibilidad y cadera)
                         - **Compañerismo y Química**: (0~10, con un decimal, compartir emociones)
                         - **Control de Distancia**: (0~10, con un decimal, idoneidad del cambio de posición)
-                    - **Puntaje General**: (Promedio y Grado. ej., "6.5 - Bailarín Social Avanzado". *Criterios: 10(Clase Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)`;
+                    ${overallScorePrompt}
+                    ${onePointLessonPrompt}`;
                     }
                 }
                 else if (genre === "Kizomba") {
@@ -393,7 +406,8 @@
                         - **Espectáculo y Atmósfera**: (0~10, con un decimal, inmersión)
                         - **Musicalidad (División de Ritmo)**: (0~10, con un decimal, expresión de micro-ritmos)
                         - **Quietud (Stillness)**: (0~10, con un decimal, núcleo inquebrantable)
-                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Clase Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)
+                    ${overallScorePrompt}
+                    ${onePointLessonPrompt}
                     3. **Análisis de Actuación del Seguidor**:
                     - **Pros**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Contras y Mejoras**: (Describir específicamente basado en puntajes detallados a continuación)
@@ -406,7 +420,8 @@
                         - **Espectáculo y Atmósfera**: (0~10, con un decimal, inmersión)
                         - **Musicalidad (División de Ritmo)**: (0~10, con un decimal, expresión de micro-ritmos)
                         - **Quietud (Stillness)**: (0~10, con un decimal, núcleo inquebrantable)
-                    - **Puntaje General**: (Promedio y Grado. *Criterios: 10(Clase Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)`;
+                    ${overallScorePrompt}
+                    ${onePointLessonPrompt}`;
                     } else {
                         genreFocus = "Kizomba se trata de **'Enraizamiento' y 'Transferencia de Peso Suave'**. En el Baile Social, el Abrazo cómodo, ajustar los pasos a la pareja y la unidad en la música son importantes.";
                         analysisFormat = `
@@ -422,7 +437,8 @@
                         - **Disociación**: (0~10, con un decimal, separación de cuerpo superior/inferior)
                         - **Compañerismo y Cuidado**: (0~10, con un decimal, coincidencia con el tamaño del paso de la pareja)
                         - **Control del Paso**: (0~10, con un decimal, pasos adaptados a la pareja)
-                    - **Puntaje General**: (Promedio y Grado. ej., "6.5 - Bailarín Social Avanzado". *Criterios: 10(Clase Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)
+                    ${overallScorePrompt}
+                    ${onePointLessonPrompt}
                     3. **Análisis del Seguidor**:
                     - **Pros**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Contras y Mejoras**: (Describir específicamente basado en puntajes detallados a continuación)
@@ -434,7 +450,8 @@
                         - **Musicalidad**: (0~10, con un decimal, montar la música)
                         - **Compañerismo y Confianza**: (0~10, con un decimal, entregarse al líder)
                         - **Control del Paso**: (0~10, con un decimal, pasos adaptados a la pareja)
-                    - **Puntaje General**: (Promedio y Grado. ej., "6.5 - Bailarín Social Avanzado". *Criterios: 10(Clase Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)`;
+                    ${overallScorePrompt}
+                    ${onePointLessonPrompt}`;
                     }
                 }
                 else if (genre === "Zouk") {
@@ -454,7 +471,8 @@
                         - **Espectáculo y Estilo**: (0~10, con un decimal, movimiento de cabello y líneas)
                         - **Musicalidad (Dinámica)**: (0~10, con un decimal, arco narrativo)
                         - **Fluidez**: (0~10, con un decimal, flujo continuo)
-                    - **Puntaje General**: (Promedio y Grado. ej., "6.5 - Bailarín Social Avanzado". *Criterios: 10(Clase Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)
+                    ${overallScorePrompt}
+                    ${onePointLessonPrompt}
                     3. **Análisis de Actuación del Seguidor**:
                     - **Pros**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Contras y Mejoras**: (Describir específicamente basado en puntajes detallados a continuación)
@@ -466,7 +484,8 @@
                         - **Espectáculo y Estilo**: (0~10, con un decimal, movimiento de cabello y líneas)
                         - **Musicalidad (Dinámica)**: (0~10, con un decimal, arco narrativo)
                         - **Fluidez**: (0~10, con un decimal, flujo continuo)
-                    - **Puntaje General**: (Promedio y Grado. ej., "6.5 - Bailarín Social Avanzado". *Criterios: 10(Clase Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)`;
+                    ${overallScorePrompt}
+                    ${onePointLessonPrompt}`;
                     } else {
                         genreFocus = "Zouk presenta **'Movimiento de Cabeza' y 'Flujo'**. En el Baile Social, el liderazgo seguro protegiendo el cuello/espalda de la pareja y el flujo continuo son prioridad.";
                         analysisFormat = `
@@ -482,7 +501,8 @@
                         - **Dinámica**: (0~10, con un decimal, control de intensidad)
                         - **Compañerismo y Seguridad**: (0~10, con un decimal, protección de pareja y uso del espacio)
                         - **Enraizamiento**: (0~10, con un decimal, soporte del cuerpo inferior)
-                    - **Puntaje General**: (Promedio y Grado. ej., "6.5 - Bailarín Social Avanzado". *Criterios: 10(Clase Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)
+                    ${overallScorePrompt}
+                    ${onePointLessonPrompt}
                     3. **Análisis del Seguidor**:
                     - **Pros**: (Describir específicamente basado en puntajes detallados a continuación)
                     - **Contras y Mejoras**: (Describir específicamente basado en puntajes detallados a continuación)
@@ -494,7 +514,8 @@
                         - **Flexibilidad y Aislamiento**: (0~10, con un decimal, rango de movimiento)
                         - **Compañerismo y Respiración**: (0~10, con un decimal, intercambio de energía)
                         - **Enraizamiento**: (0~10, con un decimal, soporte del cuerpo inferior)
-                    - **Puntaje General**: (Promedio y Grado. ej., "6.5 - Bailarín Social Avanzado". *Criterios: 10(Clase Mundial), 9(Pro Superior), 8(Instructor Pro), 7(Semi-Pro/Equipo de Actuación), 6(Social Avanzado), 5(Social Intermedio-Alto), 4(Social Intermedio), 3(Social Intermedio-Bajo), 2(Principiante), 1(Novato)*)`;
+                    ${overallScorePrompt}
+                    ${onePointLessonPrompt}`;
                     }
                 }
 
