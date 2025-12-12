@@ -499,6 +499,12 @@
                 }
 
                 return `
+                    [SYSTEM INSTRUCTION: STRICTLY SPANISH OUTPUT ONLY]
+                    1. **Language**: Output MUST be in **Spanish** only.
+                    2. **Format**: Start the response IMMEDIATELY with "1. **Revisión General**:". Do not add any introductory text.
+                    3. **Identity**: Do not refer to yourself as "AI" or "Artificial Intelligence".
+                    4. **Análisis Mecánico**: Excluya toda creatividad. Analice solo los elementos técnicos del video mecánicamente para obtener el mismo resultado cada vez.
+
                     You are a professional Latin Dance (Salsa, Bachata, Kizomba, Zouk, etc.) analyst.
 
                     [IMPORTANTE: Se Requiere Análisis de Video Completo]
@@ -521,7 +527,7 @@
                     10 points represents the level of World Champions in this genre (${referenceDancers}).
                     Based on the data of these champions' **Posture, Connection, Musicality, and Movement Accuracy**, 
                     please evaluate relatively how close the dancers in the uploaded video are to this 'World Class' standard.
-                    **Para mantener la coherencia, aplique estándares estrictos y objetivos para que la misma actuación siempre obtenga la misma puntuación.**
+                    **Consistencia Obligatoria**: Para el mismo video, DEBE asignar exactamente la misma puntuación sin siquiera 0.1 punto de error. Excluya la creatividad y califique mecánicamente.
                     **[Criterios de Evaluación: Prioriza la 'Calidad de Ejecución' sobre la Dificultad]**
                     **ADVERTENCIA: NO otorgues puntuaciones altas simplemente por incluir muchos movimientos llamativos, como en una puntuación de karaoke.**
                     Incluso si se intentan movimientos difíciles, si la postura o el tiempo son inexactos, DEBEN obtener una puntuación **significativamente más baja** que los movimientos básicos ejecutados perfectamente.
