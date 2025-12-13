@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 	<head>
+    <script>
+        if (/KAKAOTALK/i.test(navigator.userAgent) && /Android/i.test(navigator.userAgent)) {
+            location.href = 'intent://' + location.href.replace(/https?:\/\//i, '') + '#Intent;scheme=https;package=com.android.chrome;end';
+        }
+    </script>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<title>Comunidades de Baile Latino en Corea - Salsa, Bachata y Zouk</title>
