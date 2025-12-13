@@ -113,6 +113,14 @@
       "description": "Servicio de análisis de movimiento y corrección de postura de baile latino (Salsa, Bachata) basado en IA"
     }
     </script>
+    <link rel="manifest" href="manifest.json">
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('service-worker.js');
+            });
+        }
+    </script>
 </head>
 
 <body>

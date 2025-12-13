@@ -107,6 +107,14 @@
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-197LKDJGPJ"></script>
 	<script defer src="assets/js/ga.js"></script>
 
+    <link rel="manifest" href="manifest.json">
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('service-worker.js');
+            });
+        }
+    </script>
 </head>
 
 <body>
