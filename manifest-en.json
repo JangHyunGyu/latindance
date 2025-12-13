@@ -1,13 +1,13 @@
 {
-  "name": "라틴댄스 메이트",
-  "short_name": "라틴댄스 메이트",
-  "lang": "ko",
-  "start_url": "index.html",
+  "name": "Latin Dance Mate",
+  "short_name": "Latindance",
+  "lang": "en",
+  "start_url": "index-en.html",
   "scope": "./",
   "display": "standalone",
   "background_color": "#0f1424",
   "theme_color": "#0f1424",
-  "description": "지역별 라틴댄스 클럽과 동호회 정보를 탐색할 수 있는 양언어 디렉터리입니다.",
+  "description": "A directory to explore local Latin dance clubs and communities.",
   "icons": [
     {
       "src": "assets/images/latindance_profile_logo.png",
